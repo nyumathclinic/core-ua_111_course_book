@@ -16,7 +16,7 @@ html:
   use_repository_button: false
 
 launch_buttons:
-  jupyterhub_url: "https://coreua-111001-fall-.rcnyu.org/"  # UPDATE every term
+  jupyterhub_url: "https://coreua-111001-fall.rcnyu.org/"  # UPDATE every term
   
 #######################################################################################
 # Parse and render settings
