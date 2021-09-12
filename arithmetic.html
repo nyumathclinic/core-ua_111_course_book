@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Base R &#8212; From Data to Discovery</title>
+    <title>Arithmetic with numbers &#8212; From Data to Discovery</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Arithmetic with numbers" href="arithmetic.html" />
-    <link rel="prev" title="From Data to Discovery" href="landing_page.html" />
+    <link rel="next" title="dplyr Library" href="dplyr_library.html" />
+    <link rel="prev" title="Base R" href="base_r.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -94,7 +94,7 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="base_r.html">
    Base R
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -102,9 +102,9 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="arithmetic.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Arithmetic with numbers
     </a>
    </li>
@@ -161,7 +161,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/base_r.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/arithmetic.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -194,18 +194,89 @@
         
               <div>
                 
-  <div class="section" id="base-r">
-<h1>Base R<a class="headerlink" href="#base-r" title="Permalink to this headline">¶</a></h1>
-<p><strong>Comments</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">#</span></code> pund proceeds comments</p>
+  <div class="section" id="arithmetic-with-numbers">
+<h1>Arithmetic with numbers<a class="headerlink" href="#arithmetic-with-numbers" title="Permalink to this headline">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">+</span></code> plus adds numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># R ignores this.</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1+2</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">3</div></div>
 </div>
-<div class="toctree-wrapper compound">
+<p><code class="docutils literal notranslate"><span class="pre">-</span></code> minus subtracts numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1-2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">-1</div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">*</span></code> asterisk multiplies numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">*</span><span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">10</div></div>
+</div>
+<div class="admonition warning" id="html-admonition">
+<p class="admonition-title">Warning</p>
+<p>Juxtiposiition does <b>not</b> work for multiplication. The code <code>5(2)</code> will reult in the following error.</p>
+<p><quote>Error in eval(expr, envir, enclos): attempt to apply non-function</quote></p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">/</span></code> forward slash divides numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">4</span><span class="o">/</span><span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">2</div></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">()</span></code> parentheses group computations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1+2</span><span class="p">)</span><span class="o">*</span><span class="m">5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">15</div></div>
+</div>
+<div class="admonition note" id="id1">
+<p class="admonition-title">Note</p>
+<p>R uses the standard order of operations when evaluating arithmetic expressions.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">^</span></code> caret and <code class="docutils literal notranslate"><span class="pre">**</span></code> two astricks both raise numbers two powers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">^</span><span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">25</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">**</span><span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">25</div></div>
+</div>
+<div class="admonition tip" id="id2">
+<p class="admonition-title">Style Tip</p>
+<p>You  can decide which method of imputting exponents you prefer, but for the sake of clarity you should only use one method in a give notebook.</p>
 </div>
 </div>
 
@@ -239,19 +310,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="landing_page.html" title="previous page">
+        <a class="left-prev" href="base_r.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">From Data to Discovery</p>
+                <p class="prevnext-title">Base R</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="arithmetic.html" title="next page">
+        <a class="right-next" href="dplyr_library.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Arithmetic with numbers</p>
+                <p class="prevnext-title">dplyr Library</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
