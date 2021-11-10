@@ -9,11 +9,22 @@ parts:
     sections: 
     - file: arithmetic
   - file: dplyr_library
+  - file: ggplot2_library
+  - file: numerical_models
   - file: outside_sources
-#- caption: Exercises
-#  chapters:
-#  - file: lesson02_solutions
-#  - file: lesson03_solutions
-#  - file: lesson04_solutions
-#  - file: lesson05_solutions
-#  - file: lesson06_solutions
+- caption: In Class Exercises
+ chapters:
+ - file: lesson02_solutions
+ - file: lesson03_solutions
+ - file: lesson04_solutions
+ - file: lesson05_solutions
+ - file: lesson06_solutions
+ - file: lesson08_solutions
+ - file: lesson10_solutions
+ - file: lesson11_solutions
+ - file: lesson12_solutions
+ - file: lesson13_solutions
+ - file: lesson14_solutions
+ - file: lesson15_solutions
+ - file: lesson16_solutions
+ - file: lesson17_solutions
