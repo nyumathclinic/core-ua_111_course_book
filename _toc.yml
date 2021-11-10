@@ -1,9 +1,13 @@
+# WARNING! indentation matters.
+
 format: jb-book
 root: landing_page
-parts:
+parts: 
 - caption: References
-  chapters:
+  chapters: 
   - file: base_r
+    sections: 
+    - file: arithmetic
   - file: dplyr_library
   - file: outside_sources
 #- caption: Exercises
