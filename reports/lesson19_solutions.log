@@ -17,14 +17,14 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Load aritfical data
-my_data <- read.csv('~/shared/data/artificial_data.csv')
+# Load the zoombinis data set
+zoombinis <- read.csv('~/shared/data/zoombinis.csv')
 ------------------
 
 Error in file(file, "rt"): cannot open the connection
 Traceback:
 
-1. read.csv("~/shared/data/artificial_data.csv")
+1. read.csv("~/shared/data/zoombinis.csv")
 2. read.table(file = file, header = header, sep = sep, quote = quote, 
  .     dec = dec, fill = fill, comment.char = comment.char, ...)
 3. file(file, "rt")
