@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 08 - Solutions &#8212; From Data to Discovery</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lesson 10 - Solutions" href="lesson10_solutions.html" />
+    <link rel="prev" title="Lesson 6 - Solutions" href="lesson06_solutions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="landing_page.html">
+   From Data to Discovery
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="base_r.html">
+   Base R
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
+     Arithmetic with numbers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dplyr_library.html">
+   dplyr Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ggplot2_library.html">
+   ggplot2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical_models.html">
+   Numeric Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="outside_sources.html">
+   Other References
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  In Class Exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson02_solutions.html">
+   Lesson 2: Inroduction to R and JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson03_solutions.html">
+   Lesson 3 Variables and dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson04_solutions.html">
+   Lesson 4 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson05_solutions.html">
+   Lesson 5 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson06_solutions.html">
+   Lesson 6 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lesson 08 - Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson10_solutions.html">
+   Lesson 10 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson12_solutions.html">
+   Lesson 12 - Vectorization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson13_solutions.html">
+   Lesson 13 - Evaluating a classifier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson14_solutions.html">
+   Lesson 14 - Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson16_solutions.html">
+   Lesson 16 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson17_solutions.html">
+   Lesson 17 -  Solutions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lesson08_solutions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-titles">
+   Part 1: Titles
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-set-up-and-review">
+     Exercise 1 - Set up and review
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-where-are-the-trees">
+     Exercise 2 - Where are the trees?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-air-quality">
+     Exercise 3 - Air quality
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-color-and-layers">
+   Part 2 - Color and layers
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4-color-code-the-trees">
+     Exercise 4 - Color code the trees
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-large-triangles">
+     Exercise 5 - Large triangles
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-layering">
+   Part 3 - Layering
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-6-big-trees">
+     Exercise 6 - Big trees
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-map-the-big-trees">
+     Exercise 7 - Map the big trees
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-from-notes">
+   Examples from notes
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-08-solutions">
+<h1>Lesson 08 - Solutions<a class="headerlink" href="#lesson-08-solutions" title="Permalink to this headline">¶</a></h1>
+<p>These exercises are to help you check your understanding during class. They will not be collected.</p>
+<div class="section" id="part-1-titles">
+<h2>Part 1: Titles<a class="headerlink" href="#part-1-titles" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1-set-up-and-review">
+<h3>Exercise 1 - Set up and review<a class="headerlink" href="#exercise-1-set-up-and-review" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Exicute the code in the code block below. This will make all you plots 5 in by 4 in</p></li>
+<li><p>Load both the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> and the <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> packages.</p></li>
+<li><p>Import the data in the NYC_Tree_Census_small.csv file in the ~/shared/data folder. This data set contains information about the trees in New York City in 2015. The documentation for this data is provided by on the NYC Open Data project on the following webpage: <br>
+<a class="reference external" href="https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh">https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resizes all plots to 5 in by 4 in</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">repr</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the dplyr and ggplot2 packages</span>
+<span class="c1"># The warn.conflicts=FALSE option supressess the warnings</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">,</span> <span class="n">warn.conflicts</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">,</span> <span class="n">warn.conflicts</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+
+<span class="c1"># load data</span>
+<span class="n">trees</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;../shared/data/NYC_Tree_Census_small.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in file(file, &quot;rt&quot;):
+“cannot open file &#39;../shared/data/NYC_Tree_Census_small.csv&#39;: No such file or directory”
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">):</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">connection</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;../shared/data/NYC_Tree_Census_small.csv&quot;</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="n">header</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">sep</span><span class="p">,</span> <span class="n">quote</span> <span class="o">=</span> <span class="n">quote</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">dec</span> <span class="o">=</span> <span class="n">dec</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">fill</span><span class="p">,</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">.</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-2-where-are-the-trees">
+<h3>Exercise 2 - Where are the trees?<a class="headerlink" href="#exercise-2-where-are-the-trees" title="Permalink to this headline">¶</a></h3>
+<p>Create a scatter plot that shows the location of all of the trees in the data set</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">trees</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">longitude</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Latitude</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson08_solutions_6_0.png" src="_images/lesson08_solutions_6_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercise-3-air-quality">
+<h3>Exercise 3 - Air quality<a class="headerlink" href="#exercise-3-air-quality" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Review the properties of the built in data set called <code class="docutils literal notranslate"><span class="pre">airquality</span></code> by looking at its documentation.</p></li>
+<li><p>Create a scatter plot that shows the relationship between temperature and the amount of ozone in the air.</p></li>
+<li><p>Create a scatter plot that shows the relationship between temperature and wind speed.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">?</span><span class="n">airquality</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">airquality</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Temp</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Ozone</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“Removed 37 rows containing missing values (geom_point).”
+</pre></div>
+</div>
+<img alt="_images/lesson08_solutions_9_1.png" src="_images/lesson08_solutions_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">airquality</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Temp</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Wind</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson08_solutions_10_0.png" src="_images/lesson08_solutions_10_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2-color-and-layers">
+<h2>Part 2 - Color and layers<a class="headerlink" href="#part-2-color-and-layers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-4-color-code-the-trees">
+<h3>Exercise 4 - Color code the trees<a class="headerlink" href="#exercise-4-color-code-the-trees" title="Permalink to this headline">¶</a></h3>
+<p>Add the folowing features to your plot from Exercies 2.</p>
+<ul class="simple">
+<li><p>Color the stumpts black, the living trees light grey and the dead trees red.</p></li>
+<li><p>Make the background white.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">trees</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">longitude</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Latitude</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">status</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">status</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;lightgrey&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">theme_classic</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson08_solutions_13_0.png" src="_images/lesson08_solutions_13_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercise-5-large-triangles">
+<h3>Exercise 5 - Large triangles<a class="headerlink" href="#exercise-5-large-triangles" title="Permalink to this headline">¶</a></h3>
+<p>Add the following features to your first plot from Exercise 3.</p>
+<ul class="simple">
+<li><p>Make the points triangles.</p></li>
+<li><p>Make the points large enough that you can easily see that they are triangles.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">airquality</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Temp</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Ozone</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">shape</span> <span class="o">=</span> <span class="m">17</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“Removed 37 rows containing missing values (geom_point).”
+</pre></div>
+</div>
+<img alt="_images/lesson08_solutions_15_1.png" src="_images/lesson08_solutions_15_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-3-layering">
+<h2>Part 3 - Layering<a class="headerlink" href="#part-3-layering" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-6-big-trees">
+<h3>Exercise 6 - Big trees<a class="headerlink" href="#exercise-6-big-trees" title="Permalink to this headline">¶</a></h3>
+<p>Create a data frame that contains just the 15 living treas with the largest diameter.</p>
+<p><strong>Hint:</strong> You can use colon notation to select a part of a vector or particular rows for a data frame.
+<code class="docutils literal notranslate"><span class="pre">faithful$waiting[3:7]</span></code> is the 3rd through the 5th entry in the waiting column of the faithful data frame.
+<code class="docutils literal notranslate"><span class="pre">faithful[5:12,]</span></code>  is row 5 through 12 of the faithful data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">big_trees</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">trees</span><span class="p">,</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&quot;Alive&quot;</span><span class="p">)</span>
+<span class="n">big_trees</span> <span class="o">&lt;-</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">big_trees</span><span class="p">,</span> <span class="nf">desc</span><span class="p">(</span><span class="n">tree_dbh</span><span class="p">))</span>
+<span class="n">big_trees</span><span class="o">$</span><span class="n">tree_dbh</span><span class="p">[</span><span class="m">14</span><span class="o">:</span><span class="m">16</span><span class="p">]</span>
+<span class="n">big_trees</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">big_trees</span><span class="p">,</span> <span class="n">tree_dbh</span> <span class="o">&gt;=</span><span class="m">46</span><span class="p">)</span>
+<span class="nf">nrow</span><span class="p">(</span><span class="n">big_trees</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>46</li>
+	<li>46</li>
+	<li>45</li>
+</ol>
+</div><div class="output text_html">15</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 2 arrange and take first 15 rows</span>
+<span class="n">big_trees</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">trees</span><span class="p">,</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&quot;Alive&quot;</span><span class="p">)</span>
+<span class="n">big_trees</span> <span class="o">&lt;-</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">big_trees</span><span class="p">,</span> <span class="nf">desc</span><span class="p">(</span><span class="n">tree_dbh</span><span class="p">))[</span><span class="m">1</span><span class="o">:</span><span class="m">15</span><span class="p">,]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 2 arrange and take first 15 rows</span>
+<span class="n">big_trees</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">trees</span><span class="p">,</span> <span class="n">status</span> <span class="o">==</span> <span class="s">&quot;Alive&quot;</span><span class="p">)</span>
+<span class="n">big_trees</span> <span class="o">&lt;-</span> <span class="nf">arrange</span><span class="p">(</span><span class="n">big_trees</span><span class="p">,</span> <span class="nf">desc</span><span class="p">(</span><span class="n">tree_dbh</span><span class="p">))</span>
+<span class="n">big_trees</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="n">big_trees</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-7-map-the-big-trees">
+<h3>Exercise 7 - Map the big trees<a class="headerlink" href="#exercise-7-map-the-big-trees" title="Permalink to this headline">¶</a></h3>
+<p>Alter your plot from Exercise 4 so that it shoes the 15 trees from Exercise 6 as has yello triangles with black boarders.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">trees</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">longitude</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Latitude</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">status</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;lightgrey&quot;</span><span class="p">,</span> <span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">big_trees</span><span class="p">,</span> <span class="n">mapping</span><span class="o">=</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">longitude</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Latitude</span><span class="p">),</span> <span class="n">shape</span> <span class="o">=</span> <span class="m">24</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="s">&#39;yellow&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">3</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_classic</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson08_solutions_23_0.png" src="_images/lesson08_solutions_23_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="examples-from-notes">
+<h2>Examples from notes<a class="headerlink" href="#examples-from-notes" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">faithful</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">eruptions</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">waiting</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson08_solutions_25_0.png" src="_images/lesson08_solutions_25_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Petal.Length</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Petal.Width</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Species</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="n">Species</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson08_solutions_26_0.png" src="_images/lesson08_solutions_26_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">airquality</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">airquality</span><span class="p">,</span> <span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">Ozone</span><span class="p">))</span>
+<span class="n">norm_airquality</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">airquality</span><span class="p">,</span> <span class="n">nOzone</span> <span class="o">=</span> <span class="n">Ozone</span> <span class="o">/</span> <span class="nf">max</span><span class="p">(</span><span class="n">Ozone</span><span class="p">),</span> <span class="n">nWind</span> <span class="o">=</span> <span class="n">Wind</span> <span class="o">/</span> <span class="nf">max</span><span class="p">(</span><span class="n">Wind</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">norm_airquality</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Temp</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">nOzone</span><span class="p">),</span> <span class="n">shape</span> <span class="o">=</span> <span class="m">17</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Temp</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">nWind</span><span class="p">),</span> <span class="n">size</span> <span class="o">=</span> <span class="m">5</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">ylab</span><span class="p">(</span><span class="s">&#39;value divided by max&#39;</span><span class="p">)</span><span class="o">+</span>
+    <span class="nf">theme_classic</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson08_solutions_28_0.png" src="_images/lesson08_solutions_28_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="lesson06_solutions.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lesson 6 -  Solutions</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="lesson10_solutions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lesson 10 -  Solutions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Corrin Clarkson<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

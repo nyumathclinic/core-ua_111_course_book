@@ -1,0 +1,70 @@
+Traceback (most recent call last):
+  File "/opt/anaconda3/envs/FDTD/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/opt/anaconda3/envs/FDTD/lib/python3.7/site-packages/nbclient/client.py", line 1117, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/opt/anaconda3/envs/FDTD/lib/python3.7/site-packages/nbclient/util.py", line 78, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/opt/anaconda3/envs/FDTD/lib/python3.7/site-packages/nbclient/util.py", line 57, in just_run
+    return loop.run_until_complete(coro)
+  File "/opt/anaconda3/envs/FDTD/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/opt/anaconda3/envs/FDTD/lib/python3.7/site-packages/nbclient/client.py", line 559, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/opt/anaconda3/envs/FDTD/lib/python3.7/site-packages/nbclient/client.py", line 862, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/opt/anaconda3/envs/FDTD/lib/python3.7/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Code from lesson 13
+# 'cancerous' was replaced with 'cancer'
+library(dplyr)
+cancer <- read.csv('~/shared/data/cancer.csv')
+cancer <- mutate(cancer, Class = factor(
+                                    Class, 
+                                    levels = c(0,1), 
+                                    labels = c('benign', 'cancer')
+                                    )
+                 )
+
+training <- cancer[1:400,]
+test <- cancer[401:nrow(cancer),]
+
+# a is the marginal adhesion
+# t is the thickness
+classifier <- function (a, t){
+    if(a>4){
+        Class <- 'cancer' 
+    } else if (t > 6){
+        Class <- 'cancer'
+    } else {
+        Class <- 'benign'
+    }
+    Class
+}
+classifier <- Vectorize(classifier)
+
+test <- mutate(test, Prediction = classifier(Marginal.Adhesion, 
+                                            Clump.Thickness
+                                            )
+              )
+test <- select(test, 
+               Marginal.Adhesion, 
+               Clump.Thickness, 
+               Prediction, 
+               Class
+              )
+head(test,3)
+------------------
+
+Error in file(file, "rt"): cannot open the connection
+Traceback:
+
+1. read.csv("~/shared/data/cancer.csv")
+2. read.table(file = file, header = header, sep = sep, quote = quote, 
+ .     dec = dec, fill = fill, comment.char = comment.char, ...)
+3. file(file, "rt")
+ERROR: Error in file(file, "rt"): cannot open the connection
+
+

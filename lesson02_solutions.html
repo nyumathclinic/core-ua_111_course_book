@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 2: Solutions &#8212; From Data to Discovery</title>
+    <title>Lesson 2: Inroduction to R and JupyterHub &#8212; From Data to Discovery</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,22 +31,21 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -57,16 +53,16 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lesson 3 Working with Data" href="lesson03_solutions.html" />
+    <link rel="next" title="Lesson 3 Variables and dataframes" href="lesson03_solutions.html" />
     <link rel="prev" title="Other References" href="outside_sources.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,38 +71,61 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  
-  <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="landing_page.html">
    From Data to Discovery
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption" role="heading">
  <span class="caption-text">
   References
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="base_r.html">
    Base R
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
+     Arithmetic with numbers
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="dplyr_library.html">
    dplyr Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ggplot2_library.html">
+   ggplot2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical_models.html">
+   Numeric Models
   </a>
  </li>
  <li class="toctree-l1">
@@ -115,20 +134,20 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption" role="heading">
  <span class="caption-text">
-  Exercises
+  In Class Exercises
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Lesson 2: Solutions
+   Lesson 2: Inroduction to R and JupyterHub
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson03_solutions.html">
-   Lesson 3 Working with Data
+   Lesson 3 Variables and dataframes
   </a>
  </li>
  <li class="toctree-l1">
@@ -143,11 +162,47 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson06_solutions.html">
-   Lesson 06 -  Data Visualization
+   Lesson 6 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson08_solutions.html">
+   Lesson 08 - Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson10_solutions.html">
+   Lesson 10 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson12_solutions.html">
+   Lesson 12 - Vectorization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson13_solutions.html">
+   Lesson 13 - Evaluating a classifier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson14_solutions.html">
+   Lesson 14 - Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson16_solutions.html">
+   Lesson 16 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson17_solutions.html">
+   Lesson 17 -  Solutions
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -163,21 +218,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -195,49 +250,59 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/lesson02_solutions.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-links">
+   Useful links
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#class-notes">
+     Class notes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#poll-everywhere">
+     Poll Everywhere
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-1-jupyterhub">
    Part 1: JupyterHub
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-0-access-notebook-and-copy-it">
+     Exercise 0 - Access notebook and copy it
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-edit-and-save">
+     Exercise 1 - Edit and save
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2-create-a-cell-and-compute-a-sum">
      Exercise 2 - Create a cell and compute a sum
@@ -325,8 +390,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-6-math-with-one-vector">
-     Example 6: Math with one vector
+    <a class="reference internal nav-link" href="#example-6-math-with-vectors">
+     Example 6: Math with vectors
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -338,8 +403,8 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -347,12 +412,51 @@
         
               <div>
                 
-  <div class="section" id="lesson-2-solutions">
-<h1>Lesson 2: Solutions<a class="headerlink" href="#lesson-2-solutions" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-2-inroduction-to-r-and-jupyterhub">
+<h1>Lesson 2: Inroduction to R and JupyterHub<a class="headerlink" href="#lesson-2-inroduction-to-r-and-jupyterhub" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
+<div class="section" id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="class-notes">
+<h3>Class notes<a class="headerlink" href="#class-notes" title="Permalink to this headline">¶</a></h3>
+<p>Link on Brightspace or<br>
+Tiny URL: <a class="reference external" href="https://tinyurl.com/Fall21CORE111">https://tinyurl.com/Fall21CORE111</a></p>
+</div>
+<div class="section" id="poll-everywhere">
+<h3>Poll Everywhere<a class="headerlink" href="#poll-everywhere" title="Permalink to this headline">¶</a></h3>
+<p>The following links are also on NYU Classes<br>
+Login: <a class="reference external" href="https://www.polleverywhere.com/auth/saml/nyu_main">https://www.polleverywhere.com/auth/saml/nyu_main</a><br>
+Respond: <a class="reference external" href="https://pollev.com/clarkson">https://pollev.com/clarkson</a><br></p>
+</div>
+</div>
 <div class="section" id="part-1-jupyterhub">
 <h2>Part 1: JupyterHub<a class="headerlink" href="#part-1-jupyterhub" title="Permalink to this headline">¶</a></h2>
-<p>Your Name</p>
+<div class="section" id="exercise-0-access-notebook-and-copy-it">
+<h3>Exercise 0 - Access notebook and copy it<a class="headerlink" href="#exercise-0-access-notebook-and-copy-it" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Login to the JupyterHub: <a class="reference external" href="https://coreua-111001-fall.rcnyu.org/">https://coreua-111001-fall.rcnyu.org/</a></p></li>
+<li><p>Nacigate to <strong>/shared/class_notebooks</strong> and open lesson02.jpynb</p></li>
+<li><p>Save your own copy of this notebook by using the menu opetion File &gt; Save As. In the name field, write lesson02 and then press Save.</p></li>
+<li><p>Now, <strong>refresh the page</strong>. The red icon in the upper right should no longer be visible.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-1-edit-and-save">
+<h3>Exercise 1 - Edit and save<a class="headerlink" href="#exercise-1-edit-and-save" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Edit a markdown cell</p>
+<ul>
+<li><p>Double click on the cell below to start edititing.</p></li>
+<li><p>Replace the text with your name and then press SHIFT + ENTER to format the cell.</p></li>
+</ul>
+</li>
+<li><p>Save the notebook</p>
+<ul>
+<li><p>Use the menu option File &gt; Save and Checkpoint to save the file.</p></li>
+</ul>
+</li>
+</ul>
+<p>Corrin Clarkson</p>
+</div>
 <div class="section" id="exercise-2-create-a-cell-and-compute-a-sum">
 <h3>Exercise 2 - Create a cell and compute a sum<a class="headerlink" href="#exercise-2-create-a-cell-and-compute-a-sum" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -372,7 +476,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">12+7</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">12</span> <span class="o">+</span> <span class="m">7</span>
 </pre></div>
 </div>
 </div>
@@ -385,7 +489,7 @@
 <ul class="simple">
 <li><p>Change the markdown cell to a code cell</p>
 <ul>
-<li><p>Select the cell by clicking on it once</p></li>
+<li><p>Select the cell by clicking on it on it once</p></li>
 <li><p>use the menu option Cell &gt; Cell Type &gt; Code</p></li>
 </ul>
 </li>
@@ -393,16 +497,15 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Percentage of students in Brooklyn 5 +2</span>
-<span class="m">5+2</span>
-<span class="m">11</span><span class="o">/</span><span class="m">60</span><span class="o">*</span><span class="m">100</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># nummber of students in Brooklyn / total number of students * 100 (multiply by 100 to get the percentage)</span>
+<span class="m">11</span> <span class="o">/</span> <span class="m">60</span> <span class="o">*</span> <span class="m">100</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">7</div><div class="output text_html">18.3333333333333</div></div>
+<div class="output text_html">18.3333333333333</div></div>
 </div>
-<p>18.33% of the students live in Brooklyn.</p>
+<p>18.3% of the students live in Brooklyn.</p>
 </div>
 </div>
 <div class="section" id="part-2-compute">
@@ -413,7 +516,7 @@
 $<span class="math notranslate nohighlight">\(\frac{3^2 + 4^2}{5} = 5\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">3</span><span class="o">^</span><span class="m">2+4</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">/</span><span class="m">5</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">3</span><span class="o">^</span><span class="m">2</span> <span class="o">+</span> <span class="m">4</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">/</span><span class="m">5</span>
 </pre></div>
 </div>
 </div>
@@ -427,7 +530,7 @@ $<span class="math notranslate nohighlight">\(\frac{3^2 + 4^2}{5} = 5\)</span>$<
 $<span class="math notranslate nohighlight">\(\sqrt{\lvert 5^2 - 13^2\rvert} = 12\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="m">5</span><span class="o">^</span><span class="m">2-13</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="m">5</span><span class="o">^</span><span class="m">2</span> <span class="o">-</span> <span class="m">13</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -439,28 +542,12 @@ $<span class="math notranslate nohighlight">\(\sqrt{\lvert 5^2 - 13^2\rvert} = 1
 <h3>Exercise 6: Logarightm<a class="headerlink" href="#exercise-6-logarightm" title="Permalink to this headline">¶</a></h3>
 <p>Verify the following equation by using the code cell below to comput the value of the left hand side.
 $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.14159265358979\)</span>$</p>
-<p>Inside the <span class="math notranslate nohighlight">\(\ln\)</span> we have <span class="math notranslate nohighlight">\(e^\pi\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="kc">pi</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">23.1406926327793</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">log</span><span class="p">(</span><span class="m">23.1406926327793</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">3.14159265358979</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">log</span><span class="p">(</span><span class="nf">exp</span><span class="p">(</span><span class="kc">pi</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># the exponetial function exp(x) = e^x</span>
+<span class="c1"># the log function log(x) is the natural log ln(x)</span>
+
+<span class="nf">log</span><span class="p">(</span><span class="nf">exp</span><span class="p">(</span><span class="kc">pi</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -473,7 +560,7 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 <h2>Part 3: Vectors<a class="headerlink" href="#part-3-vectors" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-7-boroughs">
 <h3>Exercise 7: Boroughs<a class="headerlink" href="#exercise-7-boroughs" title="Permalink to this headline">¶</a></h3>
-<p>Create a vect0r that contains the names of the five boroughs of New York city:</p>
+<p>Create a vector that contains the names of the five boroughs of New York city:</p>
 <ul class="simple">
 <li><p>Brooklyn</p></li>
 <li><p>Bronx</p></li>
@@ -483,7 +570,11 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;Brooklyn&#39;</span><span class="p">,</span> <span class="s">&#39;Bronx&#39;</span><span class="p">,</span> <span class="s">&#39;Manhattan&#39;</span><span class="p">,</span> <span class="s">&#39;Queens&#39;</span><span class="p">,</span> <span class="s">&#39;Staten Island&#39;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;Brooklyn&#39;</span><span class="p">,</span>
+<span class="s">&#39;Bronx&#39;</span><span class="p">,</span>
+<span class="s">&#39;Manhattan&#39;</span><span class="p">,</span>
+<span class="s">&#39;Queens&#39;</span><span class="p">,</span>
+<span class="s">&#39;Staten Island&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -504,7 +595,8 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 <p>In Example 6, we used arithmeic operations on lists to created a list of the even numbers beteen 1 and 20. Use a similar strategy to create a list of the odd numbers between 1 and 20.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="o">*</span><span class="m">2</span> <span class="o">-</span> <span class="m">1</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># even numbers</span>
+<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="o">*</span><span class="m">2</span>
 </pre></div>
 </div>
 </div>
@@ -514,27 +606,13 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1</li><li>3</li><li>5</li><li>7</li><li>9</li><li>11</li><li>13</li><li>15</li><li>17</li><li>19</li></ol>
+<ol class=list-inline><li>2</li><li>4</li><li>6</li><li>8</li><li>10</li><li>12</li><li>14</li><li>16</li><li>18</li><li>20</li></ol>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">9</span><span class="p">)</span><span class="o">*</span><span class="m">2</span> <span class="o">+</span> <span class="m">1</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>1</li><li>3</li><li>5</li><li>7</li><li>9</li><li>11</li><li>13</li><li>15</li><li>17</li><li>19</li></ol>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="o">*</span><span class="m">2</span> <span class="m">+1</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># odd numbers (almost)</span>
+<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="o">*</span><span class="m">2</span> <span class="o">+</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -549,7 +627,8 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span><span class="o">*</span><span class="m">2</span> <span class="m">+1</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># odd numbers strategy 1</span>
+<span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">9</span><span class="p">)</span><span class="o">*</span><span class="m">2</span> <span class="o">+</span> <span class="m">1</span>
 </pre></div>
 </div>
 </div>
@@ -559,7 +638,53 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>3</li><li>5</li><li>7</li></ol>
+<ol class=list-inline><li>1</li><li>3</li><li>5</li><li>7</li><li>9</li><li>11</li><li>13</li><li>15</li><li>17</li><li>19</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">0</span><span class="o">:</span><span class="m">9</span> <span class="c1"># intermediate step</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">0</span><span class="o">:</span><span class="m">9</span><span class="p">)</span><span class="o">*</span><span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0</li><li>2</li><li>4</li><li>6</li><li>8</li><li>10</li><li>12</li><li>14</li><li>16</li><li>18</li></ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># odd numbers strategy</span>
+<span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="o">*</span><span class="m">2</span> <span class="o">-</span> <span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>3</li><li>5</li><li>7</li><li>9</li><li>11</li><li>13</li><li>15</li><li>17</li><li>19</li></ol>
 </div></div>
 </div>
 </div>
@@ -581,24 +706,46 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>35</li>
+	<li>39</li>
+	<li>42</li>
+	<li>36</li>
+	<li>35</li>
+</ol>
+</div><div class="output text_html"><ol class=list-inline>
+	<li>27</li>
+	<li>29</li>
+	<li>37</li>
+	<li>38</li>
+	<li>20</li>
+</ol>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># average of high and low = (high + low) / 2</span>
+<span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span> <span class="m">39</span><span class="p">,</span> <span class="m">42</span><span class="p">,</span> <span class="m">36</span><span class="p">,</span> <span class="m">35</span><span class="p">)</span> <span class="o">+</span> <span class="nf">c</span><span class="p">(</span><span class="m">27</span><span class="p">,</span> <span class="m">29</span><span class="p">,</span> <span class="m">37</span><span class="p">,</span> <span class="m">38</span><span class="p">,</span> <span class="m">20</span><span class="p">))</span> <span class="o">/</span> <span class="m">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
 <div class="output text_html"><style>
 .list-inline {list-style: none; margin:0; padding: 0}
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>35</li><li>39</li><li>42</li><li>36</li><li>35</li></ol>
-</div><div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>27</li><li>29</li><li>37</li><li>38</li><li>20</li></ol>
+<ol class=list-inline><li>31</li><li>34</li><li>39.5</li><li>37</li><li>27.5</li></ol>
 </div></div>
 </div>
-<p>Average $<span class="math notranslate nohighlight">\(\frac{h + \ell}{2}\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span> <span class="m">39</span><span class="p">,</span> <span class="m">42</span><span class="p">,</span> <span class="m">36</span><span class="p">,</span> <span class="m">35</span><span class="p">)</span> <span class="o">+</span> <span class="nf">c</span><span class="p">(</span><span class="m">27</span><span class="p">,</span> <span class="m">29</span><span class="p">,</span> <span class="m">37</span><span class="p">,</span> <span class="m">38</span><span class="p">,</span> <span class="m">20</span><span class="p">))</span><span class="o">/</span><span class="m">2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># with variables (fore shadowing)</span>
+<span class="n">highs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">35</span><span class="p">,</span> <span class="m">39</span><span class="p">,</span> <span class="m">42</span><span class="p">,</span> <span class="m">36</span><span class="p">,</span> <span class="m">35</span><span class="p">)</span>
+<span class="n">lows</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">27</span><span class="p">,</span> <span class="m">29</span><span class="p">,</span> <span class="m">37</span><span class="p">,</span> <span class="m">38</span><span class="p">,</span> <span class="m">20</span><span class="p">)</span>
+
+<span class="c1"># averages</span>
+<span class="p">(</span><span class="n">highs</span> <span class="o">+</span> <span class="n">lows</span><span class="p">)</span> <span class="o">/</span> <span class="m">2</span>
 </pre></div>
 </div>
 </div>
@@ -735,6 +882,21 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="n">smile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">typeof</span><span class="p">(</span><span class="n">smile</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;smile&#39;</span> <span class="ow">not</span> <span class="n">found</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">typeof</span><span class="p">(</span><span class="n">smile</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="m">5</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -745,10 +907,12 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 <div class="section" id="example-4-vectors">
 <h3>Example 4: Vectors<a class="headerlink" href="#example-4-vectors" title="Permalink to this headline">¶</a></h3>
-<p>Vectors are ordered collections of entries where <strong>all</strong> entries have the same data type. The R function <code class="docutils literal notranslate"><span class="pre">c()</span></code> is used to construct vectors. The <code class="docutils literal notranslate"><span class="pre">typof()</span></code> function returns the type of the elements in the vector.</p>
+<p>Vectors are ordered collections of entries where <strong>all</strong> entries have the same data type. The R function <code class="docutils literal notranslate"><span class="pre">c()</span></code> is used to construct vectors. The <code class="docutils literal notranslate"><span class="pre">typof()</span></code> function returns the type of the <strong>elements</strong> in the vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;c&#39;</span><span class="p">,</span><span class="s">&#39;d&#39;</span><span class="p">,</span><span class="s">&#39;e&#39;</span><span class="p">,</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="s">&#39;g&#39;</span><span class="p">,</span><span class="s">&#39;h&#39;</span><span class="p">,</span><span class="s">&#39;i&#39;</span><span class="p">,</span><span class="s">&#39;j&#39;</span><span class="p">,</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="s">&#39;l&#39;</span><span class="p">,</span><span class="s">&#39;m&#39;</span><span class="p">,</span><span class="s">&#39;n&#39;</span><span class="p">,</span><span class="s">&#39;o&#39;</span><span class="p">,</span><span class="s">&#39;p&#39;</span><span class="p">,</span><span class="s">&#39;q&#39;</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="s">&#39;s&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,</span><span class="s">&#39;u&#39;</span><span class="p">,</span><span class="s">&#39;v&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">,</span><span class="s">&#39;x&#39;</span><span class="p">,</span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span><span class="s">&#39;b&#39;</span><span class="p">,</span><span class="s">&#39;c&#39;</span><span class="p">,</span><span class="s">&#39;d&#39;</span><span class="p">,</span><span class="s">&#39;e&#39;</span><span class="p">,</span><span class="s">&#39;f&#39;</span><span class="p">,</span><span class="s">&#39;g&#39;</span><span class="p">,</span><span class="s">&#39;h&#39;</span><span class="p">,</span><span class="s">&#39;i&#39;</span><span class="p">,</span><span class="s">&#39;j&#39;</span><span class="p">,</span><span class="s">&#39;k&#39;</span><span class="p">,</span><span class="s">&#39;l&#39;</span><span class="p">,</span><span class="s">&#39;m&#39;</span><span class="p">,</span><span class="s">&#39;n&#39;</span><span class="p">,</span><span class="s">&#39;o&#39;</span><span class="p">,</span> 
+  <span class="s">&#39;p&#39;</span><span class="p">,</span><span class="s">&#39;q&#39;</span><span class="p">,</span><span class="s">&#39;r&#39;</span><span class="p">,</span><span class="s">&#39;s&#39;</span><span class="p">,</span><span class="s">&#39;t&#39;</span><span class="p">,</span><span class="s">&#39;u&#39;</span><span class="p">,</span><span class="s">&#39;v&#39;</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">,</span><span class="s">&#39;x&#39;</span><span class="p">,</span><span class="s">&#39;y&#39;</span><span class="p">,</span><span class="s">&#39;z&#39;</span><span class="p">)</span>
+<span class="c1"># Long expressions can be boken into multiple lines to increase readability.</span>
 </pre></div>
 </div>
 </div>
@@ -768,12 +932,16 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>2</li><li>3</li><li>5</li><li>7</li><li>11</li><li>13</li><li>17</li><li>19</li></ol>
+<div class="output text_html"><ol class=list-inline>
+	<li>2</li>
+	<li>3</li>
+	<li>5</li>
+	<li>7</li>
+	<li>11</li>
+	<li>13</li>
+	<li>17</li>
+	<li>19</li>
+</ol>
 </div></div>
 </div>
 <div class="cell docutils container">
@@ -793,12 +961,10 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>'a'</li><li>'1'</li></ol>
+<div class="output text_html"><ol class=list-inline>
+	<li>'a'</li>
+	<li>'1'</li>
+</ol>
 </div></div>
 </div>
 </div>
@@ -812,12 +978,18 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ol>
+<div class="output text_html"><ol class=list-inline>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+	<li>9</li>
+	<li>10</li>
+</ol>
 </div></div>
 </div>
 <div class="cell docutils container">
@@ -827,17 +999,21 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>-5</li><li>-4</li><li>-3</li><li>-2</li><li>-1</li><li>0</li><li>1</li><li>2</li></ol>
+<div class="output text_html"><ol class=list-inline>
+	<li>-5</li>
+	<li>-4</li>
+	<li>-3</li>
+	<li>-2</li>
+	<li>-1</li>
+	<li>0</li>
+	<li>1</li>
+	<li>2</li>
+</ol>
 </div></div>
 </div>
 </div>
-<div class="section" id="example-6-math-with-one-vector">
-<h3>Example 6: Math with one vector<a class="headerlink" href="#example-6-math-with-one-vector" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-6-math-with-vectors">
+<h3>Example 6: Math with vectors<a class="headerlink" href="#example-6-math-with-vectors" title="Permalink to this headline">¶</a></h3>
 <p>Arithmetic operations are applied to each element of a vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -846,17 +1022,24 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li></ol>
+<div class="output text_html"><ol class=list-inline>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+	<li>9</li>
+	<li>10</li>
+	<li>11</li>
+	<li>12</li>
+</ol>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="o">*</span><span class="m">2</span>
+<span class="c1"># even numbers 2 to 20</span>
 </pre></div>
 </div>
 </div>
@@ -876,12 +1059,18 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>1</li><li>4</li><li>9</li><li>16</li><li>25</li><li>36</li><li>49</li><li>64</li><li>81</li><li>100</li></ol>
+<div class="output text_html"><ol class=list-inline>
+	<li>1</li>
+	<li>4</li>
+	<li>9</li>
+	<li>16</li>
+	<li>25</li>
+	<li>36</li>
+	<li>49</li>
+	<li>64</li>
+	<li>81</li>
+	<li>100</li>
+</ol>
 </div></div>
 </div>
 </div>
@@ -895,27 +1084,27 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>1</li><li>4</li><li>7</li><li>10</li></ol>
+<div class="output text_html"><ol class=list-inline>
+	<li>1</li>
+	<li>4</li>
+	<li>7</li>
+	<li>10</li>
+</ol>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">2</span> <span class="o">+</span> <span class="p">(</span><span class="m">-1</span><span class="p">),</span> <span class="m">4</span> <span class="o">+</span> <span class="m">0</span><span class="p">,</span> <span class="m">6</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span> <span class="m">8</span> <span class="o">+</span> <span class="m">2</span><span class="p">)</span> <span class="c1"># sum of vectors done manualy</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">2</span> <span class="o">+</span> <span class="p">(</span><span class="m">-1</span><span class="p">),</span> <span class="m">4</span> <span class="o">+</span> <span class="m">0</span><span class="p">,</span> <span class="m">6</span> <span class="o">+</span> <span class="m">1</span><span class="p">,</span> <span class="m">8</span> <span class="o">+</span> <span class="m">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>1</li><li>4</li><li>7</li><li>10</li></ol>
+<div class="output text_html"><ol class=list-inline>
+	<li>1</li>
+	<li>4</li>
+	<li>7</li>
+	<li>10</li>
+</ol>
 </div></div>
 </div>
 </div>
@@ -944,23 +1133,43 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 
               </div>
               
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="outside_sources.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Other References</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="lesson03_solutions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lesson 3 Variables and dataframes</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
         </div>
     </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="outside_sources.html" title="previous page">Other References</a>
-    <a class='right-next' id="next-link" href="lesson03_solutions.html" title="next page">Lesson 3 Working with Data</a>
-
-    </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
           By Corrin Clarkson<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -969,11 +1178,9 @@ $<span class="math notranslate nohighlight">\(\ln(e^\pi) \approx 3.1415926535897
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  
   </body>
 </html>

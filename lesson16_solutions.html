@@ -1,0 +1,936 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 16 - Solutions &#8212; From Data to Discovery</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lesson 17 - Solutions" href="lesson17_solutions.html" />
+    <link rel="prev" title="Lesson 14 - Solutions" href="lesson14_solutions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="landing_page.html">
+   From Data to Discovery
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="base_r.html">
+   Base R
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
+     Arithmetic with numbers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dplyr_library.html">
+   dplyr Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ggplot2_library.html">
+   ggplot2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical_models.html">
+   Numeric Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="outside_sources.html">
+   Other References
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  In Class Exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson02_solutions.html">
+   Lesson 2: Inroduction to R and JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson03_solutions.html">
+   Lesson 3 Variables and dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson04_solutions.html">
+   Lesson 4 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson05_solutions.html">
+   Lesson 5 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson06_solutions.html">
+   Lesson 6 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson08_solutions.html">
+   Lesson 08 - Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson10_solutions.html">
+   Lesson 10 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson12_solutions.html">
+   Lesson 12 - Vectorization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson13_solutions.html">
+   Lesson 13 - Evaluating a classifier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson14_solutions.html">
+   Lesson 14 - Solutions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lesson 16 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson17_solutions.html">
+   Lesson 17 -  Solutions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lesson16_solutions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-linear-function">
+   Part 1: Linear Function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-0-set-up">
+     Exercise 0 - Set up
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-first-line">
+     Exercise 1 -  First line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-make-a-table-and-plot">
+     Exercise 2 - Make a table and plot
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-manual-linear-model">
+   Part 2: Manual Linear Model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-birth-weight-manual-linear-model">
+     Exercise 3 - Birth weight manual linear model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4-predict-birth-weight">
+     Exercise 4 - Predict birth weight
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-birth-weight-mean-squared-error">
+     Exercise 5 - Birth weight Mean Squared Error
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-birth-weight-automatic-linear-model">
+   Part 3 - Birth weight automatic linear model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-6-plot-the-automatic-model">
+     Exercise 6 - Plot the automatic model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-7-prediction-automatic-linear-model">
+     Exercise 7 - Prediction automatic linear model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-8-mean-squared-error-automatic-linear-model">
+     Exercise 8 - Mean squared error automatic linear model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-9-avoiding-over-fit">
+     Exercise 9 - Avoiding Over Fit
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples">
+   Examples
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-16-solutions">
+<h1>Lesson 16 -  Solutions<a class="headerlink" href="#lesson-16-solutions" title="Permalink to this headline">¶</a></h1>
+<p>These exercises are to help you check your understanding during class. They will not be collected.</p>
+<div class="section" id="part-1-linear-function">
+<h2>Part 1: Linear Function<a class="headerlink" href="#part-1-linear-function" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-0-set-up">
+<h3>Exercise 0 - Set up<a class="headerlink" href="#exercise-0-set-up" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Save your own copy of this notebook by using the menu opetion File &gt; Save As.</p></li>
+<li><p>Now, <strong>refresh the page</strong>. The red icon in the upper right should no longer be visible.</p></li>
+<li><p>Run the code in the first cell below to load the packages that that we will use today.</p></li>
+<li><p>Run the code in the second cell below to create the <code class="docutils literal notranslate"><span class="pre">points</span></code> data frame.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the dypyr and ggplot2 packages</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#39;dplyr&#39;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#39;ggplot2&#39;</span><span class="p">)</span>
+
+<span class="c1"># Resizes all plots to 5 in by 4 in</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">repr</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create and store a data frame with one column containing the numbers 1 - 10</span>
+<span class="n">points</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="s">&#39;x_values&#39;</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-1-first-line">
+<h3>Exercise 1 -  First line<a class="headerlink" href="#exercise-1-first-line" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a function called <code class="docutils literal notranslate"><span class="pre">my_line()</span></code> corresponds to the line with slope 1/2 through the point (4,3).</p></li>
+<li><p>Test the function <code class="docutils literal notranslate"><span class="pre">my_line()</span></code> by plugging in 4 and verifying that 3 is the output.</p></li>
+<li><p>Test the function for the input values 5 and 6. Is the output what you expected?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 1: Slope intercept form</span>
+
+<span class="c1"># myline(x)  = y = m x + b</span>
+<span class="n">my_line</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+    <span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="m">1</span>  <span class="c1"># y = m x + b where m = 1/2 slope and b is the y-intercept;</span>
+                <span class="c1"># find by by plugging in x = 4 and y=3 from known point</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 2: Slope intercept form</span>
+
+<span class="n">my_line</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+    <span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="m">-4</span><span class="p">)</span> <span class="o">+</span> <span class="m">3</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test function</span>
+<span class="nf">my_line</span><span class="p">(</span><span class="m">4</span><span class="p">)</span> <span class="c1"># Expect 3</span>
+<span class="nf">my_line</span><span class="p">(</span><span class="m">5</span><span class="p">)</span> <span class="c1"># Expect 3 + 1/2 = 3.5 </span>
+<span class="nf">my_line</span><span class="p">(</span><span class="m">6</span><span class="p">)</span> <span class="c1"># Expect 3 + 2*(1/2) = 4</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3</div><div class="output text_html">3.5</div><div class="output text_html">4</div></div>
+</div>
+</div>
+<div class="section" id="exercise-2-make-a-table-and-plot">
+<h3>Exercise 2 - Make a table and plot<a class="headerlink" href="#exercise-2-make-a-table-and-plot" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">my_line()</span></code> function to add a column called <code class="docutils literal notranslate"><span class="pre">y_values</span></code> to the <code class="docutils literal notranslate"><span class="pre">points</span></code> data frame. The values in this column should satisfy the linear equation <span class="math notranslate nohighlight">\(y=(1/2)\cdot(x-4) + 3\)</span> with for <span class="math notranslate nohighlight">\(x\)</span> in the <code class="docutils literal notranslate"><span class="pre">x_values</span></code> column.</p></li>
+<li><p>Plot the ten points that you just created.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 1: use my_line</span>
+<span class="n">points</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">y_values</span> <span class="o">=</span> <span class="nf">my_line</span><span class="p">(</span><span class="n">x_values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 2: without my_line</span>
+<span class="n">points</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="n">y_values</span> <span class="o">=</span> <span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x_values</span> <span class="o">-</span> <span class="m">4</span><span class="p">)</span> <span class="o">+</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_values</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">theme_classic</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson16_solutions_11_0.png" src="_images/lesson16_solutions_11_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2-manual-linear-model">
+<h2>Part 2: Manual Linear Model<a class="headerlink" href="#part-2-manual-linear-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-3-birth-weight-manual-linear-model">
+<h3>Exercise 3 - Birth weight manual linear model<a class="headerlink" href="#exercise-3-birth-weight-manual-linear-model" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Execute the code in the cell be low to</p>
+<ul>
+<li><p>load the baby weight data</p></li>
+<li><p>extract the data for babys whose mothers smoked</p></li>
+<li><p>create a scatter plot of getational time and birth weight</p></li>
+</ul>
+</li>
+<li><p>Create a function called <code class="docutils literal notranslate"><span class="pre">birth_weight()</span></code> that uses a linear model to predict the birth weight of a baby born to a mother who smokes based on the length of the gestation.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the baby weight data</span>
+<span class="n">babyweight</span> <span class="o">&lt;-</span><span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;~/shared/data/babyweight.csv&#39;</span><span class="p">)</span>
+<span class="c1">#extract the data for babys whose mothers smoked</span>
+<span class="n">babyweight_smoking</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">babyweight</span><span class="p">,</span> <span class="n">Smoke</span><span class="o">==</span><span class="s">&#39;yes&#39;</span><span class="p">)</span>
+
+<span class="c1"># create a scatter plot of getational time and birth weight</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">babyweight_smoking</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gest</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Wgt</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="m">32</span><span class="o">:</span><span class="m">42</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">2400</span><span class="p">,</span> <span class="m">3600</span><span class="p">,</span> <span class="m">100</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">xlab</span><span class="p">(</span><span class="s">&#39;Length of Gestation (weeks)&#39;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">ylab</span><span class="p">(</span><span class="s">&#39;Birth Weight (g)&#39;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Babies born to mothers who smoked&#39;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_classic</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme</span><span class="p">(</span><span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s">&quot;grey50&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in file(file, &quot;rt&quot;):
+“cannot open file &#39;/home/clarkson/shared/data/babyweight.csv&#39;: No such file or directory”
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">):</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">connection</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;~/shared/data/babyweight.csv&quot;</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="n">header</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">sep</span><span class="p">,</span> <span class="n">quote</span> <span class="o">=</span> <span class="n">quote</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">dec</span> <span class="o">=</span> <span class="n">dec</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">fill</span><span class="p">,</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">.</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The line through the points (36, 2500) and (41, 3300) looks like a good fit. It has slope
+$<span class="math notranslate nohighlight">\(\frac{3300 -2400}{41-36}.\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="m">3300</span> <span class="m">-2400</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">41-36</span><span class="p">)</span>
+
+<span class="c1"># g is gestation</span>
+<span class="n">birth_weight</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">g</span><span class="p">){</span>
+    <span class="n">slope</span> <span class="o">*</span> <span class="p">(</span><span class="n">g</span><span class="m">-36</span><span class="p">)</span> <span class="o">+</span> <span class="m">2400</span> <span class="c1"># point slope form</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-4-predict-birth-weight">
+<h3>Exercise 4 - Predict birth weight<a class="headerlink" href="#exercise-4-predict-birth-weight" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use your <code class="docutils literal notranslate"><span class="pre">birth_wight()</span></code> function to add a column called <code class="docutils literal notranslate"><span class="pre">Pred</span></code> to the <code class="docutils literal notranslate"><span class="pre">babyweight_smoking</span></code> data frame. The column should contain your prediction of the birth weight based on the gestational period.</p></li>
+<li><p>Plot the line of your predictions using <code class="docutils literal notranslate"><span class="pre">geom_smooth()</span></code> and the actual data on the same plot.</p></li>
+</ul>
+<p>Hint: Recall that you can specify the aesthetic mapping inside the geometry function of ggplot:</p>
+<p><code class="docutils literal notranslate"><span class="pre">geom_smooth(mapping</span> <span class="pre">=</span> <span class="pre">aes(</span> <span class="pre">...</span> <span class="pre">))</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create column</span>
+<span class="n">babyweight_smoking</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">babyweight_smoking</span><span class="p">,</span> <span class="n">Pred</span> <span class="o">=</span> <span class="nf">birth_weight</span><span class="p">(</span><span class="n">Gest</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">babyweight_smoking</span><span class="p">)</span> <span class="o">+</span> <span class="c1">### Changed: no aes()</span>
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gest</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Wgt</span><span class="p">))</span> <span class="o">+</span> <span class="c1">### added aes()</span>
+    <span class="nf">geom_smooth</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gest</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Pred</span><span class="p">),</span>  <span class="c1">### NEW</span>
+               <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;blue&#39;</span><span class="p">,</span> 
+    <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="m">32</span><span class="o">:</span><span class="m">42</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">2200</span><span class="p">,</span> <span class="m">3600</span><span class="p">,</span> <span class="m">100</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Babies born to mothers who smoked&#39;</span><span class="p">,</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Length of Gestation (weeks)&#39;</span><span class="p">,</span>
+        <span class="n">y</span> <span class="o">=</span><span class="s">&#39;Birth Weight (g)&#39;</span> 
+    <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_classic</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme</span><span class="p">(</span><span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s">&quot;grey50&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+</pre></div>
+</div>
+<img alt="_images/lesson16_solutions_18_1.png" src="_images/lesson16_solutions_18_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercise-5-birth-weight-mean-squared-error">
+<h3>Exercise 5 - Birth weight Mean Squared Error<a class="headerlink" href="#exercise-5-birth-weight-mean-squared-error" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add a column called <code class="docutils literal notranslate"><span class="pre">Residual</span></code> to the <code class="docutils literal notranslate"><span class="pre">babyweight_smoking</span></code> data frame. Using the definition of residual given below.
+$<span class="math notranslate nohighlight">\(\text{Residual} = \text{Observed value} – \text{Predicted value} \)</span>$</p></li>
+<li><p>Compute the mean squared error (mse) for your predictions using the definition given below.
+$<span class="math notranslate nohighlight">\( \text{mean squared error} = \frac{\text{ sum of the squares of the residuals}}{\text{number of observations}}\)</span>$</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create column</span>
+<span class="n">babyweight_smoking</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">babyweight_smoking</span><span class="p">,</span> <span class="n">Residual</span> <span class="o">=</span> <span class="n">Wgt</span> <span class="o">-</span> <span class="n">Pred</span><span class="p">)</span>
+
+<span class="c1"># Mean squared error</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">babyweight_smoking</span><span class="o">$</span><span class="n">Residual</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">22458.5</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="part-3-birth-weight-automatic-linear-model">
+<h2>Part 3 - Birth weight automatic linear model<a class="headerlink" href="#part-3-birth-weight-automatic-linear-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-6-plot-the-automatic-model">
+<h3>Exercise 6 - Plot the automatic model<a class="headerlink" href="#exercise-6-plot-the-automatic-model" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">geom_smooth()</span></code> to plot the linear model generated by the <code class="docutils literal notranslate"><span class="pre">lm</span></code> method for the <code class="docutils literal notranslate"><span class="pre">babyweight_smoking</span></code> data set.
+<code class="docutils literal notranslate"><span class="pre">geom_smooth(method</span> <span class="pre">=</span> <span class="pre">lm,</span> <span class="pre">formula</span> <span class="pre">=</span> <span class="pre">'y~x',</span> <span class="pre">se</span> <span class="pre">=</span> <span class="pre">FALSE)</span></code></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">babyweight_smoking</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Gest</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">Wgt</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="n">lm</span><span class="p">,</span> 
+                <span class="n">formula</span> <span class="o">=</span> <span class="s">&#39;y~x&#39;</span><span class="p">,</span> <span class="c1"># x and y variables of the plot</span>
+                <span class="n">se</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="c1"># hide error shading</span>
+               <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;blue&#39;</span><span class="p">,</span> 
+    <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="n">colors</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="m">32</span><span class="o">:</span><span class="m">42</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">2200</span><span class="p">,</span> <span class="m">3600</span><span class="p">,</span> <span class="m">100</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Babies born to mothers who smoked&#39;</span><span class="p">,</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Length of Gestation (weeks)&#39;</span><span class="p">,</span>
+        <span class="n">y</span> <span class="o">=</span><span class="s">&#39;Birth Weight (g)&#39;</span> 
+    <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_classic</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme</span><span class="p">(</span><span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s">&quot;grey50&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson16_solutions_23_0.png" src="_images/lesson16_solutions_23_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exercise-7-prediction-automatic-linear-model">
+<h3>Exercise 7 - Prediction automatic linear model<a class="headerlink" href="#exercise-7-prediction-automatic-linear-model" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">lm</span></code> function to automatically generate a linear model and store the result in a variable called <code class="docutils literal notranslate"><span class="pre">model</span></code>.
+<code class="docutils literal notranslate"><span class="pre">lm(formula</span> <span class="pre">=</span> <span class="pre">YVARIABLE</span> <span class="pre">~</span> <span class="pre">XVARIABLE,</span> <span class="pre">data</span> <span class="pre">=</span> <span class="pre">DATAFRAME)</span></code></p></li>
+<li><p>Extract the slope and y-intercept from the model.</p></li>
+<li><p>Use the model to predict the birth weight of a baby with a mother that smoked and a gestation time of 40 weeks. Does the value agree with the value in the plot in Exercise 8?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">Wgt</span> <span class="o">~</span> <span class="n">Gest</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">babyweight_smoking</span><span class="p">)</span>
+<span class="n">slope</span> <span class="o">&lt;-</span> <span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="n">intercept</span> <span class="o">&lt;-</span> <span class="n">model</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+
+<span class="n">slope</span> <span class="o">*</span> <span class="m">40</span> <span class="o">+</span> <span class="n">intercept</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3086.58585858586</div></div>
+</div>
+</div>
+<div class="section" id="exercise-8-mean-squared-error-automatic-linear-model">
+<h3>Exercise 8 - Mean squared error automatic linear model<a class="headerlink" href="#exercise-8-mean-squared-error-automatic-linear-model" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Compute the mean squared error of the automatic model. How does it compare to that of your manual model?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># mean squared error</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">model</span><span class="o">$</span><span class="n">residual</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">14019.3669386169</div></div>
+</div>
+<p>The mean squared error for our manual model was 22458.5 and that for the automatic linear model was 14019.4. We conclude that the automatic linear model is a better model with respect to this measure.</p>
+</div>
+<div class="section" id="exercise-9-avoiding-over-fit">
+<h3>Exercise 9 - Avoiding Over Fit<a class="headerlink" href="#exercise-9-avoiding-over-fit" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>What is wrong with the approach we used in this notebook?</p></li>
+</ul>
+<p>The training data was not separate from the testing data and both models were tested on the same data.</p>
+</div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># random data</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">4491</span><span class="p">)</span> <span class="c1"># ensures that the output is constistant</span>
+<span class="n">random_points</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="s">&#39;x_values&#39;</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">,</span> 
+                            <span class="s">&#39;y_values&#39;</span> <span class="o">=</span> <span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span><span class="o">*</span><span class="m">0.5</span> <span class="o">+</span> <span class="m">1</span> <span class="o">+</span> <span class="nf">runif</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">-0.5</span><span class="p">,</span> <span class="m">0.5</span><span class="p">)</span>
+                            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">line</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">y_values</span> <span class="o">~</span> <span class="n">x_values</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">random_points</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">line</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = y_values ~ x_values, data = random_points)
+
+Coefficients:
+(Intercept)     x_values  
+     0.9813       0.5074  
+</pre></div>
+</div>
+</div>
+</div>
+<p>These coefficients can be used to construct and equations as follows:
+$<span class="math notranslate nohighlight">\(\text{y_values} = 0.9813  + 0.5074(\text{x_values})\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">slope</span> <span class="o">&lt;-</span><span class="n">line</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="n">intercept</span> <span class="o">&lt;-</span> <span class="n">line</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+<span class="n">slope</span>
+<span class="n">intercept</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.507411167684547</div><div class="output text_html">0.981329042868068</div></div>
+</div>
+<p>We can use these variables to construct a function as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span>
+    <span class="n">intercept</span> <span class="o">+</span> <span class="n">slope</span><span class="o">*</span><span class="n">x</span>
+<span class="p">}</span>
+<span class="c1"># This function does not need to be vectorized, </span>
+<span class="c1"># because all of the internal operations are vectorized by default. </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can check that our function agrees with the fitted values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">data.frame</span><span class="p">(</span><span class="s">&#39;function L&#39;</span> <span class="o">=</span> <span class="nf">L</span><span class="p">(</span><span class="n">random_data</span><span class="o">$</span><span class="n">x_values</span><span class="p">),</span> <span class="s">&#39;lm fitted values&#39;</span> <span class="o">=</span> <span class="n">line</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 10 × 2</caption>
+<thead>
+	<tr><th></th><th scope=col>function.L</th><th scope=col>lm.fitted.values</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>1.488740</td><td>1.488740</td></tr>
+	<tr><th scope=row>2</th><td>1.996151</td><td>1.996151</td></tr>
+	<tr><th scope=row>3</th><td>2.503563</td><td>2.503563</td></tr>
+	<tr><th scope=row>4</th><td>3.010974</td><td>3.010974</td></tr>
+	<tr><th scope=row>5</th><td>3.518385</td><td>3.518385</td></tr>
+	<tr><th scope=row>6</th><td>4.025796</td><td>4.025796</td></tr>
+	<tr><th scope=row>7</th><td>4.533207</td><td>4.533207</td></tr>
+	<tr><th scope=row>8</th><td>5.040618</td><td>5.040618</td></tr>
+	<tr><th scope=row>9</th><td>5.548030</td><td>5.548030</td></tr>
+	<tr><th scope=row>10</th><td>6.055441</td><td>6.055441</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>We can then compute the difference between the actual y-values and the values predicted by the linear model <span class="math notranslate nohighlight">\(L(x)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">random_data</span><span class="o">$</span><span class="n">y_values</span> <span class="o">-</span> <span class="nf">L</span><span class="p">(</span><span class="n">random_data</span><span class="o">$</span><span class="n">x_values</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>-0.343425863786516</li><li>0.141742425879011</li><li>0.0856483720186532</li><li>0.180366531700234</li><li>-0.239073114675667</li><li>0.0930530927807203</li><li>-0.336349397093397</li><li>-0.518215861491803</li><li>0.265319611596395</li><li>0.0752962245521216</li></ol>
+</div></div>
+</div>
+<p>WARNING! These differences do NOT agree with the residuals given by <code class="docutils literal notranslate"><span class="pre">lm()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">line</span><span class="o">$</span><span class="n">residuals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>1</dt><dd>-0.0683612710711638</dd><dt>2</dt><dd>0.0700329075581538</dd><dt>3</dt><dd>-0.267385548032876</dd><dt>4</dt><dd>0.11132116148841</dd><dt>5</dt><dd>0.452582755618531</dd><dt>6</dt><dd>0.233084739950683</dd><dt>7</dt><dd>-0.462466401407834</dd><dt>8</dt><dd>-0.366123736690673</dd><dt>9</dt><dd>0.183153986184378</dd><dt>10</dt><dd>0.114161406402391</dd></dl>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">random_data</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_values</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">geom_smooth</span><span class="p">(</span><span class="n">method</span> <span class="o">=</span> <span class="n">lm</span><span class="p">,</span> 
+                <span class="n">formula</span> <span class="o">=</span> <span class="s">&#39;y~x&#39;</span><span class="p">,</span> <span class="c1"># x and y variables of the plot</span>
+                <span class="n">se</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="c1"># hide error shading</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;blue&#39;</span>
+                <span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">geom_smooth</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">line</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;red&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+</pre></div>
+</div>
+<img alt="_images/lesson16_solutions_45_1.png" src="_images/lesson16_solutions_45_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">random_data</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_values</span><span class="o">-</span><span class="nf">L</span><span class="p">(</span><span class="n">x_values</span><span class="p">)))</span> <span class="o">+</span>
+    <span class="nf">geom_point</span><span class="p">()</span><span class="o">+</span>
+    <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">linetype</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;darkgrey&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson16_solutions_46_0.png" src="_images/lesson16_solutions_46_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="lesson14_solutions.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lesson 14 - Solutions</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="lesson17_solutions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lesson 17 -  Solutions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Corrin Clarkson<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

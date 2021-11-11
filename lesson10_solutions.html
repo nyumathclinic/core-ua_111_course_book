@@ -1,0 +1,730 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 10 - Solutions &#8212; From Data to Discovery</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lesson 12 - Vectorization" href="lesson12_solutions.html" />
+    <link rel="prev" title="Lesson 08 - Solutions" href="lesson08_solutions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="landing_page.html">
+   From Data to Discovery
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="base_r.html">
+   Base R
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
+     Arithmetic with numbers
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dplyr_library.html">
+   dplyr Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ggplot2_library.html">
+   ggplot2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical_models.html">
+   Numeric Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="outside_sources.html">
+   Other References
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  In Class Exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson02_solutions.html">
+   Lesson 2: Inroduction to R and JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson03_solutions.html">
+   Lesson 3 Variables and dataframes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson04_solutions.html">
+   Lesson 4 Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson05_solutions.html">
+   Lesson 5 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson06_solutions.html">
+   Lesson 6 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson08_solutions.html">
+   Lesson 08 - Solutions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lesson 10 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson12_solutions.html">
+   Lesson 12 - Vectorization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson13_solutions.html">
+   Lesson 13 - Evaluating a classifier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson14_solutions.html">
+   Lesson 14 - Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson16_solutions.html">
+   Lesson 16 -  Solutions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson17_solutions.html">
+   Lesson 17 -  Solutions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/lesson10_solutions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-models-with-two-regions">
+   Part 1 - Models with two regions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-model-1">
+     Exercise 1 - Model 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-model-2">
+     Exercise 2- Model 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-models-with-multiple-regions">
+   Part 2 - Models with multiple regions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-model-3">
+     Exercise 3 - Model 3
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-from-notes">
+   Examples from notes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#generate-plot-of-models">
+     Generate plot of models
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-10-solutions">
+<h1>Lesson 10 -  Solutions<a class="headerlink" href="#lesson-10-solutions" title="Permalink to this headline">¶</a></h1>
+<p>These exercises are to help you check your understanding during class. They will not be collected.</p>
+<div class="section" id="part-1-models-with-two-regions">
+<h2>Part 1 - Models with two regions<a class="headerlink" href="#part-1-models-with-two-regions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1-model-1">
+<h3>Exercise 1 - Model 1<a class="headerlink" href="#exercise-1-model-1" title="Permalink to this headline">¶</a></h3>
+<p>The following plot uses shading to inicate whcih points are special. The grid lines where the dark and light regions meet, are included in the light region.</p>
+<p><img alt="L10_model_1_plot.png" src="attachment:L10_model_1_plot.png" /></p>
+<p>Your goal is to create code that can tell you whether or not any point in the plot is special You may assume that the x-coordinates satisfy the indequaltiy $<span class="math notranslate nohighlight">\(0\le x \le 10\)</span><span class="math notranslate nohighlight">\( and that the y-coordinates satisfy the indequality \)</span><span class="math notranslate nohighlight">\(0\le y\le 2.5\)</span>$. Here is a step by step guide to doing that:</p>
+<ul class="simple">
+<li><p>List three points that are special and three points that are not special. You will use these to test your code.</p></li>
+<li><p>In plain English, describe how you can tell whether or not a point is special.</p></li>
+<li><p>Sketch a decision tree that ends in ‘Yes’ if the point is special and ‘No’ if it is not special.</p></li>
+<li><p>Implement your decision tree in the code cell below by filling in the blanks.</p></li>
+<li><p>Test your code against your six points by uncommenting them one at a time. Does it work as expected?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use (Ctrl or Cmd) + / to comment and uncomment blocks</span>
+<span class="c1"># Yes Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- 8</span>
+<span class="c1"># y &lt;- 1</span>
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- 6.5</span>
+<span class="c1"># y &lt;- 0</span>
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- 10</span>
+<span class="c1"># y &lt;- 2</span>
+
+<span class="c1"># No Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- 0</span>
+<span class="c1"># y &lt;- 0</span>
+<span class="c1"># # second</span>
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="m">6</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">1.5</span>
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- 5</span>
+<span class="c1"># y &lt;- 2</span>
+
+<span class="c1"># Is the point special?</span>
+<span class="nf">if </span><span class="p">(</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="m">6</span> <span class="p">)</span> <span class="p">{</span> <span class="c1"># write your Boolean expression between the parentheses</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span> <span class="s">&#39;Yes&#39;</span> <span class="c1"># output if the Boolean expression is TRUE</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span> <span class="s">&#39;No&#39;</span> <span class="c1"># output if the Boolean expression is FALSE</span>
+<span class="p">}</span>
+<span class="n">answer</span> <span class="c1"># prints the value of answer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'No'</div></div>
+</div>
+</div>
+<div class="section" id="exercise-2-model-2">
+<h3>Exercise 2- Model 2<a class="headerlink" href="#exercise-2-model-2" title="Permalink to this headline">¶</a></h3>
+<p>The following plot uses shading to inicate whcih points are special. The grid lines where the dark and light regions meet, are included in the light region.</p>
+<p><img alt="L10_model_2_plot.png" src="attachment:L10_model_2_plot.png" /></p>
+<p>Your goal is to create code that can tell you whether or not any point in the plot is special You may assume that the x-coordinates satisfy the indequaltiy $<span class="math notranslate nohighlight">\(0\le x \le 10\)</span><span class="math notranslate nohighlight">\( and that the y-coordinates satisfy the indequality \)</span><span class="math notranslate nohighlight">\(0\le y\le 2.5\)</span>$. Here is a step by step guide to doing that:</p>
+<ul class="simple">
+<li><p>List three points that are special and three points that are not special. You will use these to test your code.</p></li>
+<li><p>In plain English, describe how you can tell whether or not a point is special.</p></li>
+<li><p>Sketch a decision tree that ends in ‘Yes’ if the point is special and ‘No’ if it is not special.</p></li>
+<li><p>Implement your decision tree in the code cell using <code class="docutils literal notranslate"><span class="pre">if()</span> <span class="pre">{}</span> <span class="pre">else</span> <span class="pre">{}</span></code>.</p></li>
+<li><p>Test your code against your six pointss by uncommenting them one at a time. Does it work as expected?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use Ctrl + / to comment and uncomment blocks</span>
+<span class="c1"># Yes Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- 0</span>
+<span class="c1"># y &lt;- 1</span>
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- 6</span>
+<span class="c1"># y &lt;- 0</span>
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- 7</span>
+<span class="c1"># y &lt;- 0.5</span>
+
+<span class="c1"># No Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- 0</span>
+<span class="c1"># y &lt;- 2.5</span>
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- 6</span>
+<span class="c1"># y &lt;- 1.5</span>
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- 7</span>
+<span class="c1"># y &lt;- 2</span>
+
+<span class="c1"># is it special?</span>
+<span class="nf">if </span><span class="p">(</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="m">1.5</span> <span class="p">)</span> <span class="p">{</span> <span class="c1"># write your Boolean expression between the parentheses</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span> <span class="s">&#39;Yes&#39;</span> <span class="c1"># output if the Boolean expression is TRUE</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span> <span class="s">&#39;No&#39;</span> <span class="c1"># output if the Boolean expression is FALSE</span>
+<span class="p">}</span>
+<span class="n">answer</span> <span class="c1"># prints the value of answer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'No'</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2-models-with-multiple-regions">
+<h2>Part 2 - Models with multiple regions<a class="headerlink" href="#part-2-models-with-multiple-regions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-3-model-3">
+<h3>Exercise 3 - Model 3<a class="headerlink" href="#exercise-3-model-3" title="Permalink to this headline">¶</a></h3>
+<p>The following plot uses shading to inicate whcih points are special. The grid lines where the dark and light regions meet, are included in the light region.</p>
+<p><img alt="L10_model_3_plot.png" src="attachment:L10_model_3_plot.png" /></p>
+<p>Your goal is to create code that can tell you whether or not any point in the plot is special You may assume that the x-coordinates satisfy the indequaltiy $<span class="math notranslate nohighlight">\(0\le x \le 10\)</span><span class="math notranslate nohighlight">\( and that the y-coordinates satisfy the indequality \)</span><span class="math notranslate nohighlight">\(0\le y\le 2.5\)</span>$. Here is a step by step guide to doing that:</p>
+<ul class="simple">
+<li><p>List three points that are special and three points that are not special. You will use these to test your code.</p></li>
+<li><p>In plain English, describe how you can tell whether or not a point is special.</p></li>
+<li><p>Sketch a decision tree that ends in ‘Yes’ if the point is special and ‘No’ if it is not special.</p></li>
+<li><p>Implement your decision tree in the code cell using <code class="docutils literal notranslate"><span class="pre">if()</span> <span class="pre">{}</span> <span class="pre">else</span> <span class="pre">if</span> <span class="pre">()</span> <span class="pre">{}</span> <span class="pre">else</span> <span class="pre">{}</span></code>.</p></li>
+<li><p>Test your code against your six pointss by uncommenting them one at a time. Does it work as expected?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use Ctrl + / to comment and uncomment blocks</span>
+<span class="c1"># Yes Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- 0</span>
+<span class="c1"># y &lt;- 2</span>
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- 7</span>
+<span class="c1"># y &lt;- 1</span>
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- 6.5</span>
+<span class="c1"># y &lt;- 0.5</span>
+
+<span class="c1"># No Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- 6</span>
+<span class="c1"># y &lt;- 1.5</span>
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- 1</span>
+<span class="c1"># y &lt;- 2</span>
+<span class="c1"># # third</span>
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="m">7</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="m">2</span>
+
+<span class="nf">if </span><span class="p">(</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="m">6</span> <span class="o">&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="m">1.5</span> <span class="p">)</span> <span class="p">{</span> <span class="c1"># write your first Boolean expression between the parentheses</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span> <span class="s">&#39;Yes&#39;</span> <span class="c1"># output if the first Boolean expression is TRUE</span>
+<span class="p">}</span> <span class="n">else</span> <span class="nf">if</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="m">6</span> <span class="o">&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="m">1.5</span><span class="p">)</span> <span class="p">{</span> <span class="c1"># write your second Boolean expression between the parentheses</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span> <span class="s">&#39;Yes&#39;</span> <span class="c1"># output if the Boolean expression is FALSE and the second is TRUE</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span> <span class="s">&#39;No&#39;</span> <span class="c1"># output if both the Boolean expressions are FALSE</span>
+<span class="p">}</span>
+<span class="n">answer</span> <span class="c1"># prints the value of answer</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'No'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">if</span><span class="p">((</span><span class="n">x</span> <span class="o">&lt;</span> <span class="m">6</span> <span class="o">&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="m">1.5</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="m">6</span> <span class="o">&amp;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="m">1.5</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span> <span class="s">&#39;Yes&#39;</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span> <span class="s">&#39;No&#39;</span>
+<span class="p">}</span>
+<span class="n">answer</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'No'</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="examples-from-notes">
+<h2>Examples from notes<a class="headerlink" href="#examples-from-notes" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the dypyr and ggplot2 packages</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#39;dplyr&#39;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#39;ggplot2&#39;</span><span class="p">)</span>
+
+<span class="c1"># Resizes all plots to 5 in by 4 in</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">repr</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="generate-plot-of-models">
+<h3>Generate plot of models<a class="headerlink" href="#generate-plot-of-models" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data frame with three models for tiling the xy-plane</span>
+<span class="n">models</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span>
+    <span class="n">model</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">),</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">),</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">)</span>
+    <span class="p">)),</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="m">2.5</span><span class="p">,</span><span class="m">2</span><span class="p">),</span>
+        <span class="nf">c</span><span class="p">(</span><span class="m">1.5</span><span class="p">,</span><span class="m">1</span><span class="p">),</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1.5</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">each</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+    <span class="p">),</span> 
+    <span class="n">w</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+        <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">4</span><span class="p">),</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">4</span><span class="p">),</span> <span class="m">2</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+        <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">8</span><span class="p">),</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">2</span><span class="p">),</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span> <span class="m">8</span><span class="p">),</span> <span class="m">2</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="m">1.25</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span>
+        <span class="nf">c</span><span class="p">(</span><span class="m">0.75</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span>
+        <span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0.75</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> <span class="n">each</span><span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+    <span class="p">),</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span>
+        <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span>
+        <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">),</span>
+        <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">)</span>
+    <span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># function for gernating plots from model data</span>
+<span class="n">plot_generator</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">data_frame</span><span class="p">,</span> <span class="n">df_name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cbPalette</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;grey80&#39;</span><span class="p">,</span> <span class="s">&#39;grey30&#39;</span><span class="p">)</span>
+    
+    <span class="n">my_plot</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">data_frame</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <span class="n">w</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">h</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">geom_tile</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="n">z</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s">&#39;grey80&#39;</span><span class="p">)</span> <span class="o">+</span>
+        <span class="nf">scale_fill_manual</span><span class="p">(</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Special?&#39;</span><span class="p">,</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">cbPalette</span><span class="p">,</span>
+            <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;No&#39;</span><span class="p">,</span> <span class="s">&#39;Yes&#39;</span><span class="p">)</span>
+        <span class="p">)</span> <span class="o">+</span>
+        <span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">1</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">scale_y_continuous</span><span class="p">(</span><span class="n">breaks</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">2.5</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="nf">paste</span><span class="p">(</span><span class="s">&#39;Visual representation of&#39;</span><span class="p">,</span> <span class="n">df_name</span><span class="p">))</span><span class="o">+</span>
+        <span class="nf">theme_classic</span><span class="p">()</span> <span class="o">+</span>
+        <span class="nf">theme</span><span class="p">(</span>
+            <span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s">&quot;grey80&quot;</span><span class="p">),</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="nf">return</span><span class="p">(</span><span class="n">my_plot</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot_generator</span><span class="p">(</span>
+        <span class="nf">filter</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">model</span> <span class="o">==</span> <span class="m">1</span><span class="p">),</span> 
+        <span class="nf">paste</span><span class="p">(</span><span class="s">&#39;model&#39;</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/lesson10_solutions_15_0.png" src="_images/lesson10_solutions_15_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nf">ggsave</span><span class="p">(</span>
+        <span class="nf">paste0</span><span class="p">(</span><span class="nf">getwd</span><span class="p">(),</span> <span class="s">&#39;/images/L10_model_&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s">&#39;_plot.png&#39;</span><span class="p">),</span>
+        <span class="nf">plot_generator</span><span class="p">(</span>
+            <span class="nf">filter</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">model</span> <span class="o">==</span> <span class="n">i</span><span class="p">),</span> 
+            <span class="nf">paste</span><span class="p">(</span><span class="s">&#39;model&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">width</span><span class="o">=</span><span class="m">4</span><span class="p">,</span>
+        <span class="n">height</span><span class="o">=</span><span class="m">3</span><span class="p">,</span>
+        <span class="n">scale</span><span class="o">=</span><span class="m">0.4</span>
+    <span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">grid</span><span class="o">.</span><span class="n">newpage</span><span class="p">():</span> <span class="n">could</span> <span class="ow">not</span> <span class="nb">open</span> <span class="n">file</span> <span class="s1">&#39;/home/clarkson/book/images/L10_model_1_plot.png&#39;</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">ggsave</span><span class="p">(</span><span class="n">paste0</span><span class="p">(</span><span class="n">getwd</span><span class="p">(),</span> <span class="s2">&quot;/images/L10_model_&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="s2">&quot;_plot.png&quot;</span><span class="p">),</span> 
+ <span class="o">.</span>     <span class="n">plot_generator</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="n">models</span><span class="p">,</span> <span class="n">model</span> <span class="o">==</span> <span class="n">i</span><span class="p">),</span> <span class="n">paste</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">,</span> 
+ <span class="o">.</span>         <span class="n">i</span><span class="p">)),</span> <span class="n">width</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">height</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">grid</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">.</span> <span class="n">grid</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">ggplot</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span>
+<span class="mi">4</span><span class="o">.</span> <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">5</span><span class="o">.</span> <span class="nb">print</span><span class="o">.</span><span class="n">ggplot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="mi">6</span><span class="o">.</span> <span class="n">grid</span><span class="o">.</span><span class="n">newpage</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="o">?</span><span class="n">ggsave</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="lesson08_solutions.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Lesson 08 - Solutions</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="lesson12_solutions.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Lesson 12 - Vectorization</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Corrin Clarkson<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
