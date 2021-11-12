@@ -2,11 +2,12 @@
 
 format: jb-book
 root: landing_page
-parts: 
+parts:
 - caption: References
-  chapters: 
+  chapters:
+  - file: exam_reference
   - file: base_r
-    sections: 
+    sections:
     - file: arithmetic
   - file: dplyr_library
   - file: ggplot2_library
