@@ -5,8 +5,8 @@
 # Book properties
 title: From Data to Discovery
 author: Corrin Clarkson
-#repository:
-#  url: "https://github.com/nyumathclinic/core-ua_111_public"
+repository:
+  url: "https://github.com/nyumathclinic/core-ua_111_public"
 
 # Build configuration
 only_build_toc_files: true
@@ -17,18 +17,18 @@ html:
 
 launch_buttons:
   binderhub_url: "" # necessary to prevent launch button
-  #jupyterhub_url: "https://coreua-111001-fall.rcnyu.org/"  # UPDATE every term ## Gitpull requires more configuration.
+  jupyterhub_url: "https://coreua-111001-fall.rcnyu.org/"  # UPDATE every term ## Gitpull requires more configuration.
   
 #######################################################################################
 # Parse and render settings
 parse:
   myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
-    # - amsmath
+    - amsmath
     - colon_fence
     # - deflist
     - dollarmath
     - html_admonition # added, because GitHub does not support mark down admonitions.
-    # - html_image
+    - html_image
     - linkify
     # - replacements
     # - smartquotes
