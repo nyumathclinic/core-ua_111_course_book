@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arithmetic with numbers &#8212; From Data to Discovery</title>
+    <title>Lesson 1: Introduction to R and JupyterHub &#8212; From Data to Discovery</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Variables" href="variables.html" />
-    <link rel="prev" title="Base R" href="base_r.html" />
+    <link rel="prev" title="Other References" href="outside_sources.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,24 +94,24 @@
   References
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="exam_reference.html">
    Exam Reference Page
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="base_r.html">
    Base R
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
      Arithmetic with numbers
     </a>
    </li>
@@ -159,9 +158,9 @@
   In Class Exercises
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson01.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lesson 1: Introduction to R and JupyterHub
   </a>
  </li>
@@ -206,7 +205,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/arithmetic.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/lesson01.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -237,9 +236,58 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-order-of-operations">
-   Example: Order of operations
+  <a class="reference internal nav-link" href="#useful-links">
+   Useful links
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-jupyterhub">
+   Part 1: JupyterHub
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-0-access-notebook-and-copy-it">
+     Exercise 0 - Access notebook and copy it
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-1-edit-and-save">
+     Exercise 1 - Edit and save
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-create-a-cell-and-compute-a-sum">
+     Exercise 2 - Create a cell and compute a sum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-change-cell-type">
+     Exercise 3 - Change cell type
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-compute">
+   Part 2: Compute
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-4-arithmetic">
+     Exercise 4: Arithmetic
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-debug">
+     Exercise 5: Debug
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-6-percentage">
+     Exercise 6: Percentage
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -252,113 +300,136 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="arithmetic-with-numbers">
-<h1>Arithmetic with numbers<a class="headerlink" href="#arithmetic-with-numbers" title="Permalink to this headline">¶</a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">+</span></code> plus adds numbers.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-1-introduction-to-r-and-jupyterhub">
+<h1>Lesson 1: Introduction to R and JupyterHub<a class="headerlink" href="#lesson-1-introduction-to-r-and-jupyterhub" title="Permalink to this headline">¶</a></h1>
+<p>These exercises are to help you check your understanding during class. They will not be collected.</p>
+<div class="section" id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<p>The following links are also in the Content tool on Brightspace.<br>
+<strong>eBook:</strong> <br>
+<strong>Class notes:</strong><br>
+<strong>Poll Everywhere login:</strong> <a class="reference external" href="https://www.polleverywhere.com/auth/saml/nyu_main">https://www.polleverywhere.com/auth/saml/nyu_main</a><br>
+<strong>Poll Everywhere respond:</strong> <a class="reference external" href="https://pollev.com/clarkson">https://pollev.com/clarkson</a><br></p>
+</div>
+<div class="section" id="part-1-jupyterhub">
+<h2>Part 1: JupyterHub<a class="headerlink" href="#part-1-jupyterhub" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-0-access-notebook-and-copy-it">
+<h3>Exercise 0 - Access notebook and copy it<a class="headerlink" href="#exercise-0-access-notebook-and-copy-it" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Login to the JupyterHub: <a class="reference external" href="https://coreua-111001-fall.rcnyu.org/">https://coreua-111001-fall.rcnyu.org/</a></p></li>
+<li><p>Nacigate to <strong>/shared/class_notebooks</strong> and open lesson02.jpynb</p></li>
+<li><p>Save your own copy of this notebook by using the menu opetion File &gt; Save As. In the name field, write lesson02 and then press Save.</p></li>
+<li><p>Now, <strong>refresh the page</strong>. The red icon in the upper right should no longer be visible.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-1-edit-and-save">
+<h3>Exercise 1 - Edit and save<a class="headerlink" href="#exercise-1-edit-and-save" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Edit a markdown cell</p>
+<ul>
+<li><p>Double click on the cell below to start edititing.</p></li>
+<li><p>Replace the text with your name and then press SHIFT + ENTER to format the cell.</p></li>
+</ul>
+</li>
+<li><p>Save the notebook</p>
+<ul>
+<li><p>Use the menu option File &gt; Save and Checkpoint to save the file.</p></li>
+</ul>
+</li>
+</ul>
+<p>YOUR_NAME</p>
+</div>
+<div class="section" id="exercise-2-create-a-cell-and-compute-a-sum">
+<h3>Exercise 2 - Create a cell and compute a sum<a class="headerlink" href="#exercise-2-create-a-cell-and-compute-a-sum" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Insert a cell</p>
+<ul>
+<li><p>Select this cell by clicking it once.</p></li>
+<li><p>Use the menu option Insert &gt; Insert Cell Below to insert a cell below this one.</p></li>
+</ul>
+</li>
+<li><p>Compute a sum</p>
+<ul>
+<li><p>Double click on the new cell to edit it</p></li>
+<li><p>Type 12 + 7 in the new cell</p></li>
+<li><p>Press SHIFT + Enter to execute.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="exercise-3-change-cell-type">
+<h3>Exercise 3 - Change cell type<a class="headerlink" href="#exercise-3-change-cell-type" title="Permalink to this headline">¶</a></h3>
+<p>Empty markdown cells display the following text: Type <em>Markdown</em> and LaTeX: <span class="math notranslate nohighlight">\(\alpha^2\)</span></p>
+<ul class="simple">
+<li><p>Change the markdown cell below to a code cell</p>
+<ul>
+<li><p>Select the cell below by clicking on it once.</p></li>
+<li><p>Use the menu option Cell &gt; Cell Type &gt; Code to make the cell a code cell.</p></li>
+</ul>
+</li>
+<li><p>Use the cell to compute the value of <span class="math notranslate nohighlight">\(5^7\)</span>.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="part-2-compute">
+<h2>Part 2: Compute<a class="headerlink" href="#part-2-compute" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-4-arithmetic">
+<h3>Exercise 4: Arithmetic<a class="headerlink" href="#exercise-4-arithmetic" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Verify the following equation by using the code cell below to compute the value of the left hand side.
+$<span class="math notranslate nohighlight">\(\frac{3^2 - 4^2}{5} = -1.4\)</span>$</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-5-debug">
+<h3>Exercise 5: Debug<a class="headerlink" href="#exercise-5-debug" title="Permalink to this headline">¶</a></h3>
+<p>There are 14 weeks of classes in the semester. This is a 4 credit hour course. This means that each week you are expected to spend 4 hours in class and 8 hours out of class on this course.</p>
+<p>The code in the cell below is supposed to compute the total number of hours this course will require this semester, but something is wrong with the code.</p>
+<ul class="simple">
+<li><p>Fix the code so that the computation runs correctly.</p></li>
+<li><p>Summarize the result in a sentence in the markdown cell below the code cell.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1+2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">14</span><span class="p">(</span><span class="m">8</span> <span class="o">+</span> <span class="m">4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">3</div></div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">envir</span><span class="p">,</span> <span class="n">enclos</span><span class="p">):</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">apply</span> <span class="n">non</span><span class="o">-</span><span class="n">function</span>
+<span class="ne">Traceback</span>:
+</pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">-</span></code> minus subtracts numbers.</p>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-6-percentage">
+<h3>Exercise 6: Percentage<a class="headerlink" href="#exercise-6-percentage" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Compute a percentage.</p>
+<ul>
+<li><p>Suppose that out of 60 students, 25 are living in Manhattan, 11 in Brooklyn, 9 in Queens, 9 in the Bronx, 3 in Staten Island, 2 in New Jersey, and 1 in Westchester.</p></li>
+<li><p>Insert a cell below and use it to compute the percent of of students who live in Brooklyn.</p></li>
+</ul>
+</li>
+<li><p>Summarize your findings.</p>
+<ul>
+<li><p>Insert a new cell below your code cell.</p></li>
+<li><p>Convert that cell to a markdown cell.</p></li>
+<li><p>Write a sentence summarizing the conclusion of your computation.</p></li>
+</ul>
+</li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1-2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># nummber of students in Brooklyn / total number of students * 100 (multiply by 100 to get the percentage)</span>
+<span class="m">11</span> <span class="o">/</span> <span class="m">60</span> <span class="o">*</span> <span class="m">100</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">-1</div></div>
+<div class="output text_html">18.3333333333333</div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">*</span></code> asterisk multiplies numbers.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">*</span><span class="m">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">10</div></div>
-</div>
-<div class="admonition warning" id="html-admonition">
-<p class="admonition-title">Warning</p>
-<p>Juxtaposition does <b>not</b> work for multiplication. The code <code>5(2)</code> will reult in the following error.</p>
-<p><quote>Error in eval(expr, envir, enclos): attempt to apply non-function</quote></p>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">/</span></code> forward slash divides numbers.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">4</span><span class="o">/</span><span class="m">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">2</div></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">()</span></code> parentheses group computations.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1+2</span><span class="p">)</span><span class="o">*</span><span class="m">5</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">15</div></div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">^</span></code> caret and <code class="docutils literal notranslate"><span class="pre">**</span></code> two asterisks both raise numbers two powers.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">^</span><span class="m">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">25</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">**</span><span class="m">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">25</div></div>
-</div>
-<div class="admonition tip" id="id1">
-<p class="admonition-title">Style Tip</p>
-<p>You  can decide which method of inputting exponents you prefer, but for the sake of clarity you should only use one method in a given notebook.</p>
-</div>
-<div class="admonition note" id="id2">
-<p class="admonition-title">Note</p>
-<p>R uses the standard order of operations when evaluating arithmetic expressions: parentheses, exponents, multiplication, division, addition, subtraction.</p>
-</div>
-<div class="section" id="example-order-of-operations">
-<h2>Example: Order of operations<a class="headerlink" href="#example-order-of-operations" title="Permalink to this headline">¶</a></h2>
-<div class="math notranslate nohighlight">
-\[1 + 4 \cdot 3 ^ 2 - \frac{5}{2} = 34.5\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="o">+</span> <span class="m">4</span> <span class="o">*</span> <span class="m">3</span> <span class="o">^</span> <span class="m">2</span> <span class="o">-</span> <span class="m">5</span> <span class="o">/</span> <span class="m">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">34.5</div></div>
-</div>
-<div class="math notranslate nohighlight">
-\[\frac{1 + (4 \cdot 3) ^ 2 - 10}{2}=70\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">+</span><span class="p">(</span><span class="m">4</span><span class="o">*</span><span class="m">3</span><span class="p">)</span><span class="o">^</span><span class="m">2-5</span><span class="p">)</span><span class="o">/</span><span class="m">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">70</div></div>
+<p>Approximately, 18.3% of the students live in Brooklyn.</p>
 </div>
 </div>
 </div>
@@ -393,23 +464,14 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="base_r.html" title="previous page">
+        <a class="left-prev" href="outside_sources.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Base R</p>
+                <p class="prevnext-title">Other References</p>
             </div>
         </a>
     </div>
-     <div id="next">
-        <a class="right-next" href="variables.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Variables</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         

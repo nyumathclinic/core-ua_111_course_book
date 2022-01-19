@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Other References &#8212; From Data to Discovery</title>
+    <title>Variables &#8212; From Data to Discovery</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,8 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Lesson 1: Introduction to R and JupyterHub" href="lesson01.html" />
-    <link rel="prev" title="Numeric Models" href="numerical_models.html" />
+    <link rel="next" title="Data types" href="data_types.html" />
+    <link rel="prev" title="Arithmetic with numbers" href="arithmetic.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -99,23 +99,23 @@
    Exam Reference Page
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="base_r.html">
    Base R
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="arithmetic.html">
      Arithmetic with numbers
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="variables.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Variables
     </a>
    </li>
@@ -146,8 +146,8 @@
    Numeric Models
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="outside_sources.html">
    Other References
   </a>
  </li>
@@ -204,9 +204,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/outside_sources.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/variables.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -235,25 +235,25 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#documentation">
-   Documentation
+  <a class="reference internal nav-link" href="#storing-values">
+   Storing values
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#jupyterhub-development-environment">
-     JupyterHub Development Environment
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#r-language-and-libraries">
-     R Language and Libraries
+    <a class="reference internal nav-link" href="#example-discounted-book">
+     Example: Discounted book
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#books">
-   Books
+  <a class="reference internal nav-link" href="#retrieving-values">
+   Retrieving values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#oder-of-execution">
+   Oder of execution
   </a>
  </li>
 </ul>
@@ -267,33 +267,85 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="other-references">
-<h1>Other References<a class="headerlink" href="#other-references" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="jupyterhub-development-environment">
-<h3>JupyterHub Development Environment<a class="headerlink" href="#jupyterhub-development-environment" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/stable/">JupyterNotebook</a></p></li>
-</ul>
+  <div class="tex2jax_ignore mathjax_ignore section" id="variables">
+<h1>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h1>
+<p>A <i>variable</i> is a named piece of information in R. Variable names can be a single letter like <code class="docutils literal notranslate"><span class="pre">y</span></code>, a word <code class="docutils literal notranslate"><span class="pre">price</span></code> or something more complicated <code class="docutils literal notranslate"><span class="pre">tax_rate</span></code>.</p>
+<div class="admonition tip" id="html-admonition">
+<p class="admonition-title">Style Tip</p>
+<p>By convention, variable names start with a lower case letter.</p>
 </div>
-<div class="section" id="r-language-and-libraries">
-<h3>R Language and Libraries<a class="headerlink" href="#r-language-and-libraries" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.rdocumentation.org/">R</a></p></li>
-<li><p><a class="reference external" href="https://dplyr.tidyverse.org/">dplyr</a></p></li>
-<li><p><a class="reference external" href="https://ggplot2.tidyverse.org/">ggplot2</a></p></li>
-</ul>
+<div class="admonition warning" id="id1">
+<p class="admonition-title">Warning</p>
+<p>Variable names cannot contain spaces.</p>
+</div>
+<div class="section" id="storing-values">
+<h2>Storing values<a class="headerlink" href="#storing-values" title="Permalink to this headline">¶</a></h2>
+<p>The syntax for storing a value in a variable is
+<code class="docutils literal notranslate"><span class="pre">VARIABLE_NAME</span> <span class="pre">&lt;-</span> <span class="pre">VALUE</span></code>. Here <code class="docutils literal notranslate"><span class="pre">VALUE</span></code> can be replaced with any code that outputs the desired value.</p>
+<div class="section" id="example-discounted-book">
+<h3>Example: Discounted book<a class="headerlink" href="#example-discounted-book" title="Permalink to this headline">¶</a></h3>
+<p>Suppose a particular book originally cost $10.75 and now is 20% off. We can store that information in two variables with descriptive names.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">original_price</span> <span class="o">&lt;-</span> <span class="m">10.75</span> 
+<span class="n">discount</span> <span class="o">&lt;-</span> <span class="m">0.2</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="books">
-<h2>Books<a class="headerlink" href="#books" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://r4ds.had.co.nz/">R for Datascience by Wickham and Grolemund</a></p></li>
-<li><p><a class="reference external" href="https://rc2e.com/">R Cookbook by Long and Teetor</a></p></li>
-<li><p><a class="reference external" href="https://r-graphics.org/">R Graphics Cookbook by Chang</a></p></li>
-</ul>
 </div>
+<p>We can also compute the cost of the book after the discount and store that information in a third variable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sale_price</span> <span class="o">&lt;-</span> <span class="m">10.75</span> <span class="o">*</span> <span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="m">0.20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Alternatively, we can use our first two variable to compute the sale price. The result is the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sale_price</span> <span class="o">&lt;-</span> <span class="n">original_price</span> <span class="o">*</span> <span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="n">discount</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition tip" id="id2">
+<p class="admonition-title">Coding Tip</p>
+<p>Using variables to represent constants can make code easier to understand. It also makes it possible to change the value of the constants without rewriting every line of the code.</p>
+</div>
+</div>
+</div>
+<div class="section" id="retrieving-values">
+<h2>Retrieving values<a class="headerlink" href="#retrieving-values" title="Permalink to this headline">¶</a></h2>
+<p>To output the value of a particular variable, simply write that variable name as it’s own line of code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">original_price</span>
+<span class="n">discount</span>
+<span class="n">sale_price</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">10.75</div><div class="output text_html">0.2</div><div class="output text_html">8.6</div></div>
+</div>
+<div class="admonition tip" id="id3">
+<p class="admonition-title">Style Tip</p>
+<p>Outputting multiple variable values from the same input cell can lead to confusion. Consider splitting the code into multiple input cells.</p>
+</div>
+</div>
+<div class="section" id="oder-of-execution">
+<h2>Oder of execution<a class="headerlink" href="#oder-of-execution" title="Permalink to this headline">¶</a></h2>
+<p>The order in which the input cells were executed is indicated by the number in the square brackets on the left sided after In.</p>
+<div class="admonition warning" id="id4">
+<p class="admonition-title">Warning</p>
+<p><b>Cell execution order may not agree with cell display order.</b> Executing the following three inputs in the order ACB results in a different output than executing them in the order ABC.</p>
+<pre><code> x &#60;- 10 # Input A: stores the value 10 in the variable x 
+ x       # Input B: outputs the value of the variable x
+ x &#60;- 5  # Input C: stores the value 5 in the variable x</code></pre>
+</div>
+<img alt="Six Jupyter notebook input cells" src="_images/execultion_order.png" />
+</div></div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -305,16 +357,16 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "ir",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
               </div>
               
@@ -326,19 +378,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="numerical_models.html" title="previous page">
+        <a class="left-prev" href="arithmetic.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Numeric Models</p>
+                <p class="prevnext-title">Arithmetic with numbers</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="lesson01.html" title="next page">
+        <a class="right-next" href="data_types.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 1: Introduction to R and JupyterHub</p>
+                <p class="prevnext-title">Data types</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
