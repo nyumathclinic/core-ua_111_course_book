@@ -129,6 +129,11 @@
      Vectors
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data.html">
+     Data
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -289,7 +294,7 @@
 <p>A <i>variable</i> is a named piece of information in R. Variable names can be a single letter like <code class="docutils literal notranslate"><span class="pre">y</span></code>, a word <code class="docutils literal notranslate"><span class="pre">price</span></code> or something more complicated <code class="docutils literal notranslate"><span class="pre">tax_rate</span></code>.</p>
 <div class="admonition tip" id="html-admonition">
 <p class="admonition-title">Style Tip</p>
-<p>By convention, variable names start with a lower case letter.</p>
+<p>By convention, variable names start with a lower case letter. For more variable naming conventions, see the <a href="https://style.tidyverse.org/syntax.html#object-names">tidyverse style guide</a>.</p>
 </div>
 <div class="admonition warning" id="id1">
 <p class="admonition-title">Warning</p>
@@ -310,6 +315,10 @@
 </div>
 </div>
 </div>
+<div class="admonition note" id="id2">
+<p class="admonition-title">Note</p>
+<p>Storing a value in a variable does not produce any output.</p>
+</div>
 <p>We can also compute the cost of the book after the discount and store that information in a third variable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -326,7 +335,7 @@
 </div>
 </div>
 </div>
-<div class="admonition tip" id="id2">
+<div class="admonition tip" id="id3">
 <p class="admonition-title">Coding Tip</p>
 <p>Using variables to represent constants can make code easier to understand. It also makes it possible to change the value of the constants without rewriting every line of the code.</p>
 </div>
@@ -346,7 +355,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html">10.75</div><div class="output text_html">0.2</div><div class="output text_html">8.6</div></div>
 </div>
-<div class="admonition tip" id="id3">
+<div class="admonition tip" id="id4">
 <p class="admonition-title">Style Tip</p>
 <p>Outputting multiple variable values from the same input cell can lead to confusion. Consider splitting the code into multiple input cells.</p>
 </div>
@@ -354,7 +363,7 @@
 <div class="section" id="oder-of-execution">
 <h2>Oder of execution<a class="headerlink" href="#oder-of-execution" title="Permalink to this headline">¶</a></h2>
 <p>The order in which the input cells were executed is indicated by the number in the square brackets on the left sided after In.</p>
-<div class="admonition warning" id="id4">
+<div class="admonition warning" id="id5">
 <p class="admonition-title">Warning</p>
 <p><b>Cell execution order may not agree with cell display order.</b> Executing the following three inputs in the order ACB results in a different output than executing them in the order ABC.</p>
 <pre><code> x &#60;- 10 # Input A: stores the value 10 in the variable x 

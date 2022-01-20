@@ -129,6 +129,11 @@
      Vectors
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data.html">
+     Data
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -246,6 +251,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comments">
+   Comments
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#documentation">
+   Documentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-base-r">
+   More base R
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -256,8 +284,9 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="base-r">
 <h1>Base R<a class="headerlink" href="#base-r" title="Permalink to this headline">¶</a></h1>
-<p><strong>Comments</strong></p>
-<p><code class="docutils literal notranslate"><span class="pre">#</span></code> pound proceeds comments</p>
+<div class="section" id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Comments are ignored by R. Their purpose is to make the code more readable. Comments are proceeded by <code class="docutils literal notranslate"><span class="pre">#</span></code> pound signs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># R ignores this.</span>
@@ -265,14 +294,25 @@
 </div>
 </div>
 </div>
-<p>These sections summarize some useful functionality of base R.</p>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+<p>To view the documentation of any built-in object in R, write a question mark in front of the name of the object and execute the code.</p>
+<p>?OBJECT_NAME</p>
+<p>For example, executing <code class="docutils literal notranslate"><span class="pre">?sum</span></code> opens a pop up with information about the <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function.</p>
+</div>
+<div class="section" id="more-base-r">
+<h2>More base R<a class="headerlink" href="#more-base-r" title="Permalink to this headline">¶</a></h2>
+<p>For more information on base R functionality, see these sections:</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="arithmetic.html">Arithmetic with numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variables.html">Variables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_types.html">Data types</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vectors.html">Vectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data</a></li>
 </ul>
+</div>
 </div>
 </div>
 
