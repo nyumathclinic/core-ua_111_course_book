@@ -1,0 +1,964 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Numeric Models &#8212; From Data to Discovery</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Other References" href="outside_sources.html" />
+    <link rel="prev" title="ggplot2" href="ggplot2_library.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   From Data to Discovery
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="base_r.html">
+   Base R
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
+     Arithmetic with numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_types.html">
+     Data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors.html">
+     Vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="numerical_vectors.html">
+     Numerical Vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_sets.html">
+     Data sets
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="dplyr_library.html">
+   dplyr Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ggplot2_library.html">
+   ggplot2
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Numeric Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="outside_sources.html">
+   Other References
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  In-Class Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson01.html">
+   Lesson 1: Introduction to R and JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson02.html">
+   Lesson 2 Variables and Vectors
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/reference/numerical_models.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://coreua-111001-fall.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_public&urlpath=tree/core-ua_111_public/reference/numerical_models.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scientific-notation-in-r">
+   Scientific notation in R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-models">
+   Linear models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mean-squared-error">
+     Mean squared error
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#quadratic-models">
+   Quadratic models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exponential-models">
+   Exponential models
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exponentials-and-logarithms-in-r">
+     Exponentials and logarithms in R
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exponential-function">
+       Exponential function
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logarithm-function">
+       Logarithm function
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mathematical-background">
+     Mathematical background
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-lm-to-find-an-exponential-model">
+     Using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       lm()
+      </span>
+     </code>
+     to find an exponential model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Mean squared error
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="numeric-models">
+<h1>Numeric Models<a class="headerlink" href="#numeric-models" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tidyr</span><span class="p">)</span> <span class="c1"># you do not need to use this.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="scientific-notation-in-r">
+<h2>Scientific notation in R<a class="headerlink" href="#scientific-notation-in-r" title="Permalink to this headline">¶</a></h2>
+<p>R uses scientific notation to denote both very large and very small numbers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">10</span><span class="o">^</span><span class="m">17</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">1e+17</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">/</span><span class="m">10</span><span class="o">^</span><span class="m">17</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">1e-17</div></div>
+</div>
+<div class="admonition warning" id="html-admonition">
+<p class="admonition-title">Warning</p>
+<p>The ‘e’ used <code>1e+17</code> is not <span class="math notranslate nohighlight">\(e\)</span>, the base of the natural logarithm. Rather, it indicates the start of the <i>exponent</i> that should be applied to the number 10.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">3e-2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.03</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">3</span><span class="o">*</span><span class="m">10</span><span class="o">^</span><span class="p">(</span><span class="m">-2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.03</div></div>
+</div>
+<p>When we check our models against manual computations, we will get differences that are very close but not quite zero. Difference from zero is due to rounding errors.</p>
+</div>
+<div class="section" id="linear-models">
+<h2>Linear models<a class="headerlink" href="#linear-models" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">Diet4</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Diet</span> <span class="o">==</span> <span class="m">4</span><span class="p">)</span>
+<span class="n">plot1</span> <span class="o">&lt;-</span> <span class="nf">ggplot</span><span class="p">(</span><span class="n">Diet4</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">weight</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Time (days)&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="s">&#39;Weight (gm)&#39;</span><span class="p">)</span><span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">20</span><span class="p">))</span>
+<span class="n">plot1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/numerical_models_11_0.png" src="../_images/numerical_models_11_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">linear</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">~</span> <span class="n">Time</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Diet4</span><span class="p">)</span> <span class="c1"># weight as linear func of time</span>
+<span class="n">linear</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = weight ~ Time, data = Diet4)
+
+Coefficients:
+(Intercept)         Time  
+     30.792        9.714  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">&lt;-</span> <span class="n">linear</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span> <span class="c1"># intercept</span>
+<span class="n">A</span> <span class="o">&lt;-</span> <span class="n">linear</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span> <span class="c1"># slope</span>
+<span class="n">C</span>
+<span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">30.7921195068004</div><div class="output text_html">9.71436556201541</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">t</span><span class="p">){</span>
+   <span class="n">A</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">C</span>
+<span class="p">}</span>
+
+<span class="c1"># test values</span>
+<span class="nf">w</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="o">==</span> <span class="n">C</span>
+<span class="nf">w</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="o">==</span> <span class="n">A</span> <span class="o">+</span> <span class="n">C</span>
+
+<span class="c1"># w(t) = predicted weight on day t</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">TRUE</div><div class="output text_html">TRUE</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># fitted values are w(t)</span>
+<span class="n">linear</span><span class="o">$</span><span class="n">fitted.values</span> <span class="o">-</span> <span class="nf">w</span><span class="p">(</span><span class="n">Diet4</span><span class="o">$</span><span class="n">Time</span><span class="p">)</span> <span class="c1"># very small numbers!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>1</dt><dd>-5.82645043323282e-13</dd><dt>2</dt><dd>-1.84741111297626e-13</dd><dt>3</dt><dd>-4.2632564145606e-14</dd><dt>4</dt><dd>-4.2632564145606e-14</dd><dt>5</dt><dd>-2.8421709430404e-14</dd><dt>6</dt><dd>-4.2632564145606e-14</dd><dt>7</dt><dd>-2.8421709430404e-14</dd><dt>8</dt><dd>0</dd><dt>9</dt><dd>-2.8421709430404e-14</dd><dt>10</dt><dd>-2.8421709430404e-14</dd><dt>11</dt><dd>-2.8421709430404e-14</dd><dt>12</dt><dd>-2.8421709430404e-14</dd><dt>13</dt><dd>-4.2632564145606e-14</dd><dt>14</dt><dd>-2.8421709430404e-14</dd><dt>15</dt><dd>-2.8421709430404e-14</dd><dt>16</dt><dd>-4.2632564145606e-14</dd><dt>17</dt><dd>-2.8421709430404e-14</dd><dt>18</dt><dd>-4.2632564145606e-14</dd><dt>19</dt><dd>-2.8421709430404e-14</dd><dt>20</dt><dd>0</dd><dt>21</dt><dd>-2.8421709430404e-14</dd><dt>22</dt><dd>-2.8421709430404e-14</dd><dt>23</dt><dd>-2.8421709430404e-14</dd><dt>24</dt><dd>-2.8421709430404e-14</dd><dt>25</dt><dd>-4.2632564145606e-14</dd><dt>26</dt><dd>-2.8421709430404e-14</dd><dt>27</dt><dd>-4.2632564145606e-14</dd><dt>28</dt><dd>-4.2632564145606e-14</dd><dt>29</dt><dd>-2.8421709430404e-14</dd><dt>30</dt><dd>-4.2632564145606e-14</dd><dt>31</dt><dd>-2.8421709430404e-14</dd><dt>32</dt><dd>0</dd><dt>33</dt><dd>-2.8421709430404e-14</dd><dt>34</dt><dd>-2.8421709430404e-14</dd><dt>35</dt><dd>-2.8421709430404e-14</dd><dt>36</dt><dd>-2.8421709430404e-14</dd><dt>37</dt><dd>-4.2632564145606e-14</dd><dt>38</dt><dd>-2.8421709430404e-14</dd><dt>39</dt><dd>-4.2632564145606e-14</dd><dt>40</dt><dd>-4.2632564145606e-14</dd><dt>41</dt><dd>-2.8421709430404e-14</dd><dt>42</dt><dd>-4.2632564145606e-14</dd><dt>43</dt><dd>-2.8421709430404e-14</dd><dt>44</dt><dd>0</dd><dt>45</dt><dd>-2.8421709430404e-14</dd><dt>46</dt><dd>-2.8421709430404e-14</dd><dt>47</dt><dd>-4.2632564145606e-14</dd><dt>48</dt><dd>-2.8421709430404e-14</dd><dt>49</dt><dd>-2.8421709430404e-14</dd><dt>50</dt><dd>-4.2632564145606e-14</dd><dt>51</dt><dd>-2.8421709430404e-14</dd><dt>52</dt><dd>-4.2632564145606e-14</dd><dt>53</dt><dd>-2.8421709430404e-14</dd><dt>54</dt><dd>0</dd><dt>55</dt><dd>-2.8421709430404e-14</dd><dt>56</dt><dd>-2.8421709430404e-14</dd><dt>57</dt><dd>-2.8421709430404e-14</dd><dt>58</dt><dd>-2.8421709430404e-14</dd><dt>59</dt><dd>-4.2632564145606e-14</dd><dt>60</dt><dd>-2.8421709430404e-14</dd><dt>61</dt><dd>-2.8421709430404e-14</dd><dt>62</dt><dd>-4.2632564145606e-14</dd><dt>63</dt><dd>-2.8421709430404e-14</dd><dt>64</dt><dd>-4.2632564145606e-14</dd><dt>65</dt><dd>-2.8421709430404e-14</dd><dt>66</dt><dd>0</dd><dt>67</dt><dd>-2.8421709430404e-14</dd><dt>68</dt><dd>-2.8421709430404e-14</dd><dt>69</dt><dd>-2.8421709430404e-14</dd><dt>70</dt><dd>-2.8421709430404e-14</dd><dt>71</dt><dd>-4.2632564145606e-14</dd><dt>72</dt><dd>-2.8421709430404e-14</dd><dt>73</dt><dd>-4.2632564145606e-14</dd><dt>74</dt><dd>-4.2632564145606e-14</dd><dt>75</dt><dd>-2.8421709430404e-14</dd><dt>76</dt><dd>-4.2632564145606e-14</dd><dt>77</dt><dd>-2.8421709430404e-14</dd><dt>78</dt><dd>0</dd><dt>79</dt><dd>-2.8421709430404e-14</dd><dt>80</dt><dd>-2.8421709430404e-14</dd><dt>81</dt><dd>-2.8421709430404e-14</dd><dt>82</dt><dd>-2.8421709430404e-14</dd><dt>83</dt><dd>-4.2632564145606e-14</dd><dt>84</dt><dd>-2.8421709430404e-14</dd><dt>85</dt><dd>-2.8421709430404e-14</dd><dt>86</dt><dd>-4.2632564145606e-14</dd><dt>87</dt><dd>-2.8421709430404e-14</dd><dt>88</dt><dd>-4.2632564145606e-14</dd><dt>89</dt><dd>-2.8421709430404e-14</dd><dt>90</dt><dd>0</dd><dt>91</dt><dd>-2.8421709430404e-14</dd><dt>92</dt><dd>-2.8421709430404e-14</dd><dt>93</dt><dd>-2.8421709430404e-14</dd><dt>94</dt><dd>-2.8421709430404e-14</dd><dt>95</dt><dd>-4.2632564145606e-14</dd><dt>96</dt><dd>-2.8421709430404e-14</dd><dt>97</dt><dd>-4.2632564145606e-14</dd><dt>98</dt><dd>-4.2632564145606e-14</dd><dt>99</dt><dd>-2.8421709430404e-14</dd><dt>100</dt><dd>-4.2632564145606e-14</dd><dt>101</dt><dd>-2.8421709430404e-14</dd><dt>102</dt><dd>0</dd><dt>103</dt><dd>-2.8421709430404e-14</dd><dt>104</dt><dd>-2.8421709430404e-14</dd><dt>105</dt><dd>-2.8421709430404e-14</dd><dt>106</dt><dd>-2.8421709430404e-14</dd><dt>107</dt><dd>-4.2632564145606e-14</dd><dt>108</dt><dd>-2.8421709430404e-14</dd><dt>109</dt><dd>-4.2632564145606e-14</dd><dt>110</dt><dd>-4.2632564145606e-14</dd><dt>111</dt><dd>-2.8421709430404e-14</dd><dt>112</dt><dd>-4.2632564145606e-14</dd><dt>113</dt><dd>-2.8421709430404e-14</dd><dt>114</dt><dd>0</dd><dt>115</dt><dd>-2.8421709430404e-14</dd><dt>116</dt><dd>-2.8421709430404e-14</dd><dt>117</dt><dd>-2.8421709430404e-14</dd><dt>118</dt><dd>-2.8421709430404e-14</dd></dl>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">linear</span><span class="o">$</span><span class="n">fitted.values</span> <span class="o">-</span> <span class="nf">w</span><span class="p">(</span><span class="n">Diet4</span><span class="o">$</span><span class="n">Time</span><span class="p">))</span> <span class="o">&lt;</span> <span class="m">10</span><span class="o">^</span><span class="p">(</span><span class="m">-10</span><span class="p">))</span> <span class="o">==</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">Diet4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">TRUE</div></div>
+</div>
+<p>The fitted values provided by <code class="docutils literal notranslate"><span class="pre">lm()</span></code> are within <span class="math notranslate nohighlight">\(10^{-10}\)</span> of those we compute using the coefficients provided by <code class="docutils literal notranslate"><span class="pre">lm()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">plot1</span> <span class="o">+</span> <span class="nf">geom_smooth</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">linear</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+</pre></div>
+</div>
+<img alt="../_images/numerical_models_18_1.png" src="../_images/numerical_models_18_1.png" />
+</div>
+</div>
+<div class="section" id="mean-squared-error">
+<h3>Mean squared error<a class="headerlink" href="#mean-squared-error" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># (Diet4$weight - linear$fitted.values) manually comput the residuals; actual - pred</span>
+<span class="n">linear</span><span class="o">$</span><span class="n">residuals</span> <span class="o">-</span> <span class="p">(</span><span class="n">Diet4</span><span class="o">$</span><span class="n">weight</span> <span class="o">-</span> <span class="n">linear</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">)</span> <span class="c1"># VERY small</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>1</dt><dd>1.77635683940025e-15</dd><dt>2</dt><dd>-3.33066907387547e-15</dd><dt>3</dt><dd>-6.21724893790088e-15</dd><dt>4</dt><dd>4.44089209850063e-15</dd><dt>5</dt><dd>8.88178419700125e-16</dd><dt>6</dt><dd>-2.66453525910038e-15</dd><dt>7</dt><dd>-1.77635683940025e-15</dd><dt>8</dt><dd>1.4210854715202e-14</dd><dt>9</dt><dd>-3.5527136788005e-15</dd><dt>10</dt><dd>3.5527136788005e-15</dd><dt>11</dt><dd>-7.105427357601e-15</dd><dt>12</dt><dd>-3.5527136788005e-15</dd><dt>13</dt><dd>1.77635683940025e-15</dd><dt>14</dt><dd>1.99840144432528e-15</dd><dt>15</dt><dd>8.88178419700125e-16</dd><dt>16</dt><dd>4.44089209850063e-15</dd><dt>17</dt><dd>8.88178419700125e-16</dd><dt>18</dt><dd>-2.44249065417534e-15</dd><dt>19</dt><dd>-1.77635683940025e-15</dd><dt>20</dt><dd>1.33226762955019e-14</dd><dt>21</dt><dd>-1.06581410364015e-14</dd><dt>22</dt><dd>-3.5527136788005e-15</dd><dt>23</dt><dd>-7.105427357601e-15</dd><dt>24</dt><dd>0</dd><dt>25</dt><dd>1.77635683940025e-15</dd><dt>26</dt><dd>1.77635683940025e-15</dd><dt>27</dt><dd>-5.99520433297585e-15</dd><dt>28</dt><dd>4.44089209850063e-15</dd><dt>29</dt><dd>0</dd><dt>30</dt><dd>-3.5527136788005e-15</dd><dt>31</dt><dd>0</dd><dt>32</dt><dd>1.06581410364015e-14</dd><dt>33</dt><dd>-1.06581410364015e-14</dd><dt>34</dt><dd>-8.88178419700125e-16</dd><dt>35</dt><dd>-7.105427357601e-15</dd><dt>36</dt><dd>0</dd><dt>37</dt><dd>1.77635683940025e-15</dd><dt>38</dt><dd>2.1094237467878e-15</dd><dt>39</dt><dd>-6.21724893790088e-15</dd><dt>40</dt><dd>4.44089209850063e-15</dd><dt>41</dt><dd>8.88178419700125e-16</dd><dt>42</dt><dd>-3.5527136788005e-15</dd><dt>43</dt><dd>-3.5527136788005e-15</dd><dt>44</dt><dd>1.06581410364015e-14</dd><dt>45</dt><dd>0</dd><dt>46</dt><dd>7.105427357601e-15</dd><dt>47</dt><dd>1.77635683940025e-15</dd><dt>48</dt><dd>2.22044604925031e-15</dd><dt>49</dt><dd>1.77635683940025e-15</dd><dt>50</dt><dd>5.32907051820075e-15</dd><dt>51</dt><dd>1.77635683940025e-15</dd><dt>52</dt><dd>-3.5527136788005e-15</dd><dt>53</dt><dd>-3.5527136788005e-15</dd><dt>54</dt><dd>1.06581410364015e-14</dd><dt>55</dt><dd>0</dd><dt>56</dt><dd>3.5527136788005e-15</dd><dt>57</dt><dd>-7.105427357601e-15</dd><dt>58</dt><dd>0</dd><dt>59</dt><dd>1.77635683940025e-15</dd><dt>60</dt><dd>1.99840144432528e-15</dd><dt>61</dt><dd>8.88178419700125e-16</dd><dt>62</dt><dd>4.44089209850063e-15</dd><dt>63</dt><dd>8.88178419700125e-16</dd><dt>64</dt><dd>-4.44089209850063e-15</dd><dt>65</dt><dd>-1.77635683940025e-15</dd><dt>66</dt><dd>1.4210854715202e-14</dd><dt>67</dt><dd>-3.5527136788005e-15</dd><dt>68</dt><dd>-8.88178419700125e-16</dd><dt>69</dt><dd>-9.76996261670138e-15</dd><dt>70</dt><dd>-3.99680288865056e-15</dd><dt>71</dt><dd>1.77635683940025e-15</dd><dt>72</dt><dd>2.22044604925031e-15</dd><dt>73</dt><dd>-6.21724893790088e-15</dd><dt>74</dt><dd>5.32907051820075e-15</dd><dt>75</dt><dd>1.77635683940025e-15</dd><dt>76</dt><dd>-2.66453525910038e-15</dd><dt>77</dt><dd>-1.77635683940025e-15</dd><dt>78</dt><dd>1.4210854715202e-14</dd><dt>79</dt><dd>-3.5527136788005e-15</dd><dt>80</dt><dd>3.5527136788005e-15</dd><dt>81</dt><dd>-5.32907051820075e-15</dd><dt>82</dt><dd>-3.5527136788005e-15</dd><dt>83</dt><dd>1.77635683940025e-15</dd><dt>84</dt><dd>2.22044604925031e-15</dd><dt>85</dt><dd>8.88178419700125e-16</dd><dt>86</dt><dd>5.32907051820075e-15</dd><dt>87</dt><dd>8.88178419700125e-16</dd><dt>88</dt><dd>-2.66453525910038e-15</dd><dt>89</dt><dd>-1.77635683940025e-15</dd><dt>90</dt><dd>1.33226762955019e-14</dd><dt>91</dt><dd>-7.105427357601e-15</dd><dt>92</dt><dd>0</dd><dt>93</dt><dd>0</dd><dt>94</dt><dd>-1.4210854715202e-14</dd><dt>95</dt><dd>1.77635683940025e-15</dd><dt>96</dt><dd>2.22044604925031e-15</dd><dt>97</dt><dd>-6.21724893790088e-15</dd><dt>98</dt><dd>4.44089209850063e-15</dd><dt>99</dt><dd>6.66133814775094e-16</dd><dt>100</dt><dd>-2.67841304690819e-15</dd><dt>101</dt><dd>-1.77635683940025e-15</dd><dt>102</dt><dd>1.37667655053519e-14</dd><dt>103</dt><dd>-4.44089209850063e-15</dd><dt>104</dt><dd>-8.88178419700125e-16</dd><dt>105</dt><dd>-9.76996261670138e-15</dd><dt>106</dt><dd>-3.99680288865056e-15</dd><dt>107</dt><dd>1.77635683940025e-15</dd><dt>108</dt><dd>1.77635683940025e-15</dd><dt>109</dt><dd>-6.21724893790088e-15</dd><dt>110</dt><dd>4.44089209850063e-15</dd><dt>111</dt><dd>8.88178419700125e-16</dd><dt>112</dt><dd>-2.66453525910038e-15</dd><dt>113</dt><dd>-8.88178419700125e-15</dd><dt>114</dt><dd>8.88178419700125e-15</dd><dt>115</dt><dd>-1.06581410364015e-14</dd><dt>116</dt><dd>-3.5527136788005e-15</dd><dt>117</dt><dd>-7.105427357601e-15</dd><dt>118</dt><dd>-1.06581410364015e-14</dd></dl>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">linear</span><span class="o">$</span><span class="n">residuals</span> <span class="o">-</span> <span class="p">(</span><span class="n">Diet4</span><span class="o">$</span><span class="n">weight</span> <span class="o">-</span> <span class="n">linear</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">))</span><span class="o">&lt;</span><span class="m">10</span><span class="o">^</span><span class="p">(</span><span class="m">-10</span><span class="p">))</span> <span class="o">==</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">Diet4</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">linear</span><span class="o">$</span><span class="n">residuals</span> <span class="o">-</span> <span class="p">(</span><span class="n">Diet4</span><span class="o">$</span><span class="n">weight</span> <span class="o">-</span> <span class="nf">w</span><span class="p">(</span><span class="n">Diet4</span><span class="o">$</span><span class="n">Time</span><span class="p">))</span><span class="o">&lt;</span><span class="m">10</span><span class="o">^</span><span class="p">(</span><span class="m">-10</span><span class="p">)))</span> <span class="o">==</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">Diet4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">TRUE</div><div class="output text_html">TRUE</div></div>
+</div>
+<p>The residuals given by <code class="docutils literal notranslate"><span class="pre">lm()</span></code> are within <span class="math notranslate nohighlight">\(10^{-10}\)</span> of the residuals we compute.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">linear</span><span class="o">$</span><span class="n">residuals</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">441.148943834774</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">linear</span><span class="o">$</span><span class="n">residuals</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">14.1778752941327</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="quadratic-models">
+<h2>Quadratic models<a class="headerlink" href="#quadratic-models" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">quadratic</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">~</span> <span class="n">Time</span> <span class="o">+</span> <span class="nf">I</span><span class="p">(</span><span class="n">Time</span><span class="o">^</span><span class="m">2</span><span class="p">),</span> <span class="n">data</span> <span class="o">=</span> <span class="n">Diet4</span><span class="p">)</span>
+<span class="c1"># weight is a linear function of both time and time^2</span>
+<span class="n">quadratic</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = weight ~ Time + I(Time^2), data = Diet4)
+
+Coefficients:
+(Intercept)         Time    I(Time^2)  
+   37.06515      7.75821      0.09184  
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">&lt;-</span> <span class="n">quadratic</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">1</span><span class="p">]]</span>
+<span class="n">B</span> <span class="o">&lt;-</span> <span class="n">quadratic</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">2</span><span class="p">]]</span>
+<span class="n">A</span> <span class="o">&lt;-</span> <span class="n">quadratic</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[[</span><span class="m">3</span><span class="p">]]</span>
+<span class="n">C</span>
+<span class="n">B</span>
+<span class="n">A</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">37.0651492788793</div><div class="output text_html">7.75821425662362</div><div class="output text_html">0.0918413460613043</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># weight as a linear function of both time and time^2</span>
+<span class="n">quad_model</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">t</span><span class="p">){</span>
+    <span class="n">C</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">A</span><span class="o">*</span><span class="n">t</span><span class="o">^</span><span class="m">2</span> <span class="c1"># = predicted weight</span>
+<span class="p">}</span>
+
+<span class="nf">quad_model</span><span class="p">(</span><span class="m">0</span><span class="p">)</span>
+<span class="nf">quad_model</span><span class="p">(</span><span class="m">3</span><span class="p">)</span> <span class="c1"># predicted weight on day three</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">37.0651492788793</div><div class="output text_html">61.1663641633019</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">quadratic</span><span class="o">$</span><span class="n">fitted.values</span> <span class="o">-</span> <span class="nf">quad_model</span><span class="p">(</span><span class="n">Diet4</span><span class="o">$</span><span class="n">Time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>1</dt><dd>-6.32383034826489e-13</dd><dt>2</dt><dd>-1.70530256582424e-13</dd><dt>3</dt><dd>-7.105427357601e-14</dd><dt>4</dt><dd>-5.6843418860808e-14</dd><dt>5</dt><dd>-7.105427357601e-14</dd><dt>6</dt><dd>-5.6843418860808e-14</dd><dt>7</dt><dd>-5.6843418860808e-14</dd><dt>8</dt><dd>-5.6843418860808e-14</dd><dt>9</dt><dd>-5.6843418860808e-14</dd><dt>10</dt><dd>-2.8421709430404e-14</dd><dt>11</dt><dd>-5.6843418860808e-14</dd><dt>12</dt><dd>-2.8421709430404e-14</dd><dt>13</dt><dd>-6.3948846218409e-14</dd><dt>14</dt><dd>-4.9737991503207e-14</dd><dt>15</dt><dd>-7.105427357601e-14</dd><dt>16</dt><dd>-5.6843418860808e-14</dd><dt>17</dt><dd>-7.105427357601e-14</dd><dt>18</dt><dd>-5.6843418860808e-14</dd><dt>19</dt><dd>-8.5265128291212e-14</dd><dt>20</dt><dd>-5.6843418860808e-14</dd><dt>21</dt><dd>-5.6843418860808e-14</dd><dt>22</dt><dd>-2.8421709430404e-14</dd><dt>23</dt><dd>-5.6843418860808e-14</dd><dt>24</dt><dd>-2.8421709430404e-14</dd><dt>25</dt><dd>-6.3948846218409e-14</dd><dt>26</dt><dd>-4.9737991503207e-14</dd><dt>27</dt><dd>-7.105427357601e-14</dd><dt>28</dt><dd>-5.6843418860808e-14</dd><dt>29</dt><dd>-7.105427357601e-14</dd><dt>30</dt><dd>-5.6843418860808e-14</dd><dt>31</dt><dd>-8.5265128291212e-14</dd><dt>32</dt><dd>-5.6843418860808e-14</dd><dt>33</dt><dd>-5.6843418860808e-14</dd><dt>34</dt><dd>-2.8421709430404e-14</dd><dt>35</dt><dd>-5.6843418860808e-14</dd><dt>36</dt><dd>-2.8421709430404e-14</dd><dt>37</dt><dd>-6.3948846218409e-14</dd><dt>38</dt><dd>-4.9737991503207e-14</dd><dt>39</dt><dd>-7.105427357601e-14</dd><dt>40</dt><dd>-5.6843418860808e-14</dd><dt>41</dt><dd>-7.105427357601e-14</dd><dt>42</dt><dd>-5.6843418860808e-14</dd><dt>43</dt><dd>-5.6843418860808e-14</dd><dt>44</dt><dd>-5.6843418860808e-14</dd><dt>45</dt><dd>-5.6843418860808e-14</dd><dt>46</dt><dd>-2.8421709430404e-14</dd><dt>47</dt><dd>-6.3948846218409e-14</dd><dt>48</dt><dd>-4.9737991503207e-14</dd><dt>49</dt><dd>-7.105427357601e-14</dd><dt>50</dt><dd>-5.6843418860808e-14</dd><dt>51</dt><dd>-5.6843418860808e-14</dd><dt>52</dt><dd>-5.6843418860808e-14</dd><dt>53</dt><dd>-5.6843418860808e-14</dd><dt>54</dt><dd>-5.6843418860808e-14</dd><dt>55</dt><dd>-5.6843418860808e-14</dd><dt>56</dt><dd>-2.8421709430404e-14</dd><dt>57</dt><dd>-5.6843418860808e-14</dd><dt>58</dt><dd>-2.8421709430404e-14</dd><dt>59</dt><dd>-6.3948846218409e-14</dd><dt>60</dt><dd>-4.9737991503207e-14</dd><dt>61</dt><dd>-7.105427357601e-14</dd><dt>62</dt><dd>-5.6843418860808e-14</dd><dt>63</dt><dd>-5.6843418860808e-14</dd><dt>64</dt><dd>-5.6843418860808e-14</dd><dt>65</dt><dd>-5.6843418860808e-14</dd><dt>66</dt><dd>-5.6843418860808e-14</dd><dt>67</dt><dd>-5.6843418860808e-14</dd><dt>68</dt><dd>-2.8421709430404e-14</dd><dt>69</dt><dd>-5.6843418860808e-14</dd><dt>70</dt><dd>-2.8421709430404e-14</dd><dt>71</dt><dd>-6.3948846218409e-14</dd><dt>72</dt><dd>-4.9737991503207e-14</dd><dt>73</dt><dd>-7.105427357601e-14</dd><dt>74</dt><dd>-5.6843418860808e-14</dd><dt>75</dt><dd>-5.6843418860808e-14</dd><dt>76</dt><dd>-5.6843418860808e-14</dd><dt>77</dt><dd>-5.6843418860808e-14</dd><dt>78</dt><dd>-5.6843418860808e-14</dd><dt>79</dt><dd>-5.6843418860808e-14</dd><dt>80</dt><dd>-2.8421709430404e-14</dd><dt>81</dt><dd>-5.6843418860808e-14</dd><dt>82</dt><dd>-2.8421709430404e-14</dd><dt>83</dt><dd>-6.3948846218409e-14</dd><dt>84</dt><dd>-4.9737991503207e-14</dd><dt>85</dt><dd>-7.105427357601e-14</dd><dt>86</dt><dd>-5.6843418860808e-14</dd><dt>87</dt><dd>-7.105427357601e-14</dd><dt>88</dt><dd>-5.6843418860808e-14</dd><dt>89</dt><dd>-5.6843418860808e-14</dd><dt>90</dt><dd>-5.6843418860808e-14</dd><dt>91</dt><dd>-5.6843418860808e-14</dd><dt>92</dt><dd>-2.8421709430404e-14</dd><dt>93</dt><dd>-5.6843418860808e-14</dd><dt>94</dt><dd>-2.8421709430404e-14</dd><dt>95</dt><dd>-6.3948846218409e-14</dd><dt>96</dt><dd>-4.9737991503207e-14</dd><dt>97</dt><dd>-7.105427357601e-14</dd><dt>98</dt><dd>-5.6843418860808e-14</dd><dt>99</dt><dd>-7.105427357601e-14</dd><dt>100</dt><dd>-5.6843418860808e-14</dd><dt>101</dt><dd>-5.6843418860808e-14</dd><dt>102</dt><dd>-5.6843418860808e-14</dd><dt>103</dt><dd>-5.6843418860808e-14</dd><dt>104</dt><dd>-2.8421709430404e-14</dd><dt>105</dt><dd>-5.6843418860808e-14</dd><dt>106</dt><dd>-2.8421709430404e-14</dd><dt>107</dt><dd>-6.3948846218409e-14</dd><dt>108</dt><dd>-4.9737991503207e-14</dd><dt>109</dt><dd>-7.105427357601e-14</dd><dt>110</dt><dd>-5.6843418860808e-14</dd><dt>111</dt><dd>-7.105427357601e-14</dd><dt>112</dt><dd>-5.6843418860808e-14</dd><dt>113</dt><dd>-5.6843418860808e-14</dd><dt>114</dt><dd>-5.6843418860808e-14</dd><dt>115</dt><dd>-5.6843418860808e-14</dd><dt>116</dt><dd>-2.8421709430404e-14</dd><dt>117</dt><dd>-5.6843418860808e-14</dd><dt>118</dt><dd>-2.8421709430404e-14</dd></dl>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">plot1</span> <span class="o">+</span> <span class="nf">geom_smooth</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">quadratic</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+</pre></div>
+</div>
+<img alt="../_images/numerical_models_30_1.png" src="../_images/numerical_models_30_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="exponential-models">
+<h2>Exponential models<a class="headerlink" href="#exponential-models" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exponentials-and-logarithms-in-r">
+<h3>Exponentials and logarithms in R<a class="headerlink" href="#exponentials-and-logarithms-in-r" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exponential-function">
+<h4>Exponential function<a class="headerlink" href="#exponential-function" title="Permalink to this headline">¶</a></h4>
+<p>In R, we use <code class="docutils literal notranslate"><span class="pre">exp(x)</span></code> to compute <span class="math notranslate nohighlight">\(e^x\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="c1"># e^0 = 1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">1</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="c1"># e^1 = e</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">2.71828182845905</div></div>
+</div>
+</div>
+<div class="section" id="logarithm-function">
+<h4>Logarithm function<a class="headerlink" href="#logarithm-function" title="Permalink to this headline">¶</a></h4>
+<div class="admonition warning" id="id1">
+<p class="admonition-title">Warning</p>
+<p>In R, <b><code>log()</code> is the natural logarithm</b> which is sometimes denoted by <span class="math notranslate nohighlight">\(\ln()\)</span> or <span class="math notranslate nohighlight">\(\log_e()\)</span>. For consistency, we will also use <span class="math notranslate nohighlight">\(\log()\)</span> to refer to the natural logarithm.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">log</span><span class="p">(</span><span class="m">1</span><span class="p">)</span> <span class="c1"># what exponent do I raise e to to get 1?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">log</span><span class="p">(</span><span class="m">2.71828182845905</span><span class="p">)</span> <span class="c1"># what exponent do I raise e to to get e?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">1</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="mathematical-background">
+<h3>Mathematical background<a class="headerlink" href="#mathematical-background" title="Permalink to this headline">¶</a></h3>
+<p>By the definition of the natural logarithm, we have that
+<span class="math notranslate nohighlight">\(\log(e^{x}) = x\)</span>.
+It follows that
+$<span class="math notranslate nohighlight">\(\log \left(e^{Ax + C}\right) = Ax + C.\)</span>$</p>
+<div class="admonition note" id="id2">
+<p class="admonition-title">Note</p>
+<p>Applying <code>log()</code> to the outputs of an exponential function transforms it into a linear function.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># create data for the function e^(x/3 + 7)</span>
+<span class="n">exp_example</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">x_values</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">30</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">y_values</span> <span class="o">=</span> <span class="nf">exp</span><span class="p">((</span><span class="m">1</span><span class="o">/</span><span class="m">3</span><span class="p">)</span><span class="o">*</span><span class="n">x_values</span> <span class="o">+</span> <span class="m">7</span><span class="p">),</span> <span class="c1"># y = e^(x/3 + 7)</span>
+           <span class="n">log_y</span> <span class="o">=</span> <span class="nf">log</span><span class="p">(</span><span class="n">y_values</span><span class="p">),</span> <span class="c1"># log(y)</span>
+           <span class="n">line</span> <span class="o">=</span> <span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">3</span><span class="p">)</span><span class="o">*</span><span class="n">x_values</span> <span class="o">+</span> <span class="m">7</span> <span class="c1"># x/3 + 7</span>
+          <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot data</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_example</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_values</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;exp(x/3 + 7)&#39;</span><span class="p">)</span><span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/numerical_models_45_0.png" src="../_images/numerical_models_45_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># check that this is exponential by applying log to the outputs</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_example</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="nf">log</span><span class="p">(</span><span class="n">y_values</span><span class="p">)))</span> <span class="o">+</span> <span class="c1"># &lt;- change</span>
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+    <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;log(exp(x/3 + 7))&#39;</span><span class="p">)</span><span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/numerical_models_46_0.png" src="../_images/numerical_models_46_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot line and log of the outputs</span>
+<span class="n">exp_example</span> <span class="o">%&gt;%</span>
+    <span class="nf">pivot_longer</span><span class="p">(</span><span class="o">-</span><span class="n">x_values</span><span class="p">,</span> <span class="s">&#39;formula&#39;</span><span class="p">)</span>  <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">formula</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;log_y&#39;</span><span class="p">,</span> <span class="s">&#39;line&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">value</span><span class="p">,</span> 
+                <span class="n">fill</span> <span class="o">=</span> <span class="n">formula</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">formula</span>
+              <span class="p">),</span>
+          <span class="p">)</span> <span class="o">+</span>
+        <span class="nf">geom_point</span><span class="p">(</span><span class="n">shape</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="o">+</span> 
+        <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="s">&#39;grey&#39;</span><span class="p">))</span> <span class="o">+</span> 
+        <span class="nf">scale_size_manual</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Formula&#39;</span><span class="p">,</span> 
+                            <span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">7</span><span class="p">),</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;x/3+7&#39;</span><span class="p">,</span> <span class="s">&#39;log(y)&#39;</span><span class="p">)</span>
+                         <span class="p">)</span> <span class="o">+</span>
+        <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Log(y) = x/3 + 7&#39;</span><span class="p">)</span> <span class="o">+</span>
+        <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="s">&#39;none&#39;</span><span class="p">)</span> <span class="o">+</span>
+        <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+        <span class="nf">theme</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/numerical_models_47_0.png" src="../_images/numerical_models_47_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="using-lm-to-find-an-exponential-model">
+<h3>Using <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to find an exponential model<a class="headerlink" href="#using-lm-to-find-an-exponential-model" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">exp_model</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="nf">log</span><span class="p">(</span><span class="n">y_values</span><span class="p">)</span> <span class="o">~</span> <span class="n">x_values</span><span class="p">,</span>
+                <span class="c1"># log(y) is a linear function of x</span>
+                <span class="n">data</span> <span class="o">=</span> <span class="n">exp_example</span>
+               <span class="p">)</span>
+<span class="n">exp_model</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = log(y_values) ~ x_values, data = exp_example)
+
+Coefficients:
+(Intercept)     x_values  
+     7.0000       0.3333  
+</pre></div>
+</div>
+</div>
+</div>
+<p>As expected the slope is 1/3 and the intercept is 7. Line is given by $<span class="math notranslate nohighlight">\(y = x/3 + 7\)</span>$.</p>
+<div class="admonition warning" id="id3">
+<p class="admonition-title">Warning</p>
+<p>When using a formula of the from <code>log(y) ~ x</code>, the fitted values are predictions of <span class="math notranslate nohighlight">\(log(y)\)</span> rather than <span class="math notranslate nohighlight">\(y\)</span>. <b>To plot the predicted <span class="math notranslate nohighlight">\(y\)</span>-values, apply <code>exp()</code> to the fitted values.</b></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &lt;code&gt; exp(log(y)) = y &lt;/code&gt;
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot to show y = exp (fitted values)</span>
+<span class="n">exp_example</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">predictions</span> <span class="o">=</span> <span class="nf">exp</span><span class="p">(</span><span class="n">exp_model</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">pivot_longer</span><span class="p">(</span><span class="o">-</span><span class="n">x_values</span><span class="p">,</span> <span class="s">&#39;formula&#39;</span><span class="p">)</span>  <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">formula</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;y_values&#39;</span><span class="p">,</span> <span class="s">&#39;predictions&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">value</span><span class="p">,</span> 
+                <span class="n">fill</span> <span class="o">=</span> <span class="n">formula</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">formula</span>
+              <span class="p">),</span>
+          <span class="p">)</span> <span class="o">+</span>
+        <span class="nf">geom_point</span><span class="p">(</span><span class="n">shape</span> <span class="o">=</span> <span class="m">21</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span><span class="p">)</span> <span class="o">+</span> 
+        <span class="nf">scale_fill_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="s">&#39;grey&#39;</span><span class="p">))</span> <span class="o">+</span> 
+        <span class="nf">scale_size_manual</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Formula&#39;</span><span class="p">,</span> 
+                            <span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">7</span><span class="p">),</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;exp(fitted values)&#39;</span><span class="p">,</span> 
+                              <span class="s">&#39;original y-values&#39;</span>
+                         <span class="p">)</span>
+                         <span class="p">)</span> <span class="o">+</span>
+        <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;y = exp(fitted values)&#39;</span><span class="p">)</span> <span class="o">+</span>
+        <span class="nf">guides</span><span class="p">(</span><span class="n">fill</span> <span class="o">=</span> <span class="s">&#39;none&#39;</span><span class="p">)</span> <span class="o">+</span>
+        <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+        <span class="nf">theme</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/numerical_models_52_0.png" src="../_images/numerical_models_52_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot original values and model curve</span>
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">exp_example</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_values</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">mapping</span><span class="o">=</span> <span class="nf">aes</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="n">y_values</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">geom_smooth</span><span class="p">(</span><span class="n">mapping</span> <span class="o">=</span> <span class="nf">aes</span><span class="p">(</span>
+                <span class="n">y</span><span class="o">=</span> <span class="nf">exp</span><span class="p">(</span><span class="n">exp_model</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">)</span> <span class="c1">#&lt;- fitted vals are log(y)</span>
+        <span class="c1"># different from linear and quadraditc</span>
+                <span class="p">),</span> 
+                <span class="n">se</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">labs</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Model curve&#39;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">theme</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;
+</pre></div>
+</div>
+<img alt="../_images/numerical_models_53_1.png" src="../_images/numerical_models_53_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h3>Mean squared error<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning" id="id5">
+<p class="admonition-title">Warning</p>
+<p>The residuals are measuring the difference between log(y) and the predicted value of log(y). We want the difference between y and predicted y.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># predicted y values use exp(exp_model$fitted.values)</span>
+<span class="c1"># actual residuals are</span>
+<span class="n">exp_example</span><span class="o">$</span><span class="n">y_values</span> <span class="o">-</span> <span class="nf">exp</span><span class="p">(</span><span class="n">exp_model</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">)</span>
+<span class="c1"># small as expected</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style><dl class=dl-inline><dt>1</dt><dd>-4.09272615797818e-12</dd><dt>2</dt><dd>0</dd><dt>3</dt><dd>2.72848410531878e-12</dd><dt>4</dt><dd>7.27595761418343e-12</dd><dt>5</dt><dd>0</dd><dt>6</dt><dd>0</dd><dt>7</dt><dd>0</dd><dt>8</dt><dd>0</dd><dt>9</dt><dd>0</dd><dt>10</dt><dd>0</dd><dt>11</dt><dd>0</dd><dt>12</dt><dd>0</dd><dt>13</dt><dd>0</dd><dt>14</dt><dd>0</dd><dt>15</dt><dd>0</dd><dt>16</dt><dd>0</dd><dt>17</dt><dd>0</dd><dt>18</dt><dd>0</dd><dt>19</dt><dd>0</dd><dt>20</dt><dd>0</dd><dt>21</dt><dd>0</dd><dt>22</dt><dd>0</dd><dt>23</dt><dd>0</dd><dt>24</dt><dd>0</dd><dt>25</dt><dd>0</dd><dt>26</dt><dd>0</dd><dt>27</dt><dd>1.49011611938477e-08</dd><dt>28</dt><dd>0</dd><dt>29</dt><dd>-6.33299350738525e-08</dd><dt>30</dt><dd>0</dd></dl>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./reference"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="ggplot2_library.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">ggplot2</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="outside_sources.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Other References</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Corrin Clarkson<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
