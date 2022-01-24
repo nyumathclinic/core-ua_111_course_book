@@ -17,7 +17,7 @@ html:
 
 launch_buttons:
   binderhub_url: "" # necessary to prevent launch button
-  jupyterhub_url: "https://coreua-111001-fall.rcnyu.org/"  # UPDATE every term ## Gitpull requires more configuration.
+  jupyterhub_url: "https://coreua-111001-fall.rcnyu.org"  # UPDATE every term ## Gitpull requires more configuration.
   
 #######################################################################################
 # Parse and render settings
