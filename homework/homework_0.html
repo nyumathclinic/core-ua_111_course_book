@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Numerical Vectors &#8212; From Data to Discovery</title>
+    <title>Homework 0 &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Data sets" href="data_sets.html" />
-    <link rel="prev" title="Vectors" href="vectors.html" />
+    <link rel="prev" title="Lesson 2 Variables and Vectors" href="../in-class_exercises/lesson02.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,66 +94,66 @@
   Reference
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="base_r.html">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../reference/base_r.html">
    Base R
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="arithmetic.html">
+    <a class="reference internal" href="../reference/arithmetic.html">
      Arithmetic with numbers
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="variables.html">
+    <a class="reference internal" href="../reference/variables.html">
      Variables
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="data_types.html">
+    <a class="reference internal" href="../reference/data_types.html">
      Data types
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="vectors.html">
+    <a class="reference internal" href="../reference/vectors.html">
      Vectors
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/numerical_vectors.html">
      Numerical Vectors
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="data_sets.html">
+    <a class="reference internal" href="../reference/data_sets.html">
      Data sets
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="dplyr_library.html">
+  <a class="reference internal" href="../reference/dplyr_library.html">
    dplyr Library
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="ggplot2_library.html">
+  <a class="reference internal" href="../reference/ggplot2_library.html">
    ggplot2
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="numerical_models.html">
+  <a class="reference internal" href="../reference/numerical_models.html">
    Numeric Models
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="outside_sources.html">
+  <a class="reference internal" href="../reference/outside_sources.html">
    Other References
   </a>
  </li>
@@ -181,9 +180,9 @@
   Homework
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../homework/homework_0.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Homework 0
   </a>
  </li>
@@ -228,7 +227,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/reference/numerical_vectors.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/homework/homework_0.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -254,7 +253,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/reference/numerical_vectors.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/homework/homework_0.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -276,33 +275,98 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#computing-with-vectors">
-   Computing with vectors
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#useful-functions">
-   Useful functions
+  <a class="reference internal nav-link" href="#part-1-jupyter-hub">
+   Part 1: Jupyter Hub
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#min-and-max">
-     Min and max
+    <a class="reference internal nav-link" href="#open-this-notebook-on-the-jupyter-hub">
+     Open this notebook on the Jupyter Hub
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#length">
-     Length
+    <a class="reference internal nav-link" href="#exercises">
+     Exercises
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-1-compute-a-value">
+       Exercise 1: Compute a value
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-2-favorite-color">
+       Exercise: 2 Favorite color
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#exercise-3-anything-i-should-know">
+       Exercise 3: Anything I should know?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#print-notebook-as-pdf-document">
+     Print notebook as PDF document
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#strategy-1-use-print-preview">
+       Strategy 1: Use print preview
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#strategy-2-use-latex">
+       Strategy 2: Use LaTeX
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-gradescope">
+   Part 2: Gradescope
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-in">
+     Log in
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sum">
-     Sum
+    <a class="reference internal nav-link" href="#first-submission">
+     First submission
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-campuswire">
+   Part 3: Campuswire
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#create-account">
+     Create account
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#mean-a-k-a-average">
-     Mean a.k.a. average
+    <a class="reference internal nav-link" href="#respond-to-the-ice-breaker">
+     Respond to the ice breaker
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-onenote-optional">
+   Part 4. OneNote (optional)
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#set-up-class-notebook-in-onenote-app">
+     Set up Class Notebook in OneNote app
     </a>
    </li>
   </ul>
@@ -318,127 +382,79 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="numerical-vectors">
-<span id="base-r-numerical-vectors"></span><h1>Numerical Vectors<a class="headerlink" href="#numerical-vectors" title="Permalink to this headline">¶</a></h1>
-<p>A numerical vector is simply a vector whose entries are numbers.</p>
-<div class="section" id="computing-with-vectors">
-<h2>Computing with vectors<a class="headerlink" href="#computing-with-vectors" title="Permalink to this headline">¶</a></h2>
-<p>Arithmetic operations that combine a vector with a single number distributed to all entries in the vector.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span><span class="o">*</span><span class="m">5</span> <span class="c1"># Each entry is multiplied by five.</span>
-</pre></div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="homework-0">
+<h1>Homework 0<a class="headerlink" href="#homework-0" title="Permalink to this headline">¶</a></h1>
+<p>This assignment has four parts. Many of the parts refer to the Web Services Guide which is linked from Web Services section of the Content tool on Brightspace.</p>
+<div class="section" id="part-1-jupyter-hub">
+<h2>Part 1: Jupyter Hub<a class="headerlink" href="#part-1-jupyter-hub" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="open-this-notebook-on-the-jupyter-hub">
+<h3>Open this notebook on the Jupyter Hub<a class="headerlink" href="#open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Click on the rocket icon in the upper right of this page of the course book.</p></li>
+<li><p>Click the JupyterHub link.</p></li>
+<li><p>If prompted, log in to the Jupyter Hub with your NYU account.</p></li>
+<li><p>If prompted to select a kernel, choose <em>R [conda env:FDTD]</em>.</p></li>
+</ul>
+</div>
+<div class="section" id="exercises">
+<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
+<p>Complete each of the following exercises.</p>
+<div class="section" id="exercise-1-compute-a-value">
+<h4>Exercise 1: Compute a value<a class="headerlink" href="#exercise-1-compute-a-value" title="Permalink to this headline">¶</a></h4>
+<p>Insert a code cell below this cell and use it to compute the following value
+$<span class="math notranslate nohighlight">\(\frac{3(7-5)}{2}\)</span>$</p>
+</div>
+<div class="section" id="exercise-2-favorite-color">
+<h4>Exercise: 2 Favorite color<a class="headerlink" href="#exercise-2-favorite-color" title="Permalink to this headline">¶</a></h4>
+<p>Convert the input cell below to a markdown cell. Then, write your favorite color in bold in the cell. You can use double asterisks on both sides of the word to make it bold.</p>
+</div>
+<div class="section" id="exercise-3-anything-i-should-know">
+<h4>Exercise 3: Anything I should know?<a class="headerlink" href="#exercise-3-anything-i-should-know" title="Permalink to this headline">¶</a></h4>
+<p>Is there anything you would like to tell Prof. Clarkson at this time? If so type it in the markdown cell below.</p>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>5</li><li>10</li><li>15</li></ol>
-</div></div>
+<div class="section" id="print-notebook-as-pdf-document">
+<h3>Print notebook as PDF document<a class="headerlink" href="#print-notebook-as-pdf-document" title="Permalink to this headline">¶</a></h3>
+<p>Download a PDF version of this notebook using one of the following strategies.</p>
+<div class="section" id="strategy-1-use-print-preview">
+<h4>Strategy 1: Use print preview<a class="headerlink" href="#strategy-1-use-print-preview" title="Permalink to this headline">¶</a></h4>
+<p>Use the menu option File &gt; Print Preview to generate a printer friendly version of this notebook. Then use your browsers print dialogue to save as PDF.
+Use the following menu option to download a PDF version of this notebook.</p>
 </div>
-<p>Arithmetic operations that combine multiple vectors are performed entry-by-entry.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span> <span class="o">-</span> <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">4</span><span class="p">)</span> <span class="c1"># Same output as c(1-6, 2-5, 3-4)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>-5</li><li>-3</li><li>-1</li></ol>
-</div></div>
-</div>
-</div>
-<div class="section" id="useful-functions">
-<h2>Useful functions<a class="headerlink" href="#useful-functions" title="Permalink to this headline">¶</a></h2>
-<p>For more information on these functions, execute <code class="docutils literal notranslate"><span class="pre">?FUNCTION_NAME</span></code> and read the documentation.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store ten random numbers in a the variable ten_numbers</span>
-<span class="n">ten_numbers</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5.8</span><span class="p">,</span> <span class="m">3.52</span><span class="p">,</span> <span class="m">7.81</span><span class="p">,</span> <span class="m">0.4</span><span class="p">,</span> <span class="m">4.79</span><span class="p">,</span> <span class="m">3.04</span><span class="p">,</span> <span class="m">4.89</span><span class="p">,</span> <span class="m">5.23</span><span class="p">,</span> <span class="m">2.37</span><span class="p">,</span> <span class="m">4.32</span><span class="p">)</span> 
-</pre></div>
+<div class="section" id="strategy-2-use-latex">
+<h4>Strategy 2: Use LaTeX<a class="headerlink" href="#strategy-2-use-latex" title="Permalink to this headline">¶</a></h4>
+<p>Use the menu option File &gt; Download as &gt; PDF via LaTeX (.pdf) generate a PDF file you can download.</p>
 </div>
 </div>
 </div>
-<div class="section" id="min-and-max">
-<h3>Min and max<a class="headerlink" href="#min-and-max" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">min()</span></code> and <code class="docutils literal notranslate"><span class="pre">max()</span></code> functions return respectively the minimum and maximum value in a numerical vector.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">min</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
-</pre></div>
+<div class="section" id="part-2-gradescope">
+<h2>Part 2: Gradescope<a class="headerlink" href="#part-2-gradescope" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="log-in">
+<h3>Log in<a class="headerlink" href="#log-in" title="Permalink to this headline">¶</a></h3>
+<p>Follow the instructions in the Web Services Guide to create an account.</p>
+</div>
+<div class="section" id="first-submission">
+<h3>First submission<a class="headerlink" href="#first-submission" title="Permalink to this headline">¶</a></h3>
+<p>Submit the PDF document that you downloaded in Part 1 to the Homework 0 assignment on Gradescope. Be sure to assign a page to each question even if your document is only one
+page, See the <a class="reference external" href="https://help.gradescope.com/article/ccbpppziu9-student-submit-work#submitting_a_pdf">Gradescope support page</a> for detailed instructions. Assigning pages to questions greatly expedites the grading process.</p>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.4</div></div>
+<div class="section" id="part-3-campuswire">
+<h2>Part 3: Campuswire<a class="headerlink" href="#part-3-campuswire" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="create-account">
+<h3>Create account<a class="headerlink" href="#create-account" title="Permalink to this headline">¶</a></h3>
+<p>Follow the instructions in the Web Services Guide to create an account.</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">max</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">7.81</div></div>
+<div class="section" id="respond-to-the-ice-breaker">
+<h3>Respond to the ice breaker<a class="headerlink" href="#respond-to-the-ice-breaker" title="Permalink to this headline">¶</a></h3>
+<p>Answer the question on Campuswire titled Homework 0: Ice Breaker.</p>
 </div>
 </div>
-<div class="section" id="length">
-<h3>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">length()</span></code> function returns the number of entries in a vector.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">length</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">10</div></div>
-</div>
-</div>
-<div class="section" id="sum">
-<h3>Sum<a class="headerlink" href="#sum" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function returns the sum of the entries in a numerical vector.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">42.17</div></div>
-</div>
-</div>
-<div class="section" id="mean-a-k-a-average">
-<h3>Mean a.k.a. average<a class="headerlink" href="#mean-a-k-a-average" title="Permalink to this headline">¶</a></h3>
-<p>The <em>average</em> of a collection of values is defined to be
-$<span class="math notranslate nohighlight">\(\frac{\text{sum of the values}}{\text{number of values}}.\)</span>$</p>
-<p>We can perform this computation by combining the previous two functions</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span><span class="o">/</span><span class="nf">length</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">4.217</div></div>
-</div>
-<p>Alternatively, we can use the <code class="docutils literal notranslate"><span class="pre">mean()</span></code> which returns the average of the entries in a numerical vector.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">4.217</div></div>
-</div>
+<div class="section" id="part-4-onenote-optional">
+<h2>Part 4. OneNote (optional)<a class="headerlink" href="#part-4-onenote-optional" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="set-up-class-notebook-in-onenote-app">
+<h3>Set up Class Notebook in OneNote app<a class="headerlink" href="#set-up-class-notebook-in-onenote-app" title="Permalink to this headline">¶</a></h3>
+<p>Click on the Class Notes link in the Web Services section of the Content tool on Brightspace. Follow the instructions to open the Class Notebook in the OneNote app on your computer or tablet.</p>
 </div>
 </div>
 </div>
@@ -456,7 +472,7 @@ $<span class="math notranslate nohighlight">\(\frac{\text{sum of the values}}{\t
         },
         kernelOptions: {
             kernelName: "ir",
-            path: "./reference"
+            path: "./homework"
         },
         predefinedOutput: true
     }
@@ -473,23 +489,14 @@ $<span class="math notranslate nohighlight">\(\frac{\text{sum of the values}}{\t
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="vectors.html" title="previous page">
+        <a class="left-prev" href="../in-class_exercises/lesson02.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Vectors</p>
+                <p class="prevnext-title">Lesson 2 Variables and Vectors</p>
             </div>
         </a>
     </div>
-     <div id="next">
-        <a class="right-next" href="data_sets.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Data sets</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
 
 </div>
         
