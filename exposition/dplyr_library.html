@@ -1,0 +1,1435 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dplyr Library &#8212; From Data to Discovery</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ggplot2" href="ggplot2_library.html" />
+    <link rel="prev" title="Data" href="data.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   From Data to Discovery
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="base_r.html">
+   Base R
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
+     Arithmetic with numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_types.html">
+     Data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors.html">
+     Vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data.html">
+     Data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   dplyr Library
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ggplot2_library.html">
+   ggplot2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical_models.html">
+   Numeric Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="outside_sources.html">
+   Other References
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  In Class Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../lesson01.html">
+   Lesson 1: Introduction to R and JupyterHub
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/exposition/dplyr_library.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://coreua-111001-fall.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_public&urlpath=tree/core-ua_111_public/exposition/dplyr_library.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-data">
+   Example data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mutate">
+   mutate
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#compare-to-base-r">
+     Compare to base R
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arrange">
+   arrange
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sorting-with-respect-to-multiple-columns">
+     Sorting with respect to multiple columns
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#piping">
+   Piping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#filter">
+   filter
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#criteria">
+     Criteria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-weight-of-chicks-on-the-last-day">
+     Example: Weight of chicks on the last day
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-by-multiple-criteria">
+     Filtering by multiple criteria
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#select">
+   select
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-remove-the-time-column-from-chickweight-last-day">
+     Example: Remove the time column from
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ChickWeight_last_day
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-renaming-a-column">
+     Example: Renaming a column
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#group-by-and-summarize">
+   group_by and summarize
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-average-weight-of-each-diet-group-on-last-day">
+     Example: Average weight of each diet group on last day
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="dplyr-library">
+<h1>dplyr Library<a class="headerlink" href="#dplyr-library" title="Permalink to this headline">¶</a></h1>
+<p>The dplyr library is part of a family of R packages called the <a class="reference external" href="https://www.tidyverse.org/">tidyverse</a>. See the <a class="reference external" href="https://dplyr.tidyverse.org/reference/index.html">dplyr documentation</a> for a summary of all the functions in this library. See also the <a class="reference external" href="https://r4ds.had.co.nz/transform.html">Data Transformations</a> chapter of <em>R for Data Science</em> for more explanation and examples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can ignore the warning about objects from other libraries being masked.</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+
+<span class="c1"># Executing the above command twice will get rid of the warning message.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note" id="html-admonition">
+<p class="admonition-title">Note</p>
+<p>If you try to execute a dplyr function before loading the library, you will get an error messages stating that R could not find the function.</p>
+</div>
+<div class="section" id="example-data">
+<h2>Example data<a class="headerlink" href="#example-data" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we will use the <code class="docutils literal notranslate"><span class="pre">ChickWeight</span></code> dataset which is built into R. Execute <code class="docutils literal notranslate"><span class="pre">?ChickWeight</span></code> in a code cell to view the documentation for this dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the documentation for the built in ChickWeight dataset.</span>
+<span class="o">?</span><span class="n">ChickWeight</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Execute this code to restore ChickWieght to its original state.</span>
+<span class="nf">rm</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">)</span>
+
+<span class="c1"># If you see a warning message indicating that ChickWeight was not found, </span>
+<span class="c1"># it means that there were no saved edits to ChickWeight. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in rm(ChickWeight):
+“object &#39;ChickWeight&#39; not found”
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="mutate">
+<h2>mutate<a class="headerlink" href="#mutate" title="Permalink to this headline">¶</a></h2>
+<p>Use the dplyr function <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add or change columns. The basic syntax for this function is the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">mutate(DATA_FRAME,</span> <span class="pre">NEW_COLUMN</span> <span class="pre">=</span> <span class="pre">FORMULA)</span></code></p>
+<p>The mutate function outputs a <strong>new</strong> data frame which is generated by using the formula to create the data for a column called NEW_COLUMN in the specified DATA_FRAME.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the weight from grams to pounds.</span>
+<span class="c1"># 1 gram is 0.00220462 pounds.</span>
+<span class="c1"># mutate(ChickWeight, weight = weight * 0.00220462) # produces a large output</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="nf">mutate</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">*</span> <span class="m">0.00220462</span><span class="p">),</span> <span class="m">3</span><span class="p">)</span>
+<span class="c1"># We use the head() function to limit the output to the first three observations.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 3 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>0.09259404</td><td>0</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>0.11243562</td><td>2</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>3</th><td>0.13007258</td><td>4</td><td>1</td><td>1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Notice that the ChickWeight data frame is unchanged.</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 3 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>42</td><td>0</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>51</td><td>2</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>3</th><td>59</td><td>4</td><td>1</td><td>1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="admonition warning" id="id1">
+<p class="admonition-title">Warning</p>
+<p>If you want to keep the updated data frame that you produced with a dplyr function, then you must <b>store the output in a variable</b>.</p>
+<p><code>VARIABLE  &lt;- mutate(DATA_FRAME, NEW_COLUMN = FORMULA)</code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store the output of mutate() in the ChickWeight data frame</span>
+<span class="c1"># Assigning a value to a variable generates no output</span>
+<span class="n">ChickWeight</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">weight</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">*</span> <span class="m">0.00220462</span><span class="p">)</span>
+
+<span class="c1"># Look at the first three observations of ChickWieght</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 3 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>0.09259404</td><td>0</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>0.11243562</td><td>2</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>3</th><td>0.13007258</td><td>4</td><td>1</td><td>1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="section" id="compare-to-base-r">
+<h3>Compare to base R<a class="headerlink" href="#compare-to-base-r" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Restore ChickWeight to its original state</span>
+<span class="nf">remove</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">)</span>
+
+<span class="c1"># Use base R to convert the weight from grams to pounds and store the result.</span>
+<span class="n">ChickWeight</span><span class="o">$</span><span class="n">weight</span> <span class="o">&lt;-</span> <span class="n">ChickWeight</span><span class="o">$</span><span class="n">weight</span> <span class="o">*</span> <span class="m">0.00220462</span>
+
+<span class="c1"># Look at the first three observations of ChickWieght</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 3 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>0.09259404</td><td>0</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>0.11243562</td><td>2</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>3</th><td>0.13007258</td><td>4</td><td>1</td><td>1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="arrange">
+<h2>arrange<a class="headerlink" href="#arrange" title="Permalink to this headline">¶</a></h2>
+<p>Use the dplyr <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> to sort the observations of a data frame. The basic syntax for this function is the following:</p>
+<p><code class="docutils literal notranslate"><span class="pre">arrange(DATA_FRAME,</span> <span class="pre">COLUMN_NAME)</span></code></p>
+<p>The default is to sort the date frame so that the values of the specified column in <em>ascending</em> order. Put the COLUMN_NAME inside the the <code class="docutils literal notranslate"><span class="pre">desc()</span></code> function o sort in descending order.</p>
+<p><code class="docutils literal notranslate"><span class="pre">arrange(DATA_FRAME,</span> <span class="pre">desc(COLUMN_NAME))</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort the ChickWeight data frame so that the values in the Time column are in ascending order.</span>
+<span class="nf">arrange</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Time</span><span class="p">)</span>
+
+<span class="c1"># This code allows us to look at the sorted data but does not save it anywhere. </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 578 × 4</caption>
+<thead>
+	<tr><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0.09259404</td><td>0</td><td>1 </td><td>1</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>2 </td><td>1</td></tr>
+	<tr><td>0.09479866</td><td>0</td><td>3 </td><td>1</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>4 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>5 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>6 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>7 </td><td>1</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>8 </td><td>1</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>9 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>10</td><td>1</td></tr>
+	<tr><td>0.09479866</td><td>0</td><td>11</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>12</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>13</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>14</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>15</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>16</td><td>1</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>17</td><td>1</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>18</td><td>1</td></tr>
+	<tr><td>0.09479866</td><td>0</td><td>19</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>20</td><td>1</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>21</td><td>2</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>22</td><td>2</td></tr>
+	<tr><td>0.09479866</td><td>0</td><td>23</td><td>2</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>24</td><td>2</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>25</td><td>2</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>26</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>27</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>28</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>29</td><td>2</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>30</td><td>2</td></tr>
+	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+	<tr><td>0.2579405</td><td>21</td><td>20</td><td>1</td></tr>
+	<tr><td>0.7297292</td><td>21</td><td>21</td><td>2</td></tr>
+	<tr><td>0.3681715</td><td>21</td><td>22</td><td>2</td></tr>
+	<tr><td>0.3858085</td><td>21</td><td>23</td><td>2</td></tr>
+	<tr><td>0.1631419</td><td>21</td><td>24</td><td>2</td></tr>
+	<tr><td>0.5842243</td><td>21</td><td>25</td><td>2</td></tr>
+	<tr><td>0.5533596</td><td>21</td><td>26</td><td>2</td></tr>
+	<tr><td>0.4232870</td><td>21</td><td>27</td><td>2</td></tr>
+	<tr><td>0.5136765</td><td>21</td><td>28</td><td>2</td></tr>
+	<tr><td>0.6812276</td><td>21</td><td>29</td><td>2</td></tr>
+	<tr><td>0.3306930</td><td>21</td><td>30</td><td>2</td></tr>
+	<tr><td>0.5643827</td><td>21</td><td>31</td><td>3</td></tr>
+	<tr><td>0.6724091</td><td>21</td><td>32</td><td>3</td></tr>
+	<tr><td>0.3240791</td><td>21</td><td>33</td><td>3</td></tr>
+	<tr><td>0.7517754</td><td>21</td><td>34</td><td>3</td></tr>
+	<tr><td>0.8223233</td><td>21</td><td>35</td><td>3</td></tr>
+	<tr><td>0.4850164</td><td>21</td><td>36</td><td>3</td></tr>
+	<tr><td>0.3924224</td><td>21</td><td>37</td><td>3</td></tr>
+	<tr><td>0.6393398</td><td>21</td><td>38</td><td>3</td></tr>
+	<tr><td>0.5996566</td><td>21</td><td>39</td><td>3</td></tr>
+	<tr><td>0.7076830</td><td>21</td><td>40</td><td>3</td></tr>
+	<tr><td>0.4497425</td><td>21</td><td>41</td><td>4</td></tr>
+	<tr><td>0.6194982</td><td>21</td><td>42</td><td>4</td></tr>
+	<tr><td>0.4409240</td><td>21</td><td>43</td><td>4</td></tr>
+	<tr><td>0.4321055</td><td>21</td><td>45</td><td>4</td></tr>
+	<tr><td>0.5246996</td><td>21</td><td>46</td><td>4</td></tr>
+	<tr><td>0.4519471</td><td>21</td><td>47</td><td>4</td></tr>
+	<tr><td>0.7098876</td><td>21</td><td>48</td><td>4</td></tr>
+	<tr><td>0.5224949</td><td>21</td><td>49</td><td>4</td></tr>
+	<tr><td>0.5820197</td><td>21</td><td>50</td><td>4</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="admonition warning" id="id2">
+<p class="admonition-title">Warning</p>
+<p>The sorted data frame is the output; arrange does not change the original data frame. To replace the original data frame with the sored one use.</p>
+<p><code>DATA_FRAME  &lt;- arrange(DATA_FRAME, COLUMN_NAME)</code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort the ChickWeight data frame so that the values in the Time column are in descending order.</span>
+<span class="nf">arrange</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="nf">desc</span><span class="p">(</span><span class="n">Time</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 578 × 4</caption>
+<thead>
+	<tr><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0.4519471</td><td>21</td><td>1 </td><td>1</td></tr>
+	<tr><td>0.4739933</td><td>21</td><td>2 </td><td>1</td></tr>
+	<tr><td>0.4453332</td><td>21</td><td>3 </td><td>1</td></tr>
+	<tr><td>0.3461253</td><td>21</td><td>4 </td><td>1</td></tr>
+	<tr><td>0.4916303</td><td>21</td><td>5 </td><td>1</td></tr>
+	<tr><td>0.3461253</td><td>21</td><td>6 </td><td>1</td></tr>
+	<tr><td>0.6724091</td><td>21</td><td>7 </td><td>1</td></tr>
+	<tr><td>0.2160528</td><td>21</td><td>9 </td><td>1</td></tr>
+	<tr><td>0.2733729</td><td>21</td><td>10</td><td>1</td></tr>
+	<tr><td>0.3858085</td><td>21</td><td>11</td><td>1</td></tr>
+	<tr><td>0.4519471</td><td>21</td><td>12</td><td>1</td></tr>
+	<tr><td>0.2116435</td><td>21</td><td>13</td><td>1</td></tr>
+	<tr><td>0.5864289</td><td>21</td><td>14</td><td>1</td></tr>
+	<tr><td>0.3130560</td><td>21</td><td>17</td><td>1</td></tr>
+	<tr><td>0.3461253</td><td>21</td><td>19</td><td>1</td></tr>
+	<tr><td>0.2579405</td><td>21</td><td>20</td><td>1</td></tr>
+	<tr><td>0.7297292</td><td>21</td><td>21</td><td>2</td></tr>
+	<tr><td>0.3681715</td><td>21</td><td>22</td><td>2</td></tr>
+	<tr><td>0.3858085</td><td>21</td><td>23</td><td>2</td></tr>
+	<tr><td>0.1631419</td><td>21</td><td>24</td><td>2</td></tr>
+	<tr><td>0.5842243</td><td>21</td><td>25</td><td>2</td></tr>
+	<tr><td>0.5533596</td><td>21</td><td>26</td><td>2</td></tr>
+	<tr><td>0.4232870</td><td>21</td><td>27</td><td>2</td></tr>
+	<tr><td>0.5136765</td><td>21</td><td>28</td><td>2</td></tr>
+	<tr><td>0.6812276</td><td>21</td><td>29</td><td>2</td></tr>
+	<tr><td>0.3306930</td><td>21</td><td>30</td><td>2</td></tr>
+	<tr><td>0.5643827</td><td>21</td><td>31</td><td>3</td></tr>
+	<tr><td>0.6724091</td><td>21</td><td>32</td><td>3</td></tr>
+	<tr><td>0.3240791</td><td>21</td><td>33</td><td>3</td></tr>
+	<tr><td>0.7517754</td><td>21</td><td>34</td><td>3</td></tr>
+	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>21</td><td>2</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>22</td><td>2</td></tr>
+	<tr><td>0.09479866</td><td>0</td><td>23</td><td>2</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>24</td><td>2</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>25</td><td>2</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>26</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>27</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>28</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>29</td><td>2</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>30</td><td>2</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>31</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>32</td><td>3</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>33</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>34</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>35</td><td>3</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>36</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>37</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>38</td><td>3</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>39</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>40</td><td>3</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>41</td><td>4</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>42</td><td>4</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>43</td><td>4</td></tr>
+	<tr><td>0.09259404</td><td>0</td><td>44</td><td>4</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>45</td><td>4</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>46</td><td>4</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>47</td><td>4</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>48</td><td>4</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>49</td><td>4</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>50</td><td>4</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="admonition note" id="id3">
+<p class="admonition-title">Note</p>
+<p><b>R cares about capitalizations</b>. The above code would not work if <code>Time</code> were replaced with <code>time</code>.</p>
+</div>
+<div class="section" id="sorting-with-respect-to-multiple-columns">
+<h3>Sorting with respect to multiple columns<a class="headerlink" href="#sorting-with-respect-to-multiple-columns" title="Permalink to this headline">¶</a></h3>
+<p>You can sort with respect to multiple columns by listing multiple column names in the arrange function:</p>
+<p><code class="docutils literal notranslate"><span class="pre">arrange(DATA_FRAME,</span> <span class="pre">COLUMN_NAME1,COLUMN_NAME2,</span> <span class="pre">COLUMN_NAME3,</span> <span class="pre">etc.)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort with respect to both Time and weight.</span>
+<span class="c1"># Time values dominate the sort order.</span>
+<span class="nf">arrange</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Time</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 578 × 4</caption>
+<thead>
+	<tr><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0.08598018</td><td>0</td><td>18</td><td>1</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>27</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>28</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>29</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>33</td><td>3</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>36</td><td>3</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>48</td><td>4</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>2 </td><td>1</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>21</td><td>2</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>25</td><td>2</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>46</td><td>4</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>49</td><td>4</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>5 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>6 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>7 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>10</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>12</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>13</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>14</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>15</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>16</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>20</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>22</td><td>2</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>32</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>34</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>35</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>37</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>38</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>40</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>45</td><td>4</td></tr>
+	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+	<tr><td>0.4232870</td><td>21</td><td>27</td><td>2</td></tr>
+	<tr><td>0.4321055</td><td>21</td><td>45</td><td>4</td></tr>
+	<tr><td>0.4409240</td><td>21</td><td>43</td><td>4</td></tr>
+	<tr><td>0.4453332</td><td>21</td><td>3 </td><td>1</td></tr>
+	<tr><td>0.4497425</td><td>21</td><td>41</td><td>4</td></tr>
+	<tr><td>0.4519471</td><td>21</td><td>1 </td><td>1</td></tr>
+	<tr><td>0.4519471</td><td>21</td><td>12</td><td>1</td></tr>
+	<tr><td>0.4519471</td><td>21</td><td>47</td><td>4</td></tr>
+	<tr><td>0.4739933</td><td>21</td><td>2 </td><td>1</td></tr>
+	<tr><td>0.4850164</td><td>21</td><td>36</td><td>3</td></tr>
+	<tr><td>0.4916303</td><td>21</td><td>5 </td><td>1</td></tr>
+	<tr><td>0.5136765</td><td>21</td><td>28</td><td>2</td></tr>
+	<tr><td>0.5224949</td><td>21</td><td>49</td><td>4</td></tr>
+	<tr><td>0.5246996</td><td>21</td><td>46</td><td>4</td></tr>
+	<tr><td>0.5533596</td><td>21</td><td>26</td><td>2</td></tr>
+	<tr><td>0.5643827</td><td>21</td><td>31</td><td>3</td></tr>
+	<tr><td>0.5820197</td><td>21</td><td>50</td><td>4</td></tr>
+	<tr><td>0.5842243</td><td>21</td><td>25</td><td>2</td></tr>
+	<tr><td>0.5864289</td><td>21</td><td>14</td><td>1</td></tr>
+	<tr><td>0.5996566</td><td>21</td><td>39</td><td>3</td></tr>
+	<tr><td>0.6194982</td><td>21</td><td>42</td><td>4</td></tr>
+	<tr><td>0.6393398</td><td>21</td><td>38</td><td>3</td></tr>
+	<tr><td>0.6724091</td><td>21</td><td>7 </td><td>1</td></tr>
+	<tr><td>0.6724091</td><td>21</td><td>32</td><td>3</td></tr>
+	<tr><td>0.6812276</td><td>21</td><td>29</td><td>2</td></tr>
+	<tr><td>0.7076830</td><td>21</td><td>40</td><td>3</td></tr>
+	<tr><td>0.7098876</td><td>21</td><td>48</td><td>4</td></tr>
+	<tr><td>0.7297292</td><td>21</td><td>21</td><td>2</td></tr>
+	<tr><td>0.7517754</td><td>21</td><td>34</td><td>3</td></tr>
+	<tr><td>0.8223233</td><td>21</td><td>35</td><td>3</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="admonition note" id="id4">
+<p class="admonition-title">Note</p>
+<p>The order of the column names in the <code>arrange()</code> function matters. The farther left a columns name is higher priority its values have in the sort order.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sort with respect to both Time and weight.</span>
+<span class="c1"># Weight values dominate the sort order.</span>
+<span class="nf">arrange</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">Time</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 578 × 4</caption>
+<thead>
+	<tr><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0.07716170</td><td>2</td><td>18</td><td>1</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>18</td><td>1</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>27</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>28</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>29</td><td>2</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>33</td><td>3</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>36</td><td>3</td></tr>
+	<tr><td>0.08598018</td><td>0</td><td>48</td><td>4</td></tr>
+	<tr><td>0.08598018</td><td>2</td><td>3 </td><td>1</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>2 </td><td>1</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>21</td><td>2</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>25</td><td>2</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>46</td><td>4</td></tr>
+	<tr><td>0.08818480</td><td>0</td><td>49</td><td>4</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>5 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>6 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>7 </td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>10</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>12</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>13</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>14</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>15</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>16</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>20</td><td>1</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>22</td><td>2</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>32</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>34</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>35</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>37</td><td>3</td></tr>
+	<tr><td>0.09038942</td><td>0</td><td>38</td><td>3</td></tr>
+	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+	<tr><td>0.5820197</td><td>20</td><td>50</td><td>4</td></tr>
+	<tr><td>0.5820197</td><td>21</td><td>50</td><td>4</td></tr>
+	<tr><td>0.5842243</td><td>21</td><td>25</td><td>2</td></tr>
+	<tr><td>0.5864289</td><td>21</td><td>14</td><td>1</td></tr>
+	<tr><td>0.5930428</td><td>20</td><td>42</td><td>4</td></tr>
+	<tr><td>0.5996566</td><td>21</td><td>39</td><td>3</td></tr>
+	<tr><td>0.6062705</td><td>16</td><td>21</td><td>2</td></tr>
+	<tr><td>0.6150890</td><td>20</td><td>29</td><td>2</td></tr>
+	<tr><td>0.6172936</td><td>20</td><td>38</td><td>3</td></tr>
+	<tr><td>0.6194982</td><td>21</td><td>42</td><td>4</td></tr>
+	<tr><td>0.6327259</td><td>16</td><td>35</td><td>3</td></tr>
+	<tr><td>0.6349306</td><td>20</td><td>7 </td><td>1</td></tr>
+	<tr><td>0.6393398</td><td>21</td><td>38</td><td>3</td></tr>
+	<tr><td>0.6415444</td><td>20</td><td>32</td><td>3</td></tr>
+	<tr><td>0.6481583</td><td>18</td><td>34</td><td>3</td></tr>
+	<tr><td>0.6503629</td><td>20</td><td>40</td><td>3</td></tr>
+	<tr><td>0.6679999</td><td>20</td><td>48</td><td>4</td></tr>
+	<tr><td>0.6724091</td><td>21</td><td>7 </td><td>1</td></tr>
+	<tr><td>0.6724091</td><td>21</td><td>32</td><td>3</td></tr>
+	<tr><td>0.6768183</td><td>18</td><td>21</td><td>2</td></tr>
+	<tr><td>0.6812276</td><td>21</td><td>29</td><td>2</td></tr>
+	<tr><td>0.7010692</td><td>20</td><td>21</td><td>2</td></tr>
+	<tr><td>0.7076830</td><td>21</td><td>40</td><td>3</td></tr>
+	<tr><td>0.7098876</td><td>21</td><td>48</td><td>4</td></tr>
+	<tr><td>0.7209107</td><td>20</td><td>34</td><td>3</td></tr>
+	<tr><td>0.7297292</td><td>21</td><td>21</td><td>2</td></tr>
+	<tr><td>0.7319338</td><td>18</td><td>35</td><td>3</td></tr>
+	<tr><td>0.7517754</td><td>21</td><td>34</td><td>3</td></tr>
+	<tr><td>0.7958678</td><td>20</td><td>35</td><td>3</td></tr>
+	<tr><td>0.8223233</td><td>21</td><td>35</td><td>3</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="piping">
+<h2>Piping<a class="headerlink" href="#piping" title="Permalink to this headline">¶</a></h2>
+<p>The dplyr library introduces an useful mechanism for passing the output of one function to another function as its first input. The general syntax for this is shown below.</p>
+<p><code class="docutils literal notranslate"><span class="pre">INPUT_1a</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION_1(INPUT_1b)</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION_2(INPUT_2b)</span></code></p>
+<p>The example of piping above is equivalent to the following.</p>
+<p><code class="docutils literal notranslate"><span class="pre">FUNCTION(FUNCTION_1(INPUT_1a,</span> <span class="pre">INPUT_1b),</span> <span class="pre">INPUT_2b))</span></code></p>
+<p>In practice, we would usually use the following code to achieve the same output as the given example of piping.</p>
+<p><code class="docutils literal notranslate"><span class="pre">INPUT_2a</span> <span class="pre">&lt;-</span> <span class="pre">FUNCTION_1(INPUT_1a,</span> <span class="pre">INPUT_1b)</span> <span class="pre">FUNCTION_2(INPUT_2a,</span> <span class="pre">INPUT_2b)</span></code></p>
+<p>In the following sections, all examples will be given both with and without piping. You can choose the method that you find easiest to understand. Either way, it is a good idea to know the basics of piping so that you will be able to understand code that uses it.</p>
+</div>
+<div class="section" id="filter">
+<h2>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function allows you to extract the observations in a data frame that meet specified criteria. The general syntax is given below.</p>
+<p><code class="docutils literal notranslate"><span class="pre">filter(DATA_FRAME,</span> <span class="pre">CRITERIA)</span></code></p>
+<div class="section" id="criteria">
+<h3>Criteria<a class="headerlink" href="#criteria" title="Permalink to this headline">¶</a></h3>
+<p>Use <code class="docutils literal notranslate"><span class="pre">==</span></code> to extract observations that have a particular value in a given column.
+<code class="docutils literal notranslate"><span class="pre">COLUMN_NAME</span> <span class="pre">==</span> <span class="pre">VALUE</span></code></p>
+<p>Use inequalities (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>) to specify upper or lower bounds for the values in a given column.
+<code class="docutils literal notranslate"><span class="pre">COLUMN_NAME</span> <span class="pre">&gt;=</span> <span class="pre">BOUND</span></code></p>
+<div class="admonition warning" id="id5">
+<p class="admonition-title">Warning</p>
+<p>If the value you are using in the filter is text, then it must be in quote marks. Consider the following example.</p>
+<p><code> filter(students, First_Name == “Elisabeth”) </code></p>
+</div>
+</div>
+<div class="section" id="example-weight-of-chicks-on-the-last-day">
+<h3>Example: Weight of chicks on the last day<a class="headerlink" href="#example-weight-of-chicks-on-the-last-day" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we were only interested in the weight of the chicks on the last day of the study. We can use the following code to create a data frame that only contains the observations that were made on the last day.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># without piping</span>
+<span class="n">ChickWeight_last_day</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Time</span> <span class="o">==</span> <span class="nf">max</span><span class="p">(</span><span class="n">Time</span><span class="p">))</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 3 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>0.4519471</td><td>21</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>0.4739933</td><td>21</td><td>2</td><td>1</td></tr>
+	<tr><th scope=row>3</th><td>0.4453332</td><td>21</td><td>3</td><td>1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># with piping</span>
+<span class="n">ChickWeight_last_day</span> <span class="o">&lt;-</span> <span class="n">ChickWeight</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="nf">max</span><span class="p">(</span><span class="n">Time</span><span class="p">))</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 3 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>0.4519471</td><td>21</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>0.4739933</td><td>21</td><td>2</td><td>1</td></tr>
+	<tr><th scope=row>3</th><td>0.4453332</td><td>21</td><td>3</td><td>1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="filtering-by-multiple-criteria">
+<h3>Filtering by multiple criteria<a class="headerlink" href="#filtering-by-multiple-criteria" title="Permalink to this headline">¶</a></h3>
+<p>We can combine multiple criterion using <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> for “and” as well as <code class="docutils literal notranslate"><span class="pre">|</span></code> for “or”. Commas also function as “and” inside <code class="docutils literal notranslate"><span class="pre">filter()</span></code>.</p>
+<div class="admonition warning" id="id6">
+<p class="admonition-title">Warning</p>
+<p>Criteria connected by <code>&amp;</code>, <code>|</code> and commas must be self sufficient. The following code will <b>not</b> work.</p>
+<p><code>filter(weather_data, Temp &lt; 60 &amp; &gt; 90) </code>Instead, use this.</p>
+<p><code>filter(weather_data, Temp &lt; 60 &amp; Temp &gt; 90) </code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chick weights on day 21 who were fed diet 2</span>
+<span class="c1"># Strategy 1: Use &amp; for &quot;and&quot;</span>
+<span class="nf">filter</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Time</span> <span class="o">==</span> <span class="nf">max</span><span class="p">(</span><span class="n">Time</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">Diet</span> <span class="o">==</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 10 × 4</caption>
+<thead>
+	<tr><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0.7297292</td><td>21</td><td>21</td><td>2</td></tr>
+	<tr><td>0.3681715</td><td>21</td><td>22</td><td>2</td></tr>
+	<tr><td>0.3858085</td><td>21</td><td>23</td><td>2</td></tr>
+	<tr><td>0.1631419</td><td>21</td><td>24</td><td>2</td></tr>
+	<tr><td>0.5842243</td><td>21</td><td>25</td><td>2</td></tr>
+	<tr><td>0.5533596</td><td>21</td><td>26</td><td>2</td></tr>
+	<tr><td>0.4232870</td><td>21</td><td>27</td><td>2</td></tr>
+	<tr><td>0.5136765</td><td>21</td><td>28</td><td>2</td></tr>
+	<tr><td>0.6812276</td><td>21</td><td>29</td><td>2</td></tr>
+	<tr><td>0.3306930</td><td>21</td><td>30</td><td>2</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chick weights on day 21 who were fed diet 2</span>
+<span class="c1"># Strategy 2: Use commas for &quot;and&quot;</span>
+<span class="nf">filter</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Time</span> <span class="o">==</span> <span class="nf">max</span><span class="p">(</span><span class="n">Time</span><span class="p">),</span> <span class="n">Diet</span> <span class="o">==</span> <span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 10 × 4</caption>
+<thead>
+	<tr><th scope=col>weight</th><th scope=col>Time</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>0.7297292</td><td>21</td><td>21</td><td>2</td></tr>
+	<tr><td>0.3681715</td><td>21</td><td>22</td><td>2</td></tr>
+	<tr><td>0.3858085</td><td>21</td><td>23</td><td>2</td></tr>
+	<tr><td>0.1631419</td><td>21</td><td>24</td><td>2</td></tr>
+	<tr><td>0.5842243</td><td>21</td><td>25</td><td>2</td></tr>
+	<tr><td>0.5533596</td><td>21</td><td>26</td><td>2</td></tr>
+	<tr><td>0.4232870</td><td>21</td><td>27</td><td>2</td></tr>
+	<tr><td>0.5136765</td><td>21</td><td>28</td><td>2</td></tr>
+	<tr><td>0.6812276</td><td>21</td><td>29</td><td>2</td></tr>
+	<tr><td>0.3306930</td><td>21</td><td>30</td><td>2</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="select">
+<h2>select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">select(DATA_FRAME,</span> <span class="pre">COLUMN_1,</span> <span class="pre">COLUMN_2)</span></code></p>
+<p>Alternatively, you can use <code class="docutils literal notranslate"><span class="pre">-</span></code> to mark columns that you wish to exclude.
+<code class="docutils literal notranslate"><span class="pre">select(DATA_FRAME,</span> <span class="pre">-COLUMN_1,</span> <span class="pre">-COLUMN_2)</span></code></p>
+<div class="section" id="example-remove-the-time-column-from-chickweight-last-day">
+<h3>Example: Remove the time column from <code class="docutils literal notranslate"><span class="pre">ChickWeight_last_day</span></code><a class="headerlink" href="#example-remove-the-time-column-from-chickweight-last-day" title="Permalink to this headline">¶</a></h3>
+<p>In the previous section, we created the <code class="docutils literal notranslate"><span class="pre">ChickWeight_last_day</span></code> data frame which contained only observations made on the last day. The Time column of this filtered data set is not useful, because all of the entries are 21. The code bellow shows how we can use <code class="docutils literal notranslate"><span class="pre">select()</span></code> after filtering to remove the Time column.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># without piping</span>
+<span class="n">ChickWeight_last_day</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Time</span> <span class="o">==</span> <span class="m">21</span><span class="p">)</span>
+<span class="n">ChickWeight_last_day</span> <span class="o">&lt;-</span> <span class="nf">select</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="o">-</span><span class="n">Time</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 3 × 3</caption>
+<thead>
+	<tr><th></th><th scope=col>weight</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>0.4519471</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>0.4739933</td><td>2</td><td>1</td></tr>
+	<tr><th scope=row>3</th><td>0.4453332</td><td>3</td><td>1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># with piping</span>
+<span class="n">ChickWeight_last_day</span> <span class="o">&lt;-</span> <span class="n">ChickWeight</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="m">21</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="n">Time</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A nfnGroupedData: 3 × 3</caption>
+<thead>
+	<tr><th></th><th scope=col>weight</th><th scope=col>Chick</th><th scope=col>Diet</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;ord&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>0.4519471</td><td>1</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>0.4739933</td><td>2</td><td>1</td></tr>
+	<tr><th scope=row>3</th><td>0.4453332</td><td>3</td><td>1</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="example-renaming-a-column">
+<h3>Example: Renaming a column<a class="headerlink" href="#example-renaming-a-column" title="Permalink to this headline">¶</a></h3>
+<p>Notice that <code class="docutils literal notranslate"><span class="pre">weight</span></code> is the only column in the <code class="docutils literal notranslate"><span class="pre">ChickWeight</span></code> data frame that is not capitalized. We can combine <code class="docutils literal notranslate"><span class="pre">select()</span></code> and <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to rename the weight column.</p>
+<p>Note that this can also be done using the <code class="docutils literal notranslate"><span class="pre">rename()</span></code> function from the dplyr library as shown at the end of this example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># without piping</span>
+<span class="n">ChickWeight</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Weight</span> <span class="o">=</span> <span class="n">weight</span><span class="p">)</span>
+<span class="n">ChickWeight</span> <span class="o">&lt;-</span> <span class="nf">select</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="o">-</span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># with piping</span>
+<span class="n">ChickWeight</span> <span class="o">&lt;-</span> <span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">Weight</span> <span class="o">=</span> <span class="n">weight</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error: Problem with `mutate()` column `Weight`.
+ℹ `Weight = weight`.
+✖ object &#39;weight&#39; not found
+Traceback:
+
+1. ChickWeight %&gt;% mutate(Weight = weight) %&gt;% select(-weight)
+2. select(., -weight)
+3. mutate(., Weight = weight)
+4. mutate.data.frame(., Weight = weight)
+5. mutate_cols(.data, ..., caller_env = caller_env())
+6. withCallingHandlers({
+ .     for (i in seq_along(dots)) {
+ .         mask$across_cache_reset()
+ .         context_poke(&quot;column&quot;, old_current_column)
+ .         quosures &lt;- expand_across(dots[[i]])
+ .         quosures_results &lt;- vector(mode = &quot;list&quot;, length = length(quosures))
+ .         for (k in seq_along(quosures)) {
+ .             quo &lt;- quosures[[k]]
+ .             quo_data &lt;- attr(quo, &quot;dplyr:::data&quot;)
+ .             if (!is.null(quo_data$column)) {
+ .                 context_poke(&quot;column&quot;, quo_data$column)
+ .             }
+ .             chunks &lt;- NULL
+ .             result &lt;- NULL
+ .             if (quo_is_symbol(quo)) {
+ .                 name &lt;- as_string(quo_get_expr(quo))
+ .                 if (name %in% names(new_columns)) {
+ .                   result &lt;- new_columns[[name]]
+ .                   chunks &lt;- mask$resolve(name)
+ .                 }
+ .                 else if (name %in% names(.data)) {
+ .                   result &lt;- .data[[name]]
+ .                   chunks &lt;- mask$resolve(name)
+ .                 }
+ .                 if (inherits(.data, &quot;rowwise_df&quot;) &amp;&amp; vec_is_list(result)) {
+ .                   sizes &lt;- list_sizes(result)
+ .                   wrong &lt;- which(sizes != 1)
+ .                   if (length(wrong)) {
+ .                     group &lt;- wrong[1L]
+ .                     mask$set_current_group(group)
+ .                     abort(x_size = sizes[group], class = &quot;dplyr:::mutate_incompatible_size&quot;)
+ .                   }
+ .                 }
+ .             }
+ .             if (is.null(chunks)) {
+ .                 chunks &lt;- mask$eval_all_mutate(quo)
+ .             }
+ .             if (is.null(chunks)) {
+ .                 next
+ .             }
+ .             if (is.null(result)) {
+ .                 if (length(rows) == 1) {
+ .                   result &lt;- chunks[[1]]
+ .                 }
+ .                 else {
+ .                   result &lt;- withCallingHandlers(vec_unchop(chunks &lt;- vec_cast_common(!!!chunks), 
+ .                     rows), vctrs_error_incompatible_type = function(cnd) {
+ .                     abort(class = &quot;dplyr:::error_mutate_incompatible_combine&quot;, 
+ .                       parent = cnd)
+ .                   })
+ .                 }
+ .             }
+ .             quosures_results[[k]] &lt;- list(result = result, chunks = chunks)
+ .         }
+ .         for (k in seq_along(quosures)) {
+ .             quo &lt;- quosures[[k]]
+ .             quo_data &lt;- attr(quo, &quot;dplyr:::data&quot;)
+ .             quo_result &lt;- quosures_results[[k]]
+ .             if (is.null(quo_result)) {
+ .                 if (quo_data$is_named) {
+ .                   name &lt;- quo_data$name_given
+ .                   new_columns[[name]] &lt;- zap()
+ .                   mask$remove(name)
+ .                 }
+ .                 next
+ .             }
+ .             result &lt;- quo_result$result
+ .             chunks &lt;- quo_result$chunks
+ .             if (!quo_data$is_named &amp;&amp; is.data.frame(result)) {
+ .                 new_columns[names(result)] &lt;- result
+ .                 mask$add_many(result, chunks)
+ .             }
+ .             else {
+ .                 name &lt;- quo_data$name_auto
+ .                 new_columns[[name]] &lt;- result
+ .                 mask$add_one(name, chunks)
+ .             }
+ .         }
+ .     }
+ . }, error = function(e) {
+ .     local_call_step(dots = dots, .index = i, .fn = &quot;mutate&quot;, 
+ .         .dot_data = inherits(e, &quot;rlang_error_data_pronoun_not_found&quot;))
+ .     call_step_envir &lt;- peek_call_step()
+ .     error_name &lt;- call_step_envir$error_name
+ .     error_expression &lt;- call_step_envir$error_expression
+ .     show_group_details &lt;- TRUE
+ .     if (inherits(e, &quot;dplyr:::mutate_incompatible_size&quot;)) {
+ .         size &lt;- vec_size(rows[[mask$get_current_group()]])
+ .         x_size &lt;- e$x_size
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), i = glue(&quot;`{error_name}` must be size {or_1(size)}, not {x_size}.&quot;), 
+ .             i = cnd_bullet_rowwise_unlist())
+ .     }
+ .     else if (inherits(e, &quot;dplyr:::mutate_mixed_null&quot;)) {
+ .         show_group_details &lt;- FALSE
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must return compatible vectors across groups.&quot;), 
+ .             i = &quot;Cannot combine NULL and non NULL results.&quot;, 
+ .             i = cnd_bullet_rowwise_unlist())
+ .     }
+ .     else if (inherits(e, &quot;dplyr:::mutate_not_vector&quot;)) {
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must be a vector, not {friendly_type_of(e$result)}.&quot;), 
+ .             i = cnd_bullet_rowwise_unlist())
+ .     }
+ .     else if (inherits(e, &quot;dplyr:::error_mutate_incompatible_combine&quot;)) {
+ .         show_group_details &lt;- FALSE
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must return compatible vectors across groups&quot;), 
+ .             i = cnd_bullet_combine_details(e$parent$x, e$parent$x_arg), 
+ .             i = cnd_bullet_combine_details(e$parent$y, e$parent$y_arg))
+ .     }
+ .     else {
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), x = conditionMessage(e))
+ .     }
+ .     bullets &lt;- c(cnd_bullet_header(), bullets, i = if (show_group_details) cnd_bullet_cur_group_label())
+ .     abort(bullets, class = c(&quot;dplyr:::mutate_error&quot;, &quot;dplyr_error&quot;), 
+ .         error_name = error_name, error_expression = error_expression, 
+ .         parent = e, bullets = bullets)
+ . }, warning = function(w) {
+ .     if (check_muffled_warning(w)) {
+ .         maybe_restart(&quot;muffleWarning&quot;)
+ .     }
+ .     local_call_step(dots = dots, .index = i, .fn = &quot;mutate&quot;)
+ .     warn(c(cnd_bullet_header(), i = cnd_bullet_column_info(), 
+ .         i = conditionMessage(w), i = cnd_bullet_cur_group_label(what = &quot;warning&quot;)))
+ .     maybe_restart(&quot;muffleWarning&quot;)
+ . })
+7. mask$eval_all_mutate(quo)
+8. .handleSimpleError(function (e) 
+ . {
+ .     local_call_step(dots = dots, .index = i, .fn = &quot;mutate&quot;, 
+ .         .dot_data = inherits(e, &quot;rlang_error_data_pronoun_not_found&quot;))
+ .     call_step_envir &lt;- peek_call_step()
+ .     error_name &lt;- call_step_envir$error_name
+ .     error_expression &lt;- call_step_envir$error_expression
+ .     show_group_details &lt;- TRUE
+ .     if (inherits(e, &quot;dplyr:::mutate_incompatible_size&quot;)) {
+ .         size &lt;- vec_size(rows[[mask$get_current_group()]])
+ .         x_size &lt;- e$x_size
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), i = glue(&quot;`{error_name}` must be size {or_1(size)}, not {x_size}.&quot;), 
+ .             i = cnd_bullet_rowwise_unlist())
+ .     }
+ .     else if (inherits(e, &quot;dplyr:::mutate_mixed_null&quot;)) {
+ .         show_group_details &lt;- FALSE
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must return compatible vectors across groups.&quot;), 
+ .             i = &quot;Cannot combine NULL and non NULL results.&quot;, 
+ .             i = cnd_bullet_rowwise_unlist())
+ .     }
+ .     else if (inherits(e, &quot;dplyr:::mutate_not_vector&quot;)) {
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must be a vector, not {friendly_type_of(e$result)}.&quot;), 
+ .             i = cnd_bullet_rowwise_unlist())
+ .     }
+ .     else if (inherits(e, &quot;dplyr:::error_mutate_incompatible_combine&quot;)) {
+ .         show_group_details &lt;- FALSE
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must return compatible vectors across groups&quot;), 
+ .             i = cnd_bullet_combine_details(e$parent$x, e$parent$x_arg), 
+ .             i = cnd_bullet_combine_details(e$parent$y, e$parent$y_arg))
+ .     }
+ .     else {
+ .         bullets &lt;- c(i = cnd_bullet_column_info(), x = conditionMessage(e))
+ .     }
+ .     bullets &lt;- c(cnd_bullet_header(), bullets, i = if (show_group_details) cnd_bullet_cur_group_label())
+ .     abort(bullets, class = c(&quot;dplyr:::mutate_error&quot;, &quot;dplyr_error&quot;), 
+ .         error_name = error_name, error_expression = error_expression, 
+ .         parent = e, bullets = bullets)
+ . }, &quot;object &#39;weight&#39; not found&quot;, base::quote(mask$eval_all_mutate(quo)))
+9. h(simpleError(msg, call))
+10. abort(bullets, class = c(&quot;dplyr:::mutate_error&quot;, &quot;dplyr_error&quot;), 
+  .     error_name = error_name, error_expression = error_expression, 
+  .     parent = e, bullets = bullets)
+11. signal_abort(cnd)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># using rename()</span>
+<span class="n">ChickWeight</span> <span class="o">&lt;-</span> <span class="nf">rename</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Weight</span> <span class="o">=</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="group-by-and-summarize">
+<h2>group_by and summarize<a class="headerlink" href="#group-by-and-summarize" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">group_by(DATA_FRAME,</span> <span class="pre">COLUMN_NAME)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">select(GROUPED_DATA_FRAME,</span> <span class="pre">COLUMN_NAME</span> <span class="pre">=</span> <span class="pre">FORMULA)</span></code></p>
+<div class="section" id="example-average-weight-of-each-diet-group-on-last-day">
+<h3>Example: Average weight of each diet group on last day<a class="headerlink" href="#example-average-weight-of-each-diet-group-on-last-day" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we wanted to know both how many chicks were in each diet group and what the average weight of each group was on day 21. We can do this by combining <code class="docutils literal notranslate"><span class="pre">filter()</span></code>, <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> as shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove any existant grouping.</span>
+<span class="n">ChickWeight</span> <span class="o">&lt;-</span> <span class="nf">ungroup</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># without piping</span>
+<span class="n">ChickWeight_last_day</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Time</span> <span class="o">==</span> <span class="m">21</span><span class="p">)</span>
+<span class="n">ChickWeight_last_day</span> <span class="o">&lt;-</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="n">Diet</span><span class="p">)</span>
+<span class="nf">summarize</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="n">Count</span> <span class="o">=</span> <span class="nf">n</span><span class="p">(),</span> <span class="n">Avg_Weight</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 4 × 3</caption>
+<thead>
+	<tr><th scope=col>Diet</th><th scope=col>Count</th><th scope=col>Avg_Weight</th></tr>
+	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>1</td><td>16</td><td>177.7500</td></tr>
+	<tr><td>2</td><td>10</td><td>214.7000</td></tr>
+	<tr><td>3</td><td>10</td><td>270.3000</td></tr>
+	<tr><td>4</td><td> 9</td><td>238.5556</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># With piping</span>
+<span class="n">ChickWeight</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="m">21</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">group_by</span><span class="p">(</span><span class="n">Diet</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">summarize</span><span class="p">(</span><span class="n">Count</span> <span class="o">=</span> <span class="nf">n</span><span class="p">(),</span> <span class="n">Avg_Weight</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">ChickWeight</span> <span class="o">%&gt;%</span> <span class="nb">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="mi">21</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">group_by</span><span class="p">(</span><span class="n">Diet</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">summarize</span><span class="p">(</span><span class="n">Count</span> <span class="o">=</span> <span class="n">n</span><span class="p">(),</span> <span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;%&gt;%&quot;</span>
+<span class="ne">Traceback</span>:
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./exposition"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="data.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Data</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="ggplot2_library.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">ggplot2</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Corrin Clarkson<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

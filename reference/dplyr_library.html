@@ -404,40 +404,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in seq_len(head.end.idx):
-“first element used of &#39;length.out&#39; argument”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR while rich displaying an object: Error in seq_len(head.end.idx): argument must be coercible to non-negative integer
-
-Traceback:
-1. FUN(X[[i]], ...)
-2. tryCatch(withCallingHandlers({
- .     if (!mime %in% names(repr::mime2repr)) 
- .         stop(&quot;No repr_* for mimetype &quot;, mime, &quot; in repr::mime2repr&quot;)
- .     rpr &lt;- repr::mime2repr[[mime]](obj)
- .     if (is.null(rpr)) 
- .         return(NULL)
- .     prepare_content(is.raw(rpr), rpr)
- . }, error = error_handler), error = outer_handler)
-3. tryCatchList(expr, classes, parentenv, handlers)
-4. tryCatchOne(expr, names, parentenv, handlers[[1L]])
-5. doTryCatch(return(expr), name, parentenv, handler)
-6. withCallingHandlers({
- .     if (!mime %in% names(repr::mime2repr)) 
- .         stop(&quot;No repr_* for mimetype &quot;, mime, &quot; in repr::mime2repr&quot;)
- .     rpr &lt;- repr::mime2repr[[mime]](obj)
- .     if (is.null(rpr)) 
- .         return(NULL)
- .     prepare_content(is.raw(rpr), rpr)
- . }, error = error_handler)
-7. repr::mime2repr[[mime]](obj)
-8. repr_html.help_files_with_topic(obj)
-9. repr_help_files_with_topic_generic(obj, Rd2HTML)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

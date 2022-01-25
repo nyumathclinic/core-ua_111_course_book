@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,17 +33,17 @@
     
   <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
+    <script>
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ggplot2" href="ggplot2_library.html" />
-    <link rel="prev" title="Arithmetic with numbers" href="arithmetic.html" />
+    <link rel="prev" title="Data" href="data.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -72,6 +72,7 @@
     <a class="navbar-brand text-wrap" href="index.html">
       
       
+      
       <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
       
     </a>
@@ -87,12 +88,17 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   References
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exam_reference.html">
+   Exam Reference Page
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="base_r.html">
    Base R
@@ -106,6 +112,26 @@
    <li class="toctree-l2">
     <a class="reference internal" href="arithmetic.html">
      Arithmetic with numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_types.html">
+     Data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors.html">
+     Vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data.html">
+     Data
     </a>
    </li>
   </ul>
@@ -131,75 +157,15 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p class="caption" role="heading">
  <span class="caption-text">
   In Class Exercises
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="lesson02_solutions.html">
-   Lesson 2: Inroduction to R and JupyterHub
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson03_solutions.html">
-   Lesson 3 Variables and dataframes
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson04_solutions.html">
-   Lesson 4 Solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson05_solutions.html">
-   Lesson 5 -  Solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson06_solutions.html">
-   Lesson 6 -  Solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson08_solutions.html">
-   Lesson 08 - Solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson10_solutions.html">
-   Lesson 10 -  Solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson12_solutions.html">
-   Lesson 12 - Vectorization
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson13_solutions.html">
-   Lesson 13 - Evaluating a classifier
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson14_solutions.html">
-   Lesson 14 - Solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson16_solutions.html">
-   Lesson 16 -  Solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson17_solutions.html">
-   Lesson 17 -  Solutions
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson19_solutions.html">
-   Lesson 19 -  Solutions
+  <a class="reference internal" href="lesson01.html">
+   Lesson 1: Introduction to R and JupyterHub
   </a>
  </li>
 </ul>
@@ -262,6 +228,23 @@
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://coreua-111001-fall.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_public&urlpath=tree/core-ua_111_public/dplyr_library.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
 
         </div>
 
@@ -374,7 +357,7 @@
         
               <div>
                 
-  <div class="section" id="dplyr-library">
+  <div class="tex2jax_ignore mathjax_ignore section" id="dplyr-library">
 <h1>dplyr Library<a class="headerlink" href="#dplyr-library" title="Permalink to this headline">¶</a></h1>
 <p>The dplyr library is part of a family of R packages called the <a class="reference external" href="https://www.tidyverse.org/">tidyverse</a>. See the <a class="reference external" href="https://dplyr.tidyverse.org/reference/index.html">dplyr documentation</a> for a summary of all the functions in this library. See also the <a class="reference external" href="https://r4ds.had.co.nz/transform.html">Data Transformations</a> chapter of <em>R for Data Science</em> for more explanation and examples.</p>
 <div class="cell docutils container">
@@ -413,40 +396,6 @@
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the documentation for the built in ChickWeight dataset.</span>
 <span class="o">?</span><span class="n">ChickWeight</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in seq_len(head.end.idx):
-“first element used of &#39;length.out&#39; argument”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ERROR while rich displaying an object: Error in seq_len(head.end.idx): argument must be coercible to non-negative integer
-
-Traceback:
-1. FUN(X[[i]], ...)
-2. tryCatch(withCallingHandlers({
- .     if (!mime %in% names(repr::mime2repr)) 
- .         stop(&quot;No repr_* for mimetype &quot;, mime, &quot; in repr::mime2repr&quot;)
- .     rpr &lt;- repr::mime2repr[[mime]](obj)
- .     if (is.null(rpr)) 
- .         return(NULL)
- .     prepare_content(is.raw(rpr), rpr)
- . }, error = error_handler), error = outer_handler)
-3. tryCatchList(expr, classes, parentenv, handlers)
-4. tryCatchOne(expr, names, parentenv, handlers[[1L]])
-5. doTryCatch(return(expr), name, parentenv, handler)
-6. withCallingHandlers({
- .     if (!mime %in% names(repr::mime2repr)) 
- .         stop(&quot;No repr_* for mimetype &quot;, mime, &quot; in repr::mime2repr&quot;)
- .     rpr &lt;- repr::mime2repr[[mime]](obj)
- .     if (is.null(rpr)) 
- .         return(NULL)
- .     prepare_content(is.raw(rpr), rpr)
- . }, error = error_handler)
-7. repr::mime2repr[[mime]](obj)
-8. repr_html.help_files_with_topic(obj)
-9. repr_help_files_with_topic_generic(obj, Rd2HTML)
 </pre></div>
 </div>
 </div>
@@ -946,13 +895,13 @@ Traceback:
 </div>
 <div class="section" id="filter">
 <h2>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function allows you to extras the observations in a data frame that meet specified criteria. The general syntax is given below.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function allows you to extract the observations in a data frame that meet specified criteria. The general syntax is given below.</p>
 <p><code class="docutils literal notranslate"><span class="pre">filter(DATA_FRAME,</span> <span class="pre">CRITERIA)</span></code></p>
 <div class="section" id="criteria">
 <h3>Criteria<a class="headerlink" href="#criteria" title="Permalink to this headline">¶</a></h3>
 <p>Use <code class="docutils literal notranslate"><span class="pre">==</span></code> to extract observations that have a particular value in a given column.
 <code class="docutils literal notranslate"><span class="pre">COLUMN_NAME</span> <span class="pre">==</span> <span class="pre">VALUE</span></code></p>
-<p>Use in equalities (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>) to specify upper or lower bounds for the values in a given column.
+<p>Use inequalities (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>) to specify upper or lower bounds for the values in a given column.
 <code class="docutils literal notranslate"><span class="pre">COLUMN_NAME</span> <span class="pre">&gt;=</span> <span class="pre">BOUND</span></code></p>
 <div class="admonition warning" id="id5">
 <p class="admonition-title">Warning</p>
@@ -1446,11 +1395,11 @@ Traceback:
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="arithmetic.html" title="previous page">
+        <a class="left-prev" href="data.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Arithmetic with numbers</p>
+                <p class="prevnext-title">Data</p>
             </div>
         </a>
     </div>
@@ -1468,7 +1417,7 @@ Traceback:
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
