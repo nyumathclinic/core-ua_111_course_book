@@ -38,3 +38,6 @@ parts:
 #   - file: lesson16_solutions
 #   - file: lesson17_solutions
 #   - file: lesson19_solutions
+- caption: Homework
+  chapters:
+  - file: homework/homework_0
