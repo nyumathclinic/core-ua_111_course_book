@@ -6,7 +6,7 @@
 title: From Data to Discovery
 author: Corrin Clarkson
 repository:
-  url: "https://github.com/nyumathclinic/core-ua_111_public"
+  url: "https://github.com/nyumathclinic/core-ua_111_course_book"
 
 # Build configuration
 only_build_toc_files: true
