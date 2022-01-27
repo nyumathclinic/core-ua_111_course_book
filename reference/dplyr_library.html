@@ -906,8 +906,9 @@
 <p><code class="docutils literal notranslate"><span class="pre">INPUT_1a</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION_1(INPUT_1b)</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION_2(INPUT_2b)</span></code></p>
 <p>The example of piping above is equivalent to the following.</p>
 <p><code class="docutils literal notranslate"><span class="pre">FUNCTION(FUNCTION_1(INPUT_1a,</span> <span class="pre">INPUT_1b),</span> <span class="pre">INPUT_2b))</span></code></p>
-<p>In practice, we would usually use the following code to achieve the same output as the given example of piping.</p>
-<p><code class="docutils literal notranslate"><span class="pre">INPUT_2a</span> <span class="pre">&lt;-</span> <span class="pre">FUNCTION_1(INPUT_1a,</span> <span class="pre">INPUT_1b)</span> <span class="pre">FUNCTION_2(INPUT_2a,</span> <span class="pre">INPUT_2b)</span></code></p>
+<p>We could also use the following code to achieve the same output as the given example of piping.</p>
+<p><code class="docutils literal notranslate"><span class="pre">INPUT_2a</span> <span class="pre">&lt;-</span> <span class="pre">FUNCTION_1(INPUT_1a,</span> <span class="pre">INPUT_1b)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">FUNCTION_2(INPUT_2a,</span> <span class="pre">INPUT_2b)</span></code></p>
 <p>In the following sections, all examples will be given both with and without piping. You can choose the method that you find easiest to understand. Either way, it is a good idea to know the basics of piping so that you will be able to understand code that uses it.</p>
 </div>
 <div class="section" id="filter">
