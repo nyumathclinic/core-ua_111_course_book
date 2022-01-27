@@ -1182,163 +1182,25 @@
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># without piping</span>
 <span class="n">ChickWeight_last_day</span> <span class="o">&lt;-</span> <span class="nf">filter</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Time</span> <span class="o">==</span> <span class="m">21</span><span class="p">)</span>
 <span class="n">ChickWeight_last_day</span> <span class="o">&lt;-</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="n">Diet</span><span class="p">)</span>
-<span class="nf">summarize</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="n">Count</span> <span class="o">=</span> <span class="nf">n</span><span class="p">(),</span> <span class="n">Avg_Weight</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
+<span class="nf">summarize</span><span class="p">(</span><span class="n">ChickWeight_last_day</span><span class="p">,</span> <span class="n">Count</span> <span class="o">=</span> <span class="nf">n</span><span class="p">(),</span> <span class="n">Avg_Weight</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">Weight</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error: Problem with `summarise()` column `Avg_Weight`.
-ℹ `Avg_Weight = mean(weight)`.
-✖ object &#39;weight&#39; not found
-ℹ The error occurred in group 1: Diet = 1.
-Traceback:
-
-1. summarize(ChickWeight_last_day, Count = n(), Avg_Weight = mean(weight))
-2. summarise.grouped_df(ChickWeight_last_day, Count = n(), Avg_Weight = mean(weight))
-3. summarise_cols(.data, ..., caller_env = caller_env())
-4. withCallingHandlers({
- .     for (i in seq_along(dots)) {
- .         mask$across_cache_reset()
- .         context_poke(&quot;column&quot;, old_current_column)
- .         quosures &lt;- expand_across(dots[[i]])
- .         quosures_results &lt;- vector(mode = &quot;list&quot;, length = length(quosures))
- .         for (k in seq_along(quosures)) {
- .             quo &lt;- quosures[[k]]
- .             quo_data &lt;- attr(quo, &quot;dplyr:::data&quot;)
- .             if (!is.null(quo_data$column)) {
- .                 context_poke(&quot;column&quot;, quo_data$column)
- .             }
- .             chunks_k &lt;- mask$eval_all_summarise(quo)
- .             if (is.null(chunks_k)) {
- .                 next
- .             }
- .             types_k &lt;- withCallingHandlers(vec_ptype_common(!!!chunks_k), 
- .                 vctrs_error_incompatible_type = function(cnd) {
- .                   abort(class = &quot;dplyr:::error_summarise_incompatible_combine&quot;, 
- .                     parent = cnd)
- .                 })
- .             chunks_k &lt;- vec_cast_common(!!!chunks_k, .to = types_k)
- .             quosures_results[[k]] &lt;- list(chunks = chunks_k, 
- .                 types = types_k)
- .         }
- .         for (k in seq_along(quosures)) {
- .             quo &lt;- quosures[[k]]
- .             quo_data &lt;- attr(quo, &quot;dplyr:::data&quot;)
- .             quo_result &lt;- quosures_results[[k]]
- .             if (is.null(quo_result)) {
- .                 next
- .             }
- .             types_k &lt;- quo_result$types
- .             chunks_k &lt;- quo_result$chunks
- .             if (!quo_data$is_named &amp;&amp; is.data.frame(types_k)) {
- .                 chunks_extracted &lt;- .Call(dplyr_extract_chunks, 
- .                   chunks_k, types_k)
- .                 walk2(chunks_extracted, names(types_k), function(chunks_k_j, 
- .                   nm) {
- .                   mask$add_one(nm, chunks_k_j)
- .                 })
- .                 chunks &lt;- append(chunks, chunks_extracted)
- .                 types &lt;- append(types, as.list(types_k))
- .                 out_names &lt;- c(out_names, names(types_k))
- .             }
- .             else {
- .                 name &lt;- quo_data$name_auto
- .                 mask$add_one(name, chunks_k)
- .                 chunks &lt;- append(chunks, list(chunks_k))
- .                 types &lt;- append(types, list(types_k))
- .                 out_names &lt;- c(out_names, name)
- .             }
- .         }
- .     }
- .     recycle_info &lt;- .Call(dplyr_summarise_recycle_chunks, chunks, 
- .         mask$get_rows(), types)
- .     chunks &lt;- recycle_info$chunks
- .     sizes &lt;- recycle_info$sizes
- .     for (i in seq_along(chunks)) {
- .         result &lt;- vec_c(!!!chunks[[i]], .ptype = types[[i]])
- .         cols[[out_names[i]]] &lt;- result
- .     }
- . }, error = function(e) {
- .     local_call_step(dots = dots, .index = i, .fn = &quot;summarise&quot;, 
- .         .dot_data = inherits(e, &quot;rlang_error_data_pronoun_not_found&quot;))
- .     call_step &lt;- peek_call_step()
- .     error_name &lt;- call_step$error_name
- .     show_group_details &lt;- TRUE
- .     if (inherits(e, &quot;dplyr:::error_summarise_incompatible_combine&quot;)) {
- .         show_group_details &lt;- FALSE
- .         bullets &lt;- c(x = glue(&quot;`{error_name}` must return compatible vectors across groups&quot;, 
- .             .envir = peek_call_step()), i = cnd_bullet_combine_details(e$parent$x, 
- .             e$parent$x_arg), i = cnd_bullet_combine_details(e$parent$y, 
- .             e$parent$y_arg))
- .     }
- .     else if (inherits(e, &quot;dplyr:::summarise_unsupported_type&quot;)) {
- .         bullets &lt;- c(x = glue(&quot;`{error_name}` must be a vector, not {friendly_type_of(result)}.&quot;, 
- .             result = e$result), i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, &quot;dplyr:::summarise_incompatible_size&quot;)) {
- .         peek_mask()$set_current_group(e$group)
- .         bullets &lt;- c(x = glue(&quot;`{error_name}` must be size {or_1(expected_size)}, not {size}.&quot;, 
- .             expected_size = e$expected_size, size = e$size), 
- .             i = glue(&quot;An earlier column had size {expected_size}.&quot;, 
- .                 expected_size = e$expected_size))
- .     }
- .     else if (inherits(e, &quot;dplyr:::summarise_mixed_null&quot;)) {
- .         show_group_details &lt;- FALSE
- .         bullets &lt;- c(x = glue(&quot;`{error_name}` must return compatible vectors across groups.&quot;), 
- .             i = &quot;Cannot combine NULL and non NULL results.&quot;)
- .     }
- .     else {
- .         bullets &lt;- c(x = conditionMessage(e))
- .     }
- .     bullets &lt;- c(cnd_bullet_header(), i = cnd_bullet_column_info(), 
- .         bullets, i = if (show_group_details) cnd_bullet_cur_group_label())
- .     abort(bullets, class = &quot;dplyr_error&quot;)
- . })
-5. mask$eval_all_summarise(quo)
-6. mean(weight)
-7. .handleSimpleError(function (e) 
- . {
- .     local_call_step(dots = dots, .index = i, .fn = &quot;summarise&quot;, 
- .         .dot_data = inherits(e, &quot;rlang_error_data_pronoun_not_found&quot;))
- .     call_step &lt;- peek_call_step()
- .     error_name &lt;- call_step$error_name
- .     show_group_details &lt;- TRUE
- .     if (inherits(e, &quot;dplyr:::error_summarise_incompatible_combine&quot;)) {
- .         show_group_details &lt;- FALSE
- .         bullets &lt;- c(x = glue(&quot;`{error_name}` must return compatible vectors across groups&quot;, 
- .             .envir = peek_call_step()), i = cnd_bullet_combine_details(e$parent$x, 
- .             e$parent$x_arg), i = cnd_bullet_combine_details(e$parent$y, 
- .             e$parent$y_arg))
- .     }
- .     else if (inherits(e, &quot;dplyr:::summarise_unsupported_type&quot;)) {
- .         bullets &lt;- c(x = glue(&quot;`{error_name}` must be a vector, not {friendly_type_of(result)}.&quot;, 
- .             result = e$result), i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, &quot;dplyr:::summarise_incompatible_size&quot;)) {
- .         peek_mask()$set_current_group(e$group)
- .         bullets &lt;- c(x = glue(&quot;`{error_name}` must be size {or_1(expected_size)}, not {size}.&quot;, 
- .             expected_size = e$expected_size, size = e$size), 
- .             i = glue(&quot;An earlier column had size {expected_size}.&quot;, 
- .                 expected_size = e$expected_size))
- .     }
- .     else if (inherits(e, &quot;dplyr:::summarise_mixed_null&quot;)) {
- .         show_group_details &lt;- FALSE
- .         bullets &lt;- c(x = glue(&quot;`{error_name}` must return compatible vectors across groups.&quot;), 
- .             i = &quot;Cannot combine NULL and non NULL results.&quot;)
- .     }
- .     else {
- .         bullets &lt;- c(x = conditionMessage(e))
- .     }
- .     bullets &lt;- c(cnd_bullet_header(), i = cnd_bullet_column_info(), 
- .         bullets, i = if (show_group_details) cnd_bullet_cur_group_label())
- .     abort(bullets, class = &quot;dplyr_error&quot;)
- . }, &quot;object &#39;weight&#39; not found&quot;, base::quote(mean(weight)))
-8. h(simpleError(msg, call))
-9. abort(bullets, class = &quot;dplyr_error&quot;)
-10. signal_abort(cnd)
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 4 × 3</caption>
+<thead>
+	<tr><th scope=col>Diet</th><th scope=col>Count</th><th scope=col>Avg_Weight</th></tr>
+	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>1</td><td>16</td><td>177.7500</td></tr>
+	<tr><td>2</td><td>10</td><td>214.7000</td></tr>
+	<tr><td>3</td><td>10</td><td>270.3000</td></tr>
+	<tr><td>4</td><td> 9</td><td>238.5556</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1346,16 +1208,25 @@ Traceback:
 <span class="n">ChickWeight</span> <span class="o">%&gt;%</span> 
     <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="m">21</span><span class="p">)</span> <span class="o">%&gt;%</span>
     <span class="nf">group_by</span><span class="p">(</span><span class="n">Diet</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">Count</span> <span class="o">=</span> <span class="nf">n</span><span class="p">(),</span> <span class="n">Avg_Weight</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span>
+    <span class="nf">summarize</span><span class="p">(</span><span class="n">Count</span> <span class="o">=</span> <span class="nf">n</span><span class="p">(),</span> <span class="n">Avg_Weight</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">Weight</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">ChickWeight</span> <span class="o">%&gt;%</span> <span class="nb">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="mi">21</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">group_by</span><span class="p">(</span><span class="n">Diet</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="n">summarize</span><span class="p">(</span><span class="n">Count</span> <span class="o">=</span> <span class="n">n</span><span class="p">(),</span> <span class="p">:</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;%&gt;%&quot;</span>
-<span class="ne">Traceback</span>:
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 4 × 3</caption>
+<thead>
+	<tr><th scope=col>Diet</th><th scope=col>Count</th><th scope=col>Avg_Weight</th></tr>
+	<tr><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>1</td><td>16</td><td>177.7500</td></tr>
+	<tr><td>2</td><td>10</td><td>214.7000</td></tr>
+	<tr><td>3</td><td>10</td><td>270.3000</td></tr>
+	<tr><td>4</td><td> 9</td><td>238.5556</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 </div>
 </div>
