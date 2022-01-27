@@ -17,192 +17,38 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# with piping
-ChickWeight <- ChickWeight %>%
-    mutate(Weight = weight) %>%
-    select(-weight)
+# using rename()
+ChickWeight <- rename(ChickWeight, Weight = weight)
 ------------------
 
-Error: Problem with `mutate()` column `Weight`.
-[34mℹ[39m `Weight = weight`.
-[31m✖[39m object 'weight' not found
+Error: Can't rename columns that don't exist.
+[31m✖[39m Column `weight` doesn't exist.
 Traceback:
 
-1. ChickWeight %>% mutate(Weight = weight) %>% select(-weight)
-2. select(., -weight)
-3. mutate(., Weight = weight)
-4. mutate.data.frame(., Weight = weight)
-5. mutate_cols(.data, ..., caller_env = caller_env())
-6. withCallingHandlers({
- .     for (i in seq_along(dots)) {
- .         mask$across_cache_reset()
- .         context_poke("column", old_current_column)
- .         quosures <- expand_across(dots[[i]])
- .         quosures_results <- vector(mode = "list", length = length(quosures))
- .         for (k in seq_along(quosures)) {
- .             quo <- quosures[[k]]
- .             quo_data <- attr(quo, "dplyr:::data")
- .             if (!is.null(quo_data$column)) {
- .                 context_poke("column", quo_data$column)
- .             }
- .             chunks <- NULL
- .             result <- NULL
- .             if (quo_is_symbol(quo)) {
- .                 name <- as_string(quo_get_expr(quo))
- .                 if (name %in% names(new_columns)) {
- .                   result <- new_columns[[name]]
- .                   chunks <- mask$resolve(name)
- .                 }
- .                 else if (name %in% names(.data)) {
- .                   result <- .data[[name]]
- .                   chunks <- mask$resolve(name)
- .                 }
- .                 if (inherits(.data, "rowwise_df") && vec_is_list(result)) {
- .                   sizes <- list_sizes(result)
- .                   wrong <- which(sizes != 1)
- .                   if (length(wrong)) {
- .                     group <- wrong[1L]
- .                     mask$set_current_group(group)
- .                     abort(x_size = sizes[group], class = "dplyr:::mutate_incompatible_size")
- .                   }
- .                 }
- .             }
- .             if (is.null(chunks)) {
- .                 chunks <- mask$eval_all_mutate(quo)
- .             }
- .             if (is.null(chunks)) {
- .                 next
- .             }
- .             if (is.null(result)) {
- .                 if (length(rows) == 1) {
- .                   result <- chunks[[1]]
- .                 }
- .                 else {
- .                   result <- withCallingHandlers(vec_unchop(chunks <- vec_cast_common(!!!chunks), 
- .                     rows), vctrs_error_incompatible_type = function(cnd) {
- .                     abort(class = "dplyr:::error_mutate_incompatible_combine", 
- .                       parent = cnd)
- .                   })
- .                 }
- .             }
- .             quosures_results[[k]] <- list(result = result, chunks = chunks)
- .         }
- .         for (k in seq_along(quosures)) {
- .             quo <- quosures[[k]]
- .             quo_data <- attr(quo, "dplyr:::data")
- .             quo_result <- quosures_results[[k]]
- .             if (is.null(quo_result)) {
- .                 if (quo_data$is_named) {
- .                   name <- quo_data$name_given
- .                   new_columns[[name]] <- zap()
- .                   mask$remove(name)
- .                 }
- .                 next
- .             }
- .             result <- quo_result$result
- .             chunks <- quo_result$chunks
- .             if (!quo_data$is_named && is.data.frame(result)) {
- .                 new_columns[names(result)] <- result
- .                 mask$add_many(result, chunks)
- .             }
- .             else {
- .                 name <- quo_data$name_auto
- .                 new_columns[[name]] <- result
- .                 mask$add_one(name, chunks)
- .             }
- .         }
+1. rename(ChickWeight, Weight = weight)
+2. rename.data.frame(ChickWeight, Weight = weight)
+3. tidyselect::eval_rename(expr(c(...)), .data)
+4. rename_impl(data, names(data), as_quosure(expr, env), strict = strict, 
+ .     name_spec = name_spec)
+5. eval_select_impl(x, names, {
+ .     {
+ .         sel
  .     }
- . }, error = function(e) {
- .     local_call_step(dots = dots, .index = i, .fn = "mutate", 
- .         .dot_data = inherits(e, "rlang_error_data_pronoun_not_found"))
- .     call_step_envir <- peek_call_step()
- .     error_name <- call_step_envir$error_name
- .     error_expression <- call_step_envir$error_expression
- .     show_group_details <- TRUE
- .     if (inherits(e, "dplyr:::mutate_incompatible_size")) {
- .         size <- vec_size(rows[[mask$get_current_group()]])
- .         x_size <- e$x_size
- .         bullets <- c(i = cnd_bullet_column_info(), i = glue("`{error_name}` must be size {or_1(size)}, not {x_size}."), 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, "dplyr:::mutate_mixed_null")) {
- .         show_group_details <- FALSE
- .         bullets <- c(i = cnd_bullet_column_info(), x = glue("`{error_name}` must return compatible vectors across groups."), 
- .             i = "Cannot combine NULL and non NULL results.", 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, "dplyr:::mutate_not_vector")) {
- .         bullets <- c(i = cnd_bullet_column_info(), x = glue("`{error_name}` must be a vector, not {friendly_type_of(e$result)}."), 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, "dplyr:::error_mutate_incompatible_combine")) {
- .         show_group_details <- FALSE
- .         bullets <- c(i = cnd_bullet_column_info(), x = glue("`{error_name}` must return compatible vectors across groups"), 
- .             i = cnd_bullet_combine_details(e$parent$x, e$parent$x_arg), 
- .             i = cnd_bullet_combine_details(e$parent$y, e$parent$y_arg))
- .     }
- .     else {
- .         bullets <- c(i = cnd_bullet_column_info(), x = conditionMessage(e))
- .     }
- .     bullets <- c(cnd_bullet_header(), bullets, i = if (show_group_details) cnd_bullet_cur_group_label())
- .     abort(bullets, class = c("dplyr:::mutate_error", "dplyr_error"), 
- .         error_name = error_name, error_expression = error_expression, 
- .         parent = e, bullets = bullets)
- . }, warning = function(w) {
- .     if (check_muffled_warning(w)) {
- .         maybe_restart("muffleWarning")
- .     }
- .     local_call_step(dots = dots, .index = i, .fn = "mutate")
- .     warn(c(cnd_bullet_header(), i = cnd_bullet_column_info(), 
- .         i = conditionMessage(w), i = cnd_bullet_cur_group_label(what = "warning")))
- .     maybe_restart("muffleWarning")
+ . }, strict = strict, name_spec = name_spec, type = "rename")
+6. with_subscript_errors(vars_select_eval(vars, expr, strict, data = x, 
+ .     name_spec = name_spec, uniquely_named = uniquely_named, allow_rename = allow_rename, 
+ .     type = type), type = type)
+7. tryCatch(instrument_base_errors(expr), vctrs_error_subscript = function(cnd) {
+ .     cnd$subscript_action <- subscript_action(type)
+ .     cnd$subscript_elt <- "column"
+ .     cnd_signal(cnd)
  . })
-7. mask$eval_all_mutate(quo)
-8. .handleSimpleError(function (e) 
- . {
- .     local_call_step(dots = dots, .index = i, .fn = "mutate", 
- .         .dot_data = inherits(e, "rlang_error_data_pronoun_not_found"))
- .     call_step_envir <- peek_call_step()
- .     error_name <- call_step_envir$error_name
- .     error_expression <- call_step_envir$error_expression
- .     show_group_details <- TRUE
- .     if (inherits(e, "dplyr:::mutate_incompatible_size")) {
- .         size <- vec_size(rows[[mask$get_current_group()]])
- .         x_size <- e$x_size
- .         bullets <- c(i = cnd_bullet_column_info(), i = glue("`{error_name}` must be size {or_1(size)}, not {x_size}."), 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, "dplyr:::mutate_mixed_null")) {
- .         show_group_details <- FALSE
- .         bullets <- c(i = cnd_bullet_column_info(), x = glue("`{error_name}` must return compatible vectors across groups."), 
- .             i = "Cannot combine NULL and non NULL results.", 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, "dplyr:::mutate_not_vector")) {
- .         bullets <- c(i = cnd_bullet_column_info(), x = glue("`{error_name}` must be a vector, not {friendly_type_of(e$result)}."), 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, "dplyr:::error_mutate_incompatible_combine")) {
- .         show_group_details <- FALSE
- .         bullets <- c(i = cnd_bullet_column_info(), x = glue("`{error_name}` must return compatible vectors across groups"), 
- .             i = cnd_bullet_combine_details(e$parent$x, e$parent$x_arg), 
- .             i = cnd_bullet_combine_details(e$parent$y, e$parent$y_arg))
- .     }
- .     else {
- .         bullets <- c(i = cnd_bullet_column_info(), x = conditionMessage(e))
- .     }
- .     bullets <- c(cnd_bullet_header(), bullets, i = if (show_group_details) cnd_bullet_cur_group_label())
- .     abort(bullets, class = c("dplyr:::mutate_error", "dplyr_error"), 
- .         error_name = error_name, error_expression = error_expression, 
- .         parent = e, bullets = bullets)
- . }, "object 'weight' not found", base::quote(mask$eval_all_mutate(quo)))
-9. h(simpleError(msg, call))
-10. abort(bullets, class = c("dplyr:::mutate_error", "dplyr_error"), 
-  .     error_name = error_name, error_expression = error_expression, 
-  .     parent = e, bullets = bullets)
-11. signal_abort(cnd)
-ERROR: Error: Problem with `mutate()` column `Weight`.
-[34mℹ[39m `Weight = weight`.
-[31m✖[39m object 'weight' not found
+8. tryCatchList(expr, classes, parentenv, handlers)
+9. tryCatchOne(expr, names, parentenv, handlers[[1L]])
+10. value[[3L]](cond)
+11. cnd_signal(cnd)
+12. rlang:::signal_abort(x)
+ERROR: Error: Can't rename columns that don't exist.
+[31m✖[39m Column `weight` doesn't exist.
 
 

@@ -377,12 +377,12 @@
   <div class="tex2jax_ignore mathjax_ignore section" id="dplyr-library">
 <h1>dplyr Library<a class="headerlink" href="#dplyr-library" title="Permalink to this headline">¶</a></h1>
 <p>The dplyr library is part of a family of R packages called the <a class="reference external" href="https://www.tidyverse.org/">tidyverse</a>. See the <a class="reference external" href="https://dplyr.tidyverse.org/reference/index.html">dplyr documentation</a> for a summary of all the functions in this library. See also the <a class="reference external" href="https://r4ds.had.co.nz/transform.html">Data Transformations</a> chapter of <em>R for Data Science</em> for more explanation and examples.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can ignore the warning about objects from other libraries being masked.</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
 
-<span class="c1"># Executing the above command twice will get rid of the warning message.</span>
+<span class="c1"># Running the above command twice will get rid of the warning message.</span>
 </pre></div>
 </div>
 </div>
@@ -404,11 +404,11 @@
 </div>
 <div class="admonition note" id="html-admonition">
 <p class="admonition-title">Note</p>
-<p>If you try to execute a dplyr function before loading the library, you will get an error messages stating that R could not find the function.</p>
+<p>If you try to run a dplyr function before loading the library, you will get an error messages stating that R could not find the function.</p>
 </div>
 <div class="section" id="example-data">
 <h2>Example data<a class="headerlink" href="#example-data" title="Permalink to this headline">¶</a></h2>
-<p>In this section, we will use the <code class="docutils literal notranslate"><span class="pre">ChickWeight</span></code> dataset which is built into R. Execute <code class="docutils literal notranslate"><span class="pre">?ChickWeight</span></code> in a code cell to view the documentation for this dataset.</p>
+<p>In this section, we will use the <code class="docutils literal notranslate"><span class="pre">ChickWeight</span></code> dataset which is built into R. Fun <code class="docutils literal notranslate"><span class="pre">?ChickWeight</span></code> in a code cell to view the documentation for this dataset.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Open the documentation for the built in ChickWeight dataset.</span>
@@ -419,7 +419,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Execute this code to restore ChickWieght to its original state.</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run this code to restore ChickWieght to its original state.</span>
 <span class="nf">rm</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">)</span>
 
 <span class="c1"># If you see a warning message indicating that ChickWeight was not found, </span>
@@ -1120,6 +1120,13 @@
 </div>
 </div>
 </div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">rm</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># with piping</span>
@@ -1129,193 +1136,42 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error: Problem with `mutate()` column `Weight`.
-ℹ `Weight = weight`.
-✖ object &#39;weight&#39; not found
-Traceback:
-
-1. ChickWeight %&gt;% mutate(Weight = weight) %&gt;% select(-weight)
-2. select(., -weight)
-3. mutate(., Weight = weight)
-4. mutate.data.frame(., Weight = weight)
-5. mutate_cols(.data, ..., caller_env = caller_env())
-6. withCallingHandlers({
- .     for (i in seq_along(dots)) {
- .         mask$across_cache_reset()
- .         context_poke(&quot;column&quot;, old_current_column)
- .         quosures &lt;- expand_across(dots[[i]])
- .         quosures_results &lt;- vector(mode = &quot;list&quot;, length = length(quosures))
- .         for (k in seq_along(quosures)) {
- .             quo &lt;- quosures[[k]]
- .             quo_data &lt;- attr(quo, &quot;dplyr:::data&quot;)
- .             if (!is.null(quo_data$column)) {
- .                 context_poke(&quot;column&quot;, quo_data$column)
- .             }
- .             chunks &lt;- NULL
- .             result &lt;- NULL
- .             if (quo_is_symbol(quo)) {
- .                 name &lt;- as_string(quo_get_expr(quo))
- .                 if (name %in% names(new_columns)) {
- .                   result &lt;- new_columns[[name]]
- .                   chunks &lt;- mask$resolve(name)
- .                 }
- .                 else if (name %in% names(.data)) {
- .                   result &lt;- .data[[name]]
- .                   chunks &lt;- mask$resolve(name)
- .                 }
- .                 if (inherits(.data, &quot;rowwise_df&quot;) &amp;&amp; vec_is_list(result)) {
- .                   sizes &lt;- list_sizes(result)
- .                   wrong &lt;- which(sizes != 1)
- .                   if (length(wrong)) {
- .                     group &lt;- wrong[1L]
- .                     mask$set_current_group(group)
- .                     abort(x_size = sizes[group], class = &quot;dplyr:::mutate_incompatible_size&quot;)
- .                   }
- .                 }
- .             }
- .             if (is.null(chunks)) {
- .                 chunks &lt;- mask$eval_all_mutate(quo)
- .             }
- .             if (is.null(chunks)) {
- .                 next
- .             }
- .             if (is.null(result)) {
- .                 if (length(rows) == 1) {
- .                   result &lt;- chunks[[1]]
- .                 }
- .                 else {
- .                   result &lt;- withCallingHandlers(vec_unchop(chunks &lt;- vec_cast_common(!!!chunks), 
- .                     rows), vctrs_error_incompatible_type = function(cnd) {
- .                     abort(class = &quot;dplyr:::error_mutate_incompatible_combine&quot;, 
- .                       parent = cnd)
- .                   })
- .                 }
- .             }
- .             quosures_results[[k]] &lt;- list(result = result, chunks = chunks)
- .         }
- .         for (k in seq_along(quosures)) {
- .             quo &lt;- quosures[[k]]
- .             quo_data &lt;- attr(quo, &quot;dplyr:::data&quot;)
- .             quo_result &lt;- quosures_results[[k]]
- .             if (is.null(quo_result)) {
- .                 if (quo_data$is_named) {
- .                   name &lt;- quo_data$name_given
- .                   new_columns[[name]] &lt;- zap()
- .                   mask$remove(name)
- .                 }
- .                 next
- .             }
- .             result &lt;- quo_result$result
- .             chunks &lt;- quo_result$chunks
- .             if (!quo_data$is_named &amp;&amp; is.data.frame(result)) {
- .                 new_columns[names(result)] &lt;- result
- .                 mask$add_many(result, chunks)
- .             }
- .             else {
- .                 name &lt;- quo_data$name_auto
- .                 new_columns[[name]] &lt;- result
- .                 mask$add_one(name, chunks)
- .             }
- .         }
- .     }
- . }, error = function(e) {
- .     local_call_step(dots = dots, .index = i, .fn = &quot;mutate&quot;, 
- .         .dot_data = inherits(e, &quot;rlang_error_data_pronoun_not_found&quot;))
- .     call_step_envir &lt;- peek_call_step()
- .     error_name &lt;- call_step_envir$error_name
- .     error_expression &lt;- call_step_envir$error_expression
- .     show_group_details &lt;- TRUE
- .     if (inherits(e, &quot;dplyr:::mutate_incompatible_size&quot;)) {
- .         size &lt;- vec_size(rows[[mask$get_current_group()]])
- .         x_size &lt;- e$x_size
- .         bullets &lt;- c(i = cnd_bullet_column_info(), i = glue(&quot;`{error_name}` must be size {or_1(size)}, not {x_size}.&quot;), 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, &quot;dplyr:::mutate_mixed_null&quot;)) {
- .         show_group_details &lt;- FALSE
- .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must return compatible vectors across groups.&quot;), 
- .             i = &quot;Cannot combine NULL and non NULL results.&quot;, 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, &quot;dplyr:::mutate_not_vector&quot;)) {
- .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must be a vector, not {friendly_type_of(e$result)}.&quot;), 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, &quot;dplyr:::error_mutate_incompatible_combine&quot;)) {
- .         show_group_details &lt;- FALSE
- .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must return compatible vectors across groups&quot;), 
- .             i = cnd_bullet_combine_details(e$parent$x, e$parent$x_arg), 
- .             i = cnd_bullet_combine_details(e$parent$y, e$parent$y_arg))
- .     }
- .     else {
- .         bullets &lt;- c(i = cnd_bullet_column_info(), x = conditionMessage(e))
- .     }
- .     bullets &lt;- c(cnd_bullet_header(), bullets, i = if (show_group_details) cnd_bullet_cur_group_label())
- .     abort(bullets, class = c(&quot;dplyr:::mutate_error&quot;, &quot;dplyr_error&quot;), 
- .         error_name = error_name, error_expression = error_expression, 
- .         parent = e, bullets = bullets)
- . }, warning = function(w) {
- .     if (check_muffled_warning(w)) {
- .         maybe_restart(&quot;muffleWarning&quot;)
- .     }
- .     local_call_step(dots = dots, .index = i, .fn = &quot;mutate&quot;)
- .     warn(c(cnd_bullet_header(), i = cnd_bullet_column_info(), 
- .         i = conditionMessage(w), i = cnd_bullet_cur_group_label(what = &quot;warning&quot;)))
- .     maybe_restart(&quot;muffleWarning&quot;)
- . })
-7. mask$eval_all_mutate(quo)
-8. .handleSimpleError(function (e) 
- . {
- .     local_call_step(dots = dots, .index = i, .fn = &quot;mutate&quot;, 
- .         .dot_data = inherits(e, &quot;rlang_error_data_pronoun_not_found&quot;))
- .     call_step_envir &lt;- peek_call_step()
- .     error_name &lt;- call_step_envir$error_name
- .     error_expression &lt;- call_step_envir$error_expression
- .     show_group_details &lt;- TRUE
- .     if (inherits(e, &quot;dplyr:::mutate_incompatible_size&quot;)) {
- .         size &lt;- vec_size(rows[[mask$get_current_group()]])
- .         x_size &lt;- e$x_size
- .         bullets &lt;- c(i = cnd_bullet_column_info(), i = glue(&quot;`{error_name}` must be size {or_1(size)}, not {x_size}.&quot;), 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, &quot;dplyr:::mutate_mixed_null&quot;)) {
- .         show_group_details &lt;- FALSE
- .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must return compatible vectors across groups.&quot;), 
- .             i = &quot;Cannot combine NULL and non NULL results.&quot;, 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, &quot;dplyr:::mutate_not_vector&quot;)) {
- .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must be a vector, not {friendly_type_of(e$result)}.&quot;), 
- .             i = cnd_bullet_rowwise_unlist())
- .     }
- .     else if (inherits(e, &quot;dplyr:::error_mutate_incompatible_combine&quot;)) {
- .         show_group_details &lt;- FALSE
- .         bullets &lt;- c(i = cnd_bullet_column_info(), x = glue(&quot;`{error_name}` must return compatible vectors across groups&quot;), 
- .             i = cnd_bullet_combine_details(e$parent$x, e$parent$x_arg), 
- .             i = cnd_bullet_combine_details(e$parent$y, e$parent$y_arg))
- .     }
- .     else {
- .         bullets &lt;- c(i = cnd_bullet_column_info(), x = conditionMessage(e))
- .     }
- .     bullets &lt;- c(cnd_bullet_header(), bullets, i = if (show_group_details) cnd_bullet_cur_group_label())
- .     abort(bullets, class = c(&quot;dplyr:::mutate_error&quot;, &quot;dplyr_error&quot;), 
- .         error_name = error_name, error_expression = error_expression, 
- .         parent = e, bullets = bullets)
- . }, &quot;object &#39;weight&#39; not found&quot;, base::quote(mask$eval_all_mutate(quo)))
-9. h(simpleError(msg, call))
-10. abort(bullets, class = c(&quot;dplyr:::mutate_error&quot;, &quot;dplyr_error&quot;), 
-  .     error_name = error_name, error_expression = error_expression, 
-  .     parent = e, bullets = bullets)
-11. signal_abort(cnd)
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># using rename()</span>
 <span class="n">ChickWeight</span> <span class="o">&lt;-</span> <span class="nf">rename</span><span class="p">(</span><span class="n">ChickWeight</span><span class="p">,</span> <span class="n">Weight</span> <span class="o">=</span> <span class="n">weight</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error: Can&#39;t rename columns that don&#39;t exist.
+✖ Column `weight` doesn&#39;t exist.
+Traceback:
+
+1. rename(ChickWeight, Weight = weight)
+2. rename.data.frame(ChickWeight, Weight = weight)
+3. tidyselect::eval_rename(expr(c(...)), .data)
+4. rename_impl(data, names(data), as_quosure(expr, env), strict = strict, 
+ .     name_spec = name_spec)
+5. eval_select_impl(x, names, {
+ .     {
+ .         sel
+ .     }
+ . }, strict = strict, name_spec = name_spec, type = &quot;rename&quot;)
+6. with_subscript_errors(vars_select_eval(vars, expr, strict, data = x, 
+ .     name_spec = name_spec, uniquely_named = uniquely_named, allow_rename = allow_rename, 
+ .     type = type), type = type)
+7. tryCatch(instrument_base_errors(expr), vctrs_error_subscript = function(cnd) {
+ .     cnd$subscript_action &lt;- subscript_action(type)
+ .     cnd$subscript_elt &lt;- &quot;column&quot;
+ .     cnd_signal(cnd)
+ . })
+8. tryCatchList(expr, classes, parentenv, handlers)
+9. tryCatchOne(expr, names, parentenv, handlers[[1L]])
+10. value[[3L]](cond)
+11. cnd_signal(cnd)
+12. rlang:::signal_abort(x)
 </pre></div>
 </div>
 </div>
