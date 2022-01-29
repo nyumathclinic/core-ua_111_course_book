@@ -8,23 +8,27 @@ parts:
 - caption: Reference
   chapters:
 #  - file: exam_reference
-  - file: reference/base_r
+  - file: reference/r_basics
     sections:
     - file: reference/arithmetic
     - file: reference/variables
     - file: reference/data_types
     - file: reference/vectors
-    - file: reference/numerical_vectors
-    - file: reference/data_sets
-  - file: reference/dplyr_library
-  - file: reference/ggplot2_library
+    - file: reference/vectors_numerical
+  - file: reference/data
+    sections:
+    - file: reference/data_loading
+    - file: reference/data_frames
+    - file: reference/dplyr_library
+    - file: reference/ggplot2_library
   - file: reference/numerical_models
   - file: reference/outside_sources
 - caption: In-Class Exercises
   chapters:
   - file: in-class_exercises/lesson01
   - file: in-class_exercises/lesson02
-#  - file: lesson03_solutions
+  - file: in-class_exercises/lesson03
+  - file: in-class_exercises/lesson04
 #  - file: lesson04_solutions
 #  - file: lesson05_solutions
 #  - file: lesson06_solutions
