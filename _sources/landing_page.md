@@ -21,9 +21,9 @@ This site is intended to serve as reference for students enrolled in the Spring 
 - [](base_r:variables)
 - [](base_r:data_types) 
 - [](base_r:vectors) 
-- [](base_r:numerical_vectors)
+- [](vectors_computing)
 - [](in-class_exercises:lesson02)
-- Homework 1
+- [](homework01)
 
 
 ### Lesson 3
