@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Base R" href="reference/base_r.html" />
+    <link rel="next" title="R basics" href="reference/r_basics.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -94,8 +94,8 @@
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="reference/base_r.html">
-   Base R
+  <a class="reference internal" href="reference/r_basics.html">
+   R basics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -124,26 +124,43 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="reference/numerical_vectors.html">
+    <a class="reference internal" href="reference/vectors_numerical.html">
      Numerical Vectors
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="reference/data_sets.html">
-     Data sets
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="reference/dplyr_library.html">
-   dplyr Library
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="reference/data.html">
+   Exploring Data
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="reference/ggplot2_library.html">
-   ggplot2
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reference/data_loading.html">
+     Loading data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reference/data_frames.html">
+     Working with data frames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reference/dplyr_library.html">
+     dplyr Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reference/ggplot2_library.html">
+     ggplot2
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="reference/numerical_models.html">
@@ -170,6 +187,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="in-class_exercises/lesson02.html">
    Lesson 2 Variables and Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="in-class_exercises/lesson03.html">
+   Lesson 3 Data sets and more vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="in-class_exercises/lesson04.html">
+   Lesson 4: Mutate, arrange, piping
   </a>
  </li>
 </ul>
@@ -260,6 +287,33 @@
    Spring 2022 CORE-UA 111
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recommended-sequence">
+   Recommended sequence
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lesson-1">
+     Lesson 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lesson-2">
+     Lesson 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lesson-3">
+     Lesson 3
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#lesson-4">
+     Lesson 4
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -276,6 +330,49 @@
 <div class="section" id="spring-2022-core-ua-111">
 <h2>Spring 2022 CORE-UA 111<a class="headerlink" href="#spring-2022-core-ua-111" title="Permalink to this headline">¶</a></h2>
 <p>This site is intended to serve as reference for students enrolled in the Spring 2022 New York University quantitative reasoning course CORE-UA 111 From Data to Discovery taught by Prof. Corrin Clarkson.</p>
+</div>
+<div class="section" id="recommended-sequence">
+<h2>Recommended sequence<a class="headerlink" href="#recommended-sequence" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="lesson-1">
+<h3>Lesson 1<a class="headerlink" href="#lesson-1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="reference/r_basics.html#r-basics"><span class="std std-ref">R basics</span></a></p></li>
+<li><p><a class="reference internal" href="reference/arithmetic.html#r-basics-arithmetic"><span class="std std-ref">Arithmetic with numbers</span></a></p></li>
+<li><p><a class="reference internal" href="in-class_exercises/lesson01.html#in-class-exercises-lesson01"><span class="std std-ref">Lesson 1: Introduction to R and JupyterHub</span></a></p></li>
+<li><p><a class="reference internal" href="homework/homework_0.html#homework00"><span class="std std-ref">Homework 0</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="lesson-2">
+<h3>Lesson 2<a class="headerlink" href="#lesson-2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="reference/variables.html#base-r-variables"><span class="std std-ref">Variables</span></a></p></li>
+<li><p><a class="reference internal" href="reference/data_types.html#base-r-data-types"><span class="std std-ref">Data types</span></a></p></li>
+<li><p><a class="reference internal" href="reference/vectors.html#base-r-vectors"><span class="std std-ref">Vectors</span></a></p></li>
+<li><p><a class="reference internal" href="reference/vectors_numerical.html#base-r-numerical-vectors"><span class="std std-ref">Numerical Vectors</span></a></p></li>
+<li><p><a class="reference internal" href="in-class_exercises/lesson02.html#in-class-exercises-lesson02"><span class="std std-ref">Lesson 2 Variables and Vectors</span></a></p></li>
+<li><p>Homework 1</p></li>
+</ul>
+</div>
+<div class="section" id="lesson-3">
+<h3>Lesson 3<a class="headerlink" href="#lesson-3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="reference/vectors_numerical.html#r-basics-numerical-vectors-functions"><span class="std std-ref">Useful functions</span></a></p></li>
+<li><p><a class="reference internal" href="reference/data_loading.html#loading"><span class="std std-ref">Loading data</span></a></p></li>
+<li><p><a class="reference internal" href="reference/data_frames.html#frames"><span class="std std-ref">Working with data frames</span></a></p></li>
+<li><p><a class="reference internal" href="in-class_exercises/lesson03.html#in-class-exercises-lesson03"><span class="std std-ref">Lesson 3 Data sets and more vectors</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="lesson-4">
+<h3>Lesson 4<a class="headerlink" href="#lesson-4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="reference/dplyr_library.html#dplyr"><span class="std std-ref">dplyr Library</span></a></p></li>
+<li><p><a class="reference internal" href="reference/dplyr_library.html#arrange"><span class="std std-ref">arrange</span></a></p></li>
+<li><p><a class="reference internal" href="reference/dplyr_library.html#piping"><span class="std std-ref">Piping</span></a></p></li>
+<li><p><a class="reference internal" href="in-class_exercises/lesson04.html#in-class-exercises-lesson04"><span class="std std-ref">Lesson 4: Mutate, arrange, piping</span></a></p></li>
+<li><p>Lab Worksheet 1</p></li>
+<li><p>Homework 2</p></li>
+</ul>
+</div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -315,10 +412,10 @@
 <div class='prev-next-bottom'>
     
      <div id="next">
-        <a class="right-next" href="reference/base_r.html" title="next page">
+        <a class="right-next" href="reference/r_basics.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Base R</p>
+                <p class="prevnext-title">R basics</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -4,7 +4,7 @@
 - [JupyterNotebook](https://jupyter-notebook.readthedocs.io/en/stable/)
 
 ### R Language and Libraries
-- [R](https://www.rdocumentation.org/)
+- [R](https://www.r-project.org/)
 - [dplyr](https://dplyr.tidyverse.org/)
 - [ggplot2](https://ggplot2.tidyverse.org/)
 
@@ -12,3 +12,7 @@
 - [R for Datascience by Wickham and Grolemund](https://r4ds.had.co.nz/)
 - [R Cookbook by Long and Teetor](https://rc2e.com/)
 - [R Graphics Cookbook by Chang](https://r-graphics.org/)
+
+```python
+
+```

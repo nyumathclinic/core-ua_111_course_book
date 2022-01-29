@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Data types &#8212; From Data to Discovery</title>
+    <title>Exploring Data &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Vectors" href="vectors.html" />
-    <link rel="prev" title="Variables" href="variables.html" />
+    <link rel="next" title="Loading data" href="data_loading.html" />
+    <link rel="prev" title="Numerical Vectors" href="vectors_numerical.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,16 +94,16 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="r_basics.html">
    R basics
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="arithmetic.html">
      Arithmetic with numbers
@@ -116,8 +114,8 @@
      Variables
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_types.html">
      Data types
     </a>
    </li>
@@ -133,11 +131,11 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="data.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
    Exploring Data
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
@@ -255,7 +253,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/reference/data_types.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/reference/data.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -281,7 +279,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/reference/data_types.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/reference/data.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -297,29 +295,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#numeric-integers-and-doubles">
-   Numeric: integers and doubles
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#character">
-   Character
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#logical">
-   Logical
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -328,113 +303,16 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="data-types">
-<span id="base-r-data-types"></span><h1>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h1>
-<p>All data in R has an associated type, the type refers to the format in which the data is stored. Use <code class="docutils literal notranslate"><span class="pre">typeof()</span></code> to determine the data type of an object.</p>
-<p><code class="docutils literal notranslate"><span class="pre">typeof(VARIABLE_NAME)</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="s">&#39;Hello! How are you?&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'character'</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="m">3.1415</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'double'</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'logical'</div></div>
-</div>
-<div class="section" id="numeric-integers-and-doubles">
-<h2>Numeric: integers and doubles<a class="headerlink" href="#numeric-integers-and-doubles" title="Permalink to this headline">¶</a></h2>
-<p>Numeric data comes in two main types: integers and doubles. <em>Integers</em> are whole numbers like 1, 2, 0, -1000, and 54. <em>Doubles</em> are numbers that can be represented by fractions or decimals like 3.14159, 0.25, and 0.33.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Whole numbers are sometimes stored as doubles as they can also be represented as fractions or decimals
-$<span class="math notranslate nohighlight">\(3 = \frac{3}{1} = 3.0 \)</span>$</p>
-</div>
-</div>
-<div class="section" id="character">
-<h2>Character<a class="headerlink" href="#character" title="Permalink to this headline">¶</a></h2>
-<p>Character data usually contain information like words, sentences and paragraphs. They are always surrounded by matching quote marks.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="s">&#39;apple&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'apple'</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="s">&quot;Yesturday, I went to the store.&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'Yesturday, I went to the store.'</div></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><b>Don’t omit the quote marks.</b> <code>’smile’</code> is the word smile and <code>smile</code> is a variable named smile.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="s">&#39;smile&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'character'</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="n">smile</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">typeof</span><span class="p">(</span><span class="n">smile</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;smile&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">typeof</span><span class="p">(</span><span class="n">smile</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="logical">
-<h2>Logical<a class="headerlink" href="#logical" title="Permalink to this headline">¶</a></h2>
-<p>Logical data has two possible values: <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="kc">TRUE</span>
-<span class="kc">FALSE</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">TRUE</div><div class="output text_html">FALSE</div></div>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><b>Pay attention to capitalization.</b> <code>TRUE</code> and <code>FALSE</code> are logical data values, but <code>true</code> and <code>false</code> are just variables with confusing names.</p>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="exploring-data">
+<span id="data"></span><h1>Exploring Data<a class="headerlink" href="#exploring-data" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will learn how to work with data sets.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data_loading.html">Loading data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_frames.html">Working with data frames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dplyr_library.html">dplyr Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ggplot2_library.html">ggplot2</a></li>
+</ul>
 </div>
 </div>
 
@@ -468,19 +346,19 @@ $<span class="math notranslate nohighlight">\(3 = \frac{3}{1} = 3.0 \)</span>$</
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="variables.html" title="previous page">
+        <a class="left-prev" href="vectors_numerical.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Variables</p>
+                <p class="prevnext-title">Numerical Vectors</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="vectors.html" title="next page">
+        <a class="right-next" href="data_loading.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Vectors</p>
+                <p class="prevnext-title">Loading data</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

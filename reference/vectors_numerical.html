@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vectors &#8212; From Data to Discovery</title>
+    <title>Numerical Vectors &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -51,8 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Numerical Vectors" href="vectors_numerical.html" />
-    <link rel="prev" title="Data types" href="data_types.html" />
+    <link rel="next" title="Exploring Data" href="data.html" />
+    <link rel="prev" title="Vectors" href="vectors.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -119,13 +121,13 @@
      Data types
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors.html">
      Vectors
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="vectors_numerical.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Numerical Vectors
     </a>
    </li>
@@ -253,7 +255,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/reference/vectors.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/reference/vectors_numerical.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -279,7 +281,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/reference/vectors.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/reference/vectors_numerical.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -301,25 +303,40 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constructing-vectors">
-   Constructing vectors
+  <a class="reference internal nav-link" href="#computing-with-vectors">
+   Computing with vectors
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#useful-functions">
+   Useful functions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-many-vectors">
-     Example: many vectors
+    <a class="reference internal nav-link" href="#min-and-max">
+     Min and max
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#length">
+     Length
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sum">
+     Sum
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mean-a-k-a-average">
+     Mean a.k.a. average
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#type-coercion">
-   Type coercion
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#combining-vectors">
-   Combining vectors
+  <a class="reference internal nav-link" href="#round">
+   Round
   </a>
  </li>
 </ul>
@@ -333,20 +350,15 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="vectors">
-<span id="base-r-vectors"></span><h1>Vectors<a class="headerlink" href="#vectors" title="Permalink to this headline">¶</a></h1>
-<p>In R, <em>vectors</em> are ordered collections of entries where each entry has the same type.</p>
-<div class="section" id="constructing-vectors">
-<h2>Constructing vectors<a class="headerlink" href="#constructing-vectors" title="Permalink to this headline">¶</a></h2>
-<p>We use <code class="docutils literal notranslate"><span class="pre">c()</span></code> to combine multiple values into a single vector.</p>
-<p><code class="docutils literal notranslate"><span class="pre">c(VALUE_1,</span> <span class="pre">VALUE_2,</span> <span class="pre">VALUE_3,...)</span></code></p>
-<p>Vectors of consecutive integers can be constructed using the colon operator.</p>
-<p><code class="docutils literal notranslate"><span class="pre">START_VALUE:END_VALUE</span></code></p>
-<div class="section" id="example-many-vectors">
-<h3>Example: many vectors<a class="headerlink" href="#example-many-vectors" title="Permalink to this headline">¶</a></h3>
+  <div class="tex2jax_ignore mathjax_ignore section" id="numerical-vectors">
+<span id="base-r-numerical-vectors"></span><h1>Numerical Vectors<a class="headerlink" href="#numerical-vectors" title="Permalink to this headline">¶</a></h1>
+<p>A numerical vector is simply a vector whose entries are numbers.</p>
+<div class="section" id="computing-with-vectors">
+<span id="base-r-numerical-vectors-computing"></span><h2>Computing with vectors<a class="headerlink" href="#computing-with-vectors" title="Permalink to this headline">¶</a></h2>
+<p>Arithmetic operations that combine a vector with a single number distributed to all entries in the vector.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">11</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">)</span><span class="o">*</span><span class="m">5</span> <span class="c1"># Each entry is multiplied by five.</span>
 </pre></div>
 </div>
 </div>
@@ -356,12 +368,12 @@
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1</li><li>3</li><li>5</li><li>7</li><li>9</li><li>11</li></ol>
+<ol class=list-inline><li>5</li><li>20</li><li>35</li></ol>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1.75</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">7</span><span class="p">)</span><span class="m">-2</span> <span class="c1"># Two is subtracted from each entry.</span>
 </pre></div>
 </div>
 </div>
@@ -371,12 +383,13 @@
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1.75</li><li>0.5</li><li>100</li></ol>
+<ol class=list-inline><li>-1</li><li>2</li><li>5</li></ol>
 </div></div>
 </div>
+<p>Arithmetic operations that combine multiple vectors are performed entry-by-entry.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="s">&#39;dog&#39;</span><span class="p">,</span> <span class="s">&#39;turtle&#39;</span><span class="p">,</span> <span class="s">&#39;fish&#39;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span> <span class="o">-</span> <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">4</span><span class="p">)</span> <span class="c1"># Same output as c(1+6, 2-5, 3-4)</span>
 </pre></div>
 </div>
 </div>
@@ -386,12 +399,12 @@
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>'cat'</li><li>'dog'</li><li>'turtle'</li><li>'fish'</li></ol>
+<ol class=list-inline><li>-5</li><li>-3</li><li>-1</li></ol>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">:</span><span class="m">20</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">)</span> <span class="o">*</span> <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">4</span><span class="p">)</span> <span class="c1"># Same output as c(1*6, 2*5, 3*4)</span>
 </pre></div>
 </div>
 </div>
@@ -401,12 +414,105 @@
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li></ol>
+<ol class=list-inline><li>6</li><li>10</li><li>12</li></ol>
 </div></div>
+</div>
+</div>
+<div class="section" id="useful-functions">
+<span id="r-basics-numerical-vectors-functions"></span><h2>Useful functions<a class="headerlink" href="#useful-functions" title="Permalink to this headline">¶</a></h2>
+<p>Most functions in this section use the following syntax.</p>
+<p><code class="docutils literal notranslate"><span class="pre">FUNCTION_NAME(VECTOR)</span></code></p>
+<p>For more information about a particular function, access the documentation by running <code class="docutils literal notranslate"><span class="pre">?FUNCTION_NAME</span></code> where <code class="docutils literal notranslate"><span class="pre">FUNCTION_NAME</span></code> is replaced by the name of the function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Store ten random numbers in a the variable ten_numbers</span>
+<span class="n">ten_numbers</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5.8</span><span class="p">,</span> <span class="m">3.52</span><span class="p">,</span> <span class="m">7.81</span><span class="p">,</span> <span class="m">0.4</span><span class="p">,</span> <span class="m">4.79</span><span class="p">,</span> <span class="m">3.04</span><span class="p">,</span> <span class="m">4.89</span><span class="p">,</span> <span class="m">5.23</span><span class="p">,</span> <span class="m">2.37</span><span class="p">,</span> <span class="m">4.32</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="min-and-max">
+<h3>Min and max<a class="headerlink" href="#min-and-max" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">min()</span></code> and <code class="docutils literal notranslate"><span class="pre">max()</span></code> functions return respectively the minimum and maximum value in a numerical vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">min</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.4</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">-5</span><span class="o">:</span><span class="m">2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">max</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">7.81</div></div>
+</div>
+</div>
+<div class="section" id="length">
+<h3>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">length()</span></code> function returns the number of entries in a vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">length</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">10</div></div>
+</div>
+</div>
+<div class="section" id="sum">
+<h3>Sum<a class="headerlink" href="#sum" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">sum()</span></code> function returns the sum of the entries in a numerical vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">42.17</div></div>
+</div>
+</div>
+<div class="section" id="mean-a-k-a-average">
+<h3>Mean a.k.a. average<a class="headerlink" href="#mean-a-k-a-average" title="Permalink to this headline">¶</a></h3>
+<p>The <em>mean</em> or <em>average</em> of a collection of values is defined to be
+$<span class="math notranslate nohighlight">\(\frac{\text{sum of the values}}{\text{number of values}}.\)</span>$</p>
+<p>We can perform this computation by combining the previous two functions</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span><span class="o">/</span><span class="nf">length</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">4.217</div></div>
+</div>
+<p>Alternatively, we can use the <code class="docutils literal notranslate"><span class="pre">mean()</span></code> which returns the average of the entries in a numerical vector.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">mean</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">4.217</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="round">
+<h2>Round<a class="headerlink" href="#round" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">round()</span></code> function rounds numbers to the specified number of decimal places. It can be applied to a single number or to a numerical vector. When applied to a numerical vector, it rounds each entry.</p>
+<p><code class="docutils literal notranslate"><span class="pre">round(VECTOR_OR_NUMBER,</span> <span class="pre">NUMBER_OF_DECIMAL_PLACES)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Recall the values in ten_numbers</span>
+<span class="n">ten_numbers</span>
 </pre></div>
 </div>
 </div>
@@ -416,91 +522,12 @@
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>-5</li><li>-4</li><li>-3</li><li>-2</li><li>-1</li><li>0</li><li>1</li><li>2</li></ol>
-</div></div>
-</div>
-</div>
-</div>
-<div class="section" id="type-coercion">
-<h2>Type coercion<a class="headerlink" href="#type-coercion" title="Permalink to this headline">¶</a></h2>
-<p>The entires in a vector must all have the same data type. When applied to a vector, the<code class="docutils literal notranslate"><span class="pre">typeof()</span></code> function returns the data type of the entries in that vector.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">20</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'integer'</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="s">&#39;dog&#39;</span><span class="p">,</span> <span class="s">&#39;turtle&#39;</span><span class="p">,</span> <span class="s">&#39;fish&#39;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'character'</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1.75</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">100</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'double'</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">,</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'logical'</div></div>
-</div>
-<div class="admonition warning" id="html-admonition">
-<p class="admonition-title">Warning</p>
-<p>If vector entries are not of the same type, R will coerce them into being the same type.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
-<span class="nf">typeof</span><span class="p">(</span><span class="s">&#39;cat&#39;</span><span class="p">)</span>
-<span class="nf">typeof</span><span class="p">(</span><span class="kc">TRUE</span><span class="p">)</span>
-
-<span class="nf">c</span><span class="p">(</span><span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">)</span> <span class="c1"># entries inputed with three different types</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'double'</div><div class="output text_html">'character'</div><div class="output text_html">'logical'</div><div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>'cat'</li><li>'1'</li><li>'TRUE'</li></ol>
+<ol class=list-inline><li>5.8</li><li>3.52</li><li>7.81</li><li>0.4</li><li>4.79</li><li>3.04</li><li>4.89</li><li>5.23</li><li>2.37</li><li>4.32</li></ol>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">typeof</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="s">&#39;cat&#39;</span><span class="p">,</span> <span class="kc">TRUE</span><span class="p">))</span> <span class="c1"># entries are ALL stored as charcters</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'character'</div></div>
-</div>
-<p>R changed both the double and the logical variables to character variables. Notice the quote marks around 1 and TRUE in the output.</p>
-</div>
-<div class="section" id="combining-vectors">
-<h2>Combining vectors<a class="headerlink" href="#combining-vectors" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">c()</span></code> function can also be used to combine multiple vectors into a single vector.</p>
-<p><code class="docutils literal notranslate"><span class="pre">c(VECTOR_1,</span> <span class="pre">VECTOR_2,</span> <span class="pre">VECTOR_3,...)</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="c1"># All integers from 1 to 10 exept 3</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span> <span class="c1"># rounds each number to one decimal place</span>
 </pre></div>
 </div>
 </div>
@@ -510,14 +537,12 @@
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>1</li><li>2</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ol>
+<ol class=list-inline><li>5.8</li><li>3.5</li><li>7.8</li><li>0.4</li><li>4.8</li><li>3</li><li>4.9</li><li>5.2</li><li>2.4</li><li>4.3</li></ol>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cats</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;Tiger&#39;</span><span class="p">,</span> <span class="s">&#39;Boots&#39;</span><span class="p">,</span> <span class="s">&#39;Fluffy&#39;</span><span class="p">)</span>
-<span class="n">dogs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;Spot&#39;</span><span class="p">,</span> <span class="s">&#39;Rover&#39;</span><span class="p">,</span> <span class="s">&#39;Buddy&#39;</span><span class="p">)</span>
-<span class="nf">c</span><span class="p">(</span><span class="n">cats</span><span class="p">,</span> <span class="n">dogs</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="n">ten_numbers</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span> <span class="c1"># rounds each number to the nearest whole number</span>
 </pre></div>
 </div>
 </div>
@@ -527,7 +552,7 @@
 .list-inline>li {display: inline-block}
 .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
 </style>
-<ol class=list-inline><li>'Tiger'</li><li>'Boots'</li><li>'Fluffy'</li><li>'Spot'</li><li>'Rover'</li><li>'Buddy'</li></ol>
+<ol class=list-inline><li>6</li><li>4</li><li>8</li><li>0</li><li>5</li><li>3</li><li>5</li><li>5</li><li>2</li><li>4</li></ol>
 </div></div>
 </div>
 </div>
@@ -563,19 +588,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="data_types.html" title="previous page">
+        <a class="left-prev" href="vectors.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Data types</p>
+                <p class="prevnext-title">Vectors</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="vectors_numerical.html" title="next page">
+        <a class="right-next" href="data.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Numerical Vectors</p>
+                <p class="prevnext-title">Exploring Data</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

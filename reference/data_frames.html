@@ -1,0 +1,677 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working with data frames &#8212; From Data to Discovery</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="dplyr Library" href="dplyr_library.html" />
+    <link rel="prev" title="Loading data" href="data_loading.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   From Data to Discovery
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="r_basics.html">
+   R basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
+     Arithmetic with numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_types.html">
+     Data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors.html">
+     Vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors_numerical.html">
+     Numerical Vectors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="data.html">
+   Exploring Data
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_loading.html">
+     Loading data
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Working with data frames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dplyr_library.html">
+     dplyr Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ggplot2_library.html">
+     ggplot2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical_models.html">
+   Numeric Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="outside_sources.html">
+   Other References
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  In-Class Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson01.html">
+   Lesson 1: Introduction to R and JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson02.html">
+   Lesson 2 Variables and Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson03.html">
+   Lesson 3 Data sets and more vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson04.html">
+   Lesson 4: Mutate, arrange, piping
+  </a>
+ </li>
+</ul>
+<p class="caption" role="heading">
+ <span class="caption-text">
+  Homework
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_0.html">
+   Homework 0
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/reference/data_frames.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/reference/data_frames.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#outputting-the-data">
+   Outputting the data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#head">
+     Head
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structure">
+   Structure
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dimensions">
+     Dimensions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variable-names">
+     Variable names
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pieces-of-data">
+   Pieces of data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#specific-entry">
+     Specific entry
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="working-with-data-frames">
+<span id="frames"></span><h1>Working with data frames<a class="headerlink" href="#working-with-data-frames" title="Permalink to this headline">¶</a></h1>
+<p>Data frames are essentially tables of data. The rows are called <em>observations</em> and the columns are called <em>variables</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The word “variable” has two different meanings. To reduce confusion, we will include a parenthetical note whenever referring to a column in a data frame  in this subsection. Elsewhere, the distinction should be made clear by context.</p>
+</div>
+<div class="section" id="outputting-the-data">
+<h2>Outputting the data<a class="headerlink" href="#outputting-the-data" title="Permalink to this headline">¶</a></h2>
+<p>We can output the values in a data frame stored in a variable by running the variable name all by itself.</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">airquality</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 153 × 6</caption>
+<thead>
+	<tr><th scope=col>Ozone</th><th scope=col>Solar.R</th><th scope=col>Wind</th><th scope=col>Temp</th><th scope=col>Month</th><th scope=col>Day</th></tr>
+	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td> 41</td><td>190</td><td> 7.4</td><td>67</td><td>5</td><td> 1</td></tr>
+	<tr><td> 36</td><td>118</td><td> 8.0</td><td>72</td><td>5</td><td> 2</td></tr>
+	<tr><td> 12</td><td>149</td><td>12.6</td><td>74</td><td>5</td><td> 3</td></tr>
+	<tr><td> 18</td><td>313</td><td>11.5</td><td>62</td><td>5</td><td> 4</td></tr>
+	<tr><td> NA</td><td> NA</td><td>14.3</td><td>56</td><td>5</td><td> 5</td></tr>
+	<tr><td> 28</td><td> NA</td><td>14.9</td><td>66</td><td>5</td><td> 6</td></tr>
+	<tr><td> 23</td><td>299</td><td> 8.6</td><td>65</td><td>5</td><td> 7</td></tr>
+	<tr><td> 19</td><td> 99</td><td>13.8</td><td>59</td><td>5</td><td> 8</td></tr>
+	<tr><td>  8</td><td> 19</td><td>20.1</td><td>61</td><td>5</td><td> 9</td></tr>
+	<tr><td> NA</td><td>194</td><td> 8.6</td><td>69</td><td>5</td><td>10</td></tr>
+	<tr><td>  7</td><td> NA</td><td> 6.9</td><td>74</td><td>5</td><td>11</td></tr>
+	<tr><td> 16</td><td>256</td><td> 9.7</td><td>69</td><td>5</td><td>12</td></tr>
+	<tr><td> 11</td><td>290</td><td> 9.2</td><td>66</td><td>5</td><td>13</td></tr>
+	<tr><td> 14</td><td>274</td><td>10.9</td><td>68</td><td>5</td><td>14</td></tr>
+	<tr><td> 18</td><td> 65</td><td>13.2</td><td>58</td><td>5</td><td>15</td></tr>
+	<tr><td> 14</td><td>334</td><td>11.5</td><td>64</td><td>5</td><td>16</td></tr>
+	<tr><td> 34</td><td>307</td><td>12.0</td><td>66</td><td>5</td><td>17</td></tr>
+	<tr><td>  6</td><td> 78</td><td>18.4</td><td>57</td><td>5</td><td>18</td></tr>
+	<tr><td> 30</td><td>322</td><td>11.5</td><td>68</td><td>5</td><td>19</td></tr>
+	<tr><td> 11</td><td> 44</td><td> 9.7</td><td>62</td><td>5</td><td>20</td></tr>
+	<tr><td>  1</td><td>  8</td><td> 9.7</td><td>59</td><td>5</td><td>21</td></tr>
+	<tr><td> 11</td><td>320</td><td>16.6</td><td>73</td><td>5</td><td>22</td></tr>
+	<tr><td>  4</td><td> 25</td><td> 9.7</td><td>61</td><td>5</td><td>23</td></tr>
+	<tr><td> 32</td><td> 92</td><td>12.0</td><td>61</td><td>5</td><td>24</td></tr>
+	<tr><td> NA</td><td> 66</td><td>16.6</td><td>57</td><td>5</td><td>25</td></tr>
+	<tr><td> NA</td><td>266</td><td>14.9</td><td>58</td><td>5</td><td>26</td></tr>
+	<tr><td> NA</td><td> NA</td><td> 8.0</td><td>57</td><td>5</td><td>27</td></tr>
+	<tr><td> 23</td><td> 13</td><td>12.0</td><td>67</td><td>5</td><td>28</td></tr>
+	<tr><td> 45</td><td>252</td><td>14.9</td><td>81</td><td>5</td><td>29</td></tr>
+	<tr><td>115</td><td>223</td><td> 5.7</td><td>79</td><td>5</td><td>30</td></tr>
+	<tr><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td><td>⋮</td></tr>
+	<tr><td>96</td><td>167</td><td> 6.9</td><td>91</td><td>9</td><td> 1</td></tr>
+	<tr><td>78</td><td>197</td><td> 5.1</td><td>92</td><td>9</td><td> 2</td></tr>
+	<tr><td>73</td><td>183</td><td> 2.8</td><td>93</td><td>9</td><td> 3</td></tr>
+	<tr><td>91</td><td>189</td><td> 4.6</td><td>93</td><td>9</td><td> 4</td></tr>
+	<tr><td>47</td><td> 95</td><td> 7.4</td><td>87</td><td>9</td><td> 5</td></tr>
+	<tr><td>32</td><td> 92</td><td>15.5</td><td>84</td><td>9</td><td> 6</td></tr>
+	<tr><td>20</td><td>252</td><td>10.9</td><td>80</td><td>9</td><td> 7</td></tr>
+	<tr><td>23</td><td>220</td><td>10.3</td><td>78</td><td>9</td><td> 8</td></tr>
+	<tr><td>21</td><td>230</td><td>10.9</td><td>75</td><td>9</td><td> 9</td></tr>
+	<tr><td>24</td><td>259</td><td> 9.7</td><td>73</td><td>9</td><td>10</td></tr>
+	<tr><td>44</td><td>236</td><td>14.9</td><td>81</td><td>9</td><td>11</td></tr>
+	<tr><td>21</td><td>259</td><td>15.5</td><td>76</td><td>9</td><td>12</td></tr>
+	<tr><td>28</td><td>238</td><td> 6.3</td><td>77</td><td>9</td><td>13</td></tr>
+	<tr><td> 9</td><td> 24</td><td>10.9</td><td>71</td><td>9</td><td>14</td></tr>
+	<tr><td>13</td><td>112</td><td>11.5</td><td>71</td><td>9</td><td>15</td></tr>
+	<tr><td>46</td><td>237</td><td> 6.9</td><td>78</td><td>9</td><td>16</td></tr>
+	<tr><td>18</td><td>224</td><td>13.8</td><td>67</td><td>9</td><td>17</td></tr>
+	<tr><td>13</td><td> 27</td><td>10.3</td><td>76</td><td>9</td><td>18</td></tr>
+	<tr><td>24</td><td>238</td><td>10.3</td><td>68</td><td>9</td><td>19</td></tr>
+	<tr><td>16</td><td>201</td><td> 8.0</td><td>82</td><td>9</td><td>20</td></tr>
+	<tr><td>13</td><td>238</td><td>12.6</td><td>64</td><td>9</td><td>21</td></tr>
+	<tr><td>23</td><td> 14</td><td> 9.2</td><td>71</td><td>9</td><td>22</td></tr>
+	<tr><td>36</td><td>139</td><td>10.3</td><td>81</td><td>9</td><td>23</td></tr>
+	<tr><td> 7</td><td> 49</td><td>10.3</td><td>69</td><td>9</td><td>24</td></tr>
+	<tr><td>14</td><td> 20</td><td>16.6</td><td>63</td><td>9</td><td>25</td></tr>
+	<tr><td>30</td><td>193</td><td> 6.9</td><td>70</td><td>9</td><td>26</td></tr>
+	<tr><td>NA</td><td>145</td><td>13.2</td><td>77</td><td>9</td><td>27</td></tr>
+	<tr><td>14</td><td>191</td><td>14.3</td><td>75</td><td>9</td><td>28</td></tr>
+	<tr><td>18</td><td>131</td><td> 8.0</td><td>76</td><td>9</td><td>29</td></tr>
+	<tr><td>20</td><td>223</td><td>11.5</td><td>68</td><td>9</td><td>30</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If a data frame is large, <b>R may skip some of the middle observations (rows) and / or variables (columns)</b>. This is indicated by horizontal triple dots <span class="math notranslate nohighlight">\(\cdots\)</span> or vertical triple dots <span class="math notranslate nohighlight">\(\vdots\)</span>.</p>
+</div>
+<div class="section" id="head">
+<h3>Head<a class="headerlink" href="#head" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">head()</span></code> function can be used to display the first few observations (rows) of a data frame.</p>
+<p><code class="docutils literal notranslate"><span class="pre">head(DATA_FRAME,</span> <span class="pre">NUM_OBSERVATIONS)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">airquality</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 3 × 6</caption>
+<thead>
+	<tr><th></th><th scope=col>Ozone</th><th scope=col>Solar.R</th><th scope=col>Wind</th><th scope=col>Temp</th><th scope=col>Month</th><th scope=col>Day</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>41</td><td>190</td><td> 7.4</td><td>67</td><td>5</td><td>1</td></tr>
+	<tr><th scope=row>2</th><td>36</td><td>118</td><td> 8.0</td><td>72</td><td>5</td><td>2</td></tr>
+	<tr><th scope=row>3</th><td>12</td><td>149</td><td>12.6</td><td>74</td><td>5</td><td>3</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="structure">
+<h2>Structure<a class="headerlink" href="#structure" title="Permalink to this headline">¶</a></h2>
+<p>It is often helpful know the structural properties of a data frame. The <code class="docutils literal notranslate"><span class="pre">str()</span></code> function outputs the following properties of a data frame:</p>
+<ul class="simple">
+<li><p>number of observations (rows)</p></li>
+<li><p>number of variables (columns)</p></li>
+<li><p>name of each variable (column)</p></li>
+<li><p>type of data in each variable (column)</p></li>
+<li><p>a few values from each variable (column)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">str</span><span class="p">(</span><span class="n">airquality</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	153 obs. of  6 variables:
+ $ Ozone  : int  41 36 12 18 NA 28 23 19 8 NA ...
+ $ Solar.R: int  190 118 149 313 NA NA 299 99 19 194 ...
+ $ Wind   : num  7.4 8 12.6 11.5 14.3 14.9 8.6 13.8 20.1 8.6 ...
+ $ Temp   : int  67 72 74 62 56 66 65 59 61 69 ...
+ $ Month  : int  5 5 5 5 5 5 5 5 5 5 ...
+ $ Day    : int  1 2 3 4 5 6 7 8 9 10 ...
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sometimes, we are only interested in a particular property of a data frame. The following functions give us access to specific properties.</p>
+<div class="section" id="dimensions">
+<h3>Dimensions<a class="headerlink" href="#dimensions" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">dim()</span></code> function outputs a vector containing the number of observations (rows) followed by the number of variables (columns).</p>
+<p><code class="docutils literal notranslate"><span class="pre">dim(DATA_FRAME)</span></code></p>
+<p>Output: <code class="docutils literal notranslate"><span class="pre">c(NUM_OBSERVATIONS,</span> <span class="pre">NUM_VARIABLES)</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dim</span><span class="p">(</span><span class="n">airquality</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>153</li><li>6</li></ol>
+</div></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">nrow()</span></code> function outputs the number of observations (rows) in a data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">nrow</span><span class="p">(</span><span class="n">airquality</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">153</div></div>
+</div>
+</div>
+<div class="section" id="variable-names">
+<h3>Variable names<a class="headerlink" href="#variable-names" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">names()</span></code> function outputs the names of all of the variables (columns) in a data frame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">airquality</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'Ozone'</li><li>'Solar.R'</li><li>'Wind'</li><li>'Temp'</li><li>'Month'</li><li>'Day'</li></ol>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="pieces-of-data">
+<h2>Pieces of data<a class="headerlink" href="#pieces-of-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+<p>Each variable (column) in a data frame is a vector. Use the following syntax reference a particular variable (column).</p>
+<p><code class="docutils literal notranslate"><span class="pre">DATA_FRAME$VARIABLE_NAME</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">airquality</span><span class="o">$</span><span class="n">Temp</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>67</li><li>72</li><li>74</li><li>62</li><li>56</li><li>66</li><li>65</li><li>59</li><li>61</li><li>69</li><li>74</li><li>69</li><li>66</li><li>68</li><li>58</li><li>64</li><li>66</li><li>57</li><li>68</li><li>62</li><li>59</li><li>73</li><li>61</li><li>61</li><li>57</li><li>58</li><li>57</li><li>67</li><li>81</li><li>79</li><li>76</li><li>78</li><li>74</li><li>67</li><li>84</li><li>85</li><li>79</li><li>82</li><li>87</li><li>90</li><li>87</li><li>93</li><li>92</li><li>82</li><li>80</li><li>79</li><li>77</li><li>72</li><li>65</li><li>73</li><li>76</li><li>77</li><li>76</li><li>76</li><li>76</li><li>75</li><li>78</li><li>73</li><li>80</li><li>77</li><li>83</li><li>84</li><li>85</li><li>81</li><li>84</li><li>83</li><li>83</li><li>88</li><li>92</li><li>92</li><li>89</li><li>82</li><li>73</li><li>81</li><li>91</li><li>80</li><li>81</li><li>82</li><li>84</li><li>87</li><li>85</li><li>74</li><li>81</li><li>82</li><li>86</li><li>85</li><li>82</li><li>86</li><li>88</li><li>86</li><li>83</li><li>81</li><li>81</li><li>81</li><li>82</li><li>86</li><li>85</li><li>87</li><li>89</li><li>90</li><li>90</li><li>92</li><li>86</li><li>86</li><li>82</li><li>80</li><li>79</li><li>77</li><li>79</li><li>76</li><li>78</li><li>78</li><li>77</li><li>72</li><li>75</li><li>79</li><li>81</li><li>86</li><li>88</li><li>97</li><li>94</li><li>96</li><li>94</li><li>91</li><li>92</li><li>93</li><li>93</li><li>87</li><li>84</li><li>80</li><li>78</li><li>75</li><li>73</li><li>81</li><li>76</li><li>77</li><li>71</li><li>71</li><li>78</li><li>67</li><li>76</li><li>68</li><li>82</li><li>64</li><li>71</li><li>81</li><li>69</li><li>63</li><li>70</li><li>77</li><li>75</li><li>76</li><li>68</li></ol>
+</div></div>
+</div>
+</div>
+<div class="section" id="specific-entry">
+<h3>Specific entry<a class="headerlink" href="#specific-entry" title="Permalink to this headline">¶</a></h3>
+<p>We can access a specific entry in a data frame by specifying the variable (column) and observation (row) using the following syntax.</p>
+<p><code class="docutils literal notranslate"><span class="pre">DATA_FRAME$VARIABLE_NAME[OBSERVATION_NUMBER]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">airquality</span><span class="o">$</span><span class="n">Temp</span><span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="c1"># First observation (row) in the Temp variable (column).</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">67</div></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>R starts counting at one. Some other programing language start counting at zero.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./reference"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="data_loading.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Loading data</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="dplyr_library.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">dplyr Library</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Corrin Clarkson<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

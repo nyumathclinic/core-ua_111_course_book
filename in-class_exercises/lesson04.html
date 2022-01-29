@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 0 &#8212; From Data to Discovery</title>
+    <title>Lesson 4: Mutate, arrange, piping &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,7 +53,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Lesson 4: Mutate, arrange, piping" href="../in-class_exercises/lesson04.html" />
+    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="prev" title="Lesson 3 Data sets and more vectors" href="lesson03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -180,24 +181,24 @@
   In-Class Exercises
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../in-class_exercises/lesson01.html">
+  <a class="reference internal" href="lesson01.html">
    Lesson 1: Introduction to R and JupyterHub
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../in-class_exercises/lesson02.html">
+  <a class="reference internal" href="lesson02.html">
    Lesson 2 Variables and Vectors
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../in-class_exercises/lesson03.html">
+  <a class="reference internal" href="lesson03.html">
    Lesson 3 Data sets and more vectors
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../in-class_exercises/lesson04.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lesson 4: Mutate, arrange, piping
   </a>
  </li>
@@ -207,9 +208,9 @@
   Homework
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_0.html">
    Homework 0
   </a>
  </li>
@@ -254,7 +255,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/homework/homework_0.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson04.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -280,7 +281,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/homework/homework_0.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson04.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -302,98 +303,66 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-jupyter-hub">
-   Part 1: Jupyter Hub
+  <a class="reference internal nav-link" href="#useful-links">
+   Useful links
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#open-this-notebook-on-the-jupyter-hub">
-     Open this notebook on the Jupyter Hub
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises">
-     Exercises
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-1-compute-a-value">
-       Exercise 1: Compute a value
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-2-favorite-color">
-       Exercise: 2 Favorite color
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#exercise-3-anything-i-should-know">
-       Exercise 3: Anything I should know?
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#print-notebook-as-pdf-document">
-     Print notebook as PDF document
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#strategy-1-use-print-preview">
-       Strategy 1: Use print preview
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#strategy-2-use-latex">
-       Strategy 2: Use LaTeX
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-gradescope">
-   Part 2: Gradescope
+  <a class="reference internal nav-link" href="#part-1-mutate">
+   Part 1: Mutate
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#log-in">
-     Log in
+    <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
+     Exercise 0 - Open this notebook on the Jupyter Hub
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#first-submission">
-     First submission
+    <a class="reference internal nav-link" href="#exercise-1-floor-function">
+     Exercise 1 -
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       floor()
+      </span>
+     </code>
+     function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-2-load-dplyr">
+     Exercise 2 - Load dplyr
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-3-whole-minutes">
+     Exercise 3 - Whole minutes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercises-4-seconds">
+     Exercises 4: Seconds
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3-campuswire">
-   Part 3: Campuswire
+  <a class="reference internal nav-link" href="#part-2-sorting-and-piping">
+   Part 2: Sorting and piping
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#create-account">
-     Create account
+    <a class="reference internal nav-link" href="#exercise-5-longest-eruption">
+     Exercise 5 - Longest eruption
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#respond-to-the-ice-breaker">
-     Respond to the ice breaker
+    <a class="reference internal nav-link" href="#exercise-6-shortest-eruption">
+     Exercise 6 - Shortest eruption
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-4-onenote-optional">
-   Part 4. OneNote (optional)
-  </a>
-  <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#set-up-class-notebook-in-onenote-app">
-     Set up Class Notebook in OneNote app
+    <a class="reference internal nav-link" href="#exercise-7-pipe">
+     Exercise 7: Pipe
     </a>
    </li>
   </ul>
@@ -409,14 +378,33 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="homework-0">
-<span id="homework00"></span><h1>Homework 0<a class="headerlink" href="#homework-0" title="Permalink to this headline">¶</a></h1>
-<p>This assignment has four parts. Many of the parts refer to the Web Services Guide which is linked from Web Services section of the Content tool on Brightspace.</p>
-<p>When you have finished this assignment, you can manually mark it as competed on Brightspace. This is completely optional, but will help you keep track of which assignments you have completed.</p>
-<div class="section" id="part-1-jupyter-hub">
-<h2>Part 1: Jupyter Hub<a class="headerlink" href="#part-1-jupyter-hub" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="open-this-notebook-on-the-jupyter-hub">
-<h3>Open this notebook on the Jupyter Hub<a class="headerlink" href="#open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-4-mutate-arrange-piping">
+<span id="in-class-exercises-lesson04"></span><h1>Lesson 4: Mutate, arrange, piping<a class="headerlink" href="#lesson-4-mutate-arrange-piping" title="Permalink to this headline">¶</a></h1>
+<p>These exercises are to help you check your understanding during class. They will not be collected.</p>
+<p>The content for this lesson is in the following subsections of the course book:</p>
+<ul class="simple">
+<li><p>Exploring Data</p>
+<ul>
+<li><p><a class="reference internal" href="../reference/dplyr_library.html#mutate"><span class="std std-ref">dplyr library mutate</span></a></p></li>
+<li><p><a class="reference internal" href="../reference/dplyr_library.html#arrange"><span class="std std-ref">dplyr library arrange</span></a></p></li>
+<li><p><a class="reference internal" href="../reference/dplyr_library.html#piping"><span class="std std-ref">dplyr library piping</span></a></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="useful-links">
+<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
+<p>The following links are also in the Content tool on Brightspace.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://nyumathclinic.github.io/core-ua_111_course_book/">Course Book</a></p></li>
+<li><p><a class="reference external" href="https://nyu0-my.sharepoint.com/:o:/g/personal/cc5948_nyu_edu/EthbeMeNnc5Cgs34RxBsLPMBHkNqPkzLwJCN7OM63sW1mg?e=cAb9oe">Class notes</a></p></li>
+<li><p><a class="reference external" href="https://www.polleverywhere.com/auth/saml/nyu_main">Poll Everywhere login</a></p></li>
+<li><p><a class="reference external" href="https://pollev.com/clarkson">Poll Everywhere respond</a></p></li>
+</ul>
+</div>
+<div class="section" id="part-1-mutate">
+<h2>Part 1: Mutate<a class="headerlink" href="#part-1-mutate" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-0-open-this-notebook-on-the-jupyter-hub">
+<h3>Exercise 0 - Open this notebook on the Jupyter Hub<a class="headerlink" href="#exercise-0-open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Click on the rocket icon in the upper right of this page of the course book.</p></li>
 <li><p>Click the JupyterHub link.</p></li>
@@ -424,66 +412,68 @@
 <li><p>If prompted to select a kernel, choose <em>R [conda env:FDTD]</em>.</p></li>
 </ul>
 </div>
-<div class="section" id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h3>
-<p>Complete each of the following exercises.</p>
-<div class="section" id="exercise-1-compute-a-value">
-<h4>Exercise 1: Compute a value<a class="headerlink" href="#exercise-1-compute-a-value" title="Permalink to this headline">¶</a></h4>
-<p>Insert a code cell below this cell and use it to compute the following value</p>
-<div class="math notranslate nohighlight">
-\[\frac{3(7-5)}{2}\]</div>
+<div class="section" id="exercise-1-floor-function">
+<h3>Exercise 1 - <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function<a class="headerlink" href="#exercise-1-floor-function" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function takes a decimal and returns the whole number to the left of the decimal place <strong>without</strong> rounding.
+$<span class="math notranslate nohighlight">\(\texttt{floor}(2.98) = 2 \)</span>$</p>
+<ul class="simple">
+<li><p>Use the foor function to create an expression that will output the number of whole minutes the 17th erruption lasted.</p></li>
+</ul>
 </div>
-<div class="section" id="exercise-2-favorite-color">
-<h4>Exercise: 2 Favorite color<a class="headerlink" href="#exercise-2-favorite-color" title="Permalink to this headline">¶</a></h4>
-<p>Convert the input cell below to a markdown cell. Then, write your favorite color in bold in the cell. You can use double asterisks on both sides of the word to make it bold.</p>
+<div class="section" id="exercise-2-load-dplyr">
+<h3>Exercise 2 - Load dplyr<a class="headerlink" href="#exercise-2-load-dplyr" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">library()</span></code> function to load the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package. Don’t worry about the warning message. If yo run the command a second time, the warning messages will go away.</p></li>
+<li><p>Verify that this was successful by using <code class="docutils literal notranslate"><span class="pre">?mutate</span></code> to open the documentation for the <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">library(PACKAGE_NAME)</span></code></p>
 </div>
-<div class="section" id="exercise-3-anything-i-should-know">
-<h4>Exercise 3: Anything I should know?<a class="headerlink" href="#exercise-3-anything-i-should-know" title="Permalink to this headline">¶</a></h4>
-<p>Is there anything you would like to tell Prof. Clarkson at this time? If so type it in the markdown cell below.</p>
+<div class="section" id="exercise-3-whole-minutes">
+<h3>Exercise 3 - Whole minutes<a class="headerlink" href="#exercise-3-whole-minutes" title="Permalink to this headline">¶</a></h3>
+<p>The faithful data set gives the duration of the erruptions in minutes and fractions of a minute. It would be easer to understad the data if we converted the decimals to seconds.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function is vectorized. This means that if you input a vector of decimal numbers, it will return a vector of floor of each entry.
+$<span class="math notranslate nohighlight">\(\texttt{floor}(\texttt{c}(1.2, 3.6, 4.01) ) = \texttt{c}(1, 3, 4)\)</span>$</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add a column called <code class="docutils literal notranslate"><span class="pre">minutes</span></code> to the <code class="docutils literal notranslate"><span class="pre">faithful</span></code> data set that contains the number of whole minutes (ignoring the decimal) that the eruption lasted.</p></li>
+<li><p>Verify that you were successful by using <code class="docutils literal notranslate"><span class="pre">head()</span></code> to display the first three rows of <code class="docutils literal notranslate"><span class="pre">faithful</span></code>.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">mutate(DATA_FRAME,</span> <span class="pre">UPDATED_COLUMN</span> <span class="pre">=</span> <span class="pre">FORMULA)</span></code></p>
 </div>
-</div>
-<div class="section" id="print-notebook-as-pdf-document">
-<h3>Print notebook as PDF document<a class="headerlink" href="#print-notebook-as-pdf-document" title="Permalink to this headline">¶</a></h3>
-<p>Download a PDF version of this notebook using one of the following strategies.</p>
-<div class="section" id="strategy-1-use-print-preview">
-<h4>Strategy 1: Use print preview<a class="headerlink" href="#strategy-1-use-print-preview" title="Permalink to this headline">¶</a></h4>
-<p>Use the menu option File &gt; Print Preview to generate a printer friendly version of this notebook. Then use your browsers print dialogue to save as PDF.
-Use the following menu option to download a PDF version of this notebook.</p>
-</div>
-<div class="section" id="strategy-2-use-latex">
-<h4>Strategy 2: Use LaTeX<a class="headerlink" href="#strategy-2-use-latex" title="Permalink to this headline">¶</a></h4>
-<p>Use the menu option File &gt; Download as &gt; PDF via LaTeX (.pdf) generate a PDF file you can download.</p>
-</div>
-</div>
-</div>
-<div class="section" id="part-2-gradescope">
-<h2>Part 2: Gradescope<a class="headerlink" href="#part-2-gradescope" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="log-in">
-<h3>Log in<a class="headerlink" href="#log-in" title="Permalink to this headline">¶</a></h3>
-<p>Follow the instructions in the Web Services Guide to create an account.</p>
-</div>
-<div class="section" id="first-submission">
-<h3>First submission<a class="headerlink" href="#first-submission" title="Permalink to this headline">¶</a></h3>
-<p>Submit the PDF document that you downloaded in Part 1 to the Homework 0 assignment on Gradescope. Be sure to assign a page to each question even if your document is only one
-page, See the <a class="reference external" href="https://help.gradescope.com/article/ccbpppziu9-student-submit-work#submitting_a_pdf">Gradescope support page</a> for detailed instructions. Assigning pages to questions greatly expedites the grading process.</p>
+<div class="section" id="exercises-4-seconds">
+<h3>Exercises 4: Seconds<a class="headerlink" href="#exercises-4-seconds" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add a column called <code class="docutils literal notranslate"><span class="pre">seconds</span></code> to the <code class="docutils literal notranslate"><span class="pre">faithful</span></code> data set that contains the number of seconds that correspond to the decimal portion of the eruption duration.</p></li>
+<li><p>In terms of minutes and seconds, how long was the 19th eruption? Summarize your answer in a markdown cell.</p></li>
+</ul>
 </div>
 </div>
-<div class="section" id="part-3-campuswire">
-<h2>Part 3: Campuswire<a class="headerlink" href="#part-3-campuswire" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="create-account">
-<h3>Create account<a class="headerlink" href="#create-account" title="Permalink to this headline">¶</a></h3>
-<p>Follow the instructions in the Web Services Guide to create an account.</p>
+<div class="section" id="part-2-sorting-and-piping">
+<h2>Part 2: Sorting and piping<a class="headerlink" href="#part-2-sorting-and-piping" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-5-longest-eruption">
+<h3>Exercise 5 - Longest eruption<a class="headerlink" href="#exercise-5-longest-eruption" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> function to find the duration of the longest eruption in the faithful dataset.</p></li>
+</ul>
 </div>
-<div class="section" id="respond-to-the-ice-breaker">
-<h3>Respond to the ice breaker<a class="headerlink" href="#respond-to-the-ice-breaker" title="Permalink to this headline">¶</a></h3>
-<p>Answer the question on Campuswire titled Homework 0: Ice Breaker.</p>
+<div class="section" id="exercise-6-shortest-eruption">
+<h3>Exercise 6 - Shortest eruption<a class="headerlink" href="#exercise-6-shortest-eruption" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use the minutes and seconds columns that you added to the faithful dataset to find the duration of the shortest eruption.</p></li>
+</ul>
 </div>
-</div>
-<div class="section" id="part-4-onenote-optional">
-<h2>Part 4. OneNote (optional)<a class="headerlink" href="#part-4-onenote-optional" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="set-up-class-notebook-in-onenote-app">
-<h3>Set up Class Notebook in OneNote app<a class="headerlink" href="#set-up-class-notebook-in-onenote-app" title="Permalink to this headline">¶</a></h3>
-<p>Click on the Class Notes link in the Web Services section of the Content tool on Brightspace. Follow the instructions to open the Class Notebook in the OneNote app on your computer or tablet.</p>
+<div class="section" id="exercise-7-pipe">
+<h3>Exercise 7: Pipe<a class="headerlink" href="#exercise-7-pipe" title="Permalink to this headline">¶</a></h3>
+<p>In exercises 3 - 6, you wrote code that accomplished the following tasks:</p>
+<ol class="simple">
+<li><p>Add a column called minutes to the faithful data set that contains the number of whole minutes (ignoring the decimal) that the eruption lasted.</p></li>
+<li><p>Add a column called seconds to the faithful data set that contains the number of seconds that correspond to the decimal portion of the eruption duration.</p></li>
+<li><p>Find the duration of the longest eruption in the faithful dataset.</p></li>
+<li><p>Find the duration of the shortest eruption.</p></li>
+</ol>
+<ul class="simple">
+<li><p>Write new code that uses piping to accomplish these same four tasks.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">INPUT_1</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION(INPUT_2)</span></code></p>
 </div>
 </div>
 </div>
@@ -501,7 +491,7 @@ page, See the <a class="reference external" href="https://help.gradescope.com/ar
         },
         kernelOptions: {
             kernelName: "ir",
-            path: "./homework"
+            path: "./in-class_exercises"
         },
         predefinedOutput: true
     }
@@ -518,14 +508,23 @@ page, See the <a class="reference external" href="https://help.gradescope.com/ar
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="../in-class_exercises/lesson04.html" title="previous page">
+        <a class="left-prev" href="lesson03.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lesson 4: Mutate, arrange, piping</p>
+                <p class="prevnext-title">Lesson 3 Data sets and more vectors</p>
             </div>
         </a>
     </div>
+     <div id="next">
+        <a class="right-next" href="../homework/homework_0.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Homework 0</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
 
 </div>
         

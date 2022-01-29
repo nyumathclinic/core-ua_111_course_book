@@ -97,8 +97,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="base_r.html">
-   Base R
+  <a class="reference internal" href="r_basics.html">
+   R basics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -127,26 +127,43 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="numerical_vectors.html">
+    <a class="reference internal" href="vectors_numerical.html">
      Numerical Vectors
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data_sets.html">
-     Data sets
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="dplyr_library.html">
-   dplyr Library
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="data.html">
+   Exploring Data
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ggplot2_library.html">
-   ggplot2
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_loading.html">
+     Loading data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_frames.html">
+     Working with data frames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dplyr_library.html">
+     dplyr Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ggplot2_library.html">
+     ggplot2
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
@@ -173,6 +190,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../in-class_exercises/lesson02.html">
    Lesson 2 Variables and Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson03.html">
+   Lesson 3 Data sets and more vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson04.html">
+   Lesson 4: Mutate, arrange, piping
   </a>
  </li>
 </ul>
@@ -336,7 +363,7 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id4">
+    <a class="reference internal nav-link" href="#id1">
      Mean squared error
     </a>
    </li>
@@ -400,7 +427,7 @@
 <div class="cell_output docutils container">
 <div class="output text_html">1e-17</div></div>
 </div>
-<div class="admonition warning" id="html-admonition">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The ‘e’ used <code>1e+17</code> is not <span class="math notranslate nohighlight">\(e\)</span>, the base of the natural logarithm. Rather, it indicates the start of the <i>exponent</i> that should be applied to the number 10.</p>
 </div>
@@ -684,7 +711,7 @@ Coefficients:
 </div>
 <div class="section" id="logarithm-function">
 <h4>Logarithm function<a class="headerlink" href="#logarithm-function" title="Permalink to this headline">¶</a></h4>
-<div class="admonition warning" id="id1">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>In R, <b><code>log()</code> is the natural logarithm</b> which is sometimes denoted by <span class="math notranslate nohighlight">\(\ln()\)</span> or <span class="math notranslate nohighlight">\(\log_e()\)</span>. For consistency, we will also use <span class="math notranslate nohighlight">\(\log()\)</span> to refer to the natural logarithm.</p>
 </div>
@@ -714,7 +741,7 @@ Coefficients:
 <span class="math notranslate nohighlight">\(\log(e^{x}) = x\)</span>.
 It follows that
 $<span class="math notranslate nohighlight">\(\log \left(e^{Ax + C}\right) = Ax + C.\)</span>$</p>
-<div class="admonition note" id="id2">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Applying <code>log()</code> to the outputs of an exponential function transforms it into a linear function.</p>
 </div>
@@ -812,7 +839,7 @@ Coefficients:
 </div>
 </div>
 <p>As expected the slope is 1/3 and the intercept is 7. Line is given by $<span class="math notranslate nohighlight">\(y = x/3 + 7\)</span>$.</p>
-<div class="admonition warning" id="id3">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>When using a formula of the from <code>log(y) ~ x</code>, the fitted values are predictions of <span class="math notranslate nohighlight">\(log(y)\)</span> rather than <span class="math notranslate nohighlight">\(y\)</span>. <b>To plot the predicted <span class="math notranslate nohighlight">\(y\)</span>-values, apply <code>exp()</code> to the fitted values.</b></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    &lt;code&gt; exp(log(y)) = y &lt;/code&gt;
@@ -873,9 +900,9 @@ Coefficients:
 </div>
 </div>
 </div>
-<div class="section" id="id4">
-<h3>Mean squared error<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<div class="admonition warning" id="id5">
+<div class="section" id="id1">
+<h3>Mean squared error<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The residuals are measuring the difference between log(y) and the predicted value of log(y). We want the difference between y and predicted y.</p>
 </div>

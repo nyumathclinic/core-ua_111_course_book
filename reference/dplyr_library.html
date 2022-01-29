@@ -52,7 +52,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ggplot2" href="ggplot2_library.html" />
-    <link rel="prev" title="Data sets" href="data_sets.html" />
+    <link rel="prev" title="Working with data frames" href="data_frames.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -95,8 +95,8 @@
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="base_r.html">
-   Base R
+  <a class="reference internal" href="r_basics.html">
+   R basics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -125,26 +125,43 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="numerical_vectors.html">
+    <a class="reference internal" href="vectors_numerical.html">
      Numerical Vectors
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="data_sets.html">
-     Data sets
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   dplyr Library
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="data.html">
+   Exploring Data
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="ggplot2_library.html">
-   ggplot2
-  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_loading.html">
+     Loading data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_frames.html">
+     Working with data frames
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     dplyr Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ggplot2_library.html">
+     ggplot2
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="numerical_models.html">
@@ -171,6 +188,16 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../in-class_exercises/lesson02.html">
    Lesson 2 Variables and Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson03.html">
+   Lesson 3 Data sets and more vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson04.html">
+   Lesson 4: Mutate, arrange, piping
   </a>
  </li>
 </ul>
@@ -375,7 +402,7 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="dplyr-library">
-<h1>dplyr Library<a class="headerlink" href="#dplyr-library" title="Permalink to this headline">¶</a></h1>
+<span id="dplyr"></span><h1>dplyr Library<a class="headerlink" href="#dplyr-library" title="Permalink to this headline">¶</a></h1>
 <p>The dplyr library is part of a family of R packages called the <a class="reference external" href="https://www.tidyverse.org/">tidyverse</a>. See the <a class="reference external" href="https://dplyr.tidyverse.org/reference/index.html">dplyr documentation</a> for a summary of all the functions in this library. See also the <a class="reference external" href="https://r4ds.had.co.nz/transform.html">Data Transformations</a> chapter of <em>R for Data Science</em> for more explanation and examples.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -402,7 +429,7 @@
 </div>
 </div>
 </div>
-<div class="admonition note" id="html-admonition">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you try to run a dplyr function before loading the library, you will get an error messages stating that R could not find the function.</p>
 </div>
@@ -436,7 +463,7 @@
 </div>
 </div>
 <div class="section" id="mutate">
-<h2>mutate<a class="headerlink" href="#mutate" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>mutate<a class="headerlink" href="#mutate" title="Permalink to this headline">¶</a></h2>
 <p>Use the dplyr function <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add or change columns. The basic syntax for this function is the following:</p>
 <p><code class="docutils literal notranslate"><span class="pre">mutate(DATA_FRAME,</span> <span class="pre">NEW_COLUMN</span> <span class="pre">=</span> <span class="pre">FORMULA)</span></code></p>
 <p>The mutate function outputs a <strong>new</strong> data frame which is generated by using the formula to create the data for a column called NEW_COLUMN in the specified DATA_FRAME.</p>
@@ -488,7 +515,7 @@
 </table>
 </div></div>
 </div>
-<div class="admonition warning" id="id1">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you want to keep the updated data frame that you produced with a dplyr function, then you must <b>store the output in a variable</b>.</p>
 <p><code>VARIABLE  &lt;- mutate(DATA_FRAME, NEW_COLUMN = FORMULA)</code></p>
@@ -552,7 +579,7 @@
 </div>
 </div>
 <div class="section" id="arrange">
-<h2>arrange<a class="headerlink" href="#arrange" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>arrange<a class="headerlink" href="#arrange" title="Permalink to this headline">¶</a></h2>
 <p>Use the dplyr <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> to sort the observations of a data frame. The basic syntax for this function is the following:</p>
 <p><code class="docutils literal notranslate"><span class="pre">arrange(DATA_FRAME,</span> <span class="pre">COLUMN_NAME)</span></code></p>
 <p>The default is to sort the date frame so that the values of the specified column in <em>ascending</em> order. Put the COLUMN_NAME inside the the <code class="docutils literal notranslate"><span class="pre">desc()</span></code> function o sort in descending order.</p>
@@ -639,7 +666,7 @@
 </table>
 </div></div>
 </div>
-<div class="admonition warning" id="id2">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The sorted data frame is the output; arrange does not change the original data frame. To replace the original data frame with the sored one use.</p>
 <p><code>DATA_FRAME  &lt;- arrange(DATA_FRAME, COLUMN_NAME)</code></p>
@@ -726,7 +753,7 @@
 </table>
 </div></div>
 </div>
-<div class="admonition note" id="id3">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><b>R cares about capitalizations</b>. The above code would not work if <code>Time</code> were replaced with <code>time</code>.</p>
 </div>
@@ -817,7 +844,7 @@
 </table>
 </div></div>
 </div>
-<div class="admonition note" id="id4">
+<div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The order of the column names in the <code>arrange()</code> function matters. The farther left a columns name is higher priority its values have in the sort order.</p>
 </div>
@@ -907,7 +934,7 @@
 </div>
 </div>
 <div class="section" id="piping">
-<h2>Piping<a class="headerlink" href="#piping" title="Permalink to this headline">¶</a></h2>
+<span id="id3"></span><h2>Piping<a class="headerlink" href="#piping" title="Permalink to this headline">¶</a></h2>
 <p>The dplyr library introduces an useful mechanism for passing the output of one function to another function as its first input. The general syntax for this is shown below.</p>
 <p><code class="docutils literal notranslate"><span class="pre">INPUT_1a</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION_1(INPUT_1b)</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION_2(INPUT_2b)</span></code></p>
 <p>The example of piping above is equivalent to the following.</p>
@@ -927,7 +954,7 @@
 <code class="docutils literal notranslate"><span class="pre">COLUMN_NAME</span> <span class="pre">==</span> <span class="pre">VALUE</span></code></p>
 <p>Use inequalities (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>) to specify upper or lower bounds for the values in a given column.
 <code class="docutils literal notranslate"><span class="pre">COLUMN_NAME</span> <span class="pre">&gt;=</span> <span class="pre">BOUND</span></code></p>
-<div class="admonition warning" id="id5">
+<div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If the value you are using in the filter is text, then it must be in quote marks. Consider the following example.</p>
 <p><code> filter(students, First_Name == “Elisabeth”) </code></p>
@@ -987,7 +1014,7 @@
 <div class="section" id="filtering-by-multiple-criteria">
 <h3>Filtering by multiple criteria<a class="headerlink" href="#filtering-by-multiple-criteria" title="Permalink to this headline">¶</a></h3>
 <p>We can combine multiple criterion using <code class="docutils literal notranslate"><span class="pre">&amp;</span></code> for “and” as well as <code class="docutils literal notranslate"><span class="pre">|</span></code> for “or”. Commas also function as “and” inside <code class="docutils literal notranslate"><span class="pre">filter()</span></code>.</p>
-<div class="admonition warning" id="id6">
+<div class="admonition warning" id="html-admonition">
 <p class="admonition-title">Warning</p>
 <p>Criteria connected by <code>&amp;</code>, <code>|</code> and commas must be self sufficient. The following code will <b>not</b> work.</p>
 <p><code>filter(weather_data, Temp &lt; 60 &amp; &gt; 90) </code>Instead, use this.</p>
@@ -1262,11 +1289,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="data_sets.html" title="previous page">
+        <a class="left-prev" href="data_frames.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Data sets</p>
+                <p class="prevnext-title">Working with data frames</p>
             </div>
         </a>
     </div>
