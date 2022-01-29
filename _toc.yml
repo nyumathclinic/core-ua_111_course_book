@@ -45,3 +45,4 @@ parts:
 - caption: Homework
   chapters:
   - file: homework/homework_0
+  - file: homework/homework_01
