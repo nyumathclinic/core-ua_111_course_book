@@ -46,3 +46,4 @@ parts:
   chapters:
   - file: homework/homework_0
   - file: homework/homework_01
+  - file: homework/homework_02
