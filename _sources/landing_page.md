@@ -38,5 +38,5 @@ This site is intended to serve as reference for students enrolled in the Spring 
 - [](arrange)
 - [](piping)
 - [](in-class_exercises:lesson04)
-- Lab Worksheet 1
+- [](lab01)
 - [](homework02)
