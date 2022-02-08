@@ -40,3 +40,10 @@ This site is intended to serve as reference for students enrolled in the Spring 
 - [](in-class_exercises:lesson04)
 - [](lab01)
 - [](homework02)
+
+
+### Lesson 5
+- [](select)
+- [](filter)
+- [](summarize)
+- [](in-class_exercises:lesson05)

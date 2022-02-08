@@ -200,6 +200,11 @@
    Lesson 4: Mutate, arrange, piping
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson05.html">
+   Lesson 5 -  Solutions
+  </a>
+ </li>
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
@@ -967,7 +972,7 @@
 <p>In the following sections, all examples will be given both with and without piping. You can choose the method that you find easiest to understand. Either way, it is a good idea to know the basics of piping so that you will be able to understand code that uses it.</p>
 </div>
 <div class="section" id="filter">
-<h2>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
+<span id="id4"></span><h2>filter<a class="headerlink" href="#filter" title="Permalink to this headline">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">filter()</span></code> function allows you to extract the observations in a data frame that meet specified criteria. The general syntax is given below.</p>
 <p><code class="docutils literal notranslate"><span class="pre">filter(DATA_FRAME,</span> <span class="pre">CRITERIA)</span></code></p>
 <div class="section" id="criteria">
@@ -1105,10 +1110,11 @@
 </div>
 </div>
 <div class="section" id="select">
-<h2>select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>select<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">select()</span></code> function is used to remove columns from a data frame.</p>
+<p><code class="docutils literal notranslate"><span class="pre">select(DATA_FRAME,</span> <span class="pre">-COLUMN_NAME)</span></code></p>
+<p>Alternatively, you can list the columns that you wish to keep.</p>
 <p><code class="docutils literal notranslate"><span class="pre">select(DATA_FRAME,</span> <span class="pre">COLUMN_1,</span> <span class="pre">COLUMN_2)</span></code></p>
-<p>Alternatively, you can use <code class="docutils literal notranslate"><span class="pre">-</span></code> to mark columns that you wish to exclude.
-<code class="docutils literal notranslate"><span class="pre">select(DATA_FRAME,</span> <span class="pre">-COLUMN_1,</span> <span class="pre">-COLUMN_2)</span></code></p>
 <div class="section" id="example-remove-the-time-column-from-chickweight-last-day">
 <h3>Example: Remove the time column from <code class="docutils literal notranslate"><span class="pre">ChickWeight_last_day</span></code><a class="headerlink" href="#example-remove-the-time-column-from-chickweight-last-day" title="Permalink to this headline">¶</a></h3>
 <p>In the previous section, we created the <code class="docutils literal notranslate"><span class="pre">ChickWeight_last_day</span></code> data frame which contained only observations made on the last day. The Time column of this filtered data set is not useful, because all of the entries are 21. The code bellow shows how we can use <code class="docutils literal notranslate"><span class="pre">select()</span></code> after filtering to remove the Time column.</p>
@@ -1209,6 +1215,7 @@
 </div>
 </div>
 </div>
+<p>(summarize) =</p>
 </div>
 </div>
 <div class="section" id="group-by-and-summarize">
