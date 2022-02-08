@@ -29,8 +29,7 @@ parts:
   - file: in-class_exercises/lesson02
   - file: in-class_exercises/lesson03
   - file: in-class_exercises/lesson04
-#  - file: lesson04_solutions
-#  - file: lesson05_solutions
+  - file: in-class_exercises/lesson05
 #  - file: lesson06_solutions
 #  - file: lesson08_solutions
 #  - file: lesson10_solutions
