@@ -43,7 +43,15 @@ This site is intended to serve as reference for students enrolled in the Spring 
 
 
 ### Lesson 5
+- [](loading:from_file)
 - [](select)
 - [](filter)
-- [](summarize)
 - [](in-class_exercises:lesson05)
+
+
+### Lesson 6
+- [](summarize)
+- [](ggplot:bar_charts)
+- [](in-class_exercises:lesson06)
+- Lab 2 Worksheet
+- [](homework02)

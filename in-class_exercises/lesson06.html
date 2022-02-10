@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 2 Variables and Vectors &#8212; From Data to Discovery</title>
+    <title>Lesson 6 - Group, summarize and visualize &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lesson 3 Data sets and more vectors" href="lesson03.html" />
-    <link rel="prev" title="Lesson 1: Introduction to R and JupyterHub" href="lesson01.html" />
+    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="prev" title="Lesson 5: Select columns and filter rows" href="lesson05.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -187,8 +185,8 @@
    Lesson 1: Introduction to R and JupyterHub
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson02.html">
    Lesson 2 Variables and Vectors
   </a>
  </li>
@@ -207,8 +205,8 @@
    Lesson 5: Select columns and filter rows
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson06.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lesson 6 -  Group, summarize and visualize
   </a>
  </li>
@@ -292,7 +290,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson02.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson06.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -318,7 +316,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson02.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson06.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -340,72 +338,50 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#useful-links">
-   Useful links
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-using-variables">
-   Part 1: Using variables
+  <a class="reference internal nav-link" href="#part-1-review-and-setup">
+   Part 1 - Review and setup
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
-     Exercise 0 - Open this notebook on the Jupyter Hub
+    <a class="reference internal nav-link" href="#exercise-1-set-up">
+     Exercise 1 - Set up
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-random-number">
-     Exercise 1: Random number
+    <a class="reference internal nav-link" href="#exercise-2-most-popular-breeds">
+     Exercise 2 - Most popular breeds
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-birth-year">
-     Exercise 2: Birth year
+    <a class="reference internal nav-link" href="#excercise-3-average-age">
+     Excercise 3 - Average age
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-building-vectors">
-   Part 2: Building Vectors
+  <a class="reference internal nav-link" href="#part-2-bar-charts">
+   Part 2 - Bar charts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-boroughs">
-     Exercise 3: Boroughs
+    <a class="reference internal nav-link" href="#exercise-4-meet-the-functions">
+     Exercise 4 - Meet the functions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-dollars-and-cents">
-     Exercise 4: Dollars and cents
+    <a class="reference internal nav-link" href="#exercise-5-visualize-popular-breeds">
+     Exercise 5 - Visualize popular breeds
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-count-to-100">
-     Exercise 5: Count to 100
+    <a class="reference internal nav-link" href="#exercise-6-reorder-the-bars">
+     Exercise 6 - Reorder the bars
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-check-the-type">
-     Exercise 6: Check the type
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3-working-with-vectors">
-   Part 3: Working with vectors
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-counting-by-fives">
-     Exercise 7: Counting by fives
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-8-ice-cream-sale">
-     Exercise 8: Ice cream sale!!!
+    <a class="reference internal nav-link" href="#exercise-7-visualize-average-ages">
+     Exercise 7 - Visualize average ages
     </a>
    </li>
   </ul>
@@ -421,121 +397,105 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-2-variables-and-vectors">
-<span id="in-class-exercises-lesson02"></span><h1>Lesson 2 Variables and Vectors<a class="headerlink" href="#lesson-2-variables-and-vectors" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-6-group-summarize-and-visualize">
+<span id="in-class-exercises-lesson06"></span><h1>Lesson 6 -  Group, summarize and visualize<a class="headerlink" href="#lesson-6-group-summarize-and-visualize" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
-<p>The content for this lesson is in the following subsections of the Base R section of the course book:</p>
+<div class="section" id="part-1-review-and-setup">
+<h2>Part 1 - Review and setup<a class="headerlink" href="#part-1-review-and-setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1-set-up">
+<h3>Exercise 1 - Set up<a class="headerlink" href="#exercise-1-set-up" title="Permalink to this headline">¶</a></h3>
+<p>There is a CSV file called <code class="docutils literal notranslate"><span class="pre">NYC_Dog_Licensing.csv</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/shared/data</span></code> folder. As the name indicates, this file contains information about New York City dog licenses. This data comes from the <a class="reference external" href="https://opendata.cityofnewyork.us/">NYC OpenData project</a>.</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../reference/variables.html#base-r-variables"><span class="std std-ref">Variables</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/data_types.html#base-r-data-types"><span class="std std-ref">Data Types</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/vectors.html#base-r-vectors"><span class="std std-ref">Vectors</span></a></p></li>
-<li><p><span class="xref myst">Numerical Vectors</span></p></li>
+<li><p>Import the NYC Dog Licenses data <strong>from the shared folder</strong> using the <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code> function and store it in an R data frame called <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code>.</p></li>
+<li><p>In a separate code cell, load the dplyr package by running the <code class="docutils literal notranslate"><span class="pre">library(dplyr)</span></code>command. You can ignore the warnings about masked objects.</p></li>
+<li><p>In a separate code cell, use <code class="docutils literal notranslate"><span class="pre">rename()</span></code> to rename the <code class="docutils literal notranslate"><span class="pre">AnimalBirthMonth</span></code> column in <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code> to <code class="docutils literal notranslate"><span class="pre">AnimalBirthYear</span></code>. If you run this command multiple times, you will get an error message, because on subsequent runs there will be no <code class="docutils literal notranslate"><span class="pre">AnimalBirthMonth</span></code> column to rename.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">names()</span></code> to verify that you succeeded in renaming the column.</p></li>
 </ul>
-<div class="section" id="useful-links">
-<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
-<p>The following links are also in the Content tool on Brightspace.</p>
+<p><code class="docutils literal notranslate"><span class="pre">rename(DATA_FRAME,</span> <span class="pre">NEW_COLUMN_NAME</span> <span class="pre">=</span> <span class="pre">OLD_COLUMN_NAME)</span></code></p>
+</div>
+<div class="section" id="exercise-2-most-popular-breeds">
+<h3>Exercise 2 - Most popular breeds<a class="headerlink" href="#exercise-2-most-popular-breeds" title="Permalink to this headline">¶</a></h3>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions to answer the following questions.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://nyumathclinic.github.io/core-ua_111_course_book/">Course Book</a></p></li>
-<li><p><a class="reference external" href="https://nyu0-my.sharepoint.com/:o:/g/personal/cc5948_nyu_edu/EthbeMeNnc5Cgs34RxBsLPMBHkNqPkzLwJCN7OM63sW1mg?e=cAb9oe">Class notes</a></p></li>
-<li><p><a class="reference external" href="https://www.polleverywhere.com/auth/saml/nyu_main">Poll Everywhere login</a></p></li>
-<li><p><a class="reference external" href="https://pollev.com/clarkson">Poll Everywhere respond</a></p></li>
+<li><p>Create a summary table that contains the number dogs in each breed in the <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code> data sets.</p></li>
+<li><p>Sort the table so that the most popular breeds are at the top.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">head()</span></code> to extract the first five rose from the table.</p></li>
+<li><p>Store the truncated summary table in a variable called <code class="docutils literal notranslate"><span class="pre">most_popular_breeds</span></code></p></li>
+<li><p>Answer the question below using the <code class="docutils literal notranslate"><span class="pre">most_popular_breeds</span></code> data frame.</p></li>
+</ul>
+<p>What is the most popular breed of dog in the nyc_dogs data set?</p>
+</div>
+<div class="section" id="excercise-3-average-age">
+<h3>Excercise 3 - Average age<a class="headerlink" href="#excercise-3-average-age" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add a new column called <code class="docutils literal notranslate"><span class="pre">Age</span></code> to the data frame. This column should contain an approximation of each dog’s age.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">ungroup()</span></code> to remove all groupings from nyc_dogs.</p></li>
+<li><p>Create a summary table that shows the average age of both the female dogs and the male dogs in the nyc_dogs data frame. Name the average age column <code class="docutils literal notranslate"><span class="pre">AverageAge</span></code>.</p></li>
+<li><p>Store the summary table in a variable called `avg_age_by_gender’.</p></li>
+<li><p>Out put the summary table</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">ungroup(DATA_FRAME)</span></code></p>
+</div>
+</div>
+<div class="section" id="part-2-bar-charts">
+<h2>Part 2 - Bar charts<a class="headerlink" href="#part-2-bar-charts" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-4-meet-the-functions">
+<h3>Exercise 4 - Meet the functions<a class="headerlink" href="#exercise-4-meet-the-functions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Load the <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> package by excuting the <code class="docutils literal notranslate"><span class="pre">library('ggplot2')</span></code> command. You can ignore the warning about overwritten methods.</p></li>
+<li><p>Look at the documentation for the <code class="docutils literal notranslate"><span class="pre">aes()</span></code> function. What term is “aes” a shorting of? Write your answer in a markdown cell.</p></li>
 </ul>
 </div>
-<div class="section" id="part-1-using-variables">
-<h2>Part 1: Using variables<a class="headerlink" href="#part-1-using-variables" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-0-open-this-notebook-on-the-jupyter-hub">
-<h3>Exercise 0 - Open this notebook on the Jupyter Hub<a class="headerlink" href="#exercise-0-open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-5-visualize-popular-breeds">
+<h3>Exercise 5 - Visualize popular breeds<a class="headerlink" href="#exercise-5-visualize-popular-breeds" title="Permalink to this headline">¶</a></h3>
+<p>The goal of this exercise is to produce a visual representation of the information in the summarize table from exercise 2.</p>
 <ul class="simple">
-<li><p>Click on the rocket icon in the upper right of this page of the course book.</p></li>
-<li><p>Click the JupyterHub link.</p></li>
-<li><p>If prompted, log in to the Jupyter Hub with your NYU account.</p></li>
-<li><p>If prompted to select a kernel, choose <em>R [conda env:FDTD]</em>.</p></li>
+<li><p>Execute the code in the first cell below to tell R to our preferred dimensions for plots.</p></li>
+<li><p>Replace the words in all caps in the second cell below so that it produce a bar chart that shows the number of dogs in each of the five most popular breeds.</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-1-random-number">
-<h3>Exercise 1: Random number<a class="headerlink" href="#exercise-1-random-number" title="Permalink to this headline">¶</a></h3>
-<p>The code in the cell below generates a random number between 0 and 10 and stores it in the variable <code class="docutils literal notranslate"><span class="pre">random_number</span></code>.</p>
-<ul class="simple">
-<li><p>Run the code in the cell below.</p></li>
-<li><p>Use a different code cell to output the value of random_number.</p></li>
-<li><p>Run the code in the cell below a second time.</p></li>
-<li><p>Run your code a second time. The value of <code class="docutils literal notranslate"><span class="pre">random_number</span></code> should be different this time.</p></li>
-</ul>
+<p><code class="docutils literal notranslate"><span class="pre">ggplot(DATA_FRAME,</span> <span class="pre">aes(x</span> <span class="pre">=</span> <span class="pre">COLUMN_NAME_1,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">COLUMN_NAME_2))</span> <span class="pre">+</span> <span class="pre">geom_col()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># You cannot edit this cell. </span>
-<span class="c1"># Notice that R gives no output when you assign values to variables.</span>
-<span class="c1"># You can see that the cell has been run if there is a number in the brackets: In [].</span>
-
-<span class="n">random_number</span> <span class="o">&lt;-</span> <span class="nf">runif</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">10</span><span class="p">)</span> <span class="c1"># generates a random number between 0 and 10</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resizes all plots to 5 in by 4 in</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">repr</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">DATA_FRAME</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">COLUMN_NAME_1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">COLUMN_NAME_2</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_col</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">DATA_FRAME</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">COLUMN_NAME_1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">COLUMN_NAME_2</span><span class="p">)):</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;ggplot&quot;</span>
+<span class="ne">Traceback</span>:
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="exercise-2-birth-year">
-<h3>Exercise 2: Birth year<a class="headerlink" href="#exercise-2-birth-year" title="Permalink to this headline">¶</a></h3>
-<p>Ainsley was born on January 1st 2015.</p>
+<div class="section" id="exercise-6-reorder-the-bars">
+<h3>Exercise 6 - Reorder the bars<a class="headerlink" href="#exercise-6-reorder-the-bars" title="Permalink to this headline">¶</a></h3>
+<p>The breed names in the bar chart in exercise 5 are ordered alphabetically. The chart would be more effective if the breeds were ordered according to popularity. This can be achieved using <code class="docutils literal notranslate"><span class="pre">reorder()</span></code> inside the aesthetic mapping.</p>
+<p><code class="docutils literal notranslate"><span class="pre">reorder(AXIS_VALUES,</span> <span class="pre">SORTING_VALUES)</span></code>
+Putting a minus sign in front of the <code class="docutils literal notranslate"><span class="pre">SORTING_VALUES</span></code> column name reverses the sorting order.</p>
 <ul class="simple">
-<li><p>Store Ainsley’s birth year in the variable <code class="docutils literal notranslate"><span class="pre">birth_year</span></code>.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">birth_year</span></code> to compute the year when Ainsley will turn 21.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">birth_year</span></code> to compute how old Ainsley will be in 2050.</p></li>
-<li><p>Summarize your findings in a sentence or two in a markdown cell.</p></li>
+<li><p>Copy your code from exercise 5.</p></li>
+<li><p>Replace  replace <code class="docutils literal notranslate"><span class="pre">BreedName</span></code> in the aesthetic mapping with <code class="docutils literal notranslate"><span class="pre">reorder(BreedName,</span> <span class="pre">Count)</span></code> or <code class="docutils literal notranslate"><span class="pre">reorder(BreedName,</span> <span class="pre">-Count)</span></code> depending on which order you want.</p></li>
 </ul>
 </div>
-</div>
-<div class="section" id="part-2-building-vectors">
-<h2>Part 2: Building Vectors<a class="headerlink" href="#part-2-building-vectors" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-3-boroughs">
-<h3>Exercise 3: Boroughs<a class="headerlink" href="#exercise-3-boroughs" title="Permalink to this headline">¶</a></h3>
-<p>Create a vector that contains the names of the five boroughs of New York city:</p>
+<div class="section" id="exercise-7-visualize-average-ages">
+<h3>Exercise 7 - Visualize average ages<a class="headerlink" href="#exercise-7-visualize-average-ages" title="Permalink to this headline">¶</a></h3>
+<p>The goal of this exercise is to produce a visual representation of the information in the summarize table from exercise 3.</p>
 <ul class="simple">
-<li><p>Brooklyn</p></li>
-<li><p>Bronx</p></li>
-<li><p>Manhattan</p></li>
-<li><p>Queens</p></li>
-<li><p>Staten Island</p></li>
+<li><p>Create a bar chart that shows the average age of male and female dogs in the nyc_dots data set.</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-4-dollars-and-cents">
-<h3>Exercise 4: Dollars and cents<a class="headerlink" href="#exercise-4-dollars-and-cents" title="Permalink to this headline">¶</a></h3>
-<p>Create a vector that contains all the amounts of money that you can make with five quarters. Format the amounts using decimals and no dollar signs eg. write <span class="math notranslate nohighlight">\(5.75\)</span> for five dollars and 75 cents.</p>
-</div>
-<div class="section" id="exercise-5-count-to-100">
-<h3>Exercise 5: Count to 100<a class="headerlink" href="#exercise-5-count-to-100" title="Permalink to this headline">¶</a></h3>
-<p>Without typing out the individual entries, create a vector that contains the whole numbers from 1 to 100.</p>
-</div>
-<div class="section" id="exercise-6-check-the-type">
-<h3>Exercise 6: Check the type<a class="headerlink" href="#exercise-6-check-the-type" title="Permalink to this headline">¶</a></h3>
-<p>Use <code class="docutils literal notranslate"><span class="pre">typeof()</span></code> to check the data type of the entries in each of the vectors from this part.</p>
-</div>
-</div>
-<div class="section" id="part-3-working-with-vectors">
-<h2>Part 3: Working with vectors<a class="headerlink" href="#part-3-working-with-vectors" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-7-counting-by-fives">
-<h3>Exercise 7: Counting by fives<a class="headerlink" href="#exercise-7-counting-by-fives" title="Permalink to this headline">¶</a></h3>
-<p>Without typing out the individual entries, create a vector whose entries are the following numbers:
-10 15 20 25 30 35 40 45 50 55.</p>
-</div>
-<div class="section" id="exercise-8-ice-cream-sale">
-<h3>Exercise 8: Ice cream sale!!!<a class="headerlink" href="#exercise-8-ice-cream-sale" title="Permalink to this headline">¶</a></h3>
-<p>An ice cream truck sells many different types of ice cream. The prices of each type of ice cream are stored in a vector called <code class="docutils literal notranslate"><span class="pre">ice_cream_prices</span></code>in the code cell below. Today the ice cream is on sale! The amount that each item is discounted is stored in the vector called <code class="docutils literal notranslate"><span class="pre">discounts</span></code>. The order of the discounts corresponds to the order of the prices.</p>
-<ul class="simple">
-<li><p>Run the code cell below to store the values of the ice cream prices and discounts in vectors.</p></li>
-<li><p>Create a new vector with the sale prices of each item and store the vector in a variable called <code class="docutils literal notranslate"><span class="pre">sale_prices</span></code>.</p></li>
-<li><p>Output the values in <code class="docutils literal notranslate"><span class="pre">sale_prices</span></code>.</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># You cannot edit this cell. </span>
-<span class="c1"># Notice that R gives no output when you assign values to variables.</span>
-<span class="c1"># You can see that the cell has been exicuted if there is a number in the brackets: In [].</span>
-
-<span class="n">ice_cream_prices</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1.25</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5.99</span><span class="p">,</span> <span class="m">1.75</span><span class="p">,</span> <span class="m">6.75</span><span class="p">,</span> <span class="m">4.99</span><span class="p">,</span> <span class="m">7.09</span><span class="p">,</span> <span class="m">3.55</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
-<span class="n">discounts</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.25</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.50</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.25</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<div class="admonition tip">
+<p class="admonition-title">Style Tip</p>
+<p>While using bar charts to represent averages is a common practice, other types of visualizations like box plots and histograms like do a much better job of representing how numerical values depend on categorical variables.</p>
 </div>
 </div>
 </div>
@@ -571,19 +531,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="lesson01.html" title="previous page">
+        <a class="left-prev" href="lesson05.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lesson 1: Introduction to R and JupyterHub</p>
+                <p class="prevnext-title">Lesson 5: Select columns and filter rows</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="lesson03.html" title="next page">
+        <a class="right-next" href="../homework/homework_0.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 3 Data sets and more vectors</p>
+                <p class="prevnext-title">Homework 0</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

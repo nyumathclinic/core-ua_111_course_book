@@ -202,7 +202,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../in-class_exercises/lesson05.html">
-   Lesson 5: Select, filter, group and summarize
+   Lesson 5: Select columns and filter rows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson06.html">
+   Lesson 6 -  Group, summarize and visualize
   </a>
  </li>
 </ul>
@@ -225,6 +230,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../homework/homework_02.html">
    Homework 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_03.html">
+   Homework 3
   </a>
  </li>
 </ul>
@@ -371,6 +381,11 @@
      Box plots
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-weights-of-chicks-on-last-day">
+     Example: Weights of chicks on last day
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -435,8 +450,11 @@
 </div>
 </div>
 <div class="section" id="bar-charts">
-<h2>Bar Charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">¶</a></h2>
+<span id="ggplot-bar-charts"></span><h2>Bar Charts<a class="headerlink" href="#bar-charts" title="Permalink to this headline">¶</a></h2>
+<p>Bar Charts are used to show how quantities depend on a particular <strong>categorical variable</strong>. There are two ways to produce bar charts with <code class="docutils literal notranslate"><span class="pre">ggplot</span></code>. Use <code class="docutils literal notranslate"><span class="pre">geom_bar()</span></code> to visualize the number of observations in each category.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ggplot(DATA_FRAME,</span> <span class="pre">aes(x</span> <span class="pre">=</span> <span class="pre">COLUMN))</span> <span class="pre">+</span> <span class="pre">geom_bar()</span></code></p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">geom_col()</span></code> to visualize how another numerical variable depends on the category.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ggplot(SUMMARY_TABLE,</span> <span class="pre">aes(x</span> <span class="pre">=</span> <span class="pre">COLUMN_1,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">COLUMN_2))</span> <span class="pre">+</span> <span class="pre">geom_col()</span></code></p>
 <div class="section" id="example-number-of-chicks-weighed-on-the-first-day">
 <h3>Example: Number of chicks weighed on the first day<a class="headerlink" href="#example-number-of-chicks-weighed-on-the-first-day" title="Permalink to this headline">¶</a></h3>
 <p>We can combine <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">ggplot</span></code> to create a bar chat that shows the number of chicks in each diet group that were weighed on the first day of the study.</p>
@@ -471,11 +489,11 @@
 <h3>Example: Average weight on last day<a class="headerlink" href="#example-average-weight-on-last-day" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 1: Use ggplot to summarize</span>
-<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
     <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="nf">max</span><span class="p">(</span><span class="n">Time</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Diet</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">weight</span><span class="p">))</span> <span class="o">+</span>
-        <span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span> <span class="o">=</span> <span class="s">&quot;summary&quot;</span><span class="p">,</span>  <span class="n">fun</span> <span class="o">=</span> <span class="s">&quot;mean&quot;</span><span class="p">)</span>
+    <span class="nf">group_by</span><span class="p">(</span><span class="n">Diet</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">summarize</span><span class="p">(</span><span class="n">Avg_Weight</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Diet</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Avg_Weight</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_col</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -483,26 +501,15 @@
 <img alt="../_images/ggplot2_library_11_0.png" src="../_images/ggplot2_library_11_0.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Strategy 2: Generate a summary table, then plot it</span>
-<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
-    <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="nf">max</span><span class="p">(</span><span class="n">Time</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">Diet</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">Avg_Weight</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">weight</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Diet</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Avg_Weight</span><span class="p">))</span> <span class="o">+</span>
-        <span class="nf">geom_bar</span><span class="p">(</span><span class="n">stat</span> <span class="o">=</span> <span class="s">&quot;identity&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/ggplot2_library_12_0.png" src="../_images/ggplot2_library_12_0.png" />
-</div>
+<div class="admonition tip">
+<p class="admonition-title">Style Tip</p>
+<p>While using bar charts to represent averages is a common practice, other types of visualizations like box plots and histograms like do a much better job of representing how numerical values depend on categorical variables.</p>
 </div>
 </div>
 </div>
 <div class="section" id="histograms">
 <h2>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h2>
+<p>Histograms are use to show the distribution of the values of a numeric variable.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ggplot(DATA_FRAME,</span> <span class="pre">aes(x</span> <span class="pre">=</span> <span class="pre">COLUMN))</span> <span class="pre">+</span> <span class="pre">geom_histogram(bins</span> <span class="pre">=</span> <span class="pre">NUMBER_OF_BINS)</span></code></p>
 <div class="section" id="example-distribution-of-weights-on-the-last-day">
 <h3>Example: Distribution of weights on the last day<a class="headerlink" href="#example-distribution-of-weights-on-the-last-day" title="Permalink to this headline">¶</a></h3>
@@ -551,6 +558,7 @@
 </div>
 <div class="section" id="scatter-plots">
 <h2>Scatter Plots<a class="headerlink" href="#scatter-plots" title="Permalink to this headline">¶</a></h2>
+<p>Scatter plots are used to show the relation ship between two numeric variables. Using color or shape we can also add information about categorical variables.</p>
 <p><code class="docutils literal notranslate"><span class="pre">ggplot(DATA_FRAME,</span> <span class="pre">aes(x</span> <span class="pre">=</span> <span class="pre">COLUMN_1,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">COLUMN_2))</span> <span class="pre">+</span> <span class="pre">geom_point()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -578,6 +586,11 @@
 </div>
 <div class="section" id="box-plots">
 <h3>Box plots<a class="headerlink" href="#box-plots" title="Permalink to this headline">¶</a></h3>
+<p>Box plots are another way to show the distribution of a numeric variable. The bold horizontal line in the middle of the box indicates the location of the median. The top of the box is the cut off for the 75% quantile and the bottom is that for the 25% quantile. The top of the upper vertical whisker is the maximum value and the bottom of the lower whisker is the minimum value.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ggplot(aes(x</span> <span class="pre">=</span> <span class="pre">CATEGORIC_VARIABLE,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">NUMERIC_VARIABLE))</span> <span class="pre">+</span> <span class="pre">geom_boxplot()</span></code></p>
+</div>
+<div class="section" id="example-weights-of-chicks-on-last-day">
+<h3>Example: Weights of chicks on last day<a class="headerlink" href="#example-weights-of-chicks-on-last-day" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
@@ -588,7 +601,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ggplot2_library_23_0.png" src="../_images/ggplot2_library_23_0.png" />
+<img alt="../_images/ggplot2_library_24_0.png" src="../_images/ggplot2_library_24_0.png" />
 </div>
 </div>
 </div>

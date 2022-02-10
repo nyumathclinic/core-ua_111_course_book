@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 5: Select, filter, group and summarize &#8212; From Data to Discovery</title>
+    <title>Lesson 5: Select columns and filter rows &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="next" title="Lesson 6 - Group, summarize and visualize" href="lesson06.html" />
     <link rel="prev" title="Lesson 4: Mutate, arrange, piping" href="lesson04.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -202,7 +202,12 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Lesson 5: Select, filter, group and summarize
+   Lesson 5: Select columns and filter rows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson06.html">
+   Lesson 6 -  Group, summarize and visualize
   </a>
  </li>
 </ul>
@@ -225,6 +230,11 @@
  <li class="toctree-l1">
   <a class="reference internal" href="../homework/homework_02.html">
    Homework 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_03.html">
+   Homework 3
   </a>
  </li>
 </ul>
@@ -371,28 +381,6 @@
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-3-group-and-summarize">
-   Part 3 - Group and Summarize
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-where-do-the-dogs-live">
-     Exercise 7 - Where do the dogs live?
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-8-average-age">
-     Excercise 8 - Average age
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-9-popular-name">
-     Exercise 9 - Popular name
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
             </nav>
@@ -404,17 +392,17 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-5-select-filter-group-and-summarize">
-<span id="in-class-exercises-lesson05"></span><h1>Lesson 5: Select, filter, group and summarize<a class="headerlink" href="#lesson-5-select-filter-group-and-summarize" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-5-select-columns-and-filter-rows">
+<span id="in-class-exercises-lesson05"></span><h1>Lesson 5: Select columns and filter rows<a class="headerlink" href="#lesson-5-select-columns-and-filter-rows" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
 <div class="section" id="part-1-set-up-and-sort">
 <h2>Part 1 - Set up and sort<a class="headerlink" href="#part-1-set-up-and-sort" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-1-set-up">
 <h3>Exercise 1 - Set up<a class="headerlink" href="#exercise-1-set-up" title="Permalink to this headline">¶</a></h3>
-<p>There is a CSV file called <code class="docutils literal notranslate"><span class="pre">NYC_Dog_Licensing.csv</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/shared/data</span></code> folder. As the name indicates, this file contains information about New York City dog licences. This data comes from the <a class="reference external" href="https://opendata.cityofnewyork.us/">NYC OpenData project</a>.</p>
+<p>There is a CSV file called <code class="docutils literal notranslate"><span class="pre">NYC_Dog_Licensing.csv</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/shared/data</span></code> folder. As the name indicates, this file contains information about New York City dog licenses. This data comes from the <a class="reference external" href="https://opendata.cityofnewyork.us/">NYC OpenData project</a>.</p>
 <ul class="simple">
 <li><p>Import the NYC Dog Licenses data <strong>from the shared folder</strong> using the <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code> function and store it in an R data frame called <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code>.</p></li>
-<li><p>In a separate code cell, load the dplyr package by running the <code class="docutils literal notranslate"><span class="pre">library('dplyr')</span></code>command. You can ignore the warnings about masked objects.</p></li>
+<li><p>In a separate code cell, load the dplyr package by running the <code class="docutils literal notranslate"><span class="pre">library(dplyr)</span></code>command. You can ignore the warnings about masked objects.</p></li>
 <li><p>In a separate code cell, use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add a new column called <code class="docutils literal notranslate"><span class="pre">Age</span></code> to the data frame. This column should contain an approximation of each dog’s age.</p></li>
 </ul>
 </div>
@@ -477,31 +465,6 @@
 <p>What assumptions are underlying your answer? Is your number likely larger than, equal to, or smaller than the actual number.</p>
 </div>
 </div>
-<div class="section" id="part-3-group-and-summarize">
-<h2>Part 3 - Group and Summarize<a class="headerlink" href="#part-3-group-and-summarize" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-7-where-do-the-dogs-live">
-<h3>Exercise 7 - Where do the dogs live?<a class="headerlink" href="#exercise-7-where-do-the-dogs-live" title="Permalink to this headline">¶</a></h3>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions to answer the following questions. You can ignore the warning message about <code class="docutils literal notranslate"><span class="pre">summarise()</span></code> ungrouping output.</p>
-<ul class="simple">
-<li><p>How many of dogs in the nyc_dogs data set live in each zip code?</p></li>
-</ul>
-</div>
-<div class="section" id="excercise-8-average-age">
-<h3>Excercise 8 - Average age<a class="headerlink" href="#excercise-8-average-age" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">ungroup()</span></code> to remove all groupings from nyc_dogs.</p></li>
-<li><p>Find the average age of both the female dogs and the male dogs in the nyc_dogs data frame.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">ungroup(DATA_FRAME)</span></code></p>
-</div>
-<div class="section" id="exercise-9-popular-name">
-<h3>Exercise 9 - Popular name<a class="headerlink" href="#exercise-9-popular-name" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">ungroup()</span></code> to remove all groupings from nyc_dogs.</p></li>
-<li><p>Find the most popular male dog name and the most popular female dog name in the nyc_dogs dataset.</p></li>
-</ul>
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -543,10 +506,10 @@
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../homework/homework_0.html" title="next page">
+        <a class="right-next" href="lesson06.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Homework 0</p>
+                <p class="prevnext-title">Lesson 6 -  Group, summarize and visualize</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
