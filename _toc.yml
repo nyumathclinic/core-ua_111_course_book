@@ -50,3 +50,4 @@ parts:
 - caption: Lab worksheets
   chapters:
   - file: labs/lab_01
+  - file: labs/lab_02
