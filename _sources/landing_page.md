@@ -53,5 +53,5 @@ This site is intended to serve as reference for students enrolled in the Spring 
 - [](summarize)
 - [](ggplot:bar_charts)
 - [](in-class_exercises:lesson06)
-- Lab 2 Worksheet
+- [](lab02)
 - [](homework02)
