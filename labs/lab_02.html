@@ -352,18 +352,18 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-first-summary-table">
-     Exercise 1: First summary table
+    <a class="reference internal nav-link" href="#exercise-1-first-table">
+     Exercise 1: First table
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-second-summary-table">
-     Exercise 2: Second summary table
+    <a class="reference internal nav-link" href="#exercise-2-second-table">
+     Exercise 2: Second table
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-first-summary-table">
-     Exercise 3: First summary table
+    <a class="reference internal nav-link" href="#exercise-3-third-table">
+     Exercise 3: Third table
     </a>
    </li>
   </ul>
@@ -374,8 +374,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-custom-order">
-     Exercise 4: Custom order
+    <a class="reference internal nav-link" href="#exercise-4-count-the-trees">
+     Exercise 4: Count the trees
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -418,72 +418,64 @@ and the methods yourself</p>
 <h2>Part 1 Sale!<a class="headerlink" href="#part-1-sale" title="Permalink to this headline">¶</a></h2>
 <p>The questions in this section all refer to the <code class="docutils literal notranslate"><span class="pre">sale</span></code> data set described in the table below. The Discount column gives the percentage by which the price is reduced. Thus, the carrots marked down by 50%.</p>
 <p>The exercise should be completed <strong>without using data frames or dplyr</strong>. You may using R to do arithmetic, but everything else should be done by hand. You can also use this <a class="reference external" href="https://www.tablesgenerator.com/markdown_tables">Markdown Table Generator</a> to create tables more easily.</p>
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
-<table class="tg">
+<table>
 <thead>
   <tr>
-    <th class="tg-0pky">Type</th>
-    <th class="tg-0pky">Description</th>
-    <th class="tg-0pky">Discount</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>Discount</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td class="tg-0pky">fruit</td>
-    <td class="tg-0pky">apple</td>
-    <td class="tg-0pky">0</td>
+    <td>fruit</td>
+    <td>apple</td>
+    <td>0</td>
   </tr>
   <tr>
-    <td class="tg-0pky">vegetable</td>
-    <td class="tg-0pky">spinach</td>
-    <td class="tg-0pky">25</td>
+    <td>vegetable</td>
+    <td>spinach</td>
+    <td>25</td>
   </tr>
   <tr>
-    <td class="tg-0pky">vegetable</td>
-    <td class="tg-0pky">carrot</td>
-    <td class="tg-0pky">50</td>
+    <td>vegetable</td>
+    <td>carrot</td>
+    <td>50</td>
   </tr>
   <tr>
-    <td class="tg-0pky">fruit</td>
-    <td class="tg-0pky">pear</td>
-    <td class="tg-0pky">25</td>
+    <td>fruit</td>
+    <td>pear</td>
+    <td>25</td>
   </tr>
   <tr>
-    <td class="tg-0pky">grain</td>
-    <td class="tg-0pky">rice</td>
-    <td class="tg-0pky">50</td>
+    <td>grain</td>
+    <td>rice</td>
+    <td>50</td>
   </tr>
   <tr>
-    <td class="tg-0pky">grain</td>
-    <td class="tg-0pky">quinoa</td>
-    <td class="tg-0pky">0</td>
+    <td>grain</td>
+    <td>quinoa</td>
+    <td>0</td>
   </tr>
   <tr>
-    <td class="tg-0pky">fruit</td>
-    <td class="tg-0pky">banana</td>
-    <td class="tg-0pky">50</td>
+    <td>fruit</td>
+    <td>banana</td>
+    <td>50</td>
   </tr>
   <tr>
-    <td class="tg-0pky">vegetable</td>
-    <td class="tg-0pky">celery</td>
-    <td class="tg-0pky">75</td>
+    <td>vegetable</td>
+    <td>celery</td>
+    <td>75</td>
   </tr>
   <tr>
-    <td class="tg-0pky">vegetable</td>
-    <td class="tg-0pky">onion</td>
-    <td class="tg-0pky">50</td>
+    <td>vegetable</td>
+    <td>onion</td>
+    <td>50</td>
   </tr>
 </tbody>
 </table>
-<div class="section" id="exercise-1-first-summary-table">
-<h3>Exercise 1: First summary table<a class="headerlink" href="#exercise-1-first-summary-table" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-1-first-table">
+<h3>Exercise 1: First table<a class="headerlink" href="#exercise-1-first-table" title="Permalink to this headline">¶</a></h3>
 <p>The following code defines a data frame called <code class="docutils literal notranslate"><span class="pre">table_1</span></code>. In the markdown cell below, use a markdown table to display <code class="docutils literal notranslate"><span class="pre">table_1</span></code>. Briefly explain your reasoning.</p>
 <pre>
 <code>
@@ -493,8 +485,8 @@ table_1 &lt;- sale %&gt;%
     arrange(Type)                
 </code>
 </pre></div>
-<div class="section" id="exercise-2-second-summary-table">
-<h3>Exercise 2: Second summary table<a class="headerlink" href="#exercise-2-second-summary-table" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-2-second-table">
+<h3>Exercise 2: Second table<a class="headerlink" href="#exercise-2-second-table" title="Permalink to this headline">¶</a></h3>
 <p>The following code defines a data frame called <code class="docutils literal notranslate"><span class="pre">table_2</span></code>. In the markdown cell below, use a markdown table to display <code class="docutils literal notranslate"><span class="pre">table_2</span></code>. Briefly explain your reasoning.</p>
 <pre>
 <code>
@@ -504,8 +496,8 @@ table_2 &lt;- sale %&gt;%
     arrange(desc(Number))
 </code>
 </pre></div>
-<div class="section" id="exercise-3-first-summary-table">
-<h3>Exercise 3: First summary table<a class="headerlink" href="#exercise-3-first-summary-table" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-3-third-table">
+<h3>Exercise 3: Third table<a class="headerlink" href="#exercise-3-third-table" title="Permalink to this headline">¶</a></h3>
 <p>The following code defines a data frame called <code class="docutils literal notranslate"><span class="pre">table_3</span></code>. In the markdown cell below, use a markdown table to display <code class="docutils literal notranslate"><span class="pre">table_3</span></code>. Briefly explain your reasoning.</p>
 <pre>
 <code>
@@ -517,8 +509,8 @@ table_3 &lt;- sale %&gt;%
 </div>
 <div class="section" id="part-2-nyc-trees">
 <h2>Part 2: NYC Trees<a class="headerlink" href="#part-2-nyc-trees" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-4-custom-order">
-<h3>Exercise 4: Custom order<a class="headerlink" href="#exercise-4-custom-order" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-4-count-the-trees">
+<h3>Exercise 4: Count the trees<a class="headerlink" href="#exercise-4-count-the-trees" title="Permalink to this headline">¶</a></h3>
 <p>There is a CSV file called <code class="docutils literal notranslate"><span class="pre">NYC_Tree_Census_small.csv</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/shared/data</span></code> folder. This file contains information an excerpt from the <a class="reference external" href="https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh">2015 New York City Tree Census</a> shared by the <a class="reference external" href="https://data.cityofnewyork.us">NYC OpenData project</a>.</p>
 <ul class="simple">
 <li><p>Import the NYC tree census data <strong>from the local file</strong> and store it as a data frame called <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code>.</p></li>
