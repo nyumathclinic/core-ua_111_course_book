@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Arithmetic with numbers &#8212; From Data to Discovery</title>
+    <title>Pretty plots &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Variables" href="variables.html" />
-    <link rel="prev" title="R basics" href="r_basics.html" />
+    <link rel="next" title="Numeric Models" href="numerical_models.html" />
+    <link rel="prev" title="ggplot2" href="ggplot2_library.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,18 +94,18 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="r_basics.html">
    R basics
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
      Arithmetic with numbers
     </a>
    </li>
@@ -133,16 +131,16 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="data.html">
    Exploring Data
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="data_loading.html">
      Loading data
@@ -163,8 +161,8 @@
      ggplot2
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="ggplot_pretty_plots.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Pretty plots
     </a>
    </li>
@@ -307,7 +305,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/reference/arithmetic.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/reference/ggplot_pretty_plots.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -333,7 +331,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/reference/arithmetic.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/reference/ggplot_pretty_plots.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -355,18 +353,30 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#add-subtract-multiply-and-divide">
-   Add, subtract, multiply and divide
+  <a class="reference internal nav-link" href="#layers">
+   Layers
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#parentheses-and-exponents">
-   Parentheses and exponents
+  <a class="reference internal nav-link" href="#titles-and-labels">
+   Titles and labels
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-order-of-operations">
-     Example: Order of operations
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#built-in-themes">
+   Built-in themes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Examples
     </a>
    </li>
   </ul>
@@ -382,118 +392,129 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="arithmetic-with-numbers">
-<span id="r-basics-arithmetic"></span><h1>Arithmetic with numbers<a class="headerlink" href="#arithmetic-with-numbers" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="add-subtract-multiply-and-divide">
-<h2>Add, subtract, multiply and divide<a class="headerlink" href="#add-subtract-multiply-and-divide" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">+</span></code> plus adds numbers.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="pretty-plots">
+<h1>Pretty plots<a class="headerlink" href="#pretty-plots" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will learn to make plots accessible, clear and aesthetically pleasing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1+2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># The examples require dplyr and ggplot2</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">3</div></div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">-</span></code> minus subtracts numbers.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1-2</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">-1</div></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">*</span></code> asterisk multiplies numbers.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">*</span><span class="m">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">10</div></div>
-</div>
+<div class="section" id="layers">
+<h2>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<p>ggplots are built in layers. Layers are connected with plus signs. The first layer is on the bottom and the last layer is on the top.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Juxtaposition does <b>not</b> work for multiplication. The code <code>5(2)</code> will reult in the following error.</p>
-<p><quote>Error in eval(expr, envir, enclos): attempt to apply non-function</quote></p>
+<p>The plus sign connecting layers must come <b>before the line break</b>.</p>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">/</span></code> forward slash divides numbers.</p>
+</div>
+<div class="section" id="titles-and-labels">
+<span id="pretty-plots-labels"></span><h2>Titles and labels<a class="headerlink" href="#titles-and-labels" title="Permalink to this headline">¶</a></h2>
+<p>To increase clarity, every plot should have a descriptive title and descriptive axis labels that include units. We accomplish this by adding a <code class="docutils literal notranslate"><span class="pre">labs()</span></code> layer to our ggplot.</p>
+<p><code class="docutils literal notranslate"><span class="pre">labs(</span> <span class="pre">title</span> <span class="pre">=</span> <span class="pre">'TITLE',</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">'x-AXIS_LABEL',</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">'y-AXIS_LABEL')</span></code></p>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">4</span><span class="o">/</span><span class="m">2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Size of diet groups bar chart</span>
+<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Diet</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">geom_bar</span><span class="p">()</span> <span class="o">+</span>
+        <span class="nf">labs</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Size of diet groups on first day&#39;</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Diet group&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Number of chicks&#39;</span>
+        <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">2</div></div>
+<img alt="../_images/ggplot_pretty_plots_6_0.png" src="../_images/ggplot_pretty_plots_6_0.png" />
 </div>
 </div>
-<div class="section" id="parentheses-and-exponents">
-<h2>Parentheses and exponents<a class="headerlink" href="#parentheses-and-exponents" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">()</span></code> parentheses group computations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1+2</span><span class="p">)</span><span class="o">*</span><span class="m">5</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chick weight diet group 4 scatter plot</span>
+<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Diet</span> <span class="o">==</span> <span class="m">4</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">weight</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+        <span class="nf">labs</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Weight of chicks in diet group 4&quot;</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Time (day)&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Weight (gm)&#39;</span>
+        <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">15</div></div>
+<img alt="../_images/ggplot_pretty_plots_7_0.png" src="../_images/ggplot_pretty_plots_7_0.png" />
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">^</span></code> caret and <code class="docutils literal notranslate"><span class="pre">**</span></code> two asterisks both raise numbers two powers.</p>
+</div>
+</div>
+</div>
+<div class="section" id="built-in-themes">
+<span id="pretty-plots-themes"></span><h2>Built-in themes<a class="headerlink" href="#built-in-themes" title="Permalink to this headline">¶</a></h2>
+<p>The ggplot library has multiple built-in themes to which you can use to set the style of your plots. The black and white theme <code class="docutils literal notranslate"><span class="pre">theme_bw()</span></code> and the classic theme <code class="docutils literal notranslate"><span class="pre">theme_classic()</span></code> are two of the options. See the <a class="reference external" href="https://ggplot2.tidyverse.org/reference/ggtheme.html">ggplot documentation</a> for more built-in themes.</p>
+<p>Themes should be added as the laster later to a ggplot so that the effect all other layers.</p>
+<p>Adding <code class="docutils literal notranslate"><span class="pre">base_size</span> <span class="pre">=</span> <span class="pre">NUMBER</span></code> inside the parentheses of a built-in theme scales the font size. The default value is 11; choosing a number larger than that will increase the font size.</p>
+<div class="section" id="id1">
+<h3>Examples<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">^</span><span class="m">2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Size of diet groups bar chart</span>
+<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Diet</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">geom_bar</span><span class="p">()</span> <span class="o">+</span>
+        <span class="nf">labs</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Size of diet groups on first day&#39;</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Diet group&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Number of chicks&#39;</span>
+        <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_classic</span><span class="p">(</span><span class="n">base_size</span> <span class="o">=</span> <span class="m">18</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">25</div></div>
+<img alt="../_images/ggplot_pretty_plots_10_0.png" src="../_images/ggplot_pretty_plots_10_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">5</span><span class="o">**</span><span class="m">2</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chick weight diet group 4 scatter plot</span>
+<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Diet</span> <span class="o">==</span> <span class="m">4</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">weight</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+        <span class="nf">labs</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Weight of chicks in diet group 4&quot;</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Time (day)&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Weight (gm)&#39;</span>
+        <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">(</span><span class="n">base_size</span> <span class="o">=</span> <span class="m">18</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">25</div></div>
+<img alt="../_images/ggplot_pretty_plots_11_0.png" src="../_images/ggplot_pretty_plots_11_0.png" />
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Style Tip</p>
-<p>You  can decide which method of inputting exponents you prefer, but for the sake of clarity you should only use one method in a given notebook.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>R uses the standard order of operations when evaluating arithmetic expressions: parentheses, exponents, multiplication, division, addition, subtraction.</p>
-</div>
-<div class="section" id="example-order-of-operations">
-<h3>Example: Order of operations<a class="headerlink" href="#example-order-of-operations" title="Permalink to this headline">¶</a></h3>
-<div class="math notranslate nohighlight">
-\[1 + 4 \cdot 3 ^ 2 - \frac{5}{2} = 34.5\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1</span> <span class="o">+</span> <span class="m">4</span> <span class="o">*</span> <span class="m">3</span> <span class="o">^</span> <span class="m">2</span> <span class="o">-</span> <span class="m">5</span> <span class="o">/</span> <span class="m">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">34.5</div></div>
-</div>
-<div class="math notranslate nohighlight">
-\[\frac{1 + (4 \cdot 3) ^ 2 - 10}{2}=70\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="m">1</span><span class="o">+</span><span class="p">(</span><span class="m">4</span><span class="o">*</span><span class="m">3</span><span class="p">)</span><span class="o">^</span><span class="m">2-5</span><span class="p">)</span><span class="o">/</span><span class="m">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">70</div></div>
 </div>
 </div>
 </div>
@@ -529,19 +550,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="r_basics.html" title="previous page">
+        <a class="left-prev" href="ggplot2_library.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">R basics</p>
+                <p class="prevnext-title">ggplot2</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="variables.html" title="next page">
+        <a class="right-next" href="numerical_models.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Variables</p>
+                <p class="prevnext-title">Numeric Models</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

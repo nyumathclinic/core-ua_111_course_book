@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Lesson 5: Select columns and filter rows" href="lesson05.html" />
-    <link rel="prev" title="Lesson 3 Data sets and more vectors" href="lesson03.html" />
+    <link rel="prev" title="Lesson 3: Data sets and more vectors" href="lesson03.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -163,6 +163,11 @@
      ggplot2
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/ggplot_pretty_plots.html">
+     Pretty plots
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -189,12 +194,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson02.html">
-   Lesson 2 Variables and Vectors
+   Lesson 2: Variables and Vectors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson03.html">
-   Lesson 3 Data sets and more vectors
+   Lesson 3: Data sets and more vectors
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -209,7 +214,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson06.html">
-   Lesson 6 -  Group, summarize and visualize
+   Lesson 6: Group, summarize and visualize
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson07.html">
+   Lesson 7: Labels, themes and scatter plots
   </a>
  </li>
 </ul>
@@ -356,12 +366,12 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
-     Exercise 0 - Open this notebook on the Jupyter Hub
+     Exercise 0: Open this notebook on the Jupyter Hub
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-1-floor-function">
-     Exercise 1 -
+     Exercise 1:
      <code class="docutils literal notranslate">
       <span class="pre">
        floor()
@@ -372,12 +382,12 @@
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2-load-dplyr">
-     Exercise 2 - Load dplyr
+     Exercise 2: Load dplyr
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-3-whole-minutes">
-     Exercise 3 - Whole minutes
+     Exercise 3: Whole minutes
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -394,12 +404,12 @@
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-5-longest-eruption">
-     Exercise 5 - Longest eruption
+     Exercise 5: Longest eruption
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-6-shortest-eruption">
-     Exercise 6 - Shortest eruption
+     Exercise 6: Shortest eruption
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -446,7 +456,7 @@
 <div class="section" id="part-1-mutate">
 <h2>Part 1: Mutate<a class="headerlink" href="#part-1-mutate" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-0-open-this-notebook-on-the-jupyter-hub">
-<h3>Exercise 0 - Open this notebook on the Jupyter Hub<a class="headerlink" href="#exercise-0-open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 0: Open this notebook on the Jupyter Hub<a class="headerlink" href="#exercise-0-open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Click on the rocket icon in the upper right of this page of the course book.</p></li>
 <li><p>Click the JupyterHub link.</p></li>
@@ -455,7 +465,7 @@
 </ul>
 </div>
 <div class="section" id="exercise-1-floor-function">
-<h3>Exercise 1 - <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function<a class="headerlink" href="#exercise-1-floor-function" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 1: <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function<a class="headerlink" href="#exercise-1-floor-function" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function takes a decimal and returns the whole number to the left of the decimal place <strong>without</strong> rounding.</p>
 <div class="math notranslate nohighlight">
 \[\texttt{floor}(2.98) = 2 \]</div>
@@ -464,7 +474,7 @@
 </ul>
 </div>
 <div class="section" id="exercise-2-load-dplyr">
-<h3>Exercise 2 - Load dplyr<a class="headerlink" href="#exercise-2-load-dplyr" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 2: Load dplyr<a class="headerlink" href="#exercise-2-load-dplyr" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">library()</span></code> function to load the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package. Don’t worry about the warning message. If you run the command a second time, the warning messages will go away.</p></li>
 <li><p>Verify that this was successful by using <code class="docutils literal notranslate"><span class="pre">?mutate</span></code> to open the documentation for the <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function.</p></li>
@@ -472,7 +482,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">library(PACKAGE_NAME)</span></code></p>
 </div>
 <div class="section" id="exercise-3-whole-minutes">
-<h3>Exercise 3 - Whole minutes<a class="headerlink" href="#exercise-3-whole-minutes" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 3: Whole minutes<a class="headerlink" href="#exercise-3-whole-minutes" title="Permalink to this headline">¶</a></h3>
 <p>The faithful data set gives the duration of the erruptions in minutes and fractions of a minute. It would be easer to understad the data if we converted the decimals to seconds.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function is vectorized. This means that if you input a vector of decimal numbers, it will return a vector of floor of each entry.</p>
 <div class="math notranslate nohighlight">
@@ -494,13 +504,13 @@
 <div class="section" id="part-2-sorting-and-piping">
 <h2>Part 2: Sorting and piping<a class="headerlink" href="#part-2-sorting-and-piping" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-5-longest-eruption">
-<h3>Exercise 5 - Longest eruption<a class="headerlink" href="#exercise-5-longest-eruption" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 5: Longest eruption<a class="headerlink" href="#exercise-5-longest-eruption" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> function to find the duration of the longest eruption in the faithful dataset.</p></li>
 </ul>
 </div>
 <div class="section" id="exercise-6-shortest-eruption">
-<h3>Exercise 6 - Shortest eruption<a class="headerlink" href="#exercise-6-shortest-eruption" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 6: Shortest eruption<a class="headerlink" href="#exercise-6-shortest-eruption" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Use the minutes and seconds columns that you added to the faithful dataset to find the duration of the shortest eruption.</p></li>
 </ul>
@@ -572,7 +582,7 @@
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lesson 3 Data sets and more vectors</p>
+                <p class="prevnext-title">Lesson 3: Data sets and more vectors</p>
             </div>
         </a>
     </div>

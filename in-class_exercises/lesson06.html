@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 6 - Group, summarize and visualize &#8212; From Data to Discovery</title>
+    <title>Lesson 6: Group, summarize and visualize &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="next" title="Lesson 7: Labels, themes and scatter plots" href="lesson07.html" />
     <link rel="prev" title="Lesson 5: Select columns and filter rows" href="lesson05.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -161,6 +161,11 @@
      ggplot2
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/ggplot_pretty_plots.html">
+     Pretty plots
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -187,12 +192,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson02.html">
-   Lesson 2 Variables and Vectors
+   Lesson 2: Variables and Vectors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson03.html">
-   Lesson 3 Data sets and more vectors
+   Lesson 3: Data sets and more vectors
   </a>
  </li>
  <li class="toctree-l1">
@@ -207,7 +212,12 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Lesson 6 -  Group, summarize and visualize
+   Lesson 6: Group, summarize and visualize
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson07.html">
+   Lesson 7: Labels, themes and scatter plots
   </a>
  </li>
 </ul>
@@ -344,49 +354,49 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-1-review-and-setup">
-   Part 1 - Review and setup
+   Part 1: Review and setup
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-1-set-up">
-     Exercise 1 - Set up
+     Exercise 1: Set up
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2-most-popular-breeds">
-     Exercise 2 - Most popular breeds
+     Exercise 2: Most popular breeds
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#excercise-3-average-age">
-     Excercise 3 - Average age
+    <a class="reference internal nav-link" href="#exercise-3-average-age">
+     Exercise 3: Average age
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-2-bar-charts">
-   Part 2 - Bar charts
+   Part 2: Bar charts
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-4-meet-the-functions">
-     Exercise 4 - Meet the functions
+     Exercise 4: Meet the functions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-5-visualize-popular-breeds">
-     Exercise 5 - Visualize popular breeds
+     Exercise 5: Visualize popular breeds
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-6-reorder-the-bars">
-     Exercise 6 - Reorder the bars
+     Exercise 6: Reorder the bars
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-7-visualize-average-ages">
-     Exercise 7 - Visualize average ages
+     Exercise 7: Visualize average ages
     </a>
    </li>
   </ul>
@@ -403,12 +413,12 @@
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="lesson-6-group-summarize-and-visualize">
-<span id="in-class-exercises-lesson06"></span><h1>Lesson 6 -  Group, summarize and visualize<a class="headerlink" href="#lesson-6-group-summarize-and-visualize" title="Permalink to this headline">¶</a></h1>
+<span id="in-class-exercises-lesson06"></span><h1>Lesson 6: Group, summarize and visualize<a class="headerlink" href="#lesson-6-group-summarize-and-visualize" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
 <div class="section" id="part-1-review-and-setup">
-<h2>Part 1 - Review and setup<a class="headerlink" href="#part-1-review-and-setup" title="Permalink to this headline">¶</a></h2>
+<h2>Part 1: Review and setup<a class="headerlink" href="#part-1-review-and-setup" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-1-set-up">
-<h3>Exercise 1 - Set up<a class="headerlink" href="#exercise-1-set-up" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 1: Set up<a class="headerlink" href="#exercise-1-set-up" title="Permalink to this headline">¶</a></h3>
 <p>There is a CSV file called <code class="docutils literal notranslate"><span class="pre">NYC_Dog_Licensing.csv</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/shared/data</span></code> folder. As the name indicates, this file contains information about New York City dog licenses. This data comes from the <a class="reference external" href="https://opendata.cityofnewyork.us/">NYC OpenData project</a>.</p>
 <ul class="simple">
 <li><p>Import the NYC Dog Licenses data <strong>from the shared folder</strong> using the <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code> function and store it in an R data frame called <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code>.</p></li>
@@ -419,7 +429,7 @@
 <p><code class="docutils literal notranslate"><span class="pre">rename(DATA_FRAME,</span> <span class="pre">NEW_COLUMN_NAME</span> <span class="pre">=</span> <span class="pre">OLD_COLUMN_NAME)</span></code></p>
 </div>
 <div class="section" id="exercise-2-most-popular-breeds">
-<h3>Exercise 2 - Most popular breeds<a class="headerlink" href="#exercise-2-most-popular-breeds" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 2: Most popular breeds<a class="headerlink" href="#exercise-2-most-popular-breeds" title="Permalink to this headline">¶</a></h3>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions to answer the following questions.</p>
 <ul class="simple">
 <li><p>Create a summary table that contains the number dogs in each breed in the <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code> data sets.</p></li>
@@ -430,8 +440,8 @@
 </ul>
 <p>What is the most popular breed of dog in the nyc_dogs data set?</p>
 </div>
-<div class="section" id="excercise-3-average-age">
-<h3>Excercise 3 - Average age<a class="headerlink" href="#excercise-3-average-age" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-3-average-age">
+<h3>Exercise 3: Average age<a class="headerlink" href="#exercise-3-average-age" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add a new column called <code class="docutils literal notranslate"><span class="pre">Age</span></code> to the data frame. This column should contain an approximation of each dog’s age.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">ungroup()</span></code> to remove all groupings from nyc_dogs.</p></li>
@@ -443,16 +453,16 @@
 </div>
 </div>
 <div class="section" id="part-2-bar-charts">
-<h2>Part 2 - Bar charts<a class="headerlink" href="#part-2-bar-charts" title="Permalink to this headline">¶</a></h2>
+<h2>Part 2: Bar charts<a class="headerlink" href="#part-2-bar-charts" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-4-meet-the-functions">
-<h3>Exercise 4 - Meet the functions<a class="headerlink" href="#exercise-4-meet-the-functions" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 4: Meet the functions<a class="headerlink" href="#exercise-4-meet-the-functions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Load the <code class="docutils literal notranslate"><span class="pre">ggplot2</span></code> package by excuting the <code class="docutils literal notranslate"><span class="pre">library('ggplot2')</span></code> command. You can ignore the warning about overwritten methods.</p></li>
 <li><p>Look at the documentation for the <code class="docutils literal notranslate"><span class="pre">aes()</span></code> function. What term is “aes” a shorting of? Write your answer in a markdown cell.</p></li>
 </ul>
 </div>
 <div class="section" id="exercise-5-visualize-popular-breeds">
-<h3>Exercise 5 - Visualize popular breeds<a class="headerlink" href="#exercise-5-visualize-popular-breeds" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 5: Visualize popular breeds<a class="headerlink" href="#exercise-5-visualize-popular-breeds" title="Permalink to this headline">¶</a></h3>
 <p>The goal of this exercise is to produce a visual representation of the information in the summarize table from exercise 2.</p>
 <ul class="simple">
 <li><p>Execute the code in the first cell below to tell R to our preferred dimensions for plots.</p></li>
@@ -483,7 +493,7 @@
 </div>
 </div>
 <div class="section" id="exercise-6-reorder-the-bars">
-<h3>Exercise 6 - Reorder the bars<a class="headerlink" href="#exercise-6-reorder-the-bars" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 6: Reorder the bars<a class="headerlink" href="#exercise-6-reorder-the-bars" title="Permalink to this headline">¶</a></h3>
 <p>The breed names in the bar chart in exercise 5 are ordered alphabetically. The chart would be more effective if the breeds were ordered according to popularity. This can be achieved using <code class="docutils literal notranslate"><span class="pre">reorder()</span></code> inside the aesthetic mapping.</p>
 <p><code class="docutils literal notranslate"><span class="pre">reorder(AXIS_VALUES,</span> <span class="pre">SORTING_VALUES)</span></code>
 Putting a minus sign in front of the <code class="docutils literal notranslate"><span class="pre">SORTING_VALUES</span></code> column name reverses the sorting order.</p>
@@ -493,7 +503,7 @@ Putting a minus sign in front of the <code class="docutils literal notranslate">
 </ul>
 </div>
 <div class="section" id="exercise-7-visualize-average-ages">
-<h3>Exercise 7 - Visualize average ages<a class="headerlink" href="#exercise-7-visualize-average-ages" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 7: Visualize average ages<a class="headerlink" href="#exercise-7-visualize-average-ages" title="Permalink to this headline">¶</a></h3>
 <p>The goal of this exercise is to produce a visual representation of the information in the summarize table from exercise 3.</p>
 <ul class="simple">
 <li><p>Create a bar chart that shows the average age of male and female dogs in the nyc_dots data set.</p></li>
@@ -545,10 +555,10 @@ Putting a minus sign in front of the <code class="docutils literal notranslate">
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../homework/homework_0.html" title="next page">
+        <a class="right-next" href="lesson07.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Homework 0</p>
+                <p class="prevnext-title">Lesson 7: Labels, themes and scatter plots</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

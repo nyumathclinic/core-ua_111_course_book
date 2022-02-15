@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lesson 6 - Group, summarize and visualize" href="lesson06.html" />
+    <link rel="next" title="Lesson 6: Group, summarize and visualize" href="lesson06.html" />
     <link rel="prev" title="Lesson 4: Mutate, arrange, piping" href="lesson04.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -161,6 +161,11 @@
      ggplot2
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../reference/ggplot_pretty_plots.html">
+     Pretty plots
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -187,12 +192,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson02.html">
-   Lesson 2 Variables and Vectors
+   Lesson 2: Variables and Vectors
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson03.html">
-   Lesson 3 Data sets and more vectors
+   Lesson 3: Data sets and more vectors
   </a>
  </li>
  <li class="toctree-l1">
@@ -207,7 +212,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="lesson06.html">
-   Lesson 6 -  Group, summarize and visualize
+   Lesson 6: Group, summarize and visualize
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson07.html">
+   Lesson 7: Labels, themes and scatter plots
   </a>
  </li>
 </ul>
@@ -344,44 +354,44 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-1-set-up-and-sort">
-   Part 1 - Set up and sort
+   Part 1: Set up and sort
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-1-set-up">
-     Exercise 1 - Set up
+     Exercise 1: Set up
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2-select-columns">
-     Exercise 2 - Select Columns
+     Exercise 2: Select Columns
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-3-piping">
-     Exercise 3 - Piping
+     Exercise 3: Piping
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#part-2-filter">
-   Part 2 - Filter
+   Part 2: Filter
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-4-find-the-old-chihuahuas">
-     Exercise 4 - Find the old Chihuahuas
+     Exercise 4: Find the old Chihuahuas
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-5-how-many-old-chihuahuas-are-there">
-     Exercise 5 - How many old Chihuahuas are there?
+     Exercise 5: How many old Chihuahuas are there?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-6-check-your-assumptions">
-     Exercise 6 - Check your assumptions
+     Exercise 6: Check your assumptions
     </a>
    </li>
   </ul>
@@ -401,9 +411,9 @@
 <span id="in-class-exercises-lesson05"></span><h1>Lesson 5: Select columns and filter rows<a class="headerlink" href="#lesson-5-select-columns-and-filter-rows" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
 <div class="section" id="part-1-set-up-and-sort">
-<h2>Part 1 - Set up and sort<a class="headerlink" href="#part-1-set-up-and-sort" title="Permalink to this headline">¶</a></h2>
+<h2>Part 1: Set up and sort<a class="headerlink" href="#part-1-set-up-and-sort" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-1-set-up">
-<h3>Exercise 1 - Set up<a class="headerlink" href="#exercise-1-set-up" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 1: Set up<a class="headerlink" href="#exercise-1-set-up" title="Permalink to this headline">¶</a></h3>
 <p>There is a CSV file called <code class="docutils literal notranslate"><span class="pre">NYC_Dog_Licensing.csv</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/shared/data</span></code> folder. As the name indicates, this file contains information about New York City dog licenses. This data comes from the <a class="reference external" href="https://opendata.cityofnewyork.us/">NYC OpenData project</a>.</p>
 <ul class="simple">
 <li><p>Import the NYC Dog Licenses data <strong>from the shared folder</strong> using the <code class="docutils literal notranslate"><span class="pre">read.csv()</span></code> function and store it in an R data frame called <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code>.</p></li>
@@ -412,7 +422,7 @@
 </ul>
 </div>
 <div class="section" id="exercise-2-select-columns">
-<h3>Exercise 2 - Select Columns<a class="headerlink" href="#exercise-2-select-columns" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 2: Select Columns<a class="headerlink" href="#exercise-2-select-columns" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code> data frame has a lot of columns that we wont use today. Use <code class="docutils literal notranslate"><span class="pre">select()</span></code> to prune the columns in <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code> as described below.</p>
 <p>Keep:</p>
 <ul class="simple">
@@ -435,7 +445,7 @@
 <p>Then, use the <code class="docutils literal notranslate"><span class="pre">names()</span></code> function to check that your code had the desired affect.</p>
 </div>
 <div class="section" id="exercise-3-piping">
-<h3>Exercise 3 - Piping<a class="headerlink" href="#exercise-3-piping" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 3: Piping<a class="headerlink" href="#exercise-3-piping" title="Permalink to this headline">¶</a></h3>
 <p>In Exercise 1 and 2, you completed the following tasks:</p>
 <ol class="simple">
 <li><p>Added a column called Age to <code class="docutils literal notranslate"><span class="pre">nyc_dogs</span></code>.</p></li>
@@ -452,9 +462,9 @@
 </div>
 </div>
 <div class="section" id="part-2-filter">
-<h2>Part 2 - Filter<a class="headerlink" href="#part-2-filter" title="Permalink to this headline">¶</a></h2>
+<h2>Part 2: Filter<a class="headerlink" href="#part-2-filter" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="exercise-4-find-the-old-chihuahuas">
-<h3>Exercise 4 - Find the old Chihuahuas<a class="headerlink" href="#exercise-4-find-the-old-chihuahuas" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 4: Find the old Chihuahuas<a class="headerlink" href="#exercise-4-find-the-old-chihuahuas" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Filter the nyc_dogs data frame to consist only of dogs are at least 10 years old and whose breed is ‘Chihuahua’.</p></li>
 <li><p>Store the filtered data in a new data frame called <code class="docutils literal notranslate"><span class="pre">old_chihuahuas</span></code>.</p></li>
@@ -462,11 +472,11 @@
 </ul>
 </div>
 <div class="section" id="exercise-5-how-many-old-chihuahuas-are-there">
-<h3>Exercise 5 - How many old Chihuahuas are there?<a class="headerlink" href="#exercise-5-how-many-old-chihuahuas-are-there" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 5: How many old Chihuahuas are there?<a class="headerlink" href="#exercise-5-how-many-old-chihuahuas-are-there" title="Permalink to this headline">¶</a></h3>
 <p>How many chihuahuas are there in the data set that are at least 10 years old?</p>
 </div>
 <div class="section" id="exercise-6-check-your-assumptions">
-<h3>Exercise 6 - Check your assumptions<a class="headerlink" href="#exercise-6-check-your-assumptions" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 6: Check your assumptions<a class="headerlink" href="#exercise-6-check-your-assumptions" title="Permalink to this headline">¶</a></h3>
 <p>What assumptions are underlying your answer? Is your number likely larger than, equal to, or smaller than the actual number.</p>
 </div>
 </div>
@@ -514,7 +524,7 @@
         <a class="right-next" href="lesson06.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 6 -  Group, summarize and visualize</p>
+                <p class="prevnext-title">Lesson 6: Group, summarize and visualize</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
