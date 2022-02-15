@@ -509,53 +509,6 @@ and the methods yourself</p>
 </ul>
 </li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the data</span>
-<span class="n">nyc_trees</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;~/shared/data/NYC_Tree_Census_small.csv&#39;</span><span class="p">)</span>
-
-<span class="c1"># load the dplyr package</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
-
-<span class="nf">head</span><span class="p">(</span><span class="n">nyc_trees</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in file(file, &quot;rt&quot;):
-“cannot open file &#39;/home/corrin/shared/data/NYC_Tree_Census_small.csv&#39;: No such file or directory”
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">):</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">connection</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;~/shared/data/NYC_Tree_Census_small.csv&quot;</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="n">header</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">sep</span><span class="p">,</span> <span class="n">quote</span> <span class="o">=</span> <span class="n">quote</span><span class="p">,</span> 
- <span class="o">.</span>     <span class="n">dec</span> <span class="o">=</span> <span class="n">dec</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">fill</span><span class="p">,</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-<span class="mi">3</span><span class="o">.</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">dim</span><span class="p">(</span><span class="n">nyc_trees</span><span class="p">)</span>
-<span class="nf">typeof</span><span class="p">(</span><span class="n">nyc_trees</span><span class="o">$</span><span class="n">health</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>5000</li><li>12</li></ol>
-</div><div class="output text_html">'character'</div></div>
-</div>
-<p>There are 5,000 observations and 12 variables in nyc_trees. Each observation corresponds to a tree.</p>
-<p>The status variable indicates the health of the tree. It is a character variable.</p>
-<p>The tree_dbh variable indicates the trees diameter at breast height in inches.</p>
 </div>
 <div class="section" id="exercise-2-number-of-trees-in-manhattan">
 <h3>Exercise 2 - Number of trees in Manhattan<a class="headerlink" href="#exercise-2-number-of-trees-in-manhattan" title="Permalink to this headline">¶</a></h3>
@@ -563,16 +516,6 @@ and the methods yourself</p>
 <li><p>Determine the number of trees in nyc_trees that are located in Manhattan.</p></li>
 <li><p>Summarize your findings in a markdown cell.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nyc_trees</span> <span class="o">%&gt;%</span> <span class="nf">filter</span><span class="p">(</span><span class="n">borough</span> <span class="o">==</span> <span class="s">&#39;Manhattan&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">nrow</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">506</div></div>
-</div>
-<p>There are 506 trees located on Manhattan in the data set.</p>
 </div>
 <div class="section" id="exercise-3-manhattan-trees">
 <h3>Exercise 3 - Manhattan trees<a class="headerlink" href="#exercise-3-manhattan-trees" title="Permalink to this headline">¶</a></h3>
@@ -604,133 +547,39 @@ and the methods yourself</p>
 <ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>
 </div></div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">unique</span><span class="p">(</span><span class="n">nyc_trees</span><span class="o">$</span><span class="n">status</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">'Alive'</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">manhattan_trees</span> <span class="o">&lt;-</span> <span class="n">nyc_trees</span> <span class="o">%&gt;%</span>
-    <span class="nf">filter</span><span class="p">(</span><span class="n">borough</span> <span class="o">==</span> <span class="s">&#39;Manhattan&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">select</span><span class="p">(</span><span class="o">-</span><span class="n">status</span><span class="p">,</span> <span class="o">-</span><span class="n">borough</span><span class="p">)</span>
-
-<span class="nf">dim</span><span class="p">(</span><span class="n">manhattan_trees</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>506</li><li>10</li></ol>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">max</span><span class="p">(</span><span class="n">manhattan_trees</span><span class="o">$</span><span class="n">tree_dbh</span><span class="p">)</span>
-<span class="nf">min</span><span class="p">(</span><span class="n">manhattan_trees</span><span class="o">$</span><span class="n">tree_dbh</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">38</div><div class="output text_html">1</div></div>
-</div>
-<p>The maximum diameter of a tree in Manhattan is 36 inches and the minimum diameter is 1 inch.</p>
 </div>
 <div class="section" id="exercise-4-tree-health-numbers">
 <h3>Exercise 4 - Tree health numbers<a class="headerlink" href="#exercise-4-tree-health-numbers" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Use the <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions to determine how many of the trees in nyc_trees were recorded with each level of health.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nyc_trees</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">health</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">Count</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A tibble: 3 × 2</caption>
-<thead>
-	<tr><th scope=col>health</th><th scope=col>Count</th></tr>
-	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>Fair</td><td> 730</td></tr>
-	<tr><td>Good</td><td>4091</td></tr>
-	<tr><td>Poor</td><td> 179</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
 </div>
 <div class="section" id="exercise-5-custom-order">
 <h3>Exercise 5 - Custom order<a class="headerlink" href="#exercise-5-custom-order" title="Permalink to this headline">¶</a></h3>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">factor()</span></code> to tell R our preferred order for the values in a categorical variable. Consider the following example.</p>
 <p>A data set called <code class="docutils literal notranslate"><span class="pre">schools</span></code> contains a variable called <code class="docutils literal notranslate"><span class="pre">school_type</span></code> which indicates whether the given school is a ‘kindergarten’ (age 5), ‘elementary school’ (age 6 - 10), ‘middle school’ (age 11 - 13) or ‘high school’ (age 14 - 17). The following command will tell R that we prefer to sort <code class="docutils literal notranslate"><span class="pre">school_type</span></code> the the specified order rather than alphabetically.</p>
-<div class="highlight-schools notranslate"><div class="highlight"><pre><span></span>                factor(school_type, levels = c(&#39;kindergarten&#39;, &#39;elementary school&#39;, &#39;middle school&#39;, &#39;high school&#39; ))
-                )```
-
-Here is the general syntax for factor:
-
-```factor(VECTOR_OF_DATA, levels=VECTOR_OF_ORDERED_VALUES)```
-
-The output of factor is VECTOR_OF_DATA with the additional structure of a specified order to the values.
-
-- Use `factor()` to specify a more natural order for the health variable in nyc_trees
-- Recreate the the summary table from the previous exercise and verify that the rows are now in your specified order.
-- Store your summary table in a variable called `tree_health_count`.
-- Output `tree_health_count`
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tree_health_count</span> <span class="o">&lt;-</span> <span class="n">nyc_trees</span> <span class="o">%&gt;%</span>
-    <span class="nf">mutate</span><span class="p">(</span><span class="n">health</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="n">health</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Good&quot;</span><span class="p">,</span> <span class="s">&quot;Fair&quot;</span><span class="p">,</span> <span class="s">&quot;Poor&quot;</span><span class="p">)))</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">health</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">Count</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
+<pre>
+<code>
+schools &lt;- mutate(schools, school_type = 
+                factor(school_type, levels = c('kindergarten', 'elementary school', 'middle school', 'high school' ))
+                )
+</code>
+</pre>
+<p>Here is the general syntax for factor:</p>
+<p><code class="docutils literal notranslate"><span class="pre">factor(VECTOR_OF_DATA,</span> <span class="pre">levels=VECTOR_OF_ORDERED_VALUES)</span></code></p>
+<p>The output of factor is VECTOR_OF_DATA with the additional structure of a specified order to the values.</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">factor()</span></code> to specify a more natural order for the health variable in nyc_trees</p></li>
+<li><p>Recreate the the summary table from the previous exercise and verify that the rows are now in your specified order.</p></li>
+<li><p>Store your summary table in a variable called <code class="docutils literal notranslate"><span class="pre">tree_health_count</span></code>.</p></li>
+<li><p>Output <code class="docutils literal notranslate"><span class="pre">tree_health_count</span></code></p></li>
+</ul>
 </div>
 <div class="section" id="exercise-6-visualize-tree-health">
 <h3>Exercise 6 - Visualize tree health<a class="headerlink" href="#exercise-6-visualize-tree-health" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Create a bar chart that shoes the number of trees with each level of health.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
-“package ‘ggplot2’ was built under R version 4.0.5”
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">tree_health_count</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="n">Count</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span> <span class="n">health</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_col</span><span class="p">()</span> <span class="c1"># OK to swap x and y axes</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/homework_03_32_0.png" src="../_images/homework_03_32_0.png" />
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="part-2-city-payroll">
@@ -743,35 +592,6 @@ The output of factor is VECTOR_OF_DATA with the additional structure of a specif
 <li><p>Look at the first three rows of <code class="docutils literal notranslate"><span class="pre">nyc_payroll</span></code> to verify that it imported successfully and to get a sense of the data.</p></li>
 <li><p>Add a column called <code class="docutils literal notranslate"><span class="pre">Total_Wages</span></code> to nyc_payroll that contains the total amount of money that was payed to each employee.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nyc_payroll</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;~/shared/data/NYC_Payroll_small.csv&#39;</span><span class="p">)</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">nyc_payroll</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A data.frame: 3 × 16</caption>
-<thead>
-	<tr><th></th><th scope=col>Fiscal.Year</th><th scope=col>Payroll.Number</th><th scope=col>Agency.Name</th><th scope=col>Last.Name</th><th scope=col>First.Name</th><th scope=col>Agency.Start.Date</th><th scope=col>Work.Location.Borough</th><th scope=col>Title.Description</th><th scope=col>Leave.Status.as.of.June.30</th><th scope=col>Base.Salary</th><th scope=col>Pay.Basis</th><th scope=col>Regular.Hours</th><th scope=col>Regular.Gross.Paid</th><th scope=col>OT.Hours</th><th scope=col>Total.OT.Paid</th><th scope=col>Total.Other.Pay</th></tr>
-	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>1</th><td>2019</td><td>300</td><td>BOARD OF ELECTION POLL WORKERS</td><td>WORKMAN </td><td>EULENE </td><td>07/25/2013</td><td>MANHATTAN</td><td>ELECTION WORKER        </td><td>ACTIVE</td><td>    1.00</td><td>per Hour </td><td>   0</td><td> 1450.00</td><td> 0.00</td><td>   0.0</td><td>  0.0</td></tr>
-	<tr><th scope=row>2</th><td>2019</td><td>466</td><td>COMMUNITY COLLEGE (MANHATTAN) </td><td>GEORGE  </td><td>MICHAEL</td><td>02/01/2004</td><td>MANHATTAN</td><td>NON-TEACHING ADJUNCT IV</td><td>ACTIVE</td><td>   58.26</td><td>per Hour </td><td>   6</td><td>  349.56</td><td> 0.00</td><td>   0.0</td><td>  0.0</td></tr>
-	<tr><th scope=row>3</th><td>2019</td><td>740</td><td>DEPARTMENT OF EDUCATION ADMIN </td><td>MITCHELL</td><td>SHARON </td><td>09/19/2016</td><td>MANHATTAN</td><td>COMMUNITY ASSOCIATE    </td><td>ACTIVE</td><td>48945.00</td><td>per Annum</td><td>1825</td><td>49231.13</td><td>44.25</td><td>1791.8</td><td>313.5</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nyc_payroll</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">nyc_payroll</span><span class="p">,</span> <span class="n">Total_Wages</span> <span class="o">=</span> <span class="n">Regular.Gross.Paid</span> <span class="o">+</span> <span class="n">Total.OT.Paid</span> <span class="o">+</span> <span class="n">Total.Other.Pay</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 <div class="section" id="exercise-8-large-payroll-agencies">
 <h3>Exercise 8 - Large payroll agencies<a class="headerlink" href="#exercise-8-large-payroll-agencies" title="Permalink to this headline">¶</a></h3>
@@ -779,56 +599,12 @@ The output of factor is VECTOR_OF_DATA with the additional structure of a specif
 <li><p>Create a summary table called <code class="docutils literal notranslate"><span class="pre">large_payroll_agencies</span></code> that shows the total pay roll expenses in millions of dollars rounded to two decimal places for the ten agencies with the highest payroll expenses.</p></li>
 <li><p>Output <code class="docutils literal notranslate"><span class="pre">large_payroll_agencies</span></code>.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">large_payroll_agencies</span> <span class="o">&lt;-</span> <span class="n">nyc_payroll</span> <span class="o">%&gt;%</span>
-    <span class="nf">group_by</span><span class="p">(</span><span class="n">Agency.Name</span><span class="p">)</span> <span class="o">%&gt;%</span>
-    <span class="nf">summarize</span><span class="p">(</span><span class="n">Total_Payroll</span> <span class="o">=</span> <span class="nf">round</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">Total_Wages</span><span class="p">)</span><span class="o">/</span><span class="m">10</span><span class="o">^</span><span class="m">6</span><span class="p">,</span><span class="m">2</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">arrange</span><span class="p">(</span><span class="nf">desc</span><span class="p">(</span><span class="n">Total_Payroll</span><span class="p">))</span> <span class="o">%&gt;%</span>
-    <span class="nf">head</span><span class="p">(</span><span class="m">10</span><span class="p">)</span>
-<span class="n">large_payroll_agencies</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A tibble: 10 × 2</caption>
-<thead>
-	<tr><th scope=col>Agency.Name</th><th scope=col>Total_Payroll</th></tr>
-	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>DEPARTMENT OF CORRECTION      </td><td>34.28</td></tr>
-	<tr><td>DEPARTMENT OF SANITATION      </td><td>25.84</td></tr>
-	<tr><td>DEPARTMENT OF EDUCATION ADMIN </td><td>25.22</td></tr>
-	<tr><td>ADMIN FOR CHILDREN'S SVCS     </td><td>17.09</td></tr>
-	<tr><td>DEPARTMENT OF TRANSPORTATION  </td><td>15.09</td></tr>
-	<tr><td>DEPT OF ED HRLY SUPPORT STAFF </td><td>13.09</td></tr>
-	<tr><td>DEPT OF CITYWIDE ADMIN SVCS   </td><td> 6.44</td></tr>
-	<tr><td>COMMUNITY COLLEGE (MANHATTAN) </td><td> 5.65</td></tr>
-	<tr><td>DEPARTMENT OF BUILDINGS       </td><td> 4.29</td></tr>
-	<tr><td>DEPT. OF DESIGN &amp; CONSTRUCTION</td><td> 3.66</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
 </div>
 <div class="section" id="exercise-9-visualize-large-payroll-agencies">
 <h3>Exercise 9 - Visualize large payroll agencies<a class="headerlink" href="#exercise-9-visualize-large-payroll-agencies" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Create a bar chart that shows the data in <code class="docutils literal notranslate"><span class="pre">large_payroll_agencies</span></code>. Order the agencies based on their total payroll.</p></li>
 </ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">large_payroll_agencies</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Total_Payroll</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nf">reorder</span><span class="p">(</span><span class="n">Agency.Name</span><span class="p">,</span> <span class="n">Total_Payroll</span><span class="p">)))</span> <span class="o">+</span> <span class="nf">geom_col</span><span class="p">()</span>
-    
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/homework_03_43_0.png" src="../_images/homework_03_43_0.png" />
-</div>
-</div>
 </div>
 </div>
 <div class="section" id="part-3-a-quick-reflection">
