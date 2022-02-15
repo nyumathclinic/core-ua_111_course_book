@@ -54,4 +54,11 @@ This site is intended to serve as reference for students enrolled in the Spring 
 - [](ggplot:bar_charts)
 - [](in-class_exercises:lesson06)
 - [](lab02)
-- [](homework02)
+- [](homework03)
+
+
+### Lesson 7
+- [](pretty_plots:labels)
+- [](pretty_plots:themes)
+- [](ggplot:scatter_plots)
+- [](in-class_exercises:lesson07)

@@ -7,7 +7,6 @@ options:
 parts:
 - caption: Reference
   chapters:
-#  - file: exam_reference
   - file: reference/r_basics
     sections:
     - file: reference/arithmetic
@@ -21,6 +20,7 @@ parts:
     - file: reference/data_frames
     - file: reference/dplyr_library
     - file: reference/ggplot2_library
+    - file: reference/ggplot_pretty_plots
   - file: reference/numerical_models
   - file: reference/outside_sources
 - caption: In-Class Exercises
@@ -31,16 +31,7 @@ parts:
   - file: in-class_exercises/lesson04
   - file: in-class_exercises/lesson05
   - file: in-class_exercises/lesson06
-#  - file: lesson08_solutions
-#  - file: lesson10_solutions
-#  - file: lesson11_solutions
-#   - file: lesson12_solutions
-#   - file: lesson13_solutions
-#   - file: lesson14_solutions
-#   - file: lesson15_solutions
-#   - file: lesson16_solutions
-#   - file: lesson17_solutions
-#   - file: lesson19_solutions
+  - file: in-class_exercises/lesson07
 - caption: Homework
   chapters:
   - file: homework/homework_0
