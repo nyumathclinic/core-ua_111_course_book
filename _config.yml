@@ -19,6 +19,11 @@ launch_buttons:
   binderhub_url: "" # necessary to prevent launch button
   jupyterhub_url: "https://coreua-111001-spring.rcnyu.org"  # UPDATE every term ## Gitpull requires more configuration.
   
+# Add documents folder 
+sphinx:
+  config:
+    html_extra_path: ['doc']
+  
 #######################################################################################
 # Parse and render settings
 parse:
