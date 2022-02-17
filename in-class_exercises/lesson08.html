@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 4: Mutate, arrange, piping &#8212; From Data to Discovery</title>
+    <title>Lesson 8: Colors and histograms &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -42,8 +42,6 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,8 +51,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lesson 5: Select columns and filter rows" href="lesson05.html" />
-    <link rel="prev" title="Lesson 3: Data sets and more vectors" href="lesson03.html" />
+    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="prev" title="Lesson 7: Labels, themes and scatter plots" href="lesson07.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -202,8 +200,8 @@
    Lesson 3: Data sets and more vectors
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson04.html">
    Lesson 4: Mutate, arrange, piping
   </a>
  </li>
@@ -222,8 +220,8 @@
    Lesson 7: Labels, themes and scatter plots
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson08.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lesson 8: Colors and histograms
   </a>
  </li>
@@ -312,7 +310,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson04.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson08.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -338,7 +336,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson04.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson08.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -365,61 +363,40 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-mutate">
-   Part 1: Mutate
+  <a class="reference internal nav-link" href="#part-1-more-trees">
+   Part 1: More trees
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
-     Exercise 0: Open this notebook on the Jupyter Hub
+    <a class="reference internal nav-link" href="#exercise-1-distribution-of-tree-diameters">
+     Exercise 1: Distribution of tree diameters
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-floor-function">
-     Exercise 1:
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       floor()
-      </span>
-     </code>
-     function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-load-dplyr">
-     Exercise 2: Load dplyr
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-whole-minutes">
-     Exercise 3: Whole minutes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises-4-seconds">
-     Exercises 4: Seconds
+    <a class="reference internal nav-link" href="#exercise-2-add-title-labels-and-theme">
+     Exercise 2: Add Title, labels and theme
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-sorting-and-piping">
-   Part 2: Sorting and piping
+  <a class="reference internal nav-link" href="#part-2-colorful-trees">
+   Part 2: Colorful trees
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-longest-eruption">
-     Exercise 5: Longest eruption
+    <a class="reference internal nav-link" href="#exercise-3-types-of-trees">
+     Exercise 3: Types of trees
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-shortest-eruption">
-     Exercise 6: Shortest eruption
+    <a class="reference internal nav-link" href="#exercise-4-custom-colors">
+     Exercise 4: Custom colors
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-pipe">
-     Exercise 7: Pipe
+    <a class="reference internal nav-link" href="#exercise-5-types-of-trees">
+     Exercise 5: Types of trees
     </a>
    </li>
   </ul>
@@ -435,19 +412,9 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-4-mutate-arrange-piping">
-<span id="in-class-exercises-lesson04"></span><h1>Lesson 4: Mutate, arrange, piping<a class="headerlink" href="#lesson-4-mutate-arrange-piping" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-8-colors-and-histograms">
+<span id="in-class-exercises-lesson08"></span><h1>Lesson 8: Colors and histograms<a class="headerlink" href="#lesson-8-colors-and-histograms" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
-<p>The content for this lesson is in the following subsections of the course book:</p>
-<ul class="simple">
-<li><p>Exploring Data</p>
-<ul>
-<li><p><a class="reference internal" href="../reference/dplyr_library.html#mutate"><span class="std std-ref">dplyr library mutate</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/dplyr_library.html#arrange"><span class="std std-ref">dplyr library arrange</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/dplyr_library.html#piping"><span class="std std-ref">dplyr library piping</span></a></p></li>
-</ul>
-</li>
-</ul>
 <div class="section" id="useful-links">
 <h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <p>The following links are also in the Content tool on Brightspace.</p>
@@ -458,97 +425,61 @@
 <li><p><a class="reference external" href="https://pollev.com/clarkson">Poll Everywhere respond</a></p></li>
 </ul>
 </div>
-<div class="section" id="part-1-mutate">
-<h2>Part 1: Mutate<a class="headerlink" href="#part-1-mutate" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-0-open-this-notebook-on-the-jupyter-hub">
-<h3>Exercise 0: Open this notebook on the Jupyter Hub<a class="headerlink" href="#exercise-0-open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="part-1-more-trees">
+<h2>Part 1: More trees<a class="headerlink" href="#part-1-more-trees" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1-distribution-of-tree-diameters">
+<h3>Exercise 1: Distribution of tree diameters<a class="headerlink" href="#exercise-1-distribution-of-tree-diameters" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">NYC_Tree_Census_small.csv</span></code> data set in the shared data folder contains information an excerpt from the <a class="reference external" href="https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh">2015 New York City Tree Census</a>.</p>
 <ul class="simple">
-<li><p>Click on the rocket icon in the upper right of this page of the course book.</p></li>
-<li><p>Click the JupyterHub link.</p></li>
-<li><p>If prompted, log in to the Jupyter Hub with your NYU account.</p></li>
-<li><p>If prompted to select a kernel, choose <em>R [conda env:FDTD]</em>.</p></li>
+<li><p>Import the NYC tree census data <strong>from the local file</strong> and store it as a data frame called <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code>.</p></li>
+<li><p>In a new code cell, create a histogram of the diameters of the trees broken into four bins. You can think of these groups as small medium, large and extra large.</p></li>
+<li><p>In a new code cell, generate a second histogram with the diameters of the living trees broken into 20 bins.</p></li>
 </ul>
+<p><code class="docutils literal notranslate"> <span class="pre">ggplot(</span> <span class="pre">DATA_FRAME,</span> <span class="pre">aes(x</span> <span class="pre">=</span> <span class="pre">COLUMN))</span> <span class="pre">+</span> <span class="pre">geom_histogram(bins</span> <span class="pre">=</span> <span class="pre">NUMBER)</span></code></p>
+<p>Hint: The link above contains documentation for this data set.</p>
 </div>
-<div class="section" id="exercise-1-floor-function">
-<h3>Exercise 1: <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function<a class="headerlink" href="#exercise-1-floor-function" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function takes a decimal and returns the whole number to the left of the decimal place <strong>without</strong> rounding.</p>
-<div class="math notranslate nohighlight">
-\[\texttt{floor}(2.98) = 2 \]</div>
+<div class="section" id="exercise-2-add-title-labels-and-theme">
+<h3>Exercise 2: Add Title, labels and theme<a class="headerlink" href="#exercise-2-add-title-labels-and-theme" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Use the floor function to create an expression that will output the number of whole minutes the 17th eruption lasted.</p></li>
+<li><p>Improve your histogram with 20 bis by adding the following features:</p>
+<ul>
+<li><p>Descriptive title</p></li>
+<li><p>Descriptive axis labels</p></li>
+<li><p>A built-in theme of your choice.</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-2-load-dplyr">
-<h3>Exercise 2: Load dplyr<a class="headerlink" href="#exercise-2-load-dplyr" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">library()</span></code> function to load the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package. Don’t worry about the warning message. If you run the command a second time, the warning messages will go away.</p></li>
-<li><p>Verify that this was successful by using <code class="docutils literal notranslate"><span class="pre">?mutate</span></code> to open the documentation for the <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">library(PACKAGE_NAME)</span></code></p>
-</div>
-<div class="section" id="exercise-3-whole-minutes">
-<h3>Exercise 3: Whole minutes<a class="headerlink" href="#exercise-3-whole-minutes" title="Permalink to this headline">¶</a></h3>
-<p>The faithful data set gives the duration of the erruptions in minutes and fractions of a minute. It would be easer to understad the data if we converted the decimals to seconds.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function is vectorized. This means that if you input a vector of decimal numbers, it will return a vector of floor of each entry.</p>
-<div class="math notranslate nohighlight">
-\[\texttt{floor}(\texttt{c}(1.2, 3.6, 4.01) ) = \texttt{c}(1, 3, 4)\]</div>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add a column called <code class="docutils literal notranslate"><span class="pre">minutes</span></code> to the <code class="docutils literal notranslate"><span class="pre">faithful</span></code> data set that contains the number of whole minutes (ignoring the decimal) that the eruption lasted.</p></li>
-<li><p>Verify that you were successful by using <code class="docutils literal notranslate"><span class="pre">head()</span></code> to display the first three rows of <code class="docutils literal notranslate"><span class="pre">faithful</span></code>.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">mutate(DATA_FRAME,</span> <span class="pre">UPDATED_COLUMN</span> <span class="pre">=</span> <span class="pre">FORMULA)</span></code></p>
-</div>
-<div class="section" id="exercises-4-seconds">
-<h3>Exercises 4: Seconds<a class="headerlink" href="#exercises-4-seconds" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add a column called <code class="docutils literal notranslate"><span class="pre">seconds</span></code> to the <code class="docutils literal notranslate"><span class="pre">faithful</span></code> data set that contains the number of seconds that correspond to the decimal portion of the eruption duration.</p></li>
-<li><p>In terms of minutes and seconds, how long was the 19th eruption? Summarize your answer in a markdown cell.</p></li>
+</li>
 </ul>
 </div>
 </div>
-<div class="section" id="part-2-sorting-and-piping">
-<h2>Part 2: Sorting and piping<a class="headerlink" href="#part-2-sorting-and-piping" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-5-longest-eruption">
-<h3>Exercise 5: Longest eruption<a class="headerlink" href="#exercise-5-longest-eruption" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="part-2-colorful-trees">
+<h2>Part 2: Colorful trees<a class="headerlink" href="#part-2-colorful-trees" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-3-types-of-trees">
+<h3>Exercise 3: Types of trees<a class="headerlink" href="#exercise-3-types-of-trees" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> function to find the duration of the longest eruption in the faithful dataset.</p></li>
+<li><p>Create a bar chart that shows the number of threes in <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code> from each species.</p></li>
 </ul>
 </div>
-<div class="section" id="exercise-6-shortest-eruption">
-<h3>Exercise 6: Shortest eruption<a class="headerlink" href="#exercise-6-shortest-eruption" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-4-custom-colors">
+<h3>Exercise 4: Custom colors<a class="headerlink" href="#exercise-4-custom-colors" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Use the minutes and seconds columns that you added to the faithful dataset to find the duration of the shortest eruption.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">colors()</span></code> function outputs a vector of all the named colors. How many are there?</p></li>
+<li><p>Use named colors to set the color of the border and interior of the rectangles in your bar chart from the previous exercise.</p></li>
 </ul>
 </div>
-<div class="section" id="exercise-7-pipe">
-<h3>Exercise 7: Pipe<a class="headerlink" href="#exercise-7-pipe" title="Permalink to this headline">¶</a></h3>
-<p>In exercises 3 - 5, you wrote code that accomplished the following tasks:</p>
-<ol class="simple">
-<li><p>Add a column called minutes to the faithful data set that contains the number of whole minutes (ignoring the decimal) that the eruption lasted.</p></li>
-<li><p>Add a column called seconds to the faithful data set that contains the number of seconds that correspond to the decimal portion of the eruption duration.</p></li>
-<li><p>Find the duration of the longest eruption in the faithful dataset in minutes and seconds.</p></li>
-</ol>
+<div class="section" id="exercise-5-types-of-trees">
+<h3>Exercise 5: Types of trees<a class="headerlink" href="#exercise-5-types-of-trees" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Run the code in the cell below to remove your previous edits from <code class="docutils literal notranslate"><span class="pre">faithful</span></code>.</p></li>
-<li><p>Write new code that uses piping to accomplish these same four tasks.</p></li>
+<li><p>Create a scatter plot that shows the location of each tree in <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code> and uses color to indicate the type of each tree.</p></li>
+<li><p>Improve your plot by adding the following features:</p>
+<ul>
+<li><p>Descriptive title, axis and legend labels</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">scale_color_manual()</span></code> to specify colors from this <a class="reference external" href="https://siegal.bio.nyu.edu/color-palette/">color-blind friendly pallet</a>.</p></li>
+<li><p>A built-in theme with a grid background.</p></li>
+<li><p>Increased font size</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">INPUT_1</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION(INPUT_2)</span></code></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can not edit this cell.</span>
-<span class="c1"># Run this code to remove all of your changes from the faithful dataset.</span>
-
-<span class="nf">rm</span><span class="p">(</span><span class="n">faithful</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in rm(faithful):
-“object &#39;faithful&#39; not found”
-</pre></div>
-</div>
-</div>
-</div>
+</li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">scale_PROPERTY_manual(</span> <span class="pre">name=</span> <span class="pre">&quot;LEGEND_TITLE&quot;,</span> <span class="pre">values=</span> <span class="pre">VECTOR_OF_COLORS)</span></code></p>
 </div>
 </div>
 </div>
@@ -583,19 +514,19 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="lesson03.html" title="previous page">
+        <a class="left-prev" href="lesson07.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Lesson 3: Data sets and more vectors</p>
+                <p class="prevnext-title">Lesson 7: Labels, themes and scatter plots</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="lesson05.html" title="next page">
+        <a class="right-next" href="../homework/homework_0.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Lesson 5: Select columns and filter rows</p>
+                <p class="prevnext-title">Homework 0</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

@@ -220,6 +220,11 @@
    Lesson 7: Labels, themes and scatter plots
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson08.html">
+   Lesson 8: Colors and histograms
+  </a>
+ </li>
 </ul>
 <p class="caption" role="heading">
  <span class="caption-text">
@@ -381,6 +386,42 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#colors">
+   Colors
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fixed-colors">
+     Fixed colors
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Examples
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dynamic-colors">
+     Dynamic colors
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id3">
+       Examples
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accessibility">
+     Accessibility
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
             </nav>
@@ -516,6 +557,124 @@
 <img alt="../_images/ggplot_pretty_plots_11_0.png" src="../_images/ggplot_pretty_plots_11_0.png" />
 </div>
 </div>
+</div>
+</div>
+<div class="section" id="colors">
+<span id="pretty-plots-colors"></span><h2>Colors<a class="headerlink" href="#colors" title="Permalink to this headline">¶</a></h2>
+<p>Plots made by <code class="docutils literal notranslate"><span class="pre">ggplot()</span></code> have two main color properties <code class="docutils literal notranslate"><span class="pre">color</span></code> and <code class="docutils literal notranslate"><span class="pre">fill</span></code>. Generally, <code class="docutils literal notranslate"><span class="pre">color</span></code> refers to the color of the border and <code class="docutils literal notranslate"><span class="pre">fill</span></code> refers to the color of the interior. One notable exception to this is the default shape of points in <code class="docutils literal notranslate"><span class="pre">geom_point()</span></code>; these dots do not have a border, so <code class="docutils literal notranslate"><span class="pre">color</span></code> determines the color of the whole dot.</p>
+<p>There are multiple ways to represent colors in R. The most intuitive way is to use the built-in named colors eg. ‘white’, ‘black’, ‘red’. Use the <code class="docutils literal notranslate"><span class="pre">color()</span></code> function to see a full list of the colors. See also this <a href = './R_named_colors.pdf'>PDF with the named colors</a>.</p>
+<p>For more granular customization, we can use hexadecimal color codes. These are always written in quotes and start with a pound symbol <code class="docutils literal notranslate"><span class="pre">#</span></code> eg. <code class="docutils literal notranslate"><span class="pre">'#FFFFFF'</span></code> is white, <code class="docutils literal notranslate"><span class="pre">'#000000'</span></code> is black and <code class="docutils literal notranslate"><span class="pre">'#FF0000'</span></code> is red. See the <a class="reference external" href="https://www.w3schools.com/colors/default.asp">W3Schools overview of color</a> for more details on how computers encode colors.</p>
+<div class="section" id="fixed-colors">
+<h3>Fixed colors<a class="headerlink" href="#fixed-colors" title="Permalink to this headline">¶</a></h3>
+<p>To set a color property for all parts of a particularly geometry, we use the <code class="docutils literal notranslate"><span class="pre">PROPERTY</span> <span class="pre">=</span> <span class="pre">VALUE</span></code> pattern inside the parentheses of the geometry function.</p>
+<p><code class="docutils literal notranslate"><span class="pre">geom_TYPE(</span> <span class="pre">color</span> <span class="pre">=</span> <span class="pre">COLOR1,</span> <span class="pre">fill</span> <span class="pre">=</span> <span class="pre">COLOR2)</span></code></p>
+<div class="section" id="id2">
+<h4>Examples<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Size of diet groups bar chart</span>
+<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="m">0</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Diet</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">geom_bar</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s">&#39;black&#39;</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="s">&#39;gold&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">### Color set here ###</span>
+        <span class="nf">labs</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&#39;Size of diet groups on first day&#39;</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Diet group&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Number of chicks&#39;</span>
+        <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_classic</span><span class="p">(</span><span class="n">base_size</span> <span class="o">=</span> <span class="m">18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ggplot_pretty_plots_15_0.png" src="../_images/ggplot_pretty_plots_15_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chick weight diet group 4 scatter plot</span>
+<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Diet</span> <span class="o">==</span> <span class="m">4</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">weight</span><span class="p">))</span> <span class="o">+</span>
+        <span class="nf">geom_point</span><span class="p">(</span><span class="n">color</span> <span class="o">=</span> <span class="s">&#39;#57068C&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">### color set here ###</span>
+        <span class="nf">labs</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Weight of chicks in diet group 4&quot;</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Time (day)&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Weight (gm)&#39;</span>
+        <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">(</span><span class="n">base_size</span> <span class="o">=</span> <span class="m">18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ggplot_pretty_plots_16_0.png" src="../_images/ggplot_pretty_plots_16_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dynamic-colors">
+<h3>Dynamic colors<a class="headerlink" href="#dynamic-colors" title="Permalink to this headline">¶</a></h3>
+<p>It is often helpful to use color to represent a variable in the data frame. We do this by using the aesthetic mapping <code class="docutils literal notranslate"><span class="pre">aes()</span></code> to pair color properties of the plot with variables in the data frame.</p>
+<p>We can add additional layer to the plot to specify the color pallet that we wish to use and set the title for the legend.</p>
+<p><code class="docutils literal notranslate"><span class="pre">scale_PROPERTY_manual(</span> <span class="pre">name=</span> <span class="pre">&quot;LEGEND_TITLE&quot;,</span> <span class="pre">values=</span> <span class="pre">VECTOR_OF_COLORS)</span></code></p>
+<div class="section" id="id3">
+<h4>Examples<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chick weights on last day</span>
+<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+    <span class="nf">filter</span><span class="p">(</span><span class="n">Time</span> <span class="o">==</span> <span class="nf">max</span><span class="p">(</span><span class="n">Time</span><span class="p">))</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">weight</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">Diet</span><span class="p">))</span> <span class="o">+</span> <span class="c1">## fill color set here ##</span>
+        <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">bins</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s">&#39;white&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="c1">## white border ##</span>
+        <span class="nf">scale_fill_manual</span><span class="p">(</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;Diet group&#39;</span><span class="p">,</span> <span class="c1">## legend title ##</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;#a6cee3&#39;</span><span class="p">,</span> <span class="s">&#39;#1f78b4&#39;</span><span class="p">,</span> <span class="s">&#39;#b2df8a&#39;</span><span class="p">,</span> <span class="s">&#39;#33a02c&#39;</span><span class="p">)</span> <span class="c1">## custom pallet ##</span>
+        <span class="p">)</span> <span class="o">+</span>
+        <span class="nf">labs</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Weight of chicks on last day&quot;</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Time (day)&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Number of chicks&#39;</span>
+        <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">(</span><span class="n">base_size</span> <span class="o">=</span> <span class="m">18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ggplot_pretty_plots_19_0.png" src="../_images/ggplot_pretty_plots_19_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chick weight scatter plot</span>
+<span class="n">ChickWeight</span> <span class="o">%&gt;%</span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">weight</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">Diet</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">Diet</span><span class="p">))</span> <span class="o">+</span> <span class="c1">## color set here ##</span>
+        <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span><span class="m">3</span><span class="p">)</span> <span class="o">+</span> <span class="c1">## increase size of the dots ##</span>
+        <span class="nf">scale_color_manual</span><span class="p">(</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;#a6cee3&#39;</span><span class="p">,</span> <span class="s">&#39;#1f78b4&#39;</span><span class="p">,</span> <span class="s">&#39;#b2df8a&#39;</span><span class="p">,</span> <span class="s">&#39;#33a02c&#39;</span><span class="p">)</span> <span class="c1">## custom pallet ##</span>
+        <span class="p">)</span> <span class="o">+</span>
+        <span class="nf">labs</span><span class="p">(</span> <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Weight of chicks&quot;</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Time (day)&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Weight (gm)&#39;</span>
+        <span class="p">)</span> <span class="o">+</span>
+    <span class="nf">theme_bw</span><span class="p">(</span><span class="n">base_size</span> <span class="o">=</span> <span class="m">18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ggplot_pretty_plots_20_0.png" src="../_images/ggplot_pretty_plots_20_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="accessibility">
+<h3>Accessibility<a class="headerlink" href="#accessibility" title="Permalink to this headline">¶</a></h3>
+<p>Color is a useful to for adding emphasis, grouping data and making things pretty. However, not everyone perceives color in the same way or at all. Here are some tips for ensuring that everyone can understand your plots.</p>
+<ul class="simple">
+<li><p>In scatter plots, let both color and shape depend on the variable. Do this by including <code class="docutils literal notranslate"><span class="pre">shape</span> <span class="pre">=</span> <span class="pre">COLUMN</span></code> inside <code class="docutils literal notranslate"><span class="pre">aes()</span></code>.</p></li>
+<li><p>Choose a color-blind friendly pallet.</p>
+<ul>
+<li><p><a class="reference external" href="https://siegal.bio.nyu.edu/color-palette/">pallet shared by NYU biology lab</a></p></li>
+<li><p><a class="reference external" href="https://r-graphics.org/recipe-colors-palette-discrete-colorblind">R Graphics Cookbook section on color-blind friendly pallets</a></p></li>
+<li><p><a class="reference external" href="https://colorbrewer2.org/">Color brewer 2 pallet generator</a></p></li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
 </div>
