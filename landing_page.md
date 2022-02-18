@@ -68,5 +68,5 @@ This site is intended to serve as reference for students enrolled in the Spring 
 - [](ggplot:histograms)
 - [](pretty_plots:colors)
 - [](in-class_exercises:lesson08)
-- Lab 3 worksheet
+- [](lab03)
 - Project 1
