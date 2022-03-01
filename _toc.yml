@@ -39,6 +39,7 @@ parts:
   - file: homework/homework_01
   - file: homework/homework_02
   - file: homework/homework_03
+  - file: homework/homework_04
 - caption: Lab worksheets
   chapters:
   - file: labs/lab_01
