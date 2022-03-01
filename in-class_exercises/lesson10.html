@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 1: Introduction to R and JupyterHub &#8212; From Data to Discovery</title>
+    <title>Lesson 10 - Practice with conditionals &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lesson 2: Variables and Vectors" href="lesson02.html" />
-    <link rel="prev" title="Other References" href="../reference/outside_sources.html" />
+    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="prev" title="Lesson 8: Colors and histograms" href="lesson08.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -189,8 +189,8 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson01.html">
    Lesson 1: Introduction to R and JupyterHub
   </a>
  </li>
@@ -229,8 +229,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lesson 8: Colors and histograms
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson10.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lesson 10 -  Practice with conditionals
   </a>
  </li>
@@ -334,7 +334,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson01.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson10.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -360,7 +360,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson01.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson10.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -387,50 +387,30 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-jupyterhub">
-   Part 1: JupyterHub
+  <a class="reference internal nav-link" href="#part-1-models-with-two-regions">
+   Part 1 - Models with two regions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
-     Exercise 0: Open this notebook on the Jupyter Hub
+    <a class="reference internal nav-link" href="#exercise-1-model-1">
+     Exercise 1 - Model 1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-edit-and-save">
-     Exercise 1: Edit and save
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-create-a-cell-and-compute-a-sum">
-     Exercise 2: Create a cell and compute a sum
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-change-cell-type">
-     Exercise 3: Change cell type
+    <a class="reference internal nav-link" href="#exercise-2-model-2">
+     Exercise 2- Model 2
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-compute">
-   Part 2: Compute
+  <a class="reference internal nav-link" href="#part-2-models-with-multiple-regions">
+   Part 2 - Models with multiple regions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-arithmetic">
-     Exercise 4: Arithmetic
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-debug">
-     Exercise 5: Debug
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-percentage">
-     Exercise 6: Percentage
+    <a class="reference internal nav-link" href="#exercise-3-model-3">
+     Exercise 3 - Model 3
     </a>
    </li>
   </ul>
@@ -445,7 +425,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lesson 1: Introduction to R and JupyterHub</h1>
+                <h1>Lesson 10 -  Practice with conditionals</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -461,50 +441,30 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-jupyterhub">
-   Part 1: JupyterHub
+  <a class="reference internal nav-link" href="#part-1-models-with-two-regions">
+   Part 1 - Models with two regions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
-     Exercise 0: Open this notebook on the Jupyter Hub
+    <a class="reference internal nav-link" href="#exercise-1-model-1">
+     Exercise 1 - Model 1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-edit-and-save">
-     Exercise 1: Edit and save
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-create-a-cell-and-compute-a-sum">
-     Exercise 2: Create a cell and compute a sum
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-change-cell-type">
-     Exercise 3: Change cell type
+    <a class="reference internal nav-link" href="#exercise-2-model-2">
+     Exercise 2- Model 2
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-compute">
-   Part 2: Compute
+  <a class="reference internal nav-link" href="#part-2-models-with-multiple-regions">
+   Part 2 - Models with multiple regions
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-arithmetic">
-     Exercise 4: Arithmetic
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-debug">
-     Exercise 5: Debug
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-percentage">
-     Exercise 6: Percentage
+    <a class="reference internal nav-link" href="#exercise-3-model-3">
+     Exercise 3 - Model 3
     </a>
    </li>
   </ul>
@@ -518,10 +478,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-1-introduction-to-r-and-jupyterhub">
-<span id="in-class-exercises-lesson01"></span><h1>Lesson 1: Introduction to R and JupyterHub<a class="headerlink" href="#lesson-1-introduction-to-r-and-jupyterhub" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-10-practice-with-conditionals">
+<span id="lab10"></span><h1>Lesson 10 -  Practice with conditionals<a class="headerlink" href="#lesson-10-practice-with-conditionals" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
-<p>The content in for this lesson is in the <a class="reference internal" href="../reference/arithmetic.html#r-basics-arithmetic"><span class="std std-ref">Arithmetic</span></a> subsection of the Base R section of the Course Book.</p>
 <div class="section" id="useful-links">
 <h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <p>The following links are also in the Content tool on Brightspace.</p>
@@ -532,115 +491,177 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://pollev.com/clarkson">Poll Everywhere respond</a></p></li>
 </ul>
 </div>
-<div class="section" id="part-1-jupyterhub">
-<h2>Part 1: JupyterHub<a class="headerlink" href="#part-1-jupyterhub" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-0-open-this-notebook-on-the-jupyter-hub">
-<h3>Exercise 0: Open this notebook on the Jupyter Hub<a class="headerlink" href="#exercise-0-open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="part-1-models-with-two-regions">
+<h2>Part 1 - Models with two regions<a class="headerlink" href="#part-1-models-with-two-regions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1-model-1">
+<h3>Exercise 1 - Model 1<a class="headerlink" href="#exercise-1-model-1" title="Permalink to this headline">¶</a></h3>
+<p>The following plot uses shading to inicate whcih points are special. The grid lines where the dark and light regions meet, are included in the light region.</p>
+<a class="reference internal image-reference" href="../_images/L10_model_1_plot.png"><img alt="plot with two shaded regions" src="../_images/L10_model_1_plot.png" style="width: 400px;" /></a>
+<p>Your goal is to create code that can tell you whether or not any point in the plot is special You may assume that the x-coordinates satisfy the indequaltiy $<span class="math notranslate nohighlight">\(0\le x \le 10\)</span><span class="math notranslate nohighlight">\( and that the y-coordinates satisfy the indequality \)</span><span class="math notranslate nohighlight">\(0\le y\le 2.5\)</span>$. Here is a step by step guide to doing that:</p>
 <ul class="simple">
-<li><p>Click on the rocket icon in the upper right of this page of the course book.</p></li>
-<li><p>Click the JupyterHub link.</p></li>
-<li><p>If prompted, log in to the Jupyter Hub with your NYU account.</p></li>
-<li><p>If prompted to select a kernel, choose <em>R [conda env:FDTD]</em>.</p></li>
-</ul>
-</div>
-<div class="section" id="exercise-1-edit-and-save">
-<h3>Exercise 1: Edit and save<a class="headerlink" href="#exercise-1-edit-and-save" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Edit a markdown cell</p>
-<ul>
-<li><p>Double click on the cell below to start edititing.</p></li>
-<li><p>Replace the text with your name and then press SHIFT + ENTER to format the cell.</p></li>
-</ul>
-</li>
-<li><p>Save the notebook</p>
-<ul>
-<li><p>Use the menu option File &gt; Save and Checkpoint to save the file.</p></li>
-</ul>
-</li>
-</ul>
-<p>YOUR_NAME</p>
-</div>
-<div class="section" id="exercise-2-create-a-cell-and-compute-a-sum">
-<h3>Exercise 2: Create a cell and compute a sum<a class="headerlink" href="#exercise-2-create-a-cell-and-compute-a-sum" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Insert a cell</p>
-<ul>
-<li><p>Select this cell by clicking it once.</p></li>
-<li><p>Use the menu option Insert &gt; Insert Cell Below to insert a cell below this one.</p></li>
-</ul>
-</li>
-<li><p>Compute a sum</p>
-<ul>
-<li><p>Double click on the new cell to edit it</p></li>
-<li><p>Type 12 + 7 in the new cell</p></li>
-<li><p>Press SHIFT + Enter to run the code or select the cell and click the Run button.</p></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="section" id="exercise-3-change-cell-type">
-<h3>Exercise 3: Change cell type<a class="headerlink" href="#exercise-3-change-cell-type" title="Permalink to this headline">¶</a></h3>
-<p>Empty markdown cells display the following text: Type <em>Markdown</em> and LaTeX: <span class="math notranslate nohighlight">\(\alpha^2\)</span></p>
-<ul class="simple">
-<li><p>Change the markdown cell below to a code cell</p>
-<ul>
-<li><p>Select the cell below by clicking on it once.</p></li>
-<li><p>Use the menu option Cell &gt; Cell Type &gt; Code to make the cell a code cell.</p></li>
-</ul>
-</li>
-<li><p>Use the cell to compute the value of <span class="math notranslate nohighlight">\(5^7\)</span>.</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="part-2-compute">
-<h2>Part 2: Compute<a class="headerlink" href="#part-2-compute" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-4-arithmetic">
-<h3>Exercise 4: Arithmetic<a class="headerlink" href="#exercise-4-arithmetic" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Verify the following equation by using the code cell below to compute the value of the left hand side.</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[\frac{3^2 - 4^2}{5} = -1.4\]</div>
-</div>
-<div class="section" id="exercise-5-debug">
-<h3>Exercise 5: Debug<a class="headerlink" href="#exercise-5-debug" title="Permalink to this headline">¶</a></h3>
-<p>There are 14 weeks of classes in the semester. This is a 4 credit hour course. This means that each week you are expected to spend 4 hours in class and 8 hours out of class on this course.</p>
-<p>The code in the cell below is supposed to compute the total number of hours this course will require this semester, but something is wrong with the code.</p>
-<ul class="simple">
-<li><p>Fix the code so that the computation runs correctly.</p></li>
-<li><p>Summarize the result in a sentence in the markdown cell below the code cell.</p></li>
+<li><p>List three points that are special and three points that are not special. You will use these to test your code.</p></li>
+<li><p>In plain English, describe how you can tell whether or not a point is special.</p></li>
+<li><p>Sketch a decision tree that ends in ‘Yes’ if the point is special and ‘No’ if it is not special.</p></li>
+<li><p>Implement your decision tree in the code cell below by filling in the blanks.</p></li>
+<li><p>Test your code against your six points by uncommenting them one at a time. Does it work as expected?</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">14</span><span class="p">(</span><span class="m">8</span> <span class="o">+</span> <span class="m">4</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use Ctrl + / to comment and uncomment blocks</span>
+<span class="c1"># Yes Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># No Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="nf">if </span><span class="p">(</span> <span class="p">)</span> <span class="p">{</span> <span class="c1"># write your Boolean expression between the parentheses</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span>  <span class="c1"># output if the Boolean expression is TRUE</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span>  <span class="c1"># output if the Boolean expression is FALSE</span>
+<span class="p">}</span>
+<span class="n">answer</span> <span class="c1"># prints the value of answer</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">envir</span><span class="p">,</span> <span class="n">enclos</span><span class="p">):</span> <span class="n">attempt</span> <span class="n">to</span> <span class="n">apply</span> <span class="n">non</span><span class="o">-</span><span class="n">function</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">28</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span> <span class="n">unexpected</span> <span class="s1">&#39;)&#39;</span>
+<span class="mi">27</span><span class="p">:</span> 
+<span class="mi">28</span><span class="p">:</span> <span class="k">if</span> <span class="p">(</span> <span class="p">)</span>
+         <span class="o">^</span>
 <span class="ne">Traceback</span>:
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="exercise-6-percentage">
-<h3>Exercise 6: Percentage<a class="headerlink" href="#exercise-6-percentage" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-2-model-2">
+<h3>Exercise 2- Model 2<a class="headerlink" href="#exercise-2-model-2" title="Permalink to this headline">¶</a></h3>
+<p>The following plot uses shading to inicate whcih points are special. The grid lines where the dark and light regions meet, are included in the light region.</p>
+<a class="reference internal image-reference" href="../_images/L10_model_2_plot.png"><img alt="plot with two shaded regions" src="../_images/L10_model_2_plot.png" style="width: 400px;" /></a>
+<p>Your goal is to create code that can tell you whether or not any point in the plot is special You may assume that the x-coordinates satisfy the indequaltiy $<span class="math notranslate nohighlight">\(0\le x \le 10\)</span><span class="math notranslate nohighlight">\( and that the y-coordinates satisfy the indequality \)</span><span class="math notranslate nohighlight">\(0\le y\le 2.5\)</span>$. Here is a step by step guide to doing that:</p>
 <ul class="simple">
-<li><p>Compute a percentage.</p>
-<ul>
-<li><p>Suppose that out of 60 students, 25 are living in Manhattan, 11 in Brooklyn, 9 in Queens, 9 in the Bronx, 3 in Staten Island, 2 in New Jersey, and 1 in Westchester.</p></li>
-<li><p>Insert a cell below and use it to compute the percent of of students who live in Brooklyn.</p></li>
+<li><p>List three points that are special and three points that are not special. You will use these to test your code.</p></li>
+<li><p>In plain English, describe how you can tell whether or not a point is special.</p></li>
+<li><p>Sketch a decision tree that ends in ‘Yes’ if the point is special and ‘No’ if it is not special.</p></li>
+<li><p>Implement your decision tree in the code cell using <code class="docutils literal notranslate"><span class="pre">if()</span> <span class="pre">{}</span> <span class="pre">else</span> <span class="pre">{}</span></code>.</p></li>
+<li><p>Test your code against your six pointss by uncommenting them one at a time. Does it work as expected?</p></li>
 </ul>
-</li>
-<li><p>Summarize your findings.</p>
-<ul>
-<li><p>Insert a new cell below your code cell.</p></li>
-<li><p>Convert that cell to a markdown cell.</p></li>
-<li><p>Write a sentence summarizing the conclusion of your computation.</p></li>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use Ctrl + / to comment and uncomment blocks</span>
+<span class="c1"># Yes Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># No Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="nf">if </span><span class="p">(</span> <span class="p">)</span> <span class="p">{</span> <span class="c1"># write your Boolean expression between the parentheses</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span>  <span class="c1"># output if the Boolean expression is TRUE</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span>  <span class="c1"># output if the Boolean expression is FALSE</span>
+<span class="p">}</span>
+<span class="n">answer</span> <span class="c1"># prints the value of answer</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2-models-with-multiple-regions">
+<h2>Part 2 - Models with multiple regions<a class="headerlink" href="#part-2-models-with-multiple-regions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-3-model-3">
+<h3>Exercise 3 - Model 3<a class="headerlink" href="#exercise-3-model-3" title="Permalink to this headline">¶</a></h3>
+<p>The following plot uses shading to indicate which points are special. The grid lines where the dark and light regions meet, are included in the light region.</p>
+<a class="reference internal image-reference" href="../_images/L10_model_3_plot.png"><img alt="plot with four shaded regions" src="../_images/L10_model_3_plot.png" style="width: 400px;" /></a>
+<p>Your goal is to create code that can tell you whether or not any point in the plot is special You may assume that the x-coordinates satisfy the inequality $<span class="math notranslate nohighlight">\(0\le x \le 10\)</span><span class="math notranslate nohighlight">\( and that the y-coordinates satisfy the inequality \)</span><span class="math notranslate nohighlight">\(0\le y\le 2.5\)</span>$. Here is a step by step guide to doing that:</p>
+<ul class="simple">
+<li><p>List three points that are special and three points that are not special. You will use these to test your code.</p></li>
+<li><p>In plain English, describe how you can tell whether or not a point is special.</p></li>
+<li><p>Sketch a decision tree that ends in ‘Yes’ if the point is special and ‘No’ if it is not special.</p></li>
+<li><p>Implement your decision tree in the code cell using <code class="docutils literal notranslate"><span class="pre">if()</span> <span class="pre">{}</span> <span class="pre">else</span> <span class="pre">if</span> <span class="pre">()</span> <span class="pre">{}</span> <span class="pre">else</span> <span class="pre">{}</span></code>.</p></li>
+<li><p>Test your code against your six pointss by uncommenting them one at a time. Does it work as expected?</p></li>
 </ul>
-</li>
-</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">## Use Ctrl + / to comment and uncomment blocks</span>
+<span class="c1"># Yes Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># No Points</span>
+<span class="c1"># # first</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # second</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="c1"># # third</span>
+<span class="c1"># x &lt;- </span>
+<span class="c1"># y &lt;- </span>
+
+<span class="nf">if </span><span class="p">(</span>  <span class="p">)</span> <span class="p">{</span> <span class="c1"># write your first Boolean expression between the parentheses</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span>  <span class="c1"># output if the first Boolean expression is TRUE</span>
+<span class="p">}</span> <span class="n">else</span> <span class="nf">if</span><span class="p">(</span> <span class="p">)</span> <span class="p">{</span> <span class="c1"># write your second Boolean expression between the parentheses</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span>  <span class="c1"># output if the first Boolean expression is FALSE and the second is TRUE</span>
+<span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+    <span class="n">answer</span> <span class="o">&lt;-</span>  <span class="c1"># output if both Boolean expressions are FALSE</span>
+<span class="p">}</span>
+<span class="n">answer</span> <span class="c1"># prints the value of answer</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -670,17 +691,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="../reference/outside_sources.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lesson08.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Other References</p>
+            <p class="prev-next-title">Lesson 8: Colors and histograms</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="lesson02.html" title="next page">
+    <a class='right-next' id="next-link" href="../homework/homework_0.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lesson 2: Variables and Vectors</p>
+        <p class="prev-next-title">Homework 0</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

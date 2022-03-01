@@ -69,4 +69,12 @@ This site is intended to serve as reference for students enrolled in the Spring 
 - [](pretty_plots:colors)
 - [](in-class_exercises:lesson08)
 - [](lab03)
-- Project 1
+- Project 1 (prompts on Brightspace)
+
+
+### Lesson 9
+- No in-class exercises
+
+
+### Lesson 10
+- [](lab10)
