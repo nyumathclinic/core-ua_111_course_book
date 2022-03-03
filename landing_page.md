@@ -77,4 +77,8 @@ This site is intended to serve as reference for students enrolled in the Spring 
 
 
 ### Lesson 10
-- [](lab10)
+- [](lesson10)
+
+
+### Lesson 11
+- [](lesson11)
