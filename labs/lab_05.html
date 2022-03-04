@@ -589,6 +589,7 @@ Class
 <li><p>If the number is odd, then multiply it by three and add 1.</p></li>
 </ol>
 <ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">%%</span> <span class="pre">2</span></code> gives the remainder when <code class="docutils literal notranslate"><span class="pre">n</span></code> is divided by 2. Experiment by replacing <code class="docutils literal notranslate"><span class="pre">n</span></code> in this expression with at least three different numbers.</p></li>
 <li><p>Write an if-else statement that implements these rules on a numerical variable <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p></li>
 </ul>
 </div>
@@ -622,7 +623,7 @@ Class
 <p>If you load the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package, you can use piping with your custom functions too. For a function with a single input this looks like <code class="docutils literal notranslate"><span class="pre">INPUT</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION()</span></code>.</p>
 <p>A hailstone sequence is built by picking a seed number, applying the hailstone function to it and then applying the hailstone function to the resulting output. Each subsequent number is produced by feeding the previous number into the hailstone function.</p>
 <ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">hailstone()</span></code> to produce the first seven numbers in the hailstone sequence seeded by 3.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">hailstone()</span></code> and piping to produce the first seven numbers in the hailstone sequence seeded by 3.</p></li>
 <li><p>Verify that your code outputs the following seven numbers: 10, 5, 16, 8, 4, 2, 1</p></li>
 </ul>
 </div>
