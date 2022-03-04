@@ -48,3 +48,4 @@ parts:
   - file: labs/lab_02
   - file: labs/lab_03
   - file: labs/lab_04
+  - file: labs/lab_05
