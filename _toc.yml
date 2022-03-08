@@ -35,6 +35,7 @@ parts:
   - file: in-class_exercises/lesson08
   - file: in-class_exercises/lesson10
   - file: in-class_exercises/lesson11
+  - file: in-class_exercises/lesson12
 - caption: Homework
   chapters:
   - file: homework/homework_0
