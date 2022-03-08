@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homework 3 &#8212; From Data to Discovery</title>
+    <title>Homework 5 &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Homework 4" href="homework_04.html" />
-    <link rel="prev" title="Homework 2" href="homework_02.html" />
+    <link rel="next" title="Lab 1 Worksheet" href="../labs/lab_01.html" />
+    <link rel="prev" title="Homework 4" href="homework_04.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -264,8 +264,8 @@ const thebe_selector_output = ".output, .cell_output"
    Homework 2
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="homework_03.html">
    Homework 3
   </a>
  </li>
@@ -274,8 +274,8 @@ const thebe_selector_output = ".output, .cell_output"
    Homework 4
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="homework_05.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Homework 5
   </a>
  </li>
@@ -352,7 +352,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/homework/homework_03.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/homework/homework_05.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -378,7 +378,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/homework/homework_03.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/homework/homework_05.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -405,60 +405,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-nyc-tees">
-   Part 1: NYC tees
+  <a class="reference internal nav-link" href="#part-1-horse-classifier-function">
+   Part 1: Horse classifier function
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-load-and-explore-tree-data">
-     Exercise 1 - Load and explore tree data
+    <a class="reference internal nav-link" href="#exercise-1-understand-the-data">
+     Exercise 1: Understand the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-number-of-trees-in-manhattan">
-     Exercise 2 - Number of trees in Manhattan
+    <a class="reference internal nav-link" href="#exercise-2-load-reformat-and-split-the-data">
+     Exercise 2: Load,  reformat and split the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-manhattan-trees">
-     Exercise 3 - Manhattan trees
+    <a class="reference internal nav-link" href="#exercise-3-explore-the-data">
+     Exercise 3: Explore the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-tree-health-numbers">
-     Exercise 4 - Tree health numbers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-custom-order">
-     Exercise 5 - Custom order
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-visualize-tree-health">
-     Exercise 6 - Visualize tree health
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-city-payroll">
-   Part 2: City payroll
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-load-and-explore-payroll-data">
-     Exercise 7 - Load and explore payroll data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-8-large-payroll-agencies">
-     Exercise 8 - Large payroll agencies
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-9-visualize-large-payroll-agencies">
-     Exercise 9 - Visualize large payroll agencies
+    <a class="reference internal nav-link" href="#exercise-4-classifier-function">
+     Exercise 4: Classifier function
     </a>
    </li>
   </ul>
@@ -469,13 +437,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-10-what-was-helpful">
-     Exercise 10: What was helpful?
+    <a class="reference internal nav-link" href="#exercise-5-what-was-helpful">
+     Exercise 5: What was helpful?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-what-was-challenging-interesting">
-     Exercise 11: What was challenging / interesting?
+    <a class="reference internal nav-link" href="#exercise-6-what-was-challenging-interesting">
+     Exercise 6: What was challenging / interesting?
     </a>
    </li>
   </ul>
@@ -519,7 +487,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Homework 3</h1>
+                <h1>Homework 5</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -535,60 +503,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-nyc-tees">
-   Part 1: NYC tees
+  <a class="reference internal nav-link" href="#part-1-horse-classifier-function">
+   Part 1: Horse classifier function
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-load-and-explore-tree-data">
-     Exercise 1 - Load and explore tree data
+    <a class="reference internal nav-link" href="#exercise-1-understand-the-data">
+     Exercise 1: Understand the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-number-of-trees-in-manhattan">
-     Exercise 2 - Number of trees in Manhattan
+    <a class="reference internal nav-link" href="#exercise-2-load-reformat-and-split-the-data">
+     Exercise 2: Load,  reformat and split the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-manhattan-trees">
-     Exercise 3 - Manhattan trees
+    <a class="reference internal nav-link" href="#exercise-3-explore-the-data">
+     Exercise 3: Explore the data
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-tree-health-numbers">
-     Exercise 4 - Tree health numbers
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-custom-order">
-     Exercise 5 - Custom order
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-visualize-tree-health">
-     Exercise 6 - Visualize tree health
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-city-payroll">
-   Part 2: City payroll
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-load-and-explore-payroll-data">
-     Exercise 7 - Load and explore payroll data
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-8-large-payroll-agencies">
-     Exercise 8 - Large payroll agencies
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-9-visualize-large-payroll-agencies">
-     Exercise 9 - Visualize large payroll agencies
+    <a class="reference internal nav-link" href="#exercise-4-classifier-function">
+     Exercise 4: Classifier function
     </a>
    </li>
   </ul>
@@ -599,13 +535,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-10-what-was-helpful">
-     Exercise 10: What was helpful?
+    <a class="reference internal nav-link" href="#exercise-5-what-was-helpful">
+     Exercise 5: What was helpful?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-11-what-was-challenging-interesting">
-     Exercise 11: What was challenging / interesting?
+    <a class="reference internal nav-link" href="#exercise-6-what-was-challenging-interesting">
+     Exercise 6: What was challenging / interesting?
     </a>
    </li>
   </ul>
@@ -648,8 +584,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="homework-3">
-<span id="homework03"></span><h1>Homework 3<a class="headerlink" href="#homework-3" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="homework-5">
+<span id="homework05"></span><h1>Homework 5<a class="headerlink" href="#homework-5" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="name-netid-collaborators">
 <h2>Name, NetID, Collaborators<a class="headerlink" href="#name-netid-collaborators" title="Permalink to this headline">¶</a></h2>
 <p>Please edit the markdown cell below for “Names &amp; NetIDs” and enter:</p>
@@ -666,136 +602,59 @@ and the methods yourself</p>
 <p><strong>Name and NetID:</strong></p>
 <p><strong>Collaborators:</strong></p>
 </div>
-<div class="section" id="part-1-nyc-tees">
-<h2>Part 1: NYC tees<a class="headerlink" href="#part-1-nyc-tees" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1-load-and-explore-tree-data">
-<h3>Exercise 1 - Load and explore tree data<a class="headerlink" href="#exercise-1-load-and-explore-tree-data" title="Permalink to this headline">¶</a></h3>
-<p>There is a CSV file called <code class="docutils literal notranslate"><span class="pre">NYC_Tree_Census_small.csv</span></code> in the <code class="docutils literal notranslate"><span class="pre">~/shared/data</span></code> folder. This file contains information an excerpt from the <a class="reference external" href="https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh">2015 New York City Tree Census</a> shared by the <a class="reference external" href="https://data.cityofnewyork.us">NYC OpenData project</a>.</p>
+<div class="section" id="part-1-horse-classifier-function">
+<h2>Part 1: Horse classifier function<a class="headerlink" href="#part-1-horse-classifier-function" title="Permalink to this headline">¶</a></h2>
+<p>In this part, you will begin the process of building a classifier to determine whether or not a horse with colic requires surgery.</p>
+<div class="section" id="exercise-1-understand-the-data">
+<h3>Exercise 1: Understand the data<a class="headerlink" href="#exercise-1-understand-the-data" title="Permalink to this headline">¶</a></h3>
+<p>We will use the <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/Horse+Colic">Horses Colic Data</a> set from the UCI Machine Learning Repository. Familiarize yourself with the data set by reading the attribute information on the website.</p>
 <ul class="simple">
-<li><p>Import the NYC tree census data <strong>from the local file</strong> and store it as a data frame called <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code>.</p></li>
-<li><p>Look at the first three rows of <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code> to verify that it imported successfully and to get a sense of the data.</p></li>
-<li><p>Look at the documentation of the data set on the website linked above.</p></li>
-<li><p>In a markdown cell answer the following questions:</p>
-<ul>
-<li><p>How many variables and observation are <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code>?</p></li>
-<li><p>What does each observation represent?</p></li>
-<li><p>What information is recorded in the <code class="docutils literal notranslate"><span class="pre">health</span></code> variable? What is the data type of this information?</p></li>
-<li><p>What information is recorded in the <code class="docutils literal notranslate"><span class="pre">tree_dbh</span></code> variable? What are the units?</p></li>
-</ul>
-</li>
+<li><p>Based on the documentation what is the normal range for the pulse of an adult horse?</p></li>
+<li><p>Using any reliably source, determine what it means for a horse to have colic. Write your answer and source in the markdown cell.</p></li>
 </ul>
 </div>
-<div class="section" id="exercise-2-number-of-trees-in-manhattan">
-<h3>Exercise 2 - Number of trees in Manhattan<a class="headerlink" href="#exercise-2-number-of-trees-in-manhattan" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-2-load-reformat-and-split-the-data">
+<h3>Exercise 2: Load,  reformat and split the data<a class="headerlink" href="#exercise-2-load-reformat-and-split-the-data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Determine the number of trees in nyc_trees that are located in Manhattan.</p></li>
-<li><p>Summarize your findings in a markdown cell.</p></li>
+<li><p>Load the <code class="docutils literal notranslate"><span class="pre">horses.csv</span></code> data set from our shared data folder.</p></li>
+<li><p>View the first few rows of the data frame to verify that the reformatting was successful.</p></li>
+<li><p>Split the data set into two pieces: one training and one test data sets.</p></li>
 </ul>
 </div>
-<div class="section" id="exercise-3-manhattan-trees">
-<h3>Exercise 3 - Manhattan trees<a class="headerlink" href="#exercise-3-manhattan-trees" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">unique()</span></code> function outputs a vector where each value in the inputed vector is listed exactly once. See the cell below for an example.</p>
-<p><code class="docutils literal notranslate"><span class="pre">unique(VECTOR)</span></code></p>
+<div class="section" id="exercise-3-explore-the-data">
+<h3>Exercise 3: Explore the data<a class="headerlink" href="#exercise-3-explore-the-data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">unique()</span></code> to view the values in the status column of nyc_trees. Notice that all observations have the same value.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">filter()</span></code> and <code class="docutils literal notranslate"><span class="pre">select()</span></code> to create a data frame called <code class="docutils literal notranslate"><span class="pre">manhattan_trees</span></code> that contains all the variables in nyc_trees except status and borough and only contains trees on Manhattan.</p></li>
-<li><p>Verify that this worked using <code class="docutils literal notranslate"><span class="pre">dim()</span></code> to verify that manhattan_trees has the expected number of variables and observations.</p></li>
-<li><p>Answer the following questions in a markdown cell. Don’t forget units.</p>
-<ul>
-<li><p>What is the maximum diameter of a tree on Manhattan?</p></li>
-<li><p>What is the minimum diameter of a tree on Manhattan?</p></li>
+<li><p>Create (at least) two data visualizations or summary tables <strong>using the training data</strong>. Your goal is to identify variables that will be useful for determining whether or not a given horse requires surgery.</p></li>
 </ul>
-</li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">unique</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>
-</div></div>
-</div>
-</div>
-<div class="section" id="exercise-4-tree-health-numbers">
-<h3>Exercise 4 - Tree health numbers<a class="headerlink" href="#exercise-4-tree-health-numbers" title="Permalink to this headline">¶</a></h3>
+<p>You may find it useful to use <code class="docutils literal notranslate"><span class="pre">geom_count()</span></code> (<a class="reference external" href="https://ggplot2.tidyverse.org/reference/geom_count.html">documentation</a>) in place of <code class="docutils literal notranslate"><span class="pre">geom_point()</span></code>. It will scale the size of the dots based on the number of observations that have those values. Alternatively, you can use <code class="docutils literal notranslate"><span class="pre">geom_jitter()</span></code> (<a class="reference external" href="https://ggplot2.tidyverse.org/reference/position_jitter.html">documentation</a>) in place of <code class="docutils literal notranslate"><span class="pre">geom_point()</span></code> this will wiggle the coordinates of each point a little bit in a random direction. Both will prevent repetitions from being obscured by overlapping dots.</p>
+<p><strong>You may NOT use the following variables:</strong> <code class="docutils literal notranslate"><span class="pre">surgery</span></code>, <code class="docutils literal notranslate"><span class="pre">outcome</span></code>, because neither of these contain information that would be able to a vet examining the horse.</p>
 <ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">group_by()</span></code> and <code class="docutils literal notranslate"><span class="pre">summarize()</span></code> functions to determine how many of the trees in nyc_trees were recorded with each level of health.</p></li>
+<li><p>In a markdown cell, please write a brief (2-4 sentence summary of your observations.</p></li>
 </ul>
 </div>
-<div class="section" id="exercise-5-custom-order">
-<h3>Exercise 5 - Custom order<a class="headerlink" href="#exercise-5-custom-order" title="Permalink to this headline">¶</a></h3>
-<p>We can use <code class="docutils literal notranslate"><span class="pre">factor()</span></code> to tell R our preferred order for the values in a categorical variable. Consider the following example.</p>
-<p>A data set called <code class="docutils literal notranslate"><span class="pre">schools</span></code> contains a variable called <code class="docutils literal notranslate"><span class="pre">school_type</span></code> which indicates whether the given school is a ‘kindergarten’ (age 5), ‘elementary school’ (age 6 - 10), ‘middle school’ (age 11 - 13) or ‘high school’ (age 14 - 17). The following command will tell R that we prefer to sort <code class="docutils literal notranslate"><span class="pre">school_type</span></code> the the specified order rather than alphabetically.</p>
-<pre>
-<code>
-schools &lt;- mutate(schools, school_type = 
-                factor(school_type, levels = c('kindergarten', 'elementary school', 'middle school', 'high school' ))
-                )
-</code>
-</pre>
-<p>Here is the general syntax for factor:</p>
-<p><code class="docutils literal notranslate"><span class="pre">factor(VECTOR_OF_DATA,</span> <span class="pre">levels=VECTOR_OF_ORDERED_VALUES)</span></code></p>
-<p>The output of factor is VECTOR_OF_DATA with the additional structure of a specified order to the values.</p>
+<div class="section" id="exercise-4-classifier-function">
+<h3>Exercise 4: Classifier function<a class="headerlink" href="#exercise-4-classifier-function" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">factor()</span></code> to specify a more natural order for the health variable in nyc_trees</p></li>
-<li><p>Recreate the the summary table from the previous exercise and verify that the rows are now in your specified order.</p></li>
-<li><p>Store your summary table in a variable called <code class="docutils literal notranslate"><span class="pre">tree_health_count</span></code>.</p></li>
-<li><p>Output <code class="docutils literal notranslate"><span class="pre">tree_health_count</span></code></p></li>
+<li><p>Based on your exploration and visualization in the previous exercise, create a simple classifier function that uses <strong>at least two if-statements</strong>. Your classifier should predict the value of the <code class="docutils literal notranslate"><span class="pre">surgical.lesion</span></code> variable.</p></li>
+<li><p>Test your classifier on at least three different sets of input. Are the results what you expected?</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-6-visualize-tree-health">
-<h3>Exercise 6 - Visualize tree health<a class="headerlink" href="#exercise-6-visualize-tree-health" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Create a bar chart that shoes the number of trees with each level of health.</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="part-2-city-payroll">
-<h2>Part 2: City payroll<a class="headerlink" href="#part-2-city-payroll" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-7-load-and-explore-payroll-data">
-<h3>Exercise 7 - Load and explore payroll data<a class="headerlink" href="#exercise-7-load-and-explore-payroll-data" title="Permalink to this headline">¶</a></h3>
-<p>There is a CSV file called <code class="docutils literal notranslate"><span class="pre">NYC_Payroll_small.csv</span></code> in the shared data folder. This file contains an excerpt from the <a class="reference external" href="https://data.cityofnewyork.us/City-Government/Citywide-Payroll-Data-Fiscal-Year-/k397-673e">2021 New York City Payroll</a> shared by the <a class="reference external" href="https://data.cityofnewyork.us">NYC OpenData project</a>.</p>
-<ul class="simple">
-<li><p>Import the NYC tree census data <strong>from the local file</strong> and store it as a data frame called <code class="docutils literal notranslate"><span class="pre">nyc_payroll</span></code>.</p></li>
-<li><p>Look at the first three rows of <code class="docutils literal notranslate"><span class="pre">nyc_payroll</span></code> to verify that it imported successfully and to get a sense of the data.</p></li>
-<li><p>Add a column called <code class="docutils literal notranslate"><span class="pre">Total_Wages</span></code> to nyc_payroll that contains the total amount of money that was payed to each employee.</p></li>
-</ul>
-</div>
-<div class="section" id="exercise-8-large-payroll-agencies">
-<h3>Exercise 8 - Large payroll agencies<a class="headerlink" href="#exercise-8-large-payroll-agencies" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Create a summary table called <code class="docutils literal notranslate"><span class="pre">large_payroll_agencies</span></code> that shows the total pay roll expenses in millions of dollars rounded to two decimal places for the ten agencies with the highest payroll expenses.</p></li>
-<li><p>Output <code class="docutils literal notranslate"><span class="pre">large_payroll_agencies</span></code>.</p></li>
-</ul>
-</div>
-<div class="section" id="exercise-9-visualize-large-payroll-agencies">
-<h3>Exercise 9 - Visualize large payroll agencies<a class="headerlink" href="#exercise-9-visualize-large-payroll-agencies" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Create a bar chart that shows the data in <code class="docutils literal notranslate"><span class="pre">large_payroll_agencies</span></code>. Order the agencies based on their total payroll.</p></li>
-</ul>
+<p>It is a good idea to sketch out your decision tree on scratch paper to help outline your classifier.  If you would like to include an image of your decision tree in a markdown cell, you can (however, you are not required to do this). Note that in order for your classifier to use a sequence of at least two if-statements, your decision  tree must have at least two “levels”.</p>
 </div>
 </div>
 <div class="section" id="part-3-a-quick-reflection">
 <h2>Part 3: A Quick Reflection<a class="headerlink" href="#part-3-a-quick-reflection" title="Permalink to this headline">¶</a></h2>
 <p>Briefly answer the prompts below in the markdown cell provided. (1-2 sentences for each prompt
 is sufficient.)</p>
-<div class="section" id="exercise-10-what-was-helpful">
-<h3>Exercise 10: What was helpful?<a class="headerlink" href="#exercise-10-what-was-helpful" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-5-what-was-helpful">
+<h3>Exercise 5: What was helpful?<a class="headerlink" href="#exercise-5-what-was-helpful" title="Permalink to this headline">¶</a></h3>
 <p>Indicate one question/part in this assignment that you find helpful in helping you understand
 an idea or method introduced in class. This could be a question/task that you knew right
 away how to do; one for which you kept encountering bugs/errors; or one that you needed
 to think a while or discuss with others first to figure out.
 (State which question/part and how it helps you with which idea/method.)</p>
 </div>
-<div class="section" id="exercise-11-what-was-challenging-interesting">
-<h3>Exercise 11: What was challenging / interesting?<a class="headerlink" href="#exercise-11-what-was-challenging-interesting" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-6-what-was-challenging-interesting">
+<h3>Exercise 6: What was challenging / interesting?<a class="headerlink" href="#exercise-6-what-was-challenging-interesting" title="Permalink to this headline">¶</a></h3>
 <p>Write one thing that you find challenging or interesting in this assignment. Briefly elaborate on what made it challenging or interesting.</p>
 </div>
 </div>
@@ -847,17 +706,17 @@ page, See the <a class="reference external" href="https://help.gradescope.com/ar
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="homework_02.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="homework_04.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Homework 2</p>
+            <p class="prev-next-title">Homework 4</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="homework_04.html" title="next page">
+    <a class='right-next' id="next-link" href="../labs/lab_01.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Homework 4</p>
+        <p class="prev-next-title">Lab 1 Worksheet</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

@@ -75,6 +75,7 @@ This site is intended to serve as reference for students enrolled in the Spring 
 ### Lesson 9
 - No in-class exercises
 - [](lab04)
+- [](homework04)
 
 
 ### Lesson 10
@@ -84,6 +85,7 @@ This site is intended to serve as reference for students enrolled in the Spring 
 ### Lesson 11
 - [](lesson11)
 - [](lab05)
+- [](homework05)
 
 
 ### Lesson 12
