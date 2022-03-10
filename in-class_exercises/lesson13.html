@@ -521,7 +521,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Alter the code so that the Predictions column is also more human readable. You can do this by changing the classifier function or using <code class="docutils literal notranslate"><span class="pre">factor()</span></code>.</p></li>
 </ul>
 <pre><code>training &lt;- head(cancer, 400)
-test &lt;- tail(nrow(cancer)-400)
+test &lt;- tail(cancer, nrow(cancer)-400)
 
 # a is the marginal adhesion
 # t is the thickness
@@ -540,7 +540,7 @@ classifier &lt;- Vectorize(classifier)
 
 test &lt;- mutate(test, Prediction = classifier(Marginal.Adhesion, Clump.Thickness))
 test %&gt;% 
-    select(Marginal.Adhesion, Clump.Thickness, Prediction, Class)
+    select(Marginal.Adhesion, Clump.Thickness, Prediction, Class) %&gt;% 
     head()
 </pre></code></div>
 </div>
