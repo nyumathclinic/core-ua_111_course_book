@@ -94,3 +94,4 @@ This site is intended to serve as reference for students enrolled in the Spring 
 
 ### Lesson 13
 - [](lesson13)
+- [](lab06)
