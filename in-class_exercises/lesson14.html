@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 4: Mutate, arrange, piping &#8212; From Data to Discovery</title>
+    <title>Lesson 14: Classifier metrics &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lesson 5: Select columns and filter rows" href="lesson05.html" />
-    <link rel="prev" title="Lesson 3: Data sets and more vectors" href="lesson03.html" />
+    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="prev" title="Lesson 13: Evaluating a classifier" href="lesson13.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -204,8 +204,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lesson 3: Data sets and more vectors
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson04.html">
    Lesson 4: Mutate, arrange, piping
   </a>
  </li>
@@ -249,8 +249,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lesson 13: Evaluating a classifier
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson14.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lesson 14: Classifier metrics
   </a>
  </li>
@@ -369,7 +369,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson04.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson14.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -395,7 +395,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson04.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson14.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -422,61 +422,35 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-mutate">
-   Part 1: Mutate
+  <a class="reference internal nav-link" href="#part-1-count-accuracy-types">
+   Part 1: Count accuracy types
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
-     Exercise 0: Open this notebook on the Jupyter Hub
+    <a class="reference internal nav-link" href="#exercise-1-summarize-accuracy-types">
+     Exercise 1: Summarize accuracy types
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-floor-function">
-     Exercise 1:
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       floor()
-      </span>
-     </code>
-     function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-load-dplyr">
-     Exercise 2: Load dplyr
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-whole-minutes">
-     Exercise 3: Whole minutes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises-4-seconds">
-     Exercises 4: Seconds
+    <a class="reference internal nav-link" href="#exercise-2-count-accuracy-types-with-boolean-expressions">
+     Exercise 2: Count accuracy types with boolean expressions
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-sorting-and-piping">
-   Part 2: Sorting and piping
+  <a class="reference internal nav-link" href="#part-2-classifier-metrics">
+   Part 2: Classifier metrics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-longest-eruption">
-     Exercise 5: Longest eruption
+    <a class="reference internal nav-link" href="#exercise-3-accuracy-and-precision">
+     Exercise 3: Accuracy and Precision
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-shortest-eruption">
-     Exercise 6: Shortest eruption
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-pipe">
-     Exercise 7: Pipe
+    <a class="reference internal nav-link" href="#exercise-4-true-positive-negative-rate">
+     Exercise 4: True positive / negative rate
     </a>
    </li>
   </ul>
@@ -491,7 +465,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lesson 4: Mutate, arrange, piping</h1>
+                <h1>Lesson 14: Classifier metrics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -507,61 +481,35 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-mutate">
-   Part 1: Mutate
+  <a class="reference internal nav-link" href="#part-1-count-accuracy-types">
+   Part 1: Count accuracy types
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
-     Exercise 0: Open this notebook on the Jupyter Hub
+    <a class="reference internal nav-link" href="#exercise-1-summarize-accuracy-types">
+     Exercise 1: Summarize accuracy types
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-floor-function">
-     Exercise 1:
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       floor()
-      </span>
-     </code>
-     function
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-load-dplyr">
-     Exercise 2: Load dplyr
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-whole-minutes">
-     Exercise 3: Whole minutes
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises-4-seconds">
-     Exercises 4: Seconds
+    <a class="reference internal nav-link" href="#exercise-2-count-accuracy-types-with-boolean-expressions">
+     Exercise 2: Count accuracy types with boolean expressions
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-sorting-and-piping">
-   Part 2: Sorting and piping
+  <a class="reference internal nav-link" href="#part-2-classifier-metrics">
+   Part 2: Classifier metrics
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-longest-eruption">
-     Exercise 5: Longest eruption
+    <a class="reference internal nav-link" href="#exercise-3-accuracy-and-precision">
+     Exercise 3: Accuracy and Precision
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-shortest-eruption">
-     Exercise 6: Shortest eruption
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-pipe">
-     Exercise 7: Pipe
+    <a class="reference internal nav-link" href="#exercise-4-true-positive-negative-rate">
+     Exercise 4: True positive / negative rate
     </a>
    </li>
   </ul>
@@ -575,19 +523,9 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-4-mutate-arrange-piping">
-<span id="in-class-exercises-lesson04"></span><h1>Lesson 4: Mutate, arrange, piping<a class="headerlink" href="#lesson-4-mutate-arrange-piping" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-14-classifier-metrics">
+<h1>Lesson 14: Classifier metrics<a class="headerlink" href="#lesson-14-classifier-metrics" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
-<p>The content for this lesson is in the following subsections of the course book:</p>
-<ul class="simple">
-<li><p>Exploring Data</p>
-<ul>
-<li><p><a class="reference internal" href="../reference/dplyr_library.html#mutate"><span class="std std-ref">dplyr library mutate</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/dplyr_library.html#arrange"><span class="std std-ref">dplyr library arrange</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/dplyr_library.html#piping"><span class="std std-ref">dplyr library piping</span></a></p></li>
-</ul>
-</li>
-</ul>
 <div class="section" id="useful-links">
 <h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
 <p>The following links are also in the Content tool on Brightspace.</p>
@@ -598,97 +536,149 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p><a class="reference external" href="https://pollev.com/clarkson">Poll Everywhere respond</a></p></li>
 </ul>
 </div>
-<div class="section" id="part-1-mutate">
-<h2>Part 1: Mutate<a class="headerlink" href="#part-1-mutate" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-0-open-this-notebook-on-the-jupyter-hub">
-<h3>Exercise 0: Open this notebook on the Jupyter Hub<a class="headerlink" href="#exercise-0-open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="part-1-count-accuracy-types">
+<h2>Part 1: Count accuracy types<a class="headerlink" href="#part-1-count-accuracy-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1-summarize-accuracy-types">
+<h3>Exercise 1: Summarize accuracy types<a class="headerlink" href="#exercise-1-summarize-accuracy-types" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Click on the rocket icon in the upper right of this page of the course book.</p></li>
-<li><p>Click the JupyterHub link.</p></li>
-<li><p>If prompted, log in to the Jupyter Hub with your NYU account.</p></li>
-<li><p>If prompted to select a kernel, choose <em>R [conda env:FDTD]</em>.</p></li>
+<li><p>Execute the code from Lesson 13 in the cell below to complete the following tasks:</p>
+<ul>
+<li><p>load the cancer data set</p></li>
+<li><p>split the data</p></li>
+<li><p>create a classifier function</p></li>
+<li><p>use the classifier to predict the class of the observations in the <code class="docutils literal notranslate"><span class="pre">test</span></code> data frame</p></li>
+<li><p>create an accuracy type function</p></li>
+<li><p>use the accuracy type function to label the predictions in <code class="docutils literal notranslate"><span class="pre">test</span></code>.</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-1-floor-function">
-<h3>Exercise 1: <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function<a class="headerlink" href="#exercise-1-floor-function" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function takes a decimal and returns the whole number to the left of the decimal place <strong>without</strong> rounding.</p>
-<div class="math notranslate nohighlight">
-\[\texttt{floor}(2.98) = 2 \]</div>
-<ul class="simple">
-<li><p>Use the floor function to create an expression that will output the number of whole minutes the 17th eruption lasted.</p></li>
+</li>
+<li><p>Create a summary table showing the number of predictions with each of the four accuracy types.</p></li>
 </ul>
-</div>
-<div class="section" id="exercise-2-load-dplyr">
-<h3>Exercise 2: Load dplyr<a class="headerlink" href="#exercise-2-load-dplyr" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">library()</span></code> function to load the <code class="docutils literal notranslate"><span class="pre">dplyr</span></code> package. Don’t worry about the warning message. If you run the command a second time, the warning messages will go away.</p></li>
-<li><p>Verify that this was successful by using <code class="docutils literal notranslate"><span class="pre">?mutate</span></code> to open the documentation for the <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> function.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">library(PACKAGE_NAME)</span></code></p>
-</div>
-<div class="section" id="exercise-3-whole-minutes">
-<h3>Exercise 3: Whole minutes<a class="headerlink" href="#exercise-3-whole-minutes" title="Permalink to this headline">¶</a></h3>
-<p>The faithful data set gives the duration of the erruptions in minutes and fractions of a minute. It would be easer to understad the data if we converted the decimals to seconds.</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">floor()</span></code> function is vectorized. This means that if you input a vector of decimal numbers, it will return a vector of floor of each entry.</p>
-<div class="math notranslate nohighlight">
-\[\texttt{floor}(\texttt{c}(1.2, 3.6, 4.01) ) = \texttt{c}(1, 3, 4)\]</div>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add a column called <code class="docutils literal notranslate"><span class="pre">minutes</span></code> to the <code class="docutils literal notranslate"><span class="pre">faithful</span></code> data set that contains the number of whole minutes (ignoring the decimal) that the eruption lasted.</p></li>
-<li><p>Verify that you were successful by using <code class="docutils literal notranslate"><span class="pre">head()</span></code> to display the first three rows of <code class="docutils literal notranslate"><span class="pre">faithful</span></code>.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">mutate(DATA_FRAME,</span> <span class="pre">UPDATED_COLUMN</span> <span class="pre">=</span> <span class="pre">FORMULA)</span></code></p>
-</div>
-<div class="section" id="exercises-4-seconds">
-<h3>Exercises 4: Seconds<a class="headerlink" href="#exercises-4-seconds" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">mutate()</span></code> to add a column called <code class="docutils literal notranslate"><span class="pre">seconds</span></code> to the <code class="docutils literal notranslate"><span class="pre">faithful</span></code> data set that contains the number of seconds that correspond to the decimal portion of the eruption duration.</p></li>
-<li><p>In terms of minutes and seconds, how long was the 19th eruption? Summarize your answer in a markdown cell.</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="part-2-sorting-and-piping">
-<h2>Part 2: Sorting and piping<a class="headerlink" href="#part-2-sorting-and-piping" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-5-longest-eruption">
-<h3>Exercise 5: Longest eruption<a class="headerlink" href="#exercise-5-longest-eruption" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">arrange()</span></code> function to find the duration of the longest eruption in the faithful dataset.</p></li>
-</ul>
-</div>
-<div class="section" id="exercise-6-shortest-eruption">
-<h3>Exercise 6: Shortest eruption<a class="headerlink" href="#exercise-6-shortest-eruption" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use the minutes and seconds columns that you added to the faithful dataset to find the duration of the shortest eruption.</p></li>
-</ul>
-</div>
-<div class="section" id="exercise-7-pipe">
-<h3>Exercise 7: Pipe<a class="headerlink" href="#exercise-7-pipe" title="Permalink to this headline">¶</a></h3>
-<p>In exercises 3 - 5, you wrote code that accomplished the following tasks:</p>
-<ol class="simple">
-<li><p>Add a column called minutes to the faithful data set that contains the number of whole minutes (ignoring the decimal) that the eruption lasted.</p></li>
-<li><p>Add a column called seconds to the faithful data set that contains the number of seconds that correspond to the decimal portion of the eruption duration.</p></li>
-<li><p>Find the duration of the longest eruption in the faithful dataset in minutes and seconds.</p></li>
-</ol>
-<ul class="simple">
-<li><p>Run the code in the cell below to remove your previous edits from <code class="docutils literal notranslate"><span class="pre">faithful</span></code>.</p></li>
-<li><p>Write new code that uses piping to accomplish these same four tasks.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">INPUT_1</span> <span class="pre">%&gt;%</span> <span class="pre">FUNCTION(INPUT_2)</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can not edit this cell.</span>
-<span class="c1"># Run this code to remove all of your changes from the faithful dataset.</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+<span class="n">cancer</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;~/shared/data/cancer.csv&#39;</span><span class="p">)</span>
+<span class="n">cancer</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">cancer</span><span class="p">,</span> <span class="n">Class</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span>
+                                    <span class="n">Class</span><span class="p">,</span> 
+                                    <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> 
+                                    <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;benign&#39;</span><span class="p">,</span> <span class="s">&#39;cancer&#39;</span><span class="p">)</span>
+                                    <span class="p">)</span>
+                 <span class="p">)</span>
 
-<span class="nf">rm</span><span class="p">(</span><span class="n">faithful</span><span class="p">)</span>
+<span class="c1">### Split data</span>
+<span class="n">training</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="n">cancer</span><span class="p">,</span><span class="m">400</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">&lt;-</span> <span class="nf">tail</span><span class="p">(</span><span class="n">cancer</span><span class="p">,</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">cancer</span><span class="p">)</span><span class="o">-</span> <span class="m">400</span><span class="p">)</span>
+
+<span class="c1">### Classifier function</span>
+<span class="c1"># a is the marginal adhesion</span>
+<span class="c1"># t is the thickness</span>
+<span class="n">classifier</span> <span class="o">&lt;-</span> <span class="nf">function </span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">){</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="m">4</span><span class="p">){</span>
+        <span class="n">Class</span> <span class="o">&lt;-</span> <span class="s">&#39;cancer&#39;</span> 
+    <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">t</span> <span class="o">&gt;</span> <span class="m">6</span><span class="p">){</span>
+        <span class="n">Class</span> <span class="o">&lt;-</span> <span class="s">&#39;cancer&#39;</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="n">Class</span> <span class="o">&lt;-</span> <span class="s">&#39;benign&#39;</span>
+    <span class="p">}</span>
+    <span class="n">Class</span>
+<span class="p">}</span>
+<span class="n">classifier</span> <span class="o">&lt;-</span> <span class="nf">Vectorize</span><span class="p">(</span><span class="n">classifier</span><span class="p">)</span>
+
+<span class="c1">### Make predictions</span>
+<span class="n">test</span> <span class="o">&lt;-</span> <span class="n">test</span> <span class="o">%&gt;%</span>
+        <span class="nf">mutate</span><span class="p">(</span>
+            <span class="n">Prediction</span> <span class="o">=</span> <span class="nf">classifier</span><span class="p">(</span>
+                                    <span class="n">Marginal.Adhesion</span><span class="p">,</span> 
+                                    <span class="n">Clump.Thickness</span>
+                                    <span class="p">)</span>
+            <span class="p">)</span> <span class="o">%&gt;%</span>
+        <span class="nf">select</span><span class="p">(</span> 
+               <span class="n">Marginal.Adhesion</span><span class="p">,</span> 
+               <span class="n">Clump.Thickness</span><span class="p">,</span> 
+               <span class="n">Prediction</span><span class="p">,</span> 
+               <span class="n">Class</span>
+              <span class="p">)</span>
+              
+<span class="c1">### Accuracy type function</span>
+<span class="c1"># c is the class</span>
+<span class="c1"># p is the prediction</span>
+<span class="n">accuracy_type</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">p</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">c</span> <span class="o">==</span> <span class="n">p</span><span class="p">){</span>
+        <span class="n">tf</span> <span class="o">&lt;-</span> <span class="s">&#39;true&#39;</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="n">tf</span> <span class="o">&lt;-</span> <span class="s">&#39;false&#39;</span>
+    <span class="p">}</span>
+    
+    <span class="nf">if </span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="s">&#39;cancer&#39;</span><span class="p">){</span>
+        <span class="n">pn</span> <span class="o">&lt;-</span> <span class="s">&#39;positive&#39;</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="n">pn</span> <span class="o">&lt;-</span> <span class="s">&#39;negative&#39;</span>
+    <span class="p">}</span>
+    <span class="nf">paste</span><span class="p">(</span><span class="n">tf</span><span class="p">,</span><span class="n">pn</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">accuracy_type</span> <span class="o">&lt;-</span> <span class="nf">Vectorize</span><span class="p">(</span><span class="n">accuracy_type</span><span class="p">)</span>
+
+
+<span class="c1">### Label accuracy type</span>
+<span class="n">test</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">Accuracy</span> <span class="o">=</span> <span class="nf">accuracy_type</span><span class="p">(</span><span class="n">Class</span><span class="p">,</span> <span class="n">Prediction</span><span class="p">))</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">test</span><span class="p">,</span><span class="m">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in rm(faithful):
-“object &#39;faithful&#39; not found”
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in file(file, &quot;rt&quot;):
+“cannot open file &#39;/home/corrin/shared/data/cancer.csv&#39;: No such file or directory”
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">):</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">connection</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;~/shared/data/cancer.csv&quot;</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="n">header</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">sep</span><span class="p">,</span> <span class="n">quote</span> <span class="o">=</span> <span class="n">quote</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">dec</span> <span class="o">=</span> <span class="n">dec</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">fill</span><span class="p">,</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">.</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="exercise-2-count-accuracy-types-with-boolean-expressions">
+<h3>Exercise 2: Count accuracy types with boolean expressions<a class="headerlink" href="#exercise-2-count-accuracy-types-with-boolean-expressions" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Use sums of boolean expressions to find the number of predictions in <code class="docutils literal notranslate"><span class="pre">test</span></code> with each of the four accuracy types: true positive, true negative, false positive, false negative.</p></li>
+<li><p>Store these values in variables with descriptive names.</p></li>
+<li><p>Output the values and verify that they are the same as those in the summary table from the previous exercise.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="part-2-classifier-metrics">
+<h2>Part 2: Classifier metrics<a class="headerlink" href="#part-2-classifier-metrics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-3-accuracy-and-precision">
+<h3>Exercise 3: Accuracy and Precision<a class="headerlink" href="#exercise-3-accuracy-and-precision" title="Permalink to this headline">¶</a></h3>
+<p>Find the accuracy and precision of the predictions made in Exercise 1.
+$<span class="math notranslate nohighlight">\(\text{Accuracy} = \frac{\text{# correct predictions}}{\text{# of observations}}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\text{Precision} = \frac{\text{# true positive predictions}}{\text{# of positive predictions}}\]</div>
+</div>
+<div class="section" id="exercise-4-true-positive-negative-rate">
+<h3>Exercise 4: True positive / negative rate<a class="headerlink" href="#exercise-4-true-positive-negative-rate" title="Permalink to this headline">¶</a></h3>
+<p>Find the true positive rate and true negative rate of the predictions made in Exercise 1.
+$<span class="math notranslate nohighlight">\(\text{True positive rate} = \frac{\text{# true positive predictions}}{\text{# positive cases}}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\text{True negative rate}  = \frac{\text{# true negative predictions}}{\text{# negative cases}}\]</div>
 </div>
 </div>
 </div>
@@ -718,17 +708,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="lesson03.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lesson13.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lesson 3: Data sets and more vectors</p>
+            <p class="prev-next-title">Lesson 13: Evaluating a classifier</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="lesson05.html" title="next page">
+    <a class='right-next' id="next-link" href="../homework/homework_0.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lesson 5: Select columns and filter rows</p>
+        <p class="prev-next-title">Homework 0</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
