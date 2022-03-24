@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 8: Colors and histograms &#8212; From Data to Discovery</title>
+    <title>Lesson 15: Nearest neighbors &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -48,10 +48,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lesson 10: Practice with conditionals" href="lesson10.html" />
-    <link rel="prev" title="Lesson 7: Labels, themes and scatter plots" href="lesson07.html" />
+    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="prev" title="Lesson 14: Classifier metrics" href="lesson14.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -222,8 +224,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lesson 7: Labels, themes and scatter plots
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson08.html">
    Lesson 8: Colors and histograms
   </a>
  </li>
@@ -252,8 +254,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lesson 14: Classifier metrics
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson15.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lesson 15: Nearest neighbors
   </a>
  </li>
@@ -377,7 +379,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson08.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson15.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -403,7 +405,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson08.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson15.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -425,45 +427,35 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#useful-links">
-   Useful links
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-more-trees">
-   Part 1: More trees
+  <a class="reference internal nav-link" href="#part-1-knn-classifier">
+   Part 1: knn classifier
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-distribution-of-tree-diameters">
-     Exercise 1: Distribution of tree diameters
+    <a class="reference internal nav-link" href="#exercise-1-set-up">
+     Exercise 1 - Set up
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-add-title-labels-and-theme">
-     Exercise 2: Add Title, labels and theme
+    <a class="reference internal nav-link" href="#exercise-2-five-nearest-neighbors">
+     Exercise 2 - Five nearest neighbors
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-colorful-trees">
-   Part 2: Colorful trees
+  <a class="reference internal nav-link" href="#part-2-compare-effectiveness">
+   Part 2: Compare effectiveness
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-types-of-trees">
-     Exercise 3: Types of trees
+    <a class="reference internal nav-link" href="#exercise-3-measure-effectiveness">
+     Exercise 3 - Measure effectiveness
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-custom-colors">
-     Exercise 4: Custom colors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-types-of-trees">
-     Exercise 5: Types of trees
+    <a class="reference internal nav-link" href="#exercise-4-effectiveness-of-if-statement-classifier">
+     Exercise 4 - Effectiveness of if-statement classifier
     </a>
    </li>
   </ul>
@@ -478,7 +470,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lesson 8: Colors and histograms</h1>
+                <h1>Lesson 15: Nearest neighbors</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -489,45 +481,35 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#useful-links">
-   Useful links
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-more-trees">
-   Part 1: More trees
+  <a class="reference internal nav-link" href="#part-1-knn-classifier">
+   Part 1: knn classifier
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-distribution-of-tree-diameters">
-     Exercise 1: Distribution of tree diameters
+    <a class="reference internal nav-link" href="#exercise-1-set-up">
+     Exercise 1 - Set up
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-add-title-labels-and-theme">
-     Exercise 2: Add Title, labels and theme
+    <a class="reference internal nav-link" href="#exercise-2-five-nearest-neighbors">
+     Exercise 2 - Five nearest neighbors
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-colorful-trees">
-   Part 2: Colorful trees
+  <a class="reference internal nav-link" href="#part-2-compare-effectiveness">
+   Part 2: Compare effectiveness
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-types-of-trees">
-     Exercise 3: Types of trees
+    <a class="reference internal nav-link" href="#exercise-3-measure-effectiveness">
+     Exercise 3 - Measure effectiveness
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-custom-colors">
-     Exercise 4: Custom colors
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-types-of-trees">
-     Exercise 5: Types of trees
+    <a class="reference internal nav-link" href="#exercise-4-effectiveness-of-if-statement-classifier">
+     Exercise 4 - Effectiveness of if-statement classifier
     </a>
    </li>
   </ul>
@@ -541,81 +523,137 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-8-colors-and-histograms">
-<span id="in-class-exercises-lesson08"></span><h1>Lesson 8: Colors and histograms<a class="headerlink" href="#lesson-8-colors-and-histograms" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-15-nearest-neighbors">
+<span id="lesson15"></span><h1>Lesson 15: Nearest neighbors<a class="headerlink" href="#lesson-15-nearest-neighbors" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
-<p>The content for this lesson is in the following subsections of the Base R section of the course book:</p>
+<div class="section" id="part-1-knn-classifier">
+<h2>Part 1: knn classifier<a class="headerlink" href="#part-1-knn-classifier" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1-set-up">
+<h3>Exercise 1 - Set up<a class="headerlink" href="#exercise-1-set-up" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../reference/ggplot_pretty_plots.html#pretty-plots-labels"><span class="std std-ref">Titles and labels</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/ggplot_pretty_plots.html#pretty-plots-themes"><span class="std std-ref">Themes</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/ggplot2_library.html#ggplot-histograms"><span class="std std-ref">Histograms</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/ggplot_pretty_plots.html#pretty-plots-colors"><span class="std std-ref">Colors</span></a></p></li>
+<li><p>Run the code in the first cell below to load the packages that that we will use today.</p></li>
+<li><p>Run the code in the second cell below to load the cancer data and convert the Class variable into a factor.</p></li>
+<li><p>Create a data frame called <code class="docutils literal notranslate"><span class="pre">training_data</span></code> with the first 400 observations from the cancer data.</p></li>
+<li><p>Split the remaining observations from the cancer data set in two two data frames of approximately the same size called <code class="docutils literal notranslate"><span class="pre">test_knn</span></code> and <code class="docutils literal notranslate"><span class="pre">test_rect</span></code>.</p></li>
 </ul>
-<div class="section" id="useful-links">
-<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
-<p>The following links are also in the Content tool on Brightspace.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://nyumathclinic.github.io/core-ua_111_course_book/">Course Book</a></p></li>
-<li><p><a class="reference external" href="https://nyu0-my.sharepoint.com/:o:/g/personal/cc5948_nyu_edu/EthbeMeNnc5Cgs34RxBsLPMBHkNqPkzLwJCN7OM63sW1mg?e=cAb9oe">Class notes</a></p></li>
-<li><p><a class="reference external" href="https://www.polleverywhere.com/auth/saml/nyu_main">Poll Everywhere login</a></p></li>
-<li><p><a class="reference external" href="https://pollev.com/clarkson">Poll Everywhere respond</a></p></li>
-</ul>
-</div>
-<div class="section" id="part-1-more-trees">
-<h2>Part 1: More trees<a class="headerlink" href="#part-1-more-trees" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1-distribution-of-tree-diameters">
-<h3>Exercise 1: Distribution of tree diameters<a class="headerlink" href="#exercise-1-distribution-of-tree-diameters" title="Permalink to this headline">¶</a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">NYC_Tree_Census_small.csv</span></code> data set in the shared data folder contains information an excerpt from the <a class="reference external" href="https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh">2015 New York City Tree Census</a>.</p>
-<ul class="simple">
-<li><p>Import the NYC tree census data <strong>from the local file</strong> and store it as a data frame called <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code>.</p></li>
-<li><p>In a new code cell, create a histogram of the diameters of the trees broken into four bins. You can think of these groups as small medium, large and extra large.</p></li>
-<li><p>In a new code cell, generate a second histogram with the diameters of the living trees broken into 20 bins.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"> <span class="pre">ggplot(</span> <span class="pre">DATA_FRAME,</span> <span class="pre">aes(x</span> <span class="pre">=</span> <span class="pre">COLUMN))</span> <span class="pre">+</span> <span class="pre">geom_histogram(bins</span> <span class="pre">=</span> <span class="pre">NUMBER)</span></code></p>
-<p>Hint: The link above contains documentation for this data set.</p>
-</div>
-<div class="section" id="exercise-2-add-title-labels-and-theme">
-<h3>Exercise 2: Add Title, labels and theme<a class="headerlink" href="#exercise-2-add-title-labels-and-theme" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Improve your histogram with 20 bis by adding the following features:</p>
-<ul>
-<li><p>Descriptive title</p></li>
-<li><p>Descriptive axis labels with units</p></li>
-<li><p>A built-in theme of your choice.</p></li>
-</ul>
-</li>
-</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># load the dypyr and ggplot2 packages</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#39;dplyr&#39;</span> <span class="p">,</span> <span class="n">warn.conflicts</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&#39;class&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="part-2-colorful-trees">
-<h2>Part 2: Colorful trees<a class="headerlink" href="#part-2-colorful-trees" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-3-types-of-trees">
-<h3>Exercise 3: Types of trees<a class="headerlink" href="#exercise-3-types-of-trees" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Create a bar chart that shows the number of threes in <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code> from each species.</p></li>
-</ul>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error in library(&quot;class&quot;): there is no package called ‘class’
+Traceback:
+
+1. library(&quot;class&quot;)
+</pre></div>
 </div>
-<div class="section" id="exercise-4-custom-colors">
-<h3>Exercise 4: Custom colors<a class="headerlink" href="#exercise-4-custom-colors" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">colors()</span></code> function outputs a vector of all the named colors. How many are there?</p></li>
-<li><p>Use named colors to set the color of the border and interior of the rectangles in your bar chart from the previous exercise.</p></li>
-</ul>
 </div>
-<div class="section" id="exercise-5-types-of-trees">
-<h3>Exercise 5: Types of trees<a class="headerlink" href="#exercise-5-types-of-trees" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">cancer</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;~/shared/data/cancer.csv&#39;</span><span class="p">)</span>
+<span class="n">cancer</span><span class="o">$</span><span class="n">Class</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="n">cancer</span><span class="o">$</span><span class="n">Class</span><span class="p">,</span>
+                           <span class="n">levels</span><span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span>
+                           <span class="n">labels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;benign&#39;</span><span class="p">,</span> <span class="s">&#39;cancer&#39;</span><span class="p">)</span>
+                          <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="exercise-2-five-nearest-neighbors">
+<h3>Exercise 2 - Five nearest neighbors<a class="headerlink" href="#exercise-2-five-nearest-neighbors" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Create a scatter plot that shows the location of each tree in <code class="docutils literal notranslate"><span class="pre">nyc_trees</span></code> and uses color to indicate the species of each tree.</p></li>
-<li><p>Improve your plot by adding the following features:</p>
-<ul>
-<li><p>Descriptive title, axis and legend labels</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">scale_color_manual()</span></code> to specify colors from this <a class="reference external" href="https://siegal.bio.nyu.edu/color-palette/">color-blind friendly pallet</a>.</p></li>
-<li><p>A built-in theme with a grid background.</p></li>
-<li><p>Increased font size</p></li>
+<li><p>Create a data frame called <code class="docutils literal notranslate"><span class="pre">training_attributes</span></code> that contains only the Clump.Thickness and Marginal.Adhesion variables from <code class="docutils literal notranslate"><span class="pre">training_data</span></code>.</p></li>
+<li><p>Create a variable called <code class="docutils literal notranslate"><span class="pre">training_lables</span></code> that contains the values of the Class column from <code class="docutils literal notranslate"><span class="pre">training_data</span></code>.</p></li>
+<li><p>Create a data frame called <code class="docutils literal notranslate"><span class="pre">test_attributes</span></code> that contains only the Clump.Thickness and Marginal.Adhesion variables from <code class="docutils literal notranslate"><span class="pre">test_knn</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">knn()</span></code> to find the predicted classes fro the test data based on each observations five nearest neighbors. Store the predicted classes as a column called <code class="docutils literal notranslate"><span class="pre">Prediction</span></code> in <code class="docutils literal notranslate"><span class="pre">test_knn</span></code>.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">head()</span></code> to look at the first four predicted classes.</p></li>
 </ul>
-</li>
+<p><code class="docutils literal notranslate"><span class="pre">knn(TRAININGATTRIBUTES,</span> <span class="pre">TESTATTREIBUTES,</span> <span class="pre">TRAININGLABELS,</span> <span class="pre">k</span> <span class="pre">=</span> <span class="pre">NUMBER)</span></code></p>
+</div>
+</div>
+<div class="section" id="part-2-compare-effectiveness">
+<h2>Part 2: Compare effectiveness<a class="headerlink" href="#part-2-compare-effectiveness" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-3-measure-effectiveness">
+<h3>Exercise 3 - Measure effectiveness<a class="headerlink" href="#exercise-3-measure-effectiveness" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Compute the for measures of effectiveness for the knn predictions form Exercise 2.</p></li>
 </ul>
-<p><code class="docutils literal notranslate"><span class="pre">scale_PROPERTY_manual(</span> <span class="pre">name=</span> <span class="pre">&quot;LEGEND_TITLE&quot;,</span> <span class="pre">values=</span> <span class="pre">VECTOR_OF_COLORS)</span></code></p>
+<div class="math notranslate nohighlight">
+\[\text{Accuracy} = \frac{\text{# correct predictions}}{\text{# of observations}}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{Precision} = \frac{\text{# true positive predictions}}{\text{# of positive predictions}}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{True positive rate} = \frac{\text{# true positive predictions}}{\text{# positive cases}}\]</div>
+<div class="math notranslate nohighlight">
+\[\text{True negative rate}  = \frac{\text{# true negative predictions}}{\text{# negative cases}}\]</div>
+</div>
+<div class="section" id="exercise-4-effectiveness-of-if-statement-classifier">
+<h3>Exercise 4 - Effectiveness of if-statement classifier<a class="headerlink" href="#exercise-4-effectiveness-of-if-statement-classifier" title="Permalink to this headline">¶</a></h3>
+<p>We would like to compare the effectiveness of the if-statement classifier from Lesson 14 to that of the knn classifier from Exercise 2. We also want to avoid over fitting the classifiers to the test data. To do this, we will measure the effectiveness of each classifier on different halves of the test data.</p>
+<p>In Exercise 3, you measured the effectiveness of the knn classifier on one half of the test data, <code class="docutils literal notranslate"><span class="pre">test_knn</span></code>. In lesson 14, we measured the effectiveness of our if-statement classifier on all of the test data.</p>
+<ul class="simple">
+<li><p>Alter the code from lesson 14 so that it measures the effectiveness of the if-statement classifier on the other half of the test data, <code class="docutils literal notranslate"><span class="pre">test_rect</span></code>.</p></li>
+<li><p>Compare the effectiveness measures of these two classifiers. It what ways is the if-statement classifier stronger which what ways is the knn classifier stronger?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code from Lesson 14</span>
+
+<span class="c1"># a is the marginal adhesion</span>
+<span class="c1"># t is the thickness</span>
+
+<span class="n">classifier</span> <span class="o">&lt;-</span> <span class="nf">function </span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">t</span><span class="p">){</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="m">4</span><span class="p">){</span>
+        <span class="n">Class</span> <span class="o">&lt;-</span> <span class="s">&#39;cancer&#39;</span> 
+    <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">t</span> <span class="o">&gt;</span> <span class="m">6</span><span class="p">){</span>
+        <span class="n">Class</span> <span class="o">&lt;-</span> <span class="s">&#39;cancer&#39;</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="n">Class</span> <span class="o">&lt;-</span> <span class="s">&#39;benign&#39;</span>
+    <span class="p">}</span>
+    <span class="n">Class</span>
+<span class="p">}</span>
+<span class="n">classifier</span> <span class="o">&lt;-</span> <span class="nf">Vectorize</span><span class="p">(</span><span class="n">classifier</span><span class="p">)</span>
+
+<span class="n">test</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">Prediction</span> <span class="o">=</span> <span class="nf">classifier</span><span class="p">(</span><span class="n">Marginal.Adhesion</span><span class="p">,</span> <span class="n">Clump.Thickness</span><span class="p">))</span>
+<span class="n">test</span> <span class="o">&lt;-</span> <span class="nf">select</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">Marginal.Adhesion</span><span class="p">,</span> <span class="n">Clump.Thickness</span><span class="p">,</span> <span class="n">Prediction</span><span class="p">,</span> <span class="n">Class</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Code from Lesson 14 cnt.</span>
+<span class="n">class</span> <span class="o">&lt;-</span> <span class="n">test</span><span class="o">$</span><span class="n">Class</span>
+<span class="n">prediction</span> <span class="o">&lt;-</span> <span class="n">test</span><span class="o">$</span><span class="n">Prediction</span>
+
+<span class="n">fn</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">class</span> <span class="o">!=</span> <span class="n">prediction</span> <span class="o">&amp;</span> <span class="n">prediction</span> <span class="o">==</span> <span class="s">&#39;benign&#39;</span><span class="p">)</span> <span class="c1">## false negative</span>
+<span class="n">fp</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">class</span> <span class="o">!=</span> <span class="n">prediction</span> <span class="o">&amp;</span> <span class="n">prediction</span> <span class="o">==</span> <span class="s">&#39;cancer&#39;</span><span class="p">)</span> <span class="c1">## false positive</span>
+<span class="n">tn</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">class</span> <span class="o">==</span> <span class="n">prediction</span> <span class="o">&amp;</span> <span class="n">prediction</span> <span class="o">==</span> <span class="s">&#39;benign&#39;</span><span class="p">)</span> <span class="c1">## true negative</span>
+<span class="n">tp</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">(</span><span class="n">class</span> <span class="o">==</span> <span class="n">prediction</span> <span class="o">&amp;</span> <span class="n">prediction</span> <span class="o">==</span> <span class="s">&#39;cancer&#39;</span><span class="p">)</span> <span class="c1">## true posive</span>
+
+<span class="c1"># Accuracy </span>
+<span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">tn</span><span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">tn</span> <span class="o">+</span> <span class="n">fp</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span>
+
+<span class="c1"># Precision</span>
+<span class="n">tp</span> <span class="o">/</span> <span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">fp</span><span class="p">)</span>
+
+<span class="c1"># True positive rate</span>
+<span class="n">tp</span> <span class="o">/</span> <span class="p">(</span><span class="n">tp</span> <span class="o">+</span> <span class="n">fn</span><span class="p">)</span>
+
+<span class="c1"># True negative rate</span>
+<span class="n">tn</span> <span class="o">/</span> <span class="p">(</span><span class="n">tn</span> <span class="o">+</span> <span class="n">fp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.957746478873239</div><div class="output text_html">0.939393939393939</div><div class="output text_html">0.885714285714286</div><div class="output text_html">0.981308411214953</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -645,17 +683,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="lesson07.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lesson14.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lesson 7: Labels, themes and scatter plots</p>
+            <p class="prev-next-title">Lesson 14: Classifier metrics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="lesson10.html" title="next page">
+    <a class='right-next' id="next-link" href="../homework/homework_0.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lesson 10:  Practice with conditionals</p>
+        <p class="prev-next-title">Homework 0</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
