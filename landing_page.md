@@ -103,5 +103,5 @@ This site is intended to serve as reference for students enrolled in the Spring 
 
 ### Lesson 15
 - [](lesson15)
-- [](lab06)
+- [](lab07)
 - [](homework06)
