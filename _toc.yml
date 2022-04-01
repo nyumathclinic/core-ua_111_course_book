@@ -58,3 +58,4 @@ parts:
   - file: labs/lab_05
   - file: labs/lab_06
   - file: labs/lab_07
+  - file: labs/lab_08
