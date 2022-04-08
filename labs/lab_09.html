@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 4 Worksheet &#8212; From Data to Discovery</title>
+    <title>Lab 9 Worksheet &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -50,8 +50,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lab 5 Worksheet" href="lab_05.html" />
-    <link rel="prev" title="Lab 3 Worksheet" href="lab_03.html" />
+    <link rel="prev" title="Lab 8 Worksheet" href="lab_08.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -341,8 +340,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lab 3 Worksheet
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lab_04.html">
    Lab 4 Worksheet
   </a>
  </li>
@@ -366,8 +365,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lab 8 Worksheet
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lab_09.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lab 9 Worksheet
   </a>
  </li>
@@ -412,7 +411,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/labs/lab_04.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/labs/lab_09.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -438,7 +437,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/labs/lab_04.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/labs/lab_09.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -465,40 +464,40 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-boolean-expressions">
-   Part 1: Boolean expressions
+  <a class="reference internal nav-link" href="#part-1-exponential-data">
+   Part 1: Exponential data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-not-a-or-not-b">
-     Exercise 1: Not a or Not b
+    <a class="reference internal nav-link" href="#exercise-1-create-the-model">
+     Exercise 1: Create the model
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-rent-a-car">
-     Exercise 2: Rent a car
+    <a class="reference internal nav-link" href="#exercise-2-plot-the-predictions">
+     Exercise 2:  Plot the predictions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-check-eligibility">
-     Exercise 3: Check eligibility
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-flag-ineligible-people">
-     Exercise 4: Flag ineligible people
+    <a class="reference internal nav-link" href="#exercise-3-mean-squared-error">
+     Exercise 3: Mean squared error
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-look-how-far-you-ve-come">
-   Part 2: Look how far you’ve come
+  <a class="reference internal nav-link" href="#part-2-quadratic-data">
+   Part 2: Quadratic data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-black-lives-matter-racism-and-data">
-     Exercise 5: Black Lives Matter, Racism, and Data
+    <a class="reference internal nav-link" href="#exercise-4-build-another-model">
+     Exercise 4: Build another model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-plot-the-data">
+     Exercise 5: Plot the data
     </a>
    </li>
   </ul>
@@ -513,7 +512,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lab 4 Worksheet</h1>
+                <h1>Lab 9 Worksheet</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -529,40 +528,40 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-boolean-expressions">
-   Part 1: Boolean expressions
+  <a class="reference internal nav-link" href="#part-1-exponential-data">
+   Part 1: Exponential data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-1-not-a-or-not-b">
-     Exercise 1: Not a or Not b
+    <a class="reference internal nav-link" href="#exercise-1-create-the-model">
+     Exercise 1: Create the model
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-rent-a-car">
-     Exercise 2: Rent a car
+    <a class="reference internal nav-link" href="#exercise-2-plot-the-predictions">
+     Exercise 2:  Plot the predictions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-check-eligibility">
-     Exercise 3: Check eligibility
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-flag-ineligible-people">
-     Exercise 4: Flag ineligible people
+    <a class="reference internal nav-link" href="#exercise-3-mean-squared-error">
+     Exercise 3: Mean squared error
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-look-how-far-you-ve-come">
-   Part 2: Look how far you’ve come
+  <a class="reference internal nav-link" href="#part-2-quadratic-data">
+   Part 2: Quadratic data
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-black-lives-matter-racism-and-data">
-     Exercise 5: Black Lives Matter, Racism, and Data
+    <a class="reference internal nav-link" href="#exercise-4-build-another-model">
+     Exercise 4: Build another model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exercise-5-plot-the-data">
+     Exercise 5: Plot the data
     </a>
    </li>
   </ul>
@@ -576,8 +575,8 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lab-4-worksheet">
-<span id="lab04"></span><h1>Lab 4 Worksheet<a class="headerlink" href="#lab-4-worksheet" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lab-9-worksheet">
+<span id="lab09"></span><h1>Lab 9 Worksheet<a class="headerlink" href="#lab-9-worksheet" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="name-netid-collaborators">
 <h2>Name, NetID, Collaborators<a class="headerlink" href="#name-netid-collaborators" title="Permalink to this headline">¶</a></h2>
 <p>Please edit the markdown cell below for “Names &amp; NetIDs” and enter:</p>
@@ -594,125 +593,55 @@ and the methods yourself</p>
 <p><strong>Name and NetID:</strong></p>
 <p><strong>Collaborators:</strong></p>
 </div>
-<div class="section" id="part-1-boolean-expressions">
-<h2>Part 1: Boolean expressions<a class="headerlink" href="#part-1-boolean-expressions" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-1-not-a-or-not-b">
-<h3>Exercise 1: Not a or Not b<a class="headerlink" href="#exercise-1-not-a-or-not-b" title="Permalink to this headline">¶</a></h3>
-<p>Suppose that a  and b are Boolean variables.  We would like to know whether there is any relationship between the expressions
-!(a &amp; b) and (!a) | (!b).</p>
-<p>Please complete the following truth table by hand (<strong>no R</strong>). Then, briefly write down your conclusion about the Boolean expressions !(a &amp; b) and (!a) | (!b).</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p>a</p></th>
-<th class="text-align:center head"><p>b</p></th>
-<th class="text-align:center head"><p>a &amp; b</p></th>
-<th class="text-align:center head"><p>!(a &amp; b)</p></th>
-<th class="text-align:center head"><p>!a</p></th>
-<th class="text-align:center head"><p>!b</p></th>
-<th class="text-align:center head"><p>(!a) | (!b)</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p>TRUE</p></td>
-<td class="text-align:center"><p>TRUE</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>TRUE</p></td>
-<td class="text-align:center"><p>FALSE</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>FALSE</p></td>
-<td class="text-align:center"><p>TRUE</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>FALSE</p></td>
-<td class="text-align:center"><p>FALSE</p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-<td class="text-align:center"><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="exercise-2-rent-a-car">
-<h3>Exercise 2: Rent a car<a class="headerlink" href="#exercise-2-rent-a-car" title="Permalink to this headline">¶</a></h3>
-<p>Let <code class="docutils literal notranslate"><span class="pre">age</span></code> be a numerical variable encoding a person’s age in years and <code class="docutils literal notranslate"><span class="pre">has_drivers_license</span></code> be a boolean variable encoding whether or not that person has a drivers license. We will define two new boolean variables as follows:</p>
-<p><code class="docutils literal notranslate"><span class="pre">is_above_25</span></code> is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> if the person is 25 years old or older and <code class="docutils literal notranslate"><span class="pre">FALSE</span></code> if they are younger than 25.</p>
-<p><code class="docutils literal notranslate"><span class="pre">can_rent_a_car</span></code> is <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> only when <code class="docutils literal notranslate"><span class="pre">is_above_25</span></code> and <code class="docutils literal notranslate"><span class="pre">has_drivers_license</span></code> are both <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> otherwise it is <code class="docutils literal notranslate"><span class="pre">FALSE</span></code>.</p>
-<p>Please complete the following “truth table” by hand (<strong>no R</strong>). For the age column you may choose any values that are plausible and are consistent with the rest of the table.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>age</p></th>
-<th class="head"><p>has_drivers_license</p></th>
-<th class="head"><p>is_above_25</p></th>
-<th class="head"><p>can_rent_a_car</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p></p></td>
-<td><p>TRUE</p></td>
-<td><p>TRUE</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>TRUE</p></td>
-<td><p>FALSE</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>FALSE</p></td>
-<td><p>TRUE</p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>FALSE</p></td>
-<td><p>FALSE</p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="exercise-3-check-eligibility">
-<h3>Exercise 3: Check eligibility<a class="headerlink" href="#exercise-3-check-eligibility" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="part-1-exponential-data">
+<h2>Part 1: Exponential data<a class="headerlink" href="#part-1-exponential-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-1-create-the-model">
+<h3>Exercise 1: Create the model<a class="headerlink" href="#exercise-1-create-the-model" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Write a Boolean expression using the variable <code class="docutils literal notranslate"><span class="pre">age</span></code> that outputs the value of <code class="docutils literal notranslate"><span class="pre">is_above_25</span></code></p></li>
-<li><p>Write a Boolean expression using the variables <code class="docutils literal notranslate"><span class="pre">is_above_25</span></code> and <code class="docutils literal notranslate"><span class="pre">has_drivers_license</span></code> that outputs the value of <code class="docutils literal notranslate"><span class="pre">can_rent_a_car</span></code>.</p></li>
+<li><p>Load the <code class="docutils literal notranslate"><span class="pre">artificial_data.csv</span></code> from the shared data folder.</p></li>
+<li><p>Find the best fit exponential model for group 8.</p></li>
+<li><p>Create a function called <code class="docutils literal notranslate"><span class="pre">predict_8</span></code> that predicts the value of group 8 based on the value of x.</p></li>
+<li><p>Use your function to create a column called <code class="docutils literal notranslate"><span class="pre">prediction_8</span></code> and with the predictions for each of the values in <code class="docutils literal notranslate"><span class="pre">x_values</span></code>.</p></li>
 </ul>
 </div>
-<div class="section" id="exercise-4-flag-ineligible-people">
-<h3>Exercise 4: Flag ineligible people<a class="headerlink" href="#exercise-4-flag-ineligible-people" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="exercise-2-plot-the-predictions">
+<h3>Exercise 2:  Plot the predictions<a class="headerlink" href="#exercise-2-plot-the-predictions" title="Permalink to this headline">¶</a></h3>
+<p>You can plot to different variables with different geometries as shown in the code snippet below.</p>
+<pre><code>
+ggplot(DATAFRAME, aes(x = X_VARIABLE)) +
+    geom_point(mapping = aes(Y_VARIABLE_1)) + 
+    geom_line(mapping = aes(Y_VARIABLE_2))
+</code></pre>
 <ul class="simple">
-<li><p>Write a Boolean expression using the variables <code class="docutils literal notranslate"><span class="pre">is_above_25</span></code> and <code class="docutils literal notranslate"><span class="pre">has_drivers_license</span></code> that will evaluate to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> exactly when a person is ineligible to rent a car.</p></li>
-<li><p>Write a different Boolean expression using the variables <code class="docutils literal notranslate"><span class="pre">is_above_25</span></code> and <code class="docutils literal notranslate"><span class="pre">has_drivers_license</span></code> that will evaluate to <code class="docutils literal notranslate"><span class="pre">TRUE</span></code> exactly when a person is ineligible to rent a car.</p></li>
+<li><p>Create a plot shows the data in group 8 as points and uses <code class="docutils literal notranslate"><span class="pre">geom_line()</span></code> to draw a curve connecting the values in <code class="docutils literal notranslate"><span class="pre">prediction_8</span></code>.  See the <a class="reference external" href="https://ggplot2.tidyverse.org/reference/geom_path.html">documentation for geom_line()</a> for more information about this function.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-3-mean-squared-error">
+<h3>Exercise 3: Mean squared error<a class="headerlink" href="#exercise-3-mean-squared-error" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Compute the mean squared error for your model using the values in <code class="docutils literal notranslate"><span class="pre">prediction_8</span></code>.</p></li>
+<li><p>Compare this to the value that you get from taking the average of the residuals in the output of <code class="docutils literal notranslate"><span class="pre">lm()</span></code>.</p></li>
+<li><p>Why aren’t these numbers the same for exponential data?</p></li>
 </ul>
 </div>
 </div>
-<div class="section" id="part-2-look-how-far-you-ve-come">
-<h2>Part 2: Look how far you’ve come<a class="headerlink" href="#part-2-look-how-far-you-ve-come" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-5-black-lives-matter-racism-and-data">
-<h3>Exercise 5: Black Lives Matter, Racism, and Data<a class="headerlink" href="#exercise-5-black-lives-matter-racism-and-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="part-2-quadratic-data">
+<h2>Part 2: Quadratic data<a class="headerlink" href="#part-2-quadratic-data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exercise-4-build-another-model">
+<h3>Exercise 4: Build another model<a class="headerlink" href="#exercise-4-build-another-model" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Read the quoted text below to learn about Jiejie Wang’s project.</p></li>
-<li><p>Open the workbook that is linked from the text and look at the code. <strong>You are not expected to understand all of the code.</strong></p></li>
-<li><p>Find three things in the code that are familiar to you. Copy the segments of code and briefly explain what you understand that piece of the code to be doing.</p></li>
+<li><p>Find the best fit quadratic model for group 11.</p></li>
+<li><p>Create a function called <code class="docutils literal notranslate"><span class="pre">predict_11</span></code> that predicts the value of group 11 based on the value of x.</p></li>
+<li><p>Use your function to create a column called <code class="docutils literal notranslate"><span class="pre">prediction_11</span></code> and with the predictions for each of the values in <code class="docutils literal notranslate"><span class="pre">x_values</span></code>.</p></li>
 </ul>
-<quote>
-Jiejie Wang, a Data Services student employee studying Applied Statistics for Social Science Research at Steinhardt, was interested in using natural language processing to analyze over 60,000 Twitter posts under the hashtag #BLM from June 2020 to August 2020. These tweets covered a lot of discussion about George Floyd, Black Lives Matter, protests, 2020 political candidates, and other related issues. This process of “sentiment analysis” enabled Wang to quantitatively analyze the reaction to George Floyd’s death, visualize the progression of how positive/negative language and vocal support for political candidates changed. The data and the analysis has been <a href="https://rpubs.com/jiejie/674009">made available</a> as an R Markdown workbook.</quote>
-<p><a class="reference external" href="https://wp.nyu.edu/connect/2020/11/16/black-lives-matter-racism-and-data/?utm_source=newsletter&amp;utm_medium=email&amp;utm_content=thedownload&amp;utm_campaign=thedownload">Allison, Keith “Black Lives Matter, Racism, and Data” NYU IT Download Nov 16, 2020</a></p>
+</div>
+<div class="section" id="exercise-5-plot-the-data">
+<h3>Exercise 5: Plot the data<a class="headerlink" href="#exercise-5-plot-the-data" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a plot that shows the values of group 11 as points</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">geom_smooth()</span></code> with <code class="docutils literal notranslate"><span class="pre">method</span> <span class="pre">=</span> <span class="pre">'lm'</span></code> to plot the best fit quadratic model on this plot.</p></li>
+<li><p>Verify that at least three of the predictions you made in the previous exercise agree with the plot. Write the points that you verified in a markdown cell.</p></li>
+</ul>
 </div>
 </div>
 </div>
@@ -742,19 +671,12 @@ Jiejie Wang, a Data Services student employee studying Applied Statistics for So
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="lab_03.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lab_08.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lab 3 Worksheet</p>
+            <p class="prev-next-title">Lab 8 Worksheet</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="lab_05.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lab 5 Worksheet</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             

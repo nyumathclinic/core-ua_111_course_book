@@ -117,3 +117,5 @@ This site is intended to serve as reference for students enrolled in the Spring 
 
 ### Lesson 19
 - [](lesson19)
+- [](lab09)
+- [](homework07)
