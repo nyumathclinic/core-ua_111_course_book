@@ -51,6 +51,7 @@ parts:
   - file: homework/homework_04
   - file: homework/homework_05
   - file: homework/homework_06
+  - file: homework/homework_07
 - caption: Lab worksheets
   chapters:
   - file: labs/lab_01
@@ -61,3 +62,4 @@ parts:
   - file: labs/lab_06
   - file: labs/lab_07
   - file: labs/lab_08
+  - file: labs/lab_09
