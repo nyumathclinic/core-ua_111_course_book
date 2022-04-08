@@ -497,8 +497,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-5">
-     Question 5:
+    <a class="reference internal nav-link" href="#question-5-make-predictions">
+     Question 5: Make predictions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -629,8 +629,8 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#question-5">
-     Question 5:
+    <a class="reference internal nav-link" href="#question-5-make-predictions">
+     Question 5: Make predictions
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -760,7 +760,7 @@ and the methods yourself</p>
 </div>
 <div class="section" id="part-2-chikungunya-outbreak">
 <h2>Part 2: Chikungunya outbreak<a class="headerlink" href="#part-2-chikungunya-outbreak" title="Permalink to this headline">¶</a></h2>
-<p>In this part, you will analyze a data set from the <a class="reference external" href="https://www3.paho.org/data/index.php/en/mnu-topics/chikv-en/550-chikv-weekly-en.html">Pan American Health Organization</a>. The data set describes and outbreak of the <span class="xref myst">chikungunya virus</span> in Peru in 2016 and 2017.</p>
+<p>In this part, you will analyze a data set from the <a class="reference external" href="https://www3.paho.org/data/index.php/en/mnu-topics/chikv-en/550-chikv-weekly-en.html">Pan American Health Organization</a>. The data set describes and outbreak of the <a class="reference external" href="https://www.paho.org/en/topics/chikungunya">chikungunya virus</a> in Peru in 2016 and 2017.</p>
 <p>The exercises below will walk you through implementing a strategy for predicting the total number of cases that will occur in a single outbreak of an infectious disease. This strategy is described by Joceline Lega and Heidi E. Brown in their paper <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5159251/">Data-driven outbreak forecasting with a simple nonlinear growth model</a>. Lega and Brown’s disease model states that the number of cases per time unit will be a quadratic function of the cumulative number of cases.</p>
 <div class="section" id="question-4-load-and-plot-the-data">
 <h3>Question 4: Load and plot the data<a class="headerlink" href="#question-4-load-and-plot-the-data" title="Permalink to this headline">¶</a></h3>
@@ -769,8 +769,8 @@ and the methods yourself</p>
 <li><p>Crete a scatter plot that has the number of new cases on the vertical axis and the cumulative number of cases on the horizontal axis. Use <code class="docutils literal notranslate"><span class="pre">geom_smooth</span></code> with <code class="docutils literal notranslate"><span class="pre">method</span> <span class="pre">=</span> <span class="pre">lm</span></code> to plot the best fit quadratic model for this data.</p></li>
 </ul>
 </div>
-<div class="section" id="question-5">
-<h3>Question 5:<a class="headerlink" href="#question-5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="question-5-make-predictions">
+<h3>Question 5: Make predictions<a class="headerlink" href="#question-5-make-predictions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">lm()</span></code> to find the best fist quadratic model that gives the number of new cases as a function of the commutative number of cases.</p></li>
 <li><p>Use this model to create a function called <code class="docutils literal notranslate"><span class="pre">predicted_new</span></code> that gives the predicted number of new cases for a give total number of cases.</p></li>
