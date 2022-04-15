@@ -63,3 +63,4 @@ parts:
   - file: labs/lab_07
   - file: labs/lab_08
   - file: labs/lab_09
+  - file: labs/lab_10
