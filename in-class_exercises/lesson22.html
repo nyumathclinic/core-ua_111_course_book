@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 3: Data sets and more vectors &#8212; From Data to Discovery</title>
+    <title>Lesson 22 - Bootstrap sampling &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lesson 4: Mutate, arrange, piping" href="lesson04.html" />
-    <link rel="prev" title="Lesson 2: Variables and Vectors" href="lesson02.html" />
+    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="prev" title="Lesson 19: Correlation and MSE" href="lesson19.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -199,8 +199,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lesson 2: Variables and Vectors
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson03.html">
    Lesson 3: Data sets and more vectors
   </a>
  </li>
@@ -274,8 +274,8 @@ const thebe_selector_output = ".output, .cell_output"
    Lesson 19: Correlation and MSE
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="lesson22.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Lesson 22 -  Bootstrap sampling
   </a>
  </li>
@@ -424,7 +424,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson03.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/in-class_exercises/lesson22.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -450,7 +450,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson03.ipynb&branch=master"><button type="button"
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/in-class_exercises/lesson22.ipynb&branch=master"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../_static/images/logo_jupyterhub.svg"
@@ -472,60 +472,28 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#useful-links">
-   Useful links
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-working-with-vectors">
-   Part 1: Working with vectors
+  <a class="reference internal nav-link" href="#part-1-bootstrap">
+   Part 1: Bootstrap
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
-     Exercise 0: Open this notebook on the Jupyter Hub
+    <a class="reference internal nav-link" href="#example-1-preparing-to-bootstrap">
+     Example 1 - Preparing to Bootstrap
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises-1-more-ice-cream">
-     Exercises 1: More ice cream
+    <a class="reference internal nav-link" href="#exercise-2-how-many-trials-how-many-samples">
+     Exercise 2 - How many trials? How many samples?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-average-sale-price">
-     Exercise 2: Average sale price
+    <a class="reference internal nav-link" href="#exercise-3-sample-and-sort-into-trials">
+     Exercise 3 - Sample and sort into trials
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-add-tax">
-     Exercise 3: Add tax
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-old-faithful">
-   Part 2: Old faithful
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-old-failthful">
-     Exercise 4: Old Failthful
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-the-last-observation">
-     Exercise 5: The last observation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-longest-shortest-and-average">
-     Exercise 6: Longest, shortest and average
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-total-amount-of-time">
-     Exercise 7: Total amount of time
+    <a class="reference internal nav-link" href="#exercise-4-summarize">
+     Exercise 4 - Summarize
     </a>
    </li>
   </ul>
@@ -540,7 +508,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lesson 3: Data sets and more vectors</h1>
+                <h1>Lesson 22 -  Bootstrap sampling</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -551,60 +519,28 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#useful-links">
-   Useful links
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-1-working-with-vectors">
-   Part 1: Working with vectors
+  <a class="reference internal nav-link" href="#part-1-bootstrap">
+   Part 1: Bootstrap
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-0-open-this-notebook-on-the-jupyter-hub">
-     Exercise 0: Open this notebook on the Jupyter Hub
+    <a class="reference internal nav-link" href="#example-1-preparing-to-bootstrap">
+     Example 1 - Preparing to Bootstrap
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercises-1-more-ice-cream">
-     Exercises 1: More ice cream
+    <a class="reference internal nav-link" href="#exercise-2-how-many-trials-how-many-samples">
+     Exercise 2 - How many trials? How many samples?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-2-average-sale-price">
-     Exercise 2: Average sale price
+    <a class="reference internal nav-link" href="#exercise-3-sample-and-sort-into-trials">
+     Exercise 3 - Sample and sort into trials
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-3-add-tax">
-     Exercise 3: Add tax
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#part-2-old-faithful">
-   Part 2: Old faithful
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-4-old-failthful">
-     Exercise 4: Old Failthful
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-5-the-last-observation">
-     Exercise 5: The last observation
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-6-longest-shortest-and-average">
-     Exercise 6: Longest, shortest and average
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#exercise-7-total-amount-of-time">
-     Exercise 7: Total amount of time
+    <a class="reference internal nav-link" href="#exercise-4-summarize">
+     Exercise 4 - Summarize
     </a>
    </li>
   </ul>
@@ -618,130 +554,48 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-3-data-sets-and-more-vectors">
-<span id="in-class-exercises-lesson03"></span><h1>Lesson 3: Data sets and more vectors<a class="headerlink" href="#lesson-3-data-sets-and-more-vectors" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="lesson-22-bootstrap-sampling">
+<span id="lesson22"></span><h1>Lesson 22 -  Bootstrap sampling<a class="headerlink" href="#lesson-22-bootstrap-sampling" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
-<p>The content for this lesson is in the following subsections of the course book:</p>
+<div class="section" id="part-1-bootstrap">
+<h2>Part 1: Bootstrap<a class="headerlink" href="#part-1-bootstrap" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example-1-preparing-to-bootstrap">
+<h3>Example 1 - Preparing to Bootstrap<a class="headerlink" href="#example-1-preparing-to-bootstrap" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p>Base R</p>
+<li><p>Load the <code class="docutils literal notranslate"><span class="pre">zoombinis</span></code> data set from the shared data folder.</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">sample_n()</span></code> to create a data frame called <code class="docutils literal notranslate"><span class="pre">survey</span></code> that contains 500 randomly selected observations from the zoombinis data set.</p></li>
+<li><p>Find the average age of the zoombinis in your survey and compare it with the average age of the whole zoombini population.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-2-how-many-trials-how-many-samples">
+<h3>Exercise 2 - How many trials? How many samples?<a class="headerlink" href="#exercise-2-how-many-trials-how-many-samples" title="Permalink to this headline">¶</a></h3>
+<p>It is recommended that your bootstrap simulation include <span class="math notranslate nohighlight">\(n^2\)</span> trials where <span class="math notranslate nohighlight">\(n\)</span> is the number of observations. However, the recommended number of trials can be impractically large, so sometimes we choose to run fewer trials. The number of trials in your your bootstrap simulation should be at least <span class="math notranslate nohighlight">\(n\cdot \log (n)\)</span>.</p>
+<ul class="simple">
+<li><p>Store the number of observations in your survey in the variable <code class="docutils literal notranslate"><span class="pre">nobs</span></code>.</p></li>
+<li><p>Compute the recommended number and minimum number of trials for a bootstrap simulation on your survey.</p></li>
+<li><p>Choose the number of trials that you will perform and store the number in the <code class="docutils literal notranslate"><span class="pre">ntrials</span></code> variable.</p></li>
+<li><p>Compute the total number of samples that you will need for all of the trials and store the number in the <code class="docutils literal notranslate"><span class="pre">total</span></code> variable.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-3-sample-and-sort-into-trials">
+<h3>Exercise 3 - Sample and sort into trials<a class="headerlink" href="#exercise-3-sample-and-sort-into-trials" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a data frame called <code class="docutils literal notranslate"><span class="pre">all_samples</span></code> that contains <code class="docutils literal notranslate"><span class="pre">total</span></code> many observations randomly chosen from <code class="docutils literal notranslate"><span class="pre">survey</span></code> with replacement. You can reduce memory use by first selecting only the <code class="docutils literal notranslate"><span class="pre">age</span></code> column from survey.</p></li>
+<li><p>Add a column called <code class="docutils literal notranslate"><span class="pre">trial</span></code> to <code class="docutils literal notranslate"><span class="pre">all_samples</span></code> that contains a number between 1 and <code class="docutils literal notranslate"><span class="pre">ntrials</span></code> indicating the trial to which observation belongs. Remember that every trial should have <code class="docutils literal notranslate"><span class="pre">nobs</span></code> many observations.</p></li>
+</ul>
+</div>
+<div class="section" id="exercise-4-summarize">
+<h3>Exercise 4 - Summarize<a class="headerlink" href="#exercise-4-summarize" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Create a summary table called <code class="docutils literal notranslate"><span class="pre">bootstrap</span></code> that contains the following columns:</p>
 <ul>
-<li><p><a class="reference internal" href="../reference/vectors_numerical.html#r-basics-numerical-vectors-functions"><span class="std std-ref">Numerical Vectors</span></a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">trial</span></code> the trial number</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code> the number of observations in the trial</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">avg_age</span></code> the average age of the Zoombinis in the trial</p></li>
 </ul>
 </li>
-<li><p>Exploring Data</p>
-<ul>
-<li><p><a class="reference internal" href="../reference/data_loading.html#loading"><span class="std std-ref">Loading data</span></a></p></li>
-<li><p><a class="reference internal" href="../reference/data_frames.html#frames"><span class="std std-ref">Working with data frames</span></a></p></li>
-</ul>
-</li>
-</ul>
-<div class="section" id="useful-links">
-<h2>Useful links<a class="headerlink" href="#useful-links" title="Permalink to this headline">¶</a></h2>
-<p>The following links are also in the Content tool on Brightspace.</p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://nyumathclinic.github.io/core-ua_111_course_book/">Course Book</a></p></li>
-<li><p><a class="reference external" href="https://nyu0-my.sharepoint.com/:o:/g/personal/cc5948_nyu_edu/EthbeMeNnc5Cgs34RxBsLPMBHkNqPkzLwJCN7OM63sW1mg?e=cAb9oe">Class notes</a></p></li>
-<li><p><a class="reference external" href="https://www.polleverywhere.com/auth/saml/nyu_main">Poll Everywhere login</a></p></li>
-<li><p><a class="reference external" href="https://pollev.com/clarkson">Poll Everywhere respond</a></p></li>
-</ul>
-</div>
-<div class="section" id="part-1-working-with-vectors">
-<h2>Part 1: Working with vectors<a class="headerlink" href="#part-1-working-with-vectors" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-0-open-this-notebook-on-the-jupyter-hub">
-<h3>Exercise 0: Open this notebook on the Jupyter Hub<a class="headerlink" href="#exercise-0-open-this-notebook-on-the-jupyter-hub" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Click on the rocket icon in the upper right of this page of the course book.</p></li>
-<li><p>Click the JupyterHub link.</p></li>
-<li><p>If prompted, log in to the Jupyter Hub with your NYU account.</p></li>
-<li><p>If prompted to select a kernel, choose <em>R [conda env:FDTD]</em>.</p></li>
-</ul>
-</div>
-<div class="section" id="exercises-1-more-ice-cream">
-<h3>Exercises 1: More ice cream<a class="headerlink" href="#exercises-1-more-ice-cream" title="Permalink to this headline">¶</a></h3>
-<p>An ice cream truck sells many different types of ice cream. The prices of each type of ice cream are stored in a list called <code class="docutils literal notranslate"><span class="pre">ice_cream_prices</span></code>in the code cell below. Today the ice cream is on sale! The amount that each item is discounted is stored in the list called <code class="docutils literal notranslate"><span class="pre">discounts</span></code>. The order of the discounts corresponds to the order of the prices.</p>
-<ul class="simple">
-<li><p>Run the code cell below to store the values of the ice cream prices and discounts in vectors.</p></li>
-<li><p>Use the vectors and R functions to determine the answers to the following questions:</p></li>
-</ul>
-<ol class="simple">
-<li><p>How many types of ice cream does the truck sell?</p></li>
-<li><p>What is the largest discount available?</p></li>
-<li><p>What is the cost of the cheapest ice cream option before applying the discounts?</p></li>
-</ol>
-<ul class="simple">
-<li><p>Summarize your findings in the markdown cell below.</p></li>
-</ul>
-<p>Tip: To typeset money values in a markdown cell follow this pattern: <code class="docutils literal notranslate"><span class="pre">$\$5.43$</span></code> will produce <span class="math notranslate nohighlight">\(\$5.43\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># You cannot edit this cell. </span>
-<span class="c1"># Notice that R gives no output when you assign values to variables.</span>
-<span class="c1"># You can see that the cell has been exicuted if there is a number in the brackets: In [].</span>
-
-<span class="n">ice_cream_prices</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1.25</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">5.99</span><span class="p">,</span> <span class="m">1.75</span><span class="p">,</span> <span class="m">6.75</span><span class="p">,</span> <span class="m">4.99</span><span class="p">,</span> <span class="m">7.09</span><span class="p">,</span> <span class="m">3.55</span><span class="p">,</span> <span class="m">2</span><span class="p">)</span>
-<span class="n">discounts</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.25</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.50</span><span class="p">,</span> <span class="m">0.5</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.25</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="exercise-2-average-sale-price">
-<h3>Exercise 2: Average sale price<a class="headerlink" href="#exercise-2-average-sale-price" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use the code cell below to compute the average sale price of an item from the ice cream truck described in exercise 1.</p></li>
-<li><p>Summarize your findings in the mark down cell below.</p></li>
-</ul>
-</div>
-<div class="section" id="exercise-3-add-tax">
-<h3>Exercise 3: Add tax<a class="headerlink" href="#exercise-3-add-tax" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Create a vector call <code class="docutils literal notranslate"><span class="pre">total_cost</span></code> which contains the cost of each type of ice cream after a 8.875% tax has been applied to the sale prices.</p></li>
-<li><p>Round the values in <code class="docutils literal notranslate"><span class="pre">total_cost</span></code> to two decimal places.</p></li>
-<li><p>Store the rounded values in the variable <code class="docutils literal notranslate"><span class="pre">total_cost</span></code>.</p></li>
-<li><p>Verify that your code performed as expected by outputting the values in <code class="docutils literal notranslate"><span class="pre">total_cost</span></code>.</p></li>
-</ul>
-</div>
-</div>
-<div class="section" id="part-2-old-faithful">
-<h2>Part 2: Old faithful<a class="headerlink" href="#part-2-old-faithful" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="exercise-4-old-failthful">
-<h3>Exercise 4: Old Failthful<a class="headerlink" href="#exercise-4-old-failthful" title="Permalink to this headline">¶</a></h3>
-<p>You can view the documentation of any built in object in R by running the name of the object proceeded by a question mark.</p>
-<p><code class="docutils literal notranslate"><span class="pre">?OBJECT_NAME</span></code></p>
-<ul class="simple">
-<li><p>One of the data sets in the datasets package is called <code class="docutils literal notranslate"><span class="pre">faithful</span></code>. Use the documentation on this dataset to determine why  there reason to believe that this data includes errors introduced by humans.</p></li>
-<li><p>Write your answer in the markdown cell below.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">head()</span></code> to view the first three rows of <code class="docutils literal notranslate"><span class="pre">faithful</span></code>.</p></li>
-</ul>
-</div>
-<div class="section" id="exercise-5-the-last-observation">
-<h3>Exercise 5: The last observation<a class="headerlink" href="#exercise-5-the-last-observation" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use the documentation, <code class="docutils literal notranslate"><span class="pre">str()</span></code> or <code class="docutils literal notranslate"><span class="pre">nrow()</span></code> to determine the number of observations in <code class="docutils literal notranslate"><span class="pre">faithful</span></code>.</p></li>
-<li><p>Determine the duration of the last eruption in the <code class="docutils literal notranslate"><span class="pre">faithful</span></code> data set.</p></li>
-<li><p>Write you answer in the markdown cell below. Don’t forget units!</p></li>
-</ul>
-</div>
-<div class="section" id="exercise-6-longest-shortest-and-average">
-<h3>Exercise 6: Longest, shortest and average<a class="headerlink" href="#exercise-6-longest-shortest-and-average" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">names()</span></code> to remind yourself of the names of the variables in <code class="docutils literal notranslate"><span class="pre">faithful</span></code>.</p></li>
-<li><p>Use a code cell to answer each of the following questions.</p></li>
-</ul>
-<ol class="simple">
-<li><p>What was the duration of the longest eruption that was measured?</p></li>
-<li><p>What was the shortest wait time that was measured?</p></li>
-<li><p>What was the average wait time between eruptions?</p></li>
-</ol>
-<ul class="simple">
-<li><p>Summarize your findings in the markdown cell below. Don’t forget units!</p></li>
-</ul>
-</div>
-<div class="section" id="exercise-7-total-amount-of-time">
-<h3>Exercise 7: Total amount of time<a class="headerlink" href="#exercise-7-total-amount-of-time" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>Determine the total number of hours that were spent watching the Old Faithful geyser to gather the data in <code class="docutils literal notranslate"><span class="pre">faithful</span></code>.</p></li>
-<li><p>Summarize your findings in a markdown cell.</p></li>
+<li><p>Look at the first few rows of <code class="docutils literal notranslate"><span class="pre">bootstrap</span></code> to verify that each trial has <code class="docutils literal notranslate"><span class="pre">nobs</span></code> many observations and that the averages ages are close in value.</p></li>
+<li><p>Plot the distribution of the average ages and verify that the distribution looks normal.</p></li>
 </ul>
 </div>
 </div>
@@ -772,17 +626,17 @@ const thebe_selector_output = ".output, .cell_output"
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="lesson02.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="lesson19.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Lesson 2: Variables and Vectors</p>
+            <p class="prev-next-title">Lesson 19: Correlation and MSE</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="lesson04.html" title="next page">
+    <a class='right-next' id="next-link" href="../homework/homework_0.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lesson 4: Mutate, arrange, piping</p>
+        <p class="prev-next-title">Homework 0</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
