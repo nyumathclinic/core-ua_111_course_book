@@ -65,3 +65,4 @@ parts:
   - file: labs/lab_08
   - file: labs/lab_09
   - file: labs/lab_10
+  - file: labs/lab_11
