@@ -53,6 +53,7 @@ parts:
   - file: homework/homework_05
   - file: homework/homework_06
   - file: homework/homework_07
+  - file: homework/homework_08
 - caption: Lab worksheets
   chapters:
   - file: labs/lab_01
