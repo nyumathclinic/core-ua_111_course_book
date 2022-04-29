@@ -1,0 +1,1097 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building a classifier &#8212; From Data to Discovery</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="p-value from simulation" href="p-value_simulation.html" />
+    <link rel="prev" title="Numeric Models" href="numerical_models.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">From Data to Discovery</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../landing_page.html">
+   From Data to Discovery
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Reference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="r_basics.html">
+   R basics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="arithmetic.html">
+     Arithmetic with numbers
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="variables.html">
+     Variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_types.html">
+     Data types
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors.html">
+     Vectors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="vectors_numerical.html">
+     Numerical Vectors
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="data.html">
+   Exploring Data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_loading.html">
+     Loading data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="data_frames.html">
+     Working with data frames
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="dplyr_library.html">
+     dplyr Library
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ggplot2_library.html">
+     ggplot2
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="ggplot_pretty_plots.html">
+     Pretty plots
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="numerical_models.html">
+   Numeric Models
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Building a classifier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="p-value_simulation.html">
+   p-value from simulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="outside_sources.html">
+   Other References
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  In-Class Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson01.html">
+   Lesson 1: Introduction to R and JupyterHub
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson02.html">
+   Lesson 2: Variables and Vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson03.html">
+   Lesson 3: Data sets and more vectors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson04.html">
+   Lesson 4: Mutate, arrange, piping
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson05.html">
+   Lesson 5: Select columns and filter rows
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson06.html">
+   Lesson 6: Group, summarize and visualize
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson07.html">
+   Lesson 7: Labels, themes and scatter plots
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson08.html">
+   Lesson 8: Colors and histograms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson10.html">
+   Lesson 10:  Practice with conditionals
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson11.html">
+   Lesson 11 - Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson12.html">
+   Lesson 12: Vectorization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson13.html">
+   Lesson 13: Evaluating a classifier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson14.html">
+   Lesson 14: Classifier metrics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson15.html">
+   Lesson 15: Nearest neighbors
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson16.html">
+   Lesson 16: Linear Models
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson18.html">
+   Lesson 18: Nonlinear models continued
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson19.html">
+   Lesson 19: Correlation and MSE
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson22.html">
+   Lesson 22:  Bootstrap sampling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../in-class_exercises/lesson25.html">
+   Lesson 25:  p-value simulations
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Homework
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_0.html">
+   Homework 0
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_01.html">
+   Homework 1
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_02.html">
+   Homework 2
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_03.html">
+   Homework 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_04.html">
+   Homework 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_05.html">
+   Homework 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_06.html">
+   Homework 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_07.html">
+   Homework 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_08.html">
+   Homework 8
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lab worksheets
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_01.html">
+   Lab 1 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_02.html">
+   Lab 2 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_03.html">
+   Lab 3 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_04.html">
+   Lab 4 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_05.html">
+   Lab 5 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_06.html">
+   Lab 6 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_07.html">
+   Lab 7 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_08.html">
+   Lab 8 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_09.html">
+   Lab 9 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_10.html">
+   Lab 10 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_11.html">
+   Lab 11 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_12.html">
+   Lab 12 Worksheet
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/reference/classifier_example.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://coreua-111001-spring.rcnyu.org/hub/user-redirect/git-pull?repo=https://github.com/nyumathclinic/core-ua_111_course_book&urlpath=tree/core-ua_111_course_book/reference/classifier_example.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-data-set">
+   The data set
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-look-at-the-data">
+     First look at the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-the-data">
+     Split the data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization">
+   Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-tree">
+   Decision tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classifier-function">
+   Classifier function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-function">
+     Build function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classify-test-observations">
+     Classify test observations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluate-classifier">
+   Evaluate classifier
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accuracy-type">
+     Accuracy type
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measures-of-effectiveness">
+     Measures of effectiveness
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accuracy">
+       Accuracy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#precision">
+       Precision
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#true-positive-rate">
+       True positive rate
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#true-negative-rate">
+       True negative rate
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Building a classifier</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-data-set">
+   The data set
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#first-look-at-the-data">
+     First look at the data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-the-data">
+     Split the data
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualization">
+   Visualization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-tree">
+   Decision tree
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classifier-function">
+   Classifier function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#build-function">
+     Build function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classify-test-observations">
+     Classify test observations
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluate-classifier">
+   Evaluate classifier
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#accuracy-type">
+     Accuracy type
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measures-of-effectiveness">
+     Measures of effectiveness
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accuracy">
+       Accuracy
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#precision">
+       Precision
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#true-positive-rate">
+       True positive rate
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#true-negative-rate">
+       True negative rate
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="building-a-classifier">
+<span id="classifier"></span><h1>Building a classifier<a class="headerlink" href="#building-a-classifier" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-data-set">
+<h2>The data set<a class="headerlink" href="#the-data-set" title="Permalink to this headline">¶</a></h2>
+<p>This breast cancer databases was obtained from the University of Wisconsin Hospitals, Madison from Dr. William H. Wolberg. For more information see the documentation on the <a class="reference external" href="https://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+(original)">UCI Machine Learning Repository</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">dplyr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘dplyr’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:stats’:
+
+    filter, lag
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">biopsies</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/breast-cancer-wisconsin.data&quot;</span><span class="p">,</span>
+         <span class="n">header</span> <span class="o">=</span> <span class="kc">FALSE</span>
+        <span class="p">)</span>
+
+<span class="nf">names</span><span class="p">(</span><span class="n">biopsies</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;ID&#39;</span><span class="p">,</span><span class="s">&#39;Clump.Thickness&#39;</span><span class="p">,</span><span class="s">&#39;Uniformity.of.Cell.Size&#39;</span><span class="p">,</span><span class="s">&#39;Uniformity.of.Cell.Shape&#39;</span><span class="p">,</span><span class="s">&#39;Marginal.Adhesion&#39;</span><span class="p">,</span>
+  <span class="s">&#39;Single.Epithelial.Cell.Size&#39;</span><span class="p">,</span><span class="s">&#39;Bare.Nuclei&#39;</span><span class="p">,</span><span class="s">&#39;Bland.Chromatin&#39;</span><span class="p">,</span><span class="s">&#39;Normal.Nucleoli&#39;</span><span class="p">,</span><span class="s">&#39;Mitoses&#39;</span><span class="p">,</span><span class="s">&#39;Class&#39;</span><span class="p">)</span>
+
+<span class="n">biopsies</span> <span class="o">&lt;-</span> <span class="n">biopsies</span> <span class="o">%&gt;%</span>
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">Class</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span> <span class="n">Class</span><span class="p">,</span>
+        <span class="n">levels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">),</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;benign&#39;</span><span class="p">,</span> <span class="s">&#39;malignant&#39;</span><span class="p">)</span>
+    <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="first-look-at-the-data">
+<h3>First look at the data<a class="headerlink" href="#first-look-at-the-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">biopsies</span><span class="p">)</span> 
+<span class="nf">str</span><span class="p">(</span><span class="n">biopsies</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 11</caption>
+<thead>
+	<tr><th></th><th scope=col>ID</th><th scope=col>Clump.Thickness</th><th scope=col>Uniformity.of.Cell.Size</th><th scope=col>Uniformity.of.Cell.Shape</th><th scope=col>Marginal.Adhesion</th><th scope=col>Single.Epithelial.Cell.Size</th><th scope=col>Bare.Nuclei</th><th scope=col>Bland.Chromatin</th><th scope=col>Normal.Nucleoli</th><th scope=col>Mitoses</th><th scope=col>Class</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>1000025</td><td>5</td><td> 1</td><td> 1</td><td>1</td><td>2</td><td>1 </td><td>3</td><td>1</td><td>1</td><td>benign   </td></tr>
+	<tr><th scope=row>2</th><td>1002945</td><td>5</td><td> 4</td><td> 4</td><td>5</td><td>7</td><td>10</td><td>3</td><td>2</td><td>1</td><td>benign   </td></tr>
+	<tr><th scope=row>3</th><td>1015425</td><td>3</td><td> 1</td><td> 1</td><td>1</td><td>2</td><td>2 </td><td>3</td><td>1</td><td>1</td><td>benign   </td></tr>
+	<tr><th scope=row>4</th><td>1016277</td><td>6</td><td> 8</td><td> 8</td><td>1</td><td>3</td><td>4 </td><td>3</td><td>7</td><td>1</td><td>benign   </td></tr>
+	<tr><th scope=row>5</th><td>1017023</td><td>4</td><td> 1</td><td> 1</td><td>3</td><td>2</td><td>1 </td><td>3</td><td>1</td><td>1</td><td>benign   </td></tr>
+	<tr><th scope=row>6</th><td>1017122</td><td>8</td><td>10</td><td>10</td><td>8</td><td>7</td><td>10</td><td>9</td><td>7</td><td>1</td><td>malignant</td></tr>
+</tbody>
+</table>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;data.frame&#39;:	699 obs. of  11 variables:
+ $ ID                         : int  1000025 1002945 1015425 1016277 1017023 1017122 1018099 1018561 1033078 1033078 ...
+ $ Clump.Thickness            : int  5 5 3 6 4 8 1 2 2 4 ...
+ $ Uniformity.of.Cell.Size    : int  1 4 1 8 1 10 1 1 1 2 ...
+ $ Uniformity.of.Cell.Shape   : int  1 4 1 8 1 10 1 2 1 1 ...
+ $ Marginal.Adhesion          : int  1 5 1 1 3 8 1 1 1 1 ...
+ $ Single.Epithelial.Cell.Size: int  2 7 2 3 2 7 2 2 2 2 ...
+ $ Bare.Nuclei                : chr  &quot;1&quot; &quot;10&quot; &quot;2&quot; &quot;4&quot; ...
+ $ Bland.Chromatin            : int  3 3 3 3 3 9 3 3 1 2 ...
+ $ Normal.Nucleoli            : int  1 2 1 7 1 7 1 1 1 1 ...
+ $ Mitoses                    : int  1 1 1 1 1 1 1 1 5 1 ...
+ $ Class                      : Factor w/ 2 levels &quot;benign&quot;,&quot;malignant&quot;: 1 1 1 1 1 2 1 1 1 1 ...
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split-the-data">
+<h3>Split the data<a class="headerlink" href="#split-the-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">training</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="n">biopsies</span><span class="p">,</span> <span class="m">400</span><span class="p">)</span>
+<span class="n">test</span> <span class="o">&lt;-</span> <span class="nf">head</span><span class="p">(</span><span class="n">biopsies</span><span class="p">,</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">biopsies</span><span class="p">)</span> <span class="o">-</span> <span class="m">400</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualization">
+<h2>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline">¶</a></h2>
+<p>In practice, one looks at multiple pairs of variables before finding a pattern. For the sake of brevity, we only share the visualization that we will use for our classifier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span><span class="n">training</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">Clump.Thickness</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">Marginal.Adhesion</span><span class="p">,</span> 
+                     <span class="n">color</span> <span class="o">=</span> <span class="n">Class</span><span class="p">,</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">Class</span><span class="p">)</span>
+      <span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">geom_rect</span><span class="p">(</span><span class="n">mapping</span><span class="o">=</span><span class="nf">aes</span><span class="p">(</span><span class="n">xmin</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="m">6</span><span class="p">,</span> <span class="n">ymin</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">ymax</span><span class="o">=</span><span class="m">4</span><span class="p">),</span>
+              <span class="n">color</span> <span class="o">=</span> <span class="s">&quot;lightgrey&quot;</span><span class="p">,</span>
+              <span class="n">fill</span> <span class="o">=</span> <span class="s">&quot;lightgrey&quot;</span>
+            <span class="p">)</span><span class="o">+</span>
+    <span class="nf">geom_jitter</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">3</span><span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">scale_color_manual</span><span class="p">(</span><span class="n">values</span> <span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;blue&#39;</span><span class="p">,</span> <span class="s">&#39;red&#39;</span><span class="p">))</span> <span class="o">+</span>
+    <span class="nf">labs</span><span class="p">(</span>
+        <span class="n">title</span> <span class="o">=</span> <span class="s">&quot;Breast Biopsies&quot;</span><span class="p">,</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s">&quot;Clump Thickness&quot;</span><span class="p">,</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="s">&quot;Marginal Adhesion&quot;</span>
+    <span class="p">)</span> <span class="o">+</span> 
+    <span class="nf">theme_bw</span><span class="p">(</span><span class="n">base_size</span> <span class="o">=</span> <span class="m">18</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/classifier_example_11_0.png" src="../_images/classifier_example_11_0.png" />
+</div>
+</div>
+<p>Points in the gray shaded rectangle are almost all benign. Thus, we will build a classifier that predicts lumps with clump thickness greater than 6 or marginal adhesion greater than 4 are malignant.</p>
+</div>
+<div class="section" id="decision-tree">
+<h2>Decision tree<a class="headerlink" href="#decision-tree" title="Permalink to this headline">¶</a></h2>
+<p>Before coding the classifier function, it is helpful to draw a decision tree to ensure that the logic is clear.</p>
+<p><img alt="decision tree" src="../_images/decision_tree_small.png" /></p>
+</div>
+<div class="section" id="classifier-function">
+<h2>Classifier function<a class="headerlink" href="#classifier-function" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="build-function">
+<h3>Build function<a class="headerlink" href="#build-function" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">classifier</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">thickness</span><span class="p">,</span> <span class="n">adhesion</span><span class="p">){</span>
+    <span class="nf">if</span><span class="p">(</span><span class="n">thickness</span> <span class="o">&gt;</span> <span class="m">6</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">return</span><span class="p">(</span><span class="s">&#39;malignant&#39;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">adhesion</span> <span class="o">&gt;</span> <span class="m">4</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nf">return</span><span class="p">(</span><span class="s">&#39;malignant&#39;</span><span class="p">)</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="nf">return</span><span class="p">(</span><span class="s">&#39;benign&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># test classifer function</span>
+<span class="nf">classifier</span><span class="p">(</span><span class="m">7</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+<span class="nf">classifier</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<span class="nf">classifier</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+
+<span class="c1"># Vectorize so that we can apply it to whole columns</span>
+<span class="n">classifier</span> <span class="o">&lt;-</span> <span class="nf">Vectorize</span><span class="p">(</span><span class="n">classifier</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'malignant'</div><div class="output text_html">'malignant'</div><div class="output text_html">'benign'</div></div>
+</div>
+</div>
+<div class="section" id="classify-test-observations">
+<h3>Classify test observations<a class="headerlink" href="#classify-test-observations" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> 
+              <span class="n">Prediction</span> <span class="o">=</span> <span class="nf">classifier</span><span class="p">(</span><span class="n">Clump.Thickness</span><span class="p">,</span> <span class="n">Marginal.Adhesion</span><span class="p">))</span>
+
+<span class="n">test</span> <span class="o">%&gt;%</span>
+    <span class="nf">select</span><span class="p">(</span><span class="n">Clump.Thickness</span><span class="p">,</span> <span class="n">Marginal.Adhesion</span><span class="p">,</span> <span class="n">Class</span><span class="p">,</span> <span class="n">Prediction</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">head</span><span class="p">(</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 4 × 4</caption>
+<thead>
+	<tr><th></th><th scope=col>Clump.Thickness</th><th scope=col>Marginal.Adhesion</th><th scope=col>Class</th><th scope=col>Prediction</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;fct&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>5</td><td>1</td><td>benign</td><td>benign   </td></tr>
+	<tr><th scope=row>2</th><td>5</td><td>5</td><td>benign</td><td>malignant</td></tr>
+	<tr><th scope=row>3</th><td>3</td><td>1</td><td>benign</td><td>benign   </td></tr>
+	<tr><th scope=row>4</th><td>6</td><td>1</td><td>benign</td><td>benign   </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluate-classifier">
+<h2>Evaluate classifier<a class="headerlink" href="#evaluate-classifier" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="accuracy-type">
+<h3>Accuracy type<a class="headerlink" href="#accuracy-type" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">accuracy_type</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">class</span><span class="p">,</span> <span class="n">prediction</span><span class="p">){</span>
+    <span class="nf">if </span><span class="p">(</span><span class="n">class</span> <span class="o">==</span> <span class="n">prediction</span><span class="p">){</span>
+        <span class="n">tf</span> <span class="o">&lt;-</span> <span class="s">&#39;true&#39;</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="n">tf</span> <span class="o">&lt;-</span> <span class="s">&#39;false&#39;</span>
+    <span class="p">}</span>
+    
+    <span class="nf">if</span><span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="s">&#39;malignant&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">pn</span> <span class="o">&lt;-</span> <span class="s">&#39;positive&#39;</span>
+    <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+        <span class="n">pn</span> <span class="o">&lt;-</span> <span class="s">&#39;negative&#39;</span>
+    <span class="p">}</span>
+    
+    <span class="nf">paste</span><span class="p">(</span><span class="n">tf</span><span class="p">,</span> <span class="n">pn</span><span class="p">)</span> 
+<span class="p">}</span>
+
+<span class="c1"># Test accuracy_type function</span>
+<span class="nf">accuracy_type</span><span class="p">(</span><span class="s">&#39;malignant&#39;</span><span class="p">,</span><span class="s">&#39;malignant&#39;</span><span class="p">)</span>
+<span class="nf">accuracy_type</span><span class="p">(</span><span class="s">&#39;benign&#39;</span><span class="p">,</span><span class="s">&#39;malignant&#39;</span><span class="p">)</span>
+<span class="nf">accuracy_type</span><span class="p">(</span><span class="s">&#39;malignant&#39;</span><span class="p">,</span><span class="s">&#39;benign&#39;</span><span class="p">)</span>
+<span class="nf">accuracy_type</span><span class="p">(</span><span class="s">&#39;benign&#39;</span><span class="p">,</span><span class="s">&#39;benign&#39;</span><span class="p">)</span>
+
+<span class="c1"># Vectorize so that we can apply it to whole columns</span>
+<span class="n">accuracy_type</span> <span class="o">&lt;-</span> <span class="nf">Vectorize</span><span class="p">(</span><span class="n">accuracy_type</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">'true positive'</div><div class="output text_html">'false positive'</div><div class="output text_html">'false negative'</div><div class="output text_html">'true negative'</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">test</span> <span class="o">&lt;-</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">test</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="nf">accuracy_type</span><span class="p">(</span><span class="n">Class</span><span class="p">,</span> <span class="n">Prediction</span><span class="p">))</span>
+
+<span class="n">test</span> <span class="o">%&gt;%</span> 
+    <span class="nf">group_by</span><span class="p">(</span><span class="n">type</span><span class="p">)</span> <span class="o">%&gt;%</span>
+    <span class="nf">summarize</span><span class="p">(</span><span class="n">Count</span> <span class="o">=</span> <span class="nf">n</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A tibble: 4 × 2</caption>
+<thead>
+	<tr><th scope=col>type</th><th scope=col>Count</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>false negative</td><td> 23</td></tr>
+	<tr><td>false positive</td><td>  7</td></tr>
+	<tr><td>true negative </td><td>156</td></tr>
+	<tr><td>true positive </td><td>113</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="measures-of-effectiveness">
+<h3>Measures of effectiveness<a class="headerlink" href="#measures-of-effectiveness" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># variables to help make formulas easier to read</span>
+<span class="n">class</span> <span class="o">&lt;-</span> <span class="n">test</span><span class="o">$</span><span class="n">Class</span>
+<span class="n">prediction</span> <span class="o">&lt;-</span> <span class="n">test</span><span class="o">$</span><span class="n">Prediction</span>
+<span class="n">positive</span> <span class="o">&lt;-</span> <span class="s">&#39;malignant&#39;</span>
+<span class="n">negative</span> <span class="o">&lt;-</span> <span class="s">&#39;benign&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="accuracy">
+<h4>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\text{Accuracy} = \frac{\text{(# correct predictions)}}{\text{(# of observations)}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="n">class</span> <span class="o">==</span> <span class="n">prediction</span><span class="p">)</span> <span class="o">/</span> <span class="nf">nrow</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.899665551839465</div></div>
+</div>
+</div>
+<div class="section" id="precision">
+<h4>Precision<a class="headerlink" href="#precision" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\text{Precision} = \frac{\text{(# true positive predictions)}}{\text{(# of positive predictions)}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">((</span><span class="n">class</span> <span class="o">==</span> <span class="n">prediction</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="n">positive</span><span class="p">))</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="n">positive</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.941666666666667</div></div>
+</div>
+</div>
+<div class="section" id="true-positive-rate">
+<h4>True positive rate<a class="headerlink" href="#true-positive-rate" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\text{True positive rate} = \frac{\text{(# true positive predictions)}}{\text{(# positive cases)}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">((</span><span class="n">class</span> <span class="o">==</span> <span class="n">prediction</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="n">positive</span><span class="p">))</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">class</span> <span class="o">==</span> <span class="n">positive</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.830882352941177</div></div>
+</div>
+</div>
+<div class="section" id="true-negative-rate">
+<h4>True negative rate<a class="headerlink" href="#true-negative-rate" title="Permalink to this headline">¶</a></h4>
+<div class="math notranslate nohighlight">
+\[\text{True negative rate} = \frac{\text{(# true negative predictions)}}{\text{(# negative cases)}}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">((</span><span class="n">class</span> <span class="o">==</span> <span class="n">prediction</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">prediction</span> <span class="o">==</span> <span class="n">negative</span><span class="p">))</span><span class="o">/</span><span class="nf">sum</span><span class="p">(</span><span class="n">class</span> <span class="o">==</span> <span class="n">negative</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.957055214723926</div></div>
+</div>
+<p>The classifier is correct 90% of the time. When it is incorrect, it is most likely to classify a malignant lump as benign. This is reflected in the fact that the number of false negatives is three times as high as the number of false positives. It is also reflected in the fact that the true positive rate is lower than the true negative rate; the classifier is more likely to correctly classify a benign lump.</p>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./reference"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="numerical_models.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Numeric Models</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="p-value_simulation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">p-value from simulation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By Corrin Clarkson<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
