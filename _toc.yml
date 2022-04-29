@@ -22,6 +22,7 @@ parts:
     - file: reference/ggplot2_library
     - file: reference/ggplot_pretty_plots
   - file: reference/numerical_models
+  - file: reference/p-value_simulation
   - file: reference/outside_sources
 - caption: In-Class Exercises
   chapters:
