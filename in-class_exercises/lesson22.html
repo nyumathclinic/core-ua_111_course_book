@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lesson 22 - Bootstrap sampling &#8212; From Data to Discovery</title>
+    <title>Lesson 22: Bootstrap sampling &#8212; From Data to Discovery</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Homework 0" href="../homework/homework_0.html" />
+    <link rel="next" title="Lesson 25: p-value simulations" href="lesson25.html" />
     <link rel="prev" title="Lesson 19: Correlation and MSE" href="lesson19.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -281,7 +281,12 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Lesson 22 -  Bootstrap sampling
+   Lesson 22:  Bootstrap sampling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="lesson25.html">
+   Lesson 25:  p-value simulations
   </a>
  </li>
 </ul>
@@ -398,6 +403,11 @@ const thebe_selector_output = ".output, .cell_output"
    Lab 11 Worksheet
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_12.html">
+   Lab 12 Worksheet
+  </a>
+ </li>
 </ul>
 
     </div>
@@ -493,22 +503,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-1-preparing-to-bootstrap">
-     Example 1 - Preparing to Bootstrap
+     Example 1: Preparing to Bootstrap
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2-how-many-trials-how-many-samples">
-     Exercise 2 - How many trials? How many samples?
+     Exercise 2: How many trials? How many samples?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-3-sample-and-sort-into-trials">
-     Exercise 3 - Sample and sort into trials
+     Exercise 3: Sample and sort into trials
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-4-summarize">
-     Exercise 4 - Summarize
+     Exercise 4: Summarize
     </a>
    </li>
   </ul>
@@ -523,7 +533,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Lesson 22 -  Bootstrap sampling</h1>
+                <h1>Lesson 22:  Bootstrap sampling</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -540,22 +550,22 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-1-preparing-to-bootstrap">
-     Example 1 - Preparing to Bootstrap
+     Example 1: Preparing to Bootstrap
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2-how-many-trials-how-many-samples">
-     Exercise 2 - How many trials? How many samples?
+     Exercise 2: How many trials? How many samples?
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-3-sample-and-sort-into-trials">
-     Exercise 3 - Sample and sort into trials
+     Exercise 3: Sample and sort into trials
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-4-summarize">
-     Exercise 4 - Summarize
+     Exercise 4: Summarize
     </a>
    </li>
   </ul>
@@ -570,12 +580,12 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="lesson-22-bootstrap-sampling">
-<span id="lesson22"></span><h1>Lesson 22 -  Bootstrap sampling<a class="headerlink" href="#lesson-22-bootstrap-sampling" title="Permalink to this headline">¶</a></h1>
+<span id="lesson22"></span><h1>Lesson 22:  Bootstrap sampling<a class="headerlink" href="#lesson-22-bootstrap-sampling" title="Permalink to this headline">¶</a></h1>
 <p>These exercises are to help you check your understanding during class. They will not be collected.</p>
 <div class="section" id="part-1-bootstrap">
 <h2>Part 1: Bootstrap<a class="headerlink" href="#part-1-bootstrap" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="example-1-preparing-to-bootstrap">
-<h3>Example 1 - Preparing to Bootstrap<a class="headerlink" href="#example-1-preparing-to-bootstrap" title="Permalink to this headline">¶</a></h3>
+<h3>Example 1: Preparing to Bootstrap<a class="headerlink" href="#example-1-preparing-to-bootstrap" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Load the <code class="docutils literal notranslate"><span class="pre">zoombinis</span></code> data set from the shared data folder.</p></li>
 <li><p>Use <code class="docutils literal notranslate"><span class="pre">sample_n()</span></code> to create a data frame called <code class="docutils literal notranslate"><span class="pre">survey</span></code> that contains 500 randomly selected observations from the zoombinis data set.</p></li>
@@ -583,7 +593,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="exercise-2-how-many-trials-how-many-samples">
-<h3>Exercise 2 - How many trials? How many samples?<a class="headerlink" href="#exercise-2-how-many-trials-how-many-samples" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 2: How many trials? How many samples?<a class="headerlink" href="#exercise-2-how-many-trials-how-many-samples" title="Permalink to this headline">¶</a></h3>
 <p>It is recommended that your bootstrap simulation include <span class="math notranslate nohighlight">\(n^2\)</span> trials where <span class="math notranslate nohighlight">\(n\)</span> is the number of observations. However, the recommended number of trials can be impractically large, so sometimes we choose to run fewer trials. The number of trials in your your bootstrap simulation should be at least <span class="math notranslate nohighlight">\(n\cdot \log (n)\)</span>.</p>
 <ul class="simple">
 <li><p>Store the number of observations in your survey in the variable <code class="docutils literal notranslate"><span class="pre">nobs</span></code>.</p></li>
@@ -593,14 +603,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </div>
 <div class="section" id="exercise-3-sample-and-sort-into-trials">
-<h3>Exercise 3 - Sample and sort into trials<a class="headerlink" href="#exercise-3-sample-and-sort-into-trials" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 3: Sample and sort into trials<a class="headerlink" href="#exercise-3-sample-and-sort-into-trials" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Create a data frame called <code class="docutils literal notranslate"><span class="pre">all_samples</span></code> that contains <code class="docutils literal notranslate"><span class="pre">total</span></code> many observations randomly chosen from <code class="docutils literal notranslate"><span class="pre">survey</span></code> with replacement. You can reduce memory use by first selecting only the <code class="docutils literal notranslate"><span class="pre">age</span></code> column from survey.</p></li>
 <li><p>Add a column called <code class="docutils literal notranslate"><span class="pre">trial</span></code> to <code class="docutils literal notranslate"><span class="pre">all_samples</span></code> that contains a number between 1 and <code class="docutils literal notranslate"><span class="pre">ntrials</span></code> indicating the trial to which observation belongs. Remember that every trial should have <code class="docutils literal notranslate"><span class="pre">nobs</span></code> many observations.</p></li>
 </ul>
 </div>
 <div class="section" id="exercise-4-summarize">
-<h3>Exercise 4 - Summarize<a class="headerlink" href="#exercise-4-summarize" title="Permalink to this headline">¶</a></h3>
+<h3>Exercise 4: Summarize<a class="headerlink" href="#exercise-4-summarize" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Create a summary table called <code class="docutils literal notranslate"><span class="pre">bootstrap</span></code> that contains the following columns:</p>
 <ul>
@@ -648,10 +658,10 @@ const thebe_selector_output = ".output, .cell_output"
             <p class="prev-next-title">Lesson 19: Correlation and MSE</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../homework/homework_0.html" title="next page">
+    <a class='right-next' id="next-link" href="lesson25.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Homework 0</p>
+        <p class="prev-next-title">Lesson 25:  p-value simulations</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
