@@ -12,6 +12,7 @@
 - [R for Datascience by Wickham and Grolemund](https://r4ds.had.co.nz/)
 - [R Cookbook by Long and Teetor](https://rc2e.com/)
 - [R Graphics Cookbook by Chang](https://r-graphics.org/)
+- [YaRrr! The Pirate’s Guide to R](https://bookdown.org/ndphillips/YaRrr/)
 
 ```python
 
