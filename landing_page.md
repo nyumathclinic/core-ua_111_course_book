@@ -134,6 +134,10 @@ This site is intended to serve as reference for students enrolled in the Spring 
 - [](homework08)
 
 
+### Lesson 24
+- [](lab12)
+
+
 ### Lesson 25
-- [](pvalues)
+- [](pvalue)
 - [](lesson25)

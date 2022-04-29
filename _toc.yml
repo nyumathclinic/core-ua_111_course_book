@@ -44,6 +44,7 @@ parts:
   - file: in-class_exercises/lesson18
   - file: in-class_exercises/lesson19
   - file: in-class_exercises/lesson22
+  - file: in-class_exercises/lesson25
 - caption: Homework
   chapters:
   - file: homework/homework_0
@@ -68,3 +69,4 @@ parts:
   - file: labs/lab_09
   - file: labs/lab_10
   - file: labs/lab_11
+  - file: labs/lab_12
