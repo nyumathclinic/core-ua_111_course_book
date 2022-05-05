@@ -142,3 +142,5 @@ This site is intended to serve as reference for students enrolled in the Spring 
 ### Lesson 25
 - [](pvalue)
 - [](lesson25)
+- [](lab13)
+- [](homework09)
