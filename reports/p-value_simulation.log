@@ -17,20 +17,31 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# optional nice visualization
-long_demographics <- gather(demographics, Source, Percentage, -group)
+height <- 160
 
-# create bar plot, for the proprtion of each group, with fill = type
-ggplot(long_demographics, aes( x = group, y = Percentage, fill = Source )) + 
-    geom_col( position='dodge') +
-    scale_fill_brewer(palette="Paired") +
-    labs(title = "Demographics Side by Side") +
+ggplot( proportions, aes( x = distance)) + 
+    geom_histogram( bins = 15, color='white', fill='grey60') +
+    geom_vline(aes(xintercept=observed_distance), color="red", linetype="dashed", size=1) +
+    geom_text(aes(x=observed_distance, 
+                  label=paste0('Distance between actual \n data and simulation = ',round(observed_distance,2)), 
+                  y=height), 
+              color="red", hjust = 1, vjust=1, size = 6) +
+    labs(title='1000 simulated jury pools',
+        x = 'Distance to census'
+        y = 'Number of simuulated jury pools'
+        ) +
     theme_classic(base_size = 18)
 ------------------
 
-Error in gather(demographics, Source, Percentage, -group): could not find function "gather"
+Error in parse(text = x, srcfile = src): <text>:12:9: unexpected symbol
+11:         x = 'Distance to census'
+12:         y
+            ^
 Traceback:
 
-ERROR: Error in gather(demographics, Source, Percentage, -group): could not find function "gather"
+ERROR: Error in parse(text = x, srcfile = src): <text>:12:9: unexpected symbol
+11:         x = 'Distance to census'
+12:         y
+            ^
 
 

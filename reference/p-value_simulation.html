@@ -344,6 +344,11 @@ const thebe_selector_output = ".output, .cell_output"
    Homework 8
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../homework/homework_09.html">
+   Homework 9
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -409,6 +414,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../labs/lab_12.html">
    Lab 12 Worksheet
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../labs/lab_13.html">
+   Lab 13 Worksheet
   </a>
  </li>
 </ul>
@@ -767,9 +777,9 @@ const thebe_selector_output = ".output, .cell_output"
 	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>1</td><td>8</td><td>14</td><td>22</td><td>56</td><td>9.7</td></tr>
-	<tr><td>2</td><td>7</td><td>17</td><td>20</td><td>56</td><td>5.7</td></tr>
-	<tr><td>3</td><td>6</td><td>16</td><td>21</td><td>57</td><td>9.7</td></tr>
+	<tr><td>1</td><td>11</td><td>20</td><td>19</td><td>50</td><td> 8.7</td></tr>
+	<tr><td>2</td><td> 6</td><td>14</td><td>17</td><td>63</td><td>17.3</td></tr>
+	<tr><td>3</td><td> 8</td><td>18</td><td>18</td><td>56</td><td> 4.5</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -783,7 +793,7 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">1.5</div><div class="output text_html">30.3</div></div>
+<div class="output text_html">1.5</div><div class="output text_html">33.7</div></div>
 </div>
 <p>Randomness leads to a variety of different distances.</p>
 </div>
@@ -812,15 +822,22 @@ const thebe_selector_output = ".output, .cell_output"
                   <span class="n">label</span><span class="o">=</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&#39;Distance between actual \n data and simulation = &#39;</span><span class="p">,</span><span class="nf">round</span><span class="p">(</span><span class="n">observed_distance</span><span class="p">,</span><span class="m">2</span><span class="p">)),</span> 
                   <span class="n">y</span><span class="o">=</span><span class="n">height</span><span class="p">),</span> 
               <span class="n">color</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="n">hjust</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">vjust</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">6</span><span class="p">)</span> <span class="o">+</span>
-    <span class="nf">ylab</span><span class="p">(</span><span class="s">&#39;Number of simuulated jury pools&#39;</span><span class="p">)</span> <span class="o">+</span>
-    <span class="nf">xlab</span><span class="p">(</span><span class="s">&#39;Distance to census&#39;</span><span class="p">)</span> <span class="o">+</span>
-    <span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&#39;1000 simulated jury pools&#39;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">&#39;1000 simulated jury pools&#39;</span><span class="p">,</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="s">&#39;Distance to census&#39;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="s">&#39;Number of simuulated jury pools&#39;</span>
+        <span class="p">)</span> <span class="o">+</span>
     <span class="nf">theme_classic</span><span class="p">(</span><span class="n">base_size</span> <span class="o">=</span> <span class="m">18</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/p-value_simulation_22_0.png" src="../_images/p-value_simulation_22_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">parse</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">srcfile</span> <span class="o">=</span> <span class="n">src</span><span class="p">):</span> <span class="o">&lt;</span><span class="n">text</span><span class="o">&gt;</span><span class="p">:</span><span class="mi">12</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">symbol</span>
+<span class="mi">11</span><span class="p">:</span>         <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Distance to census&#39;</span>
+<span class="mi">12</span><span class="p">:</span>         <span class="n">y</span>
+            <span class="o">^</span>
+<span class="ne">Traceback</span>:
+</pre></div>
+</div>
 </div>
 </div>
 <p>p-value is significantly less than 0.05, so we conclude that the difference been the jury demographics and the census demographics is <strong>not due to randomness</strong>.</p>
